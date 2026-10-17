@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "d43445be7d89fcff57cf405e901aab031229dea2",
+  "sourceCommit": "b8783cc6fda349f620b21951c08f905e649798fd",
   "runtime": {
     "rulesVersion": "greece-118-v31",
     "saveVersion": 31,
@@ -46,9 +46,9 @@
     ]
   },
   "audit": {
-    "trackedFiles": 17256,
+    "trackedFiles": 17257,
     "retainedTrackedFiles": 794,
-    "excludedTrackedFiles": 16462,
+    "excludedTrackedFiles": 16463,
     "privateHistoryCopied": false,
     "releasesCopied": false,
     "sourceNativeBodiesCopied": false,
@@ -4131,14 +4131,14 @@
     },
     {
       "path": "src/client/buildings.ts",
-      "bytes": 6393,
-      "sha256": "8ed64c14dcbebb98a6bfa66b7c0273be2f1ef6782683f855d9d8ef9255bc2921",
+      "bytes": 10550,
+      "sha256": "bb39065a205880b5c2937076d0bc557be88540e6cbe9f8056c5967245d812c29",
       "origin": "tracked"
     },
     {
       "path": "src/client/client.css",
-      "bytes": 33280,
-      "sha256": "68a65f72780f3c8eb46b8a4fab4713e3136136c06c9e8b23f23555628284d9c1",
+      "bytes": 33191,
+      "sha256": "0cfe240eb556458098c9eecc87ef2dfbf556b9f5d720ae174c9df23c3b71470d",
       "origin": "tracked"
     },
     {
@@ -4167,14 +4167,14 @@
     },
     {
       "path": "src/client/hud.css",
-      "bytes": 30217,
-      "sha256": "bb5897933961893c41fdf42371624e4673abd18b148f7738055e1809260c6f73",
+      "bytes": 31329,
+      "sha256": "87ba8981b6871738dd73b21993c4691e227395834e126d7cab996470bb6f07ee",
       "origin": "tracked"
     },
     {
       "path": "src/client/hud.ts",
-      "bytes": 43283,
-      "sha256": "f7fafb19ff3221fea059ba8bc822266cb39a9499d4b1fb66fdd0e011e7d75053",
+      "bytes": 44523,
+      "sha256": "5c3a68a10c81a5614079e47acbd7993be54bc916c378c5eefeb6d309c81324e8",
       "origin": "tracked"
     },
     {
@@ -4215,8 +4215,8 @@
     },
     {
       "path": "src/client/play3d.ts",
-      "bytes": 74625,
-      "sha256": "c9039cec95dcad1e809696eae8b0db9674f4b91a669ebb194720cc1995bec128",
+      "bytes": 83945,
+      "sha256": "7da359e4b14f97ffc0fa9280db7d9dd89c692b6c1759aace11b0e5c5721c0a12",
       "origin": "tracked"
     },
     {
@@ -4299,8 +4299,8 @@
     },
     {
       "path": "src/client/world.ts",
-      "bytes": 19290,
-      "sha256": "18b256af8c5d94d016e20459e998d21f87abd8c65d8f04dab29714061992be9d",
+      "bytes": 19847,
+      "sha256": "4033ae225b2e3a91216a3c707d0cf1864d720c2f3c4e1eb33ba6f3afdc70282d",
       "origin": "tracked"
     },
     {
@@ -4809,8 +4809,8 @@
     },
     {
       "path": "src/tutorial.ts",
-      "bytes": 11209,
-      "sha256": "221286f9b3f424888e797aa41f44d5103dfad70d4c7bb952127ffd3a29b0f87c",
+      "bytes": 11244,
+      "sha256": "f7784a64babf1502ea8fb2deca96f5a1cf065b214124a6e4aa6abbf2476f1d4e",
       "origin": "tracked"
     },
     {

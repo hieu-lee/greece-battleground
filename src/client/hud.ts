@@ -411,6 +411,7 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
     <span class="hex-art"><img src="${appUrl(`/art/icon-villager.webp`)}" alt=""></span>
     <span class="price"><img src="${appUrl(`/art/icon-drachma.webp`)}" alt=""><b id="hud-villager-price"></b></span>
     <span class="count" id="hud-workers"></span>
+    <span class="sell-value" aria-hidden="true">+<img src="${appUrl(`/art/icon-drachma.webp`)}" alt=""><b id="hud-sell"></b></span>
   </button>
   <button class="fate-orb" id="open-fate" aria-label="Weave your Fate"><img src="${appUrl(`/ui/insight.webp`)}" alt=""><span>Fate</span></button>
   <button class="ready" id="ready" aria-label="Ready for battle">${icons.next}</button>
@@ -532,8 +533,17 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
     drawn.set(section, key);
     return true;
   };
+  // While a structure is held, the villager hex becomes the sale zone showing what it fetches.
+  let sale: { drachmas: number; label: string; hot: boolean } | null = null;
   let villagerTooltip: { tip: Tooltip; workers: number } | null = null;
   const villagerTip = () => {
+    // While a structure is held the hex is its sale zone.
+    if (sale) {
+      // Marked stale (no worker count matches) so the next render swaps it back after the sale.
+      const tip = { title: "Sell", body: `${sale.label}.` };
+      villagerTooltip = { tip, workers: -1 };
+      return tip;
+    }
     const workers = current?.workers ?? 0;
     const tip = {
       title: "Villager",
@@ -928,6 +938,17 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
     );
   }
 
+  function applySell() {
+    const zone = button("villager");
+    zone.toggleAttribute("data-sell", sale !== null);
+    zone.toggleAttribute("data-hot", Boolean(sale?.hot));
+    if (!sale) return;
+    $("hud-sell").textContent = String(sale.drachmas);
+    zone.setAttribute("aria-label", sale.label);
+    zone.setAttribute("aria-pressed", "false");
+    zone.disabled = false;
+  }
+
   const api = {
     render(
       state: PlayState,
@@ -1002,6 +1023,7 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
       // A spare villager can always be placed; buying needs Drachmas.
       button("villager").disabled =
         !preparing || (!state.workers && state.drachmas < state.villagerPrice);
+      applySell();
       const fateAvailable =
         preparing && (!state.tutorial || state.tutorial.stage === "fate");
       button("open-fate").disabled = !fateAvailable;
@@ -1085,6 +1107,11 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
       node.querySelector("h2")!.textContent = title;
       node.querySelector("p")!.textContent = detail;
       flash(node);
+    },
+    /** Turns the villager hex into the sale zone for a held structure. Clearing it takes the next render. */
+    sell(offer: { drachmas: number; label: string; hot: boolean } | null) {
+      sale = offer;
+      applySell();
     },
     /** Abandons a shop drag in progress (Escape). */
     cancelDrag() {

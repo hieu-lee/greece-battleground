@@ -2,6 +2,7 @@ import { appUrl } from "../urls.ts";
 import * as THREE from "three";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { mergeVertices } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 import { hexToWorld } from "./hex.ts";
 import type { Side } from "./hex.ts";
 import { bindSurfaces } from "./materials.ts";
@@ -66,6 +67,93 @@ async function spriteCard(model: string, level: number) {
   return pivot;
 }
 
+// Structures the Agora also offers glow (the source's upgrade hint): the model's silhouette is
+// written to the stencil buffer, then smooth hulls pushed out along view-space normals draw only
+// outside it, a bright rim inside a softer violet haze, gently pulsing.
+const glowTime = { value: 0 };
+const glowMask = new THREE.MeshBasicMaterial({
+  colorWrite: false,
+  depthWrite: false,
+  depthTest: false,
+  stencilWrite: true,
+  stencilRef: 1,
+  stencilFunc: THREE.AlwaysStencilFunc,
+  stencilZPass: THREE.ReplaceStencilOp,
+});
+function glowMaterial(color: number, width: number, opacity: number) {
+  return new THREE.ShaderMaterial({
+    uniforms: {
+      color: { value: new THREE.Color(color) },
+      width: { value: width },
+      opacity: { value: opacity },
+      time: glowTime,
+    },
+    vertexShader: `
+      uniform float width;
+      void main() {
+        vec4 view = modelViewMatrix * vec4(position, 1.0);
+        view.xyz += normalize(normalMatrix * normal) * width;
+        gl_Position = projectionMatrix * view;
+      }`,
+    fragmentShader: `
+      uniform vec3 color;
+      uniform float opacity;
+      uniform float time;
+      void main() {
+        gl_FragColor = vec4(color, opacity * (0.8 + 0.2 * sin(time * 3.0)));
+      }`,
+    transparent: true,
+    depthWrite: false,
+    stencilWrite: true,
+    stencilRef: 1,
+    stencilFunc: THREE.NotEqualStencilFunc,
+  });
+}
+// Outer haze first, so the rim draws over it.
+const glowLayers = [
+  glowMaterial(0x8b63ff, 0.12, 0.5),
+  glowMaterial(0xeef0ff, 0.045, 0.95),
+];
+// Low-poly models split their normals at hard edges; hulls weld them so the halo has no cracks.
+const hulls = new WeakMap<THREE.BufferGeometry, THREE.BufferGeometry>();
+function hullGeometry(geometry: THREE.BufferGeometry) {
+  let hull = hulls.get(geometry);
+  if (!hull) {
+    const shape = new THREE.BufferGeometry();
+    shape.setAttribute("position", geometry.attributes.position!);
+    if (geometry.index) shape.setIndex(geometry.index);
+    hull = mergeVertices(shape);
+    hull.computeVertexNormals();
+    hulls.set(geometry, hull);
+  }
+  return hull;
+}
+function setGlow(object: THREE.Object3D, on: boolean) {
+  const added: THREE.Object3D[] = [];
+  const meshes: THREE.Mesh[] = [];
+  object.traverse((child) => {
+    if (child.userData.glow) added.push(child);
+    // Fallback sprite cards are flat; only models get a halo.
+    else if (child instanceof THREE.Mesh && !child.userData.owned)
+      meshes.push(child);
+  });
+  if (on === added.length > 0) return;
+  for (const child of added) child.removeFromParent();
+  if (!on) return;
+  for (const mesh of meshes) {
+    // Shared with the model and cached per geometry, so release() leaves them alone.
+    const mask = new THREE.Mesh(mesh.geometry, glowMask);
+    mask.userData.glow = true;
+    mesh.add(mask);
+    for (const [i, material] of glowLayers.entries()) {
+      const hull = new THREE.Mesh(hullGeometry(mesh.geometry), material);
+      hull.userData.glow = true;
+      hull.renderOrder = 1 + i;
+      mesh.add(hull);
+    }
+  }
+}
+
 // Fallback cards own their geometry, material and texture clone; models share theirs.
 function release(group: THREE.Object3D) {
   group.traverse((child) => {
@@ -95,6 +183,7 @@ export function createBuildings(
     }
   >();
   const cards: THREE.Object3D[] = [];
+  const glowing = new Set<string>();
   let reduced = false;
   let revision = 0;
   async function build(
@@ -125,6 +214,7 @@ export function createBuildings(
     release(group);
     group.clear();
     group.add(object);
+    setGlow(group, glowing.has(`${side}:${p.key}`));
     entry.status = "ready";
     if (object.userData.card) cards.push(object);
     // Rise from the ground when newly placed (appear in place under reduced motion).
@@ -160,6 +250,7 @@ export function createBuildings(
         const group = existing?.group ?? new THREE.Group();
         const c = hexToWorld(p.q, p.r, side);
         group.position.set(c.x, 0, c.z);
+        group.userData.home = c;
         group.rotation.y = side === "polis" ? 0 : Math.PI;
         group.userData.key = p.key;
         group.userData.side = side;
@@ -173,12 +264,33 @@ export function createBuildings(
           root.remove(entry.group);
           release(entry.group);
           live.delete(id);
+          glowing.delete(id);
           revision++;
           onChange();
         }
     },
+    /** Makes exactly these structures glow on a side. */
+    glow(side: Side, keys: ReadonlySet<string>) {
+      for (const [id, entry] of live) {
+        if (entry.side !== side) continue;
+        const on = keys.has(id.slice(side.length + 1));
+        if (on) glowing.add(id);
+        else glowing.delete(id);
+        setGlow(entry.group, on);
+      }
+    },
+    /** Lifts a structure to follow the ground point under the pointer; null sets it back on its tile. */
+    hold(side: Side, key: string, point: { x: number; z: number } | null) {
+      const group = live.get(`${side}:${key}`)?.group;
+      if (!group) return;
+      const at = point ?? (group.userData.home as { x: number; z: number });
+      group.position.set(at.x, point ? 0.4 : 0, at.z);
+      onChange();
+    },
     tick() {
       const now = performance.now();
+      // Reduced motion keeps the highlight steady.
+      glowTime.value = reduced ? 0 : now / 1000;
       for (const { group } of live.values()) {
         if (group.userData.settled) continue;
         const t = Math.min(1, (now - (group.userData.spawn ?? 0)) / 450);

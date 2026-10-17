@@ -426,7 +426,7 @@ void registerPlayTools({
   }),
 });
 
-type Mode = { kind: "villager" } | { kind: "move"; from: TileId } | null;
+type Mode = { kind: "villager" } | null;
 const selection: HudSelection = { shop: null, fate: null };
 // The shop offer being dragged over the island; it highlights targets like a selected offer.
 let dragged: number | null = null;
@@ -437,6 +437,7 @@ let selectionContext = preparationKey(game.state);
 
 const hud = createHud(app.querySelector<HTMLElement>("#hud")!, {
   shop(slot) {
+    abandonHold();
     audio.play("select");
     selection.shop = selection.shop === slot ? null : slot;
     selection.fate = null;
@@ -454,6 +455,7 @@ const hud = createHud(app.querySelector<HTMLElement>("#hud")!, {
     if (phase === "start") {
       // The shop selection is kept until release: changing it rebuilds the offers and would
       // drop the dragged card's pointer capture.
+      abandonHold();
       audio.play("select");
       hud.notice("");
       selection.fate = null;
@@ -485,6 +487,16 @@ const hud = createHud(app.querySelector<HTMLElement>("#hud")!, {
     void act({ op: "reroll-shop" });
   },
   villager() {
+    // While a structure is held the villager hex is its sale zone: a keyboard hold sells there,
+    // and another finger's tap during a pointer hold does nothing.
+    if (held) {
+      if (held.pointer === null) {
+        // The Enter that sold must not go on to buy a villager as it auto-repeats.
+        enterEndedHold = true;
+        release({ sale: true, tile: null });
+      }
+      return;
+    }
     const state = game.state;
     if (mode?.kind === "villager") {
       audio.play("select");
@@ -526,6 +538,7 @@ const hud = createHud(app.querySelector<HTMLElement>("#hud")!, {
   },
   settings() {
     hud.cancelDrag();
+    abandonHold();
     audio.play("select");
     screens.settings(!screens.settingsOpen);
   },
@@ -684,6 +697,7 @@ function resume() {
   lastFrame = now;
 }
 function cancelModes() {
+  abandonHold();
   if (selection.fate !== null) hud.notice("");
   selection.shop = null;
   selection.fate = null;
@@ -834,6 +848,7 @@ function tileAt(x: number, y: number) {
 }
 function targets(state: PlayState): TileId[] {
   if (state.phase.kind !== "prepare") return [];
+  if (held?.lifted) return moveTargets(state, held.tile);
   const offer = dragged ?? selection.shop;
   if (offer !== null) {
     const item = state.shop[offer];
@@ -856,19 +871,20 @@ function targets(state: PlayState): TileId[] {
         .filter((t) => state.fog[t.id] === "unlockable")
         .map((t) => t.id),
     ];
-  if (mode?.kind === "move") {
-    const from = mode.from;
-    const source = state.placements.find((p) => p.tile === from);
-    return state.owned.filter((id) => {
-      const target = state.placements.find((p) => p.tile === id);
-      return (
-        id !== from &&
-        !tileById.get(id)?.feature &&
-        (!target || target.id !== source?.id)
-      );
-    });
-  }
   return [];
+}
+// Where a held structure may land: any other owned, featureless tile that does not hold the same
+// structure (a different one swaps places with it).
+function moveTargets(state: PlayState, from: TileId): TileId[] {
+  const source = state.placements.find((p) => p.tile === from);
+  return state.owned.filter((id) => {
+    const target = state.placements.find((p) => p.tile === id);
+    return (
+      id !== from &&
+      !tileById.get(id)?.feature &&
+      (!target || target.id !== source?.id)
+    );
+  });
 }
 
 function placementTooltip(
@@ -916,6 +932,7 @@ labels.append(tileLayer);
 const tileButtons = new Map<TileId, HTMLButtonElement>();
 const tileDescriptionKeys = new Map<TileId, string>();
 let focusedTile: TileId | null = null;
+let swallowSpace = false;
 function moveTileFocus(to: TileId) {
   for (const [id, b] of tileButtons) b.tabIndex = id === to ? 0 : -1;
   tileButtons.get(to)?.focus();
@@ -948,7 +965,8 @@ function syncTileButtons(state: PlayState) {
         )
           world.flyTo({ x: c.x, z: c.z + 0.6 });
         overlay.setHover(t);
-        showTileTooltip(game.state, t.id);
+        if (held?.pointer === null) hoverTile(t.id);
+        else showTileTooltip(game.state, t.id);
       });
       button.addEventListener("blur", () => {
         tooltipTile = null;
@@ -956,6 +974,23 @@ function syncTileButtons(state: PlayState) {
         hud.tooltip(null);
       });
       button.addEventListener("keydown", (event) => {
+        // Holding from the keyboard: Space or Enter drops here (on its own tile, puts it back).
+        if (
+          held?.pointer === null &&
+          (event.key === " " || event.key === "Enter")
+        ) {
+          event.preventDefault();
+          if (!event.repeat) release({ sale: false, tile: t.id });
+          swallowSpace = event.key === " ";
+          // Nor may an Enter that dropped act on the tile (colonise it) as it auto-repeats.
+          if (event.key === "Enter") enterEndedHold = true;
+          return;
+        }
+        if (event.key === " " && !event.repeat && holdByKey(t.id)) {
+          event.preventDefault();
+          swallowSpace = true;
+          return;
+        }
         const delta = {
           ArrowLeft: [-1, 0],
           ArrowRight: [1, 0],
@@ -966,6 +1001,12 @@ function syncTileButtons(state: PlayState) {
         event.preventDefault();
         const next = tileByAxial.get(`${t.q + delta[0]!},${t.r + delta[1]!}`);
         if (next && tileButtons.has(next.id)) moveTileFocus(next.id);
+      });
+      // A Space that picked up or dropped a structure must not also press the button on release.
+      button.addEventListener("keyup", (event) => {
+        if (event.key !== " " || !swallowSpace) return;
+        event.preventDefault();
+        swallowSpace = false;
       });
       tileLayer.append(button);
       tileButtons.set(t.id, button);
@@ -980,6 +1021,8 @@ function syncTileButtons(state: PlayState) {
         : `Tile ${t.id}, ${t.terrain}, ${state.owned.includes(t.id) ? "owned" : "unclaimed"}${p ? `, ${buildings[p.id].name}, level ${p.level}, ${p.workers} workers${p.rune ? `, Charm: ${fates[p.rune].name}` : ""}` : t.feature ? `, ${t.feature.replaceAll("-", " ")}${rune ? `, Charm: ${fates[rune].name}` : ""}` : ", empty"}`,
     );
     b.setAttribute("aria-pressed", String(picked === t.id));
+    if (p) b.setAttribute("aria-keyshortcuts", "Space");
+    else b.removeAttribute("aria-keyshortcuts");
     const descriptionKey =
       !foggedTiles.has(t.id) && (p || (t.feature && state.owned.includes(t.id)))
         ? JSON.stringify([p, p ? troopCount(state, p) : t.feature, rune])
@@ -1039,7 +1082,11 @@ function syncActions(state: PlayState, preparing: boolean) {
       ? null
       : tileById.get(picked)?.feature;
   const rune = state.featureRunes.find(([tile]) => tile === picked)?.[1];
-  actionsPopup.hidden = (!p && !feature) || !preparing;
+  // Structures with nothing to assign or read have no popup: they move and sell by dragging.
+  const content = p
+    ? Boolean(p.rune || buildings[p.id].workerSlots)
+    : Boolean(feature);
+  actionsPopup.hidden = !content || !preparing;
   const key = p
     ? JSON.stringify([
         p,
@@ -1051,7 +1098,7 @@ function syncActions(state: PlayState, preparing: boolean) {
     : feature
       ? JSON.stringify([picked, feature, rune, preparing])
       : "";
-  if ((!p && !feature) || key === actionsKey) return;
+  if (!content || key === actionsKey) return;
   actionsKey = key;
   actionsPopup.replaceChildren();
   if (!p) {
@@ -1094,45 +1141,6 @@ function syncActions(state: PlayState, preparing: boolean) {
     b.addEventListener("click", () => void act({ op: "assign", tile: p.tile }));
     actionsPopup.append(b);
   }
-  const move = document.createElement("button");
-  move.id = "move";
-  move.dataset.focus = "move";
-  move.innerHTML = `<span>Move structure</span>`;
-  move.addEventListener("click", () => {
-    mode = { kind: "move", from: p.tile };
-    picked = null;
-    hud.notice("Choose an owned tile or swap with a different structure");
-    render();
-    // The popup closes; keyboard users continue from the structure's tile.
-    moveTileFocus(p.tile);
-  });
-  actionsPopup.append(move);
-  if (p.id !== "polis-hall") {
-    const returned = saleReturns(state, p);
-    if (returned) {
-      const sell = document.createElement("button");
-      sell.id = "sell";
-      sell.dataset.focus = "sell";
-      const label = document.createElement("span");
-      label.textContent = "Sell structure";
-      const details = document.createElement("small");
-      details.textContent = [
-        `+${returned.drachmas} Drachmas`,
-        ...(returned.workers
-          ? [
-              `+${returned.workers} Villager${returned.workers === 1 ? "" : "s"}`,
-            ]
-          : []),
-        ...(returned.insight ? [`+${returned.insight} Insight`] : []),
-      ].join(" · ");
-      sell.append(label, details);
-      sell.addEventListener(
-        "click",
-        () => void act({ op: "sell", tile: p.tile }),
-      );
-      actionsPopup.append(sell);
-    }
-  }
 }
 
 async function choose(id: TileId) {
@@ -1163,8 +1171,6 @@ async function choose(id: TileId) {
       )
     )
       if (!game.state.workers) mode = null;
-  } else if (mode?.kind === "move") {
-    if (await act({ op: "move", from: mode.from, to: id })) mode = null;
   } else if (!state.owned.includes(id) && state.workers > 0) {
     // With a villager to spare, an unclaimed bordering tile can be colonised directly.
     if (state.fog[id] === "unlockable") await act({ op: "colonize", tile: id });
@@ -1179,7 +1185,250 @@ async function choose(id: TileId) {
   }
   render();
 }
+// A structure held with the pointer (pressed, then lifted once the pointer travels) or the
+// keyboard (Space on its tile). Dropped on another owned tile it moves (a different structure
+// swaps places); on the villager hex, which then shows the sale price, it is sold; anywhere else
+// nothing happens.
+type Hold = {
+  tile: TileId;
+  // The held placement as picked up: a refresh that changes it (another tab) ends the hold.
+  placement: string;
+  // null while held from the keyboard.
+  pointer: number | null;
+  x: number;
+  y: number;
+  lifted: boolean;
+  sale: { drachmas: number; label: string } | null;
+  overSale: boolean;
+};
+type Drop = { sale: boolean; tile: TileId | null };
+let held: Hold | null = null;
+let enterEndedHold = false;
+// Pointers whose next click belongs to a structure drag (another pointer's events leave it).
+const suppressed = new Set<number>();
+const holdThreshold = 6;
+function canHold(state: PlayState) {
+  return (
+    state.phase.kind === "prepare" &&
+    !game.connection?.pending &&
+    dragged === null &&
+    selection.shop === null &&
+    selection.fate === null &&
+    !mode
+  );
+}
+function pickUp(
+  p: PlayState["placements"][number],
+  pointer: number | null,
+  x = 0,
+  y = 0,
+): Hold {
+  return {
+    tile: p.tile,
+    placement: JSON.stringify(p),
+    pointer,
+    x,
+    y,
+    lifted: false,
+    sale: saleQuote(game.state, p),
+    overSale: false,
+  };
+}
+// What selling the placement returns now (blessings can change it while it is held).
+function saleQuote(state: PlayState, p: PlayState["placements"][number]) {
+  const returned = saleReturns(state, p);
+  return (
+    returned && {
+      drachmas: returned.drachmas,
+      label: `Sell ${buildings[p.id].name} for ${[
+        `${returned.drachmas} Drachmas`,
+        ...(returned.workers
+          ? [`${returned.workers} Villager${returned.workers === 1 ? "" : "s"}`]
+          : []),
+        ...(returned.insight ? [`${returned.insight} Insight`] : []),
+      ].join(", ")}`,
+    }
+  );
+}
+function lift(h: Hold) {
+  h.lifted = true;
+  picked = null;
+  audio.play("select");
+  hud.notice("");
+  hud.tooltip(null);
+  if (h.sale) hud.sell({ ...h.sale, hot: false });
+  syncHeld();
+  render();
+}
+function syncHeld() {
+  const lifted = held?.lifted ? held.tile : null;
+  for (const [key, b] of troops)
+    b.group.visible =
+      battleState.key === "" && key.split(":")[0] !== String(lifted);
+  labelsDirty = true;
+}
+// Shows the held structure over a ground point and highlights the tile it would land on.
+function hover(h: Hold, ground: { x: number; z: number } | null, over: Drop) {
+  if (ground) structures.hold("polis", String(h.tile), ground);
+  const tile =
+    over.tile !== null && moveTargets(game.state, h.tile).includes(over.tile)
+      ? tileById.get(over.tile)
+      : undefined;
+  overlay.setHover(tile ?? null);
+  const overSale = Boolean(h.sale) && over.sale;
+  if (h.sale && overSale !== h.overSale) {
+    h.overSale = overSale;
+    hud.sell({ ...h.sale, hot: overSale });
+  }
+}
+function release(drop: Drop | null) {
+  const h = held;
+  if (!h) return;
+  const state = game.state;
+  held = null;
+  overlay.setHover(null);
+  canvas.style.cursor = "";
+  hud.sell(null);
+  // The click that follows the pointer's release belongs to the drag; an abandoned press (Escape,
+  // a shop pick, a pinch) clicks nothing either, lifted or not.
+  if (h.pointer !== null && (h.lifted || !drop)) suppressed.add(h.pointer);
+  if (!h.lifted) return;
+  // Keyboard instructions end with the hold; later error notices still show.
+  if (h.pointer === null) hud.notice("");
+  structures.hold("polis", String(h.tile), null);
+  syncHeld();
+  const action: Command | null =
+    state.phase.kind !== "prepare" || !drop
+      ? null
+      : drop.sale && h.sale
+        ? { op: "sell", tile: h.tile }
+        : drop.tile !== null && moveTargets(state, h.tile).includes(drop.tile)
+          ? { op: "move", from: h.tile, to: drop.tile }
+          : null;
+  if (action) {
+    audio.play("select");
+    void act(action).then(render);
+  } else render();
+}
+function abandonHold() {
+  release(null);
+}
+
+function dropAt(x: number, y: number): Drop {
+  const under = document.elementFromPoint(x, y);
+  return {
+    sale: Boolean(under?.closest("#villager")),
+    tile: under === canvas ? (tileAt(x, y)?.id ?? null) : null,
+  };
+}
+world.claimPress((event, pinch) => {
+  if (held || pinch) {
+    // A pinch, another finger, or a press while holding from the keyboard abandons the hold. A
+    // pinch's fingers then click nothing, lifted or not (no camera drag marks them).
+    if (pinch) {
+      suppressed.add(event.pointerId);
+      if (held?.pointer != null) suppressed.add(held.pointer);
+    }
+    if (held && event.pointerId !== held.pointer) abandonHold();
+    return false;
+  }
+  const state = game.state;
+  if (event.button !== 0 || !canHold(state)) return false;
+  const tile = tileAtPointer(event);
+  const p = tile && state.placements.find((x) => x.tile === tile.id);
+  if (!p) return false;
+  held = pickUp(p, event.pointerId, event.clientX, event.clientY);
+  canvas.setPointerCapture(event.pointerId);
+  return true;
+});
+addEventListener(
+  "pointermove",
+  (event) => {
+    const h = held;
+    if (!h || event.pointerId !== h.pointer) return;
+    if (!h.lifted) {
+      if (Math.hypot(event.clientX - h.x, event.clientY - h.y) < holdThreshold)
+        return;
+      canvas.style.cursor = "grabbing";
+      lift(h);
+    }
+    hover(
+      h,
+      world.groundPoint(event.clientX, event.clientY),
+      dropAt(event.clientX, event.clientY),
+    );
+  },
+  { signal: controller.signal },
+);
+addEventListener(
+  "pointerup",
+  (event) => {
+    if (held && event.pointerId === held.pointer)
+      release(dropAt(event.clientX, event.clientY));
+    const id = event.pointerId;
+    if (suppressed.has(id)) setTimeout(() => suppressed.delete(id), 0);
+  },
+  { signal: controller.signal },
+);
+addEventListener(
+  "keydown",
+  (event) => {
+    if (event.key === "Enter" && event.repeat && enterEndedHold) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  },
+  { capture: true, signal: controller.signal },
+);
+addEventListener(
+  "keyup",
+  (event) => {
+    if (event.key === "Enter") enterEndedHold = false;
+  },
+  { signal: controller.signal },
+);
+// A pointer's new press starts a new gesture: no click of its own left to swallow.
+addEventListener("pointerdown", (event) => suppressed.delete(event.pointerId), {
+  capture: true,
+  signal: controller.signal,
+});
+addEventListener(
+  "pointercancel",
+  (event) => {
+    if (held && event.pointerId === held.pointer) abandonHold();
+  },
+  { signal: controller.signal },
+);
+canvas.addEventListener("lostpointercapture", (event) => {
+  if (held && event.pointerId === held.pointer) abandonHold();
+});
+// Keyboard: Space on a structure's tile picks it up; Space or Enter on another tile drops it
+// there, Enter on the villager hex sells it, Escape puts it back.
+function holdByKey(id: TileId) {
+  const state = game.state;
+  const p = state.placements.find((x) => x.tile === id);
+  // One hold at a time: a pointer may already be carrying a structure.
+  if (!p || held || !canHold(state)) return false;
+  const h = pickUp(p, null);
+  held = h;
+  lift(h);
+  hoverTile(id);
+  hud.notice(
+    `Holding ${buildings[p.id].name}: Space on a tile moves it${h.sale ? ", Enter on the villager sells it" : ""}`,
+  );
+  return true;
+}
+// Keyboard holds follow tile focus.
+function hoverTile(id: TileId) {
+  const c = tileCentres.get(id);
+  if (held?.pointer === null && c) hover(held, c, { sale: false, tile: id });
+}
 canvas.addEventListener("click", (event) => {
+  // Clicks are PointerEvents carrying their pointer; one without is treated as the drag's.
+  const id =
+    (event as Partial<PointerEvent>).pointerId ??
+    suppressed.values().next().value;
+  if (id !== undefined && suppressed.delete(id)) return;
   if (world.dragged()) return;
   const tile = tileAtPointer(event);
   if (tile) void choose(tile.id);
@@ -1218,6 +1467,8 @@ addEventListener(
 );
 let hovered: TileId | null = null;
 canvas.addEventListener("pointermove", (event) => {
+  // A held structure owns the cursor and the hover highlight.
+  if (held?.lifted) return;
   const tile = tileAtPointer(event);
   const id = tile?.id ?? null;
   if (id === hovered) return;
@@ -1361,6 +1612,20 @@ function syncSettlement(state: PlayState) {
     level: Math.min(p.level, 4),
   }));
   structures.set("polis", models);
+  // Structures the Agora offers again can level up: they glow while preparing.
+  const offered = new Set(
+    state.shop.flatMap((item) => (item ? [item.id] : [])),
+  );
+  structures.glow(
+    "polis",
+    new Set(
+      state.phase.kind === "prepare"
+        ? placed.flatMap(({ p }) =>
+            offered.has(p.id) && p.level < 3 ? [String(p.tile)] : [],
+          )
+        : [],
+    ),
+  );
   // Badges: category hex, villager pips and level, like the source settlement labels.
   const keep = new Set<TileId>();
   for (const { p } of placed) {
@@ -1474,11 +1739,25 @@ function render() {
     else if (previous === "fate") screens.fate(null);
   }
   refreshMap();
+  if (
+    held &&
+    (state.phase.kind !== "prepare" ||
+      !state.placements.some((p) => JSON.stringify(p) === held!.placement))
+  )
+    abandonHold();
+  else if (held) {
+    const p = state.placements.find((x) => x.tile === held!.tile)!;
+    const sale = saleQuote(state, p);
+    if (JSON.stringify(sale) !== JSON.stringify(held.sale)) {
+      held.sale = sale;
+      if (held.lifted)
+        hud.sell(sale && { ...sale, hot: held.overSale && Boolean(sale) });
+    }
+  }
   const context = preparationKey(state);
   if (context !== selectionContext) {
     selectionContext = context;
     selection.shop = selection.fate = null;
-    if (mode?.kind === "move") mode = null;
     if (mode?.kind === "villager" && !state.workers) mode = null;
   }
   // Background polls mark the session busy; only an unresolved request blocks the controls
@@ -1746,7 +2025,8 @@ function projectLabels(fighting: boolean) {
     if (!c) continue;
     const s = world.project(scratch.set(c.x, 0, c.z + 0.62));
     badge.el.style.transform = `translate(${s.x}px, ${s.y}px) translate(-50%, -50%)`;
-    badge.el.hidden = !s.visible || fighting;
+    badge.el.hidden =
+      !s.visible || fighting || (held?.lifted === true && held.tile === tile);
   }
   for (const [id, b] of tileButtons) {
     const c = tileCentres.get(id);

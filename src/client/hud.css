@@ -320,7 +320,8 @@
   gap: 10px;
 }
 .hex-card {
-  --size: clamp(92px, 8.4vw, 124px);
+  /* The Agora column (four offers and the reroll) must end above the Ready dial on short windows. */
+  --size: clamp(64px, min(8.4vw, calc((100vh - 350px) / 4.4)), 124px);
   width: var(--size);
   height: calc(var(--size) * 1.1);
   position: relative;
@@ -540,6 +541,38 @@
 }
 .hex-card.villager .hex-art img {
   width: 70%;
+}
+.hex-card .sell-value {
+  display: none;
+}
+.hex-card[data-sell] .sell-value {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--gold);
+  text-shadow: 0 2px 3px #000c;
+  pointer-events: none;
+}
+.hex-card .sell-value img {
+  width: 26px;
+  height: 26px;
+}
+.hex-card[data-sell] .hex-art img,
+.hex-card[data-sell] .price,
+.hex-card[data-sell] .count {
+  display: none;
+}
+.hex-card[data-sell][data-hot] {
+  transform: scale(1.14);
+}
+.hex-card[data-sell][data-hot] .hex-art {
+  background: linear-gradient(160deg, #fff4c8, #f1c75c 45%, #a8781e);
+  filter: drop-shadow(0 0 12px #f3c75a);
 }
 .hex-card .count {
   position: absolute;
@@ -1203,10 +1236,19 @@
     gap: 8px;
   }
   .hex-card {
-    --size: 70px;
+    /* Short windows shrink the column further so it still ends above the Ready dial. */
+    --size: clamp(52px, calc((100vh - 275px) / 4.4), 70px);
   }
   .hex-card.villager {
     --size: 66px;
+  }
+  .hex-card[data-sell] .sell-value {
+    font-size: 18px;
+    gap: 2px;
+  }
+  .hex-card .sell-value img {
+    width: 18px;
+    height: 18px;
   }
   .ready {
     width: 86px;

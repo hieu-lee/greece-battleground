@@ -16,7 +16,7 @@ const chapters = {
     icon: "ward",
   },
   structures: {
-    text: "Choose an offer in the Agora, then an owned tile to place it. Camps deploy warriors; economic structures support your polis. Inspect a structure to see its costs, troops and effects. Continue when you are ready to visit the Moirai.",
+    text: "Drag an offer from the Agora onto an owned tile to place it. Camps deploy warriors; economic structures support your polis. Inspect a structure to see its costs, troops and effects. Continue when you are ready to visit the Moirai.",
     icon: "damage",
   },
   fate: {
@@ -24,7 +24,7 @@ const chapters = {
     icon: "insight",
   },
   preparation: {
-    text: "Arrange your structures, assign Villagers and inspect your warband before choosing Ready. Combat then runs automatically. Your first encounter is against the wilderness. Watch the battle or skip its presentation; either choice keeps the same result.",
+    text: "Drag structures to rearrange them, assign Villagers and inspect your warband before choosing Ready. Combat then runs automatically. Your first encounter is against the wilderness. Watch the battle or skip its presentation; either choice keeps the same result.",
     icon: "action-speed",
   },
   workers: {
@@ -48,7 +48,7 @@ const chapters = {
     icon: "insight",
   },
   upgrades: {
-    text: "Place another copy of a structure on its existing tile to improve it when an upgrade is available. The selected structure shows its level, stats and worker capacity. Check the price before committing your Drachmas.",
+    text: "Drag another copy of a structure onto its existing tile to improve it when an upgrade is available. The selected structure shows its level, stats and worker capacity. Check the price before committing your Drachmas.",
     icon: "damage",
   },
   seasons: {
@@ -60,7 +60,7 @@ const chapters = {
     icon: "damage",
   },
   selling: {
-    text: "Sell an owned structure to reshape your polis. Select it and review the return before selling. Its Charm leaves with it, while the territory remains yours. Your Polis Hall stays with your settlement.",
+    text: "Sell an owned structure to reshape your polis. Hold it and the Villager button shows its return; drop it there to sell. Its Charm leaves with it, while the territory remains yours. Your Polis Hall stays with your settlement.",
     icon: "drachma",
   },
   ending: {

@@ -13,6 +13,8 @@ export function createWorld(canvas: HTMLCanvasElement) {
     canvas,
     antialias: true,
     powerPreference: "high-performance",
+    // Glowing structures mask their silhouette so only the halo around it shows.
+    stencil: true,
   });
   // Lighter tier for phones and small or touch-first screens: lower pixel ratio and shadow map.
   const light =
@@ -123,16 +125,22 @@ export function createWorld(canvas: HTMLCanvasElement) {
     const [a, b] = [...touches.values()];
     return a && b ? Math.hypot(a.x - b.x, a.y - b.y) : 0;
   }
+  // A press the game claims (picking up a structure) never starts a camera pan. Every touch is
+  // still tracked, and a second finger is offered as a pinch so the game can let go.
+  let pressClaim: ((event: PointerEvent, pinch: boolean) => boolean) | null =
+    null;
   canvas.addEventListener("pointerdown", (event) => {
     if (event.pointerType === "touch") {
       touches.set(event.pointerId, { x: event.clientX, y: event.clientY });
       if (touches.size >= 2) {
+        pressClaim?.(event, true);
         pinch = touches.size === 2 ? fingerSpread() : 0;
         // A pinch is never a tap: keep the drag marked as moved so no tile is picked.
         if (drag) drag.moved = Infinity;
         return;
       }
     }
+    if (pressClaim?.(event, false)) return;
     drag = {
       x: event.clientX,
       y: event.clientY,
@@ -428,6 +436,9 @@ export function createWorld(canvas: HTMLCanvasElement) {
     groundPoint,
     /** True when the last pointer interaction was a drag rather than a click. */
     dragged: () => (drag?.moved ?? 0) >= 6,
+    claimPress(claim: (event: PointerEvent, pinch: boolean) => boolean) {
+      pressClaim = claim;
+    },
     onFrame(tick: (dt: number, time: number) => void) {
       tickers.add(tick);
       return () => tickers.delete(tick);

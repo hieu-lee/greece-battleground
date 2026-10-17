@@ -148,11 +148,6 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
-.tile-actions #sell {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-}
 .tile-actions button:hover:not(:disabled) {
   border-color: var(--gold);
 }
