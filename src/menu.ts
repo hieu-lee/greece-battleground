@@ -169,7 +169,10 @@ const close = () => {
 };
 // Each opening (and each leaderboard page) gets a token; a reply for an older one is dropped.
 let opening = 0;
-const open = (panel: z.infer<typeof panels>) => {
+const open = (
+  panel: z.infer<typeof panels>,
+  onlineEntry?: "ranked" | "async",
+) => {
   const token = ++opening;
   // A request from the previous panel no longer owns the busy state.
   body.removeAttribute("aria-busy");
@@ -194,6 +197,8 @@ const open = (panel: z.infer<typeof panels>) => {
       accountScreen(() => {
         loadCard().catch(() => {});
         void refreshBoard();
+        if (onlineEntry && accountToken() && token === opening && dialog.open)
+          open(onlineEntry);
       }),
     );
   } else if (
@@ -203,7 +208,7 @@ const open = (panel: z.infer<typeof panels>) => {
   ) {
     body.replaceChildren(
       element("p", "Sign in to keep your online polis across devices."),
-      retry("Sign in or create account", () => open("account")),
+      retry("Sign in or create account", () => open("account", panel)),
     );
   } else if (panel === "ranked") {
     body.innerHTML = `<p>Face other players’ warbands. Your Elo changes when the run ends.</p><p id="ranked-status" role="status">Checking for your guest polis…</p><div class="mode-links" id="ranked-links"></div><div class="panel-switch"><button type="button" data-open="profile">Your profile</button><button type="button" data-open="leaderboard">Leaderboard</button></div>`;

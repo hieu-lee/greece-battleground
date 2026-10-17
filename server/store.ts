@@ -876,12 +876,6 @@ export class GameStore {
       WHERE g.guest=? AND g.run=? AND g.round=? AND g.revision=? AND g.lineup_hash=?`,
         )
         .run(game.wins, game.lives, id, run, game.round, game.revision, digest);
-    this.db
-      .prepare(
-        `DELETE FROM ghosts WHERE guest=? AND round=? AND seq NOT IN
-      (SELECT seq FROM ghosts WHERE guest=? AND round=? ORDER BY seq DESC LIMIT 4)`,
-      )
-      .run(id, game.round, id, game.round);
     return submission.parse([run, game.round, game.revision, digest]);
   }
   inspect(

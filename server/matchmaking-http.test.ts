@@ -312,38 +312,52 @@ test("waiting never uses another queue, another round, or one's own old run; can
   }
 });
 
-test("an older retained submission can be a better match than that account's newest army", async () => {
-  const f = await fixture();
-  try {
-    const target = await f.guest("Target");
-    const rival = await f.guest("Returning rival");
-    assert.equal((await f.ready(rival)).status, 202);
-    const foil = await f.guest("Distant rival", { elo: 1500 });
-    assert.equal((await f.ready(foil)).status, 200);
-    const database = new DatabaseSync(f.path);
+for (const queue of ["ranked", "unranked"] as const) {
+  test(`${queue} history survives many campaigns and service reopen for a lone returning player`, async () => {
+    const f = await fixture();
     try {
-      database
-        .prepare("UPDATE games SET run=? WHERE guest=?")
-        .run(randomUUID(), rival.id);
+      const target = await f.guest("Target", { queue });
+      const rival = await f.guest("Returning rival", { queue });
+      assert.equal((await f.ready(rival)).status, 202);
+      const foil = await f.guest("Distant rival", { elo: 1500, queue });
+      assert.equal((await f.ready(foil)).status, 200);
+      for (let campaign = 0; campaign < 5; campaign++) {
+        const database = new DatabaseSync(f.path);
+        try {
+          database
+            .prepare("UPDATE games SET run=? WHERE guest=?")
+            .run(randomUUID(), rival.id);
+        } finally {
+          database.close();
+        }
+        f.prepare(rival.id, { elo: 1000 });
+        assert.equal((await f.ready(rival)).status, 200);
+      }
+      await f.restart();
+      assert.equal((await f.ready(target)).status, 200);
+      assert.equal(await f.opponent(target), "Returning rival");
+      const audit = new DatabaseSync(f.path, { readOnly: true });
+      try {
+        assert.equal(
+          audit
+            .prepare("SELECT opponent_elo FROM ranked_battles WHERE guest=?")
+            .get(target.id)?.opponent_elo,
+          100,
+        );
+        assert.equal(
+          audit
+            .prepare(
+              "SELECT COUNT(*) AS total FROM ghosts WHERE guest=? AND ranked=?",
+            )
+            .get(rival.id, queue === "ranked" ? 1 : 0)?.total,
+          6,
+          "all six submitted campaigns remain available after reopening",
+        );
+      } finally {
+        audit.close();
+      }
     } finally {
-      database.close();
+      await f.close();
     }
-    f.prepare(rival.id, { elo: 1000 });
-    assert.equal((await f.ready(rival)).status, 200);
-    assert.equal((await f.ready(target)).status, 200);
-    assert.equal(await f.opponent(target), "Returning rival");
-    const audit = new DatabaseSync(f.path, { readOnly: true });
-    try {
-      assert.equal(
-        audit
-          .prepare("SELECT opponent_elo FROM ranked_battles WHERE guest=?")
-          .get(target.id)?.opponent_elo,
-        100,
-      );
-    } finally {
-      audit.close();
-    }
-  } finally {
-    await f.close();
-  }
-});
+  });
+}
