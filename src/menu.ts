@@ -8,8 +8,6 @@ import { catalogue } from "./scene.ts";
 import { createAudio } from "./audio.ts";
 import { preferences, savePreferences } from "./preferences.ts";
 import type { Tool } from "./webmcp.ts";
-import { readRun } from "./run-storage.ts";
-import { appendRunArchives } from "./run-archive.ts";
 import { rulesVersion, saveVersion } from "./rules-version.ts";
 import {
   laurel,
@@ -32,7 +30,7 @@ root.innerHTML = `<img class="menu-background" alt="" src="${appUrl("/art/main-m
 <h1><span>Greece</span>Battleground</h1>
 <nav class="menu-buttons" aria-label="Game modes and options">
 <button data-panel="ranked">Ranked Play</button>
-<button data-panel="freeplay">Freeplay</button><button data-panel="async">Unranked Play</button>
+<button data-panel="freeplay">Freeplay</button>
 <button class="menu-gap" id="tutorial">Tutorial</button>
 <button data-panel="settings">Settings</button><button data-panel="report">Report a Bug</button><button data-panel="exit">Exit</button>
 </nav>
@@ -65,7 +63,6 @@ const panels = z.enum([
   "account",
   "leaderboard",
   "freeplay",
-  "async",
   "settings",
   "report",
   "exit",
@@ -171,7 +168,7 @@ const close = () => {
 let opening = 0;
 const open = (
   panel: z.infer<typeof panels>,
-  onlineEntry?: "ranked" | "async",
+  onlineEntry?: "ranked" | "freeplay",
 ) => {
   const token = ++opening;
   // A request from the previous panel no longer owns the busy state.
@@ -190,7 +187,6 @@ const open = (
     report: "Report a Bug",
     exit: "Exit",
     freeplay: "Freeplay",
-    async: "Unranked Play",
   }[panel];
   if (panel === "account") {
     body.replaceChildren(
@@ -202,7 +198,7 @@ const open = (
       }),
     );
   } else if (
-    (panel === "ranked" || panel === "async") &&
+    (panel === "ranked" || panel === "freeplay") &&
     crossOriginApi &&
     !accountToken()
   ) {
@@ -241,7 +237,7 @@ const open = (
           links.replaceChildren(resume);
         } else {
           status.textContent = started(current)
-            ? `Entering ranked play ends your unranked polis on round ${current.round}.`
+            ? `Entering ranked play ends your Freeplay polis on round ${current.round}.`
             : "Your next run will be ranked.";
           links.replaceChildren(enter);
         }
@@ -366,8 +362,8 @@ const open = (
         });
     };
     show(1);
-  } else if (panel === "async") {
-    body.innerHTML = `<p>Face other players’ warbands without changing your Elo.</p><p id="async-menu-status" role="status">Checking for your polis…</p><div class="mode-links"><a class="menu-link" href="/play.html?mode=async" id="resume-async" hidden>Resume your polis</a><a class="menu-link" href="/clans.html?mode=async">Choose a clan</a></div>`;
+  } else if (panel === "freeplay") {
+    body.innerHTML = `<p>Face saved player warbands, even when they are offline. Freeplay has its own rating and never changes your ranked Elo.</p><p id="async-menu-status" role="status">Checking for your polis…</p><div class="mode-links"><a class="menu-link" href="/play.html?mode=async" id="resume-async" hidden>Resume your polis</a><a class="menu-link" href="/clans.html?mode=async">Choose a clan</a></div>`;
     const status = document.getElementById("async-menu-status"),
       resume = document.getElementById("resume-async");
     loadProfile()
@@ -385,27 +381,6 @@ const open = (
           status.textContent =
             error instanceof Error ? error.message : "Service unavailable.";
       });
-  } else if (panel === "freeplay") {
-    body.innerHTML = `<p>A full run against practice warbands.</p><p id="saved-run"></p><div class="mode-links"><a id="resume-run" class="menu-link" href="/play.html" hidden>Resume your polis</a><a class="menu-link" href="/clans.html?mode=practice">Choose a clan for a new polis</a></div>`;
-    const saved = document.getElementById("saved-run"),
-      resume = document.getElementById("resume-run");
-    try {
-      const current = readRun("practice");
-      if (current.game) {
-        if (saved)
-          saved.textContent = `Your saved polis: round ${current.game.round}, ${current.game.wins} wins, ${current.game.lives} lives.`;
-        if (resume) resume.hidden = false;
-      } else if (saved)
-        saved.textContent =
-          current.issue ??
-          (current.archives.length
-            ? "Your previous-rules polis is preserved. Download its archive or choose a clan to begin under the current rules."
-            : "");
-      appendRunArchives(body, "practice");
-    } catch {
-      if (saved)
-        saved.textContent = "Allow browser storage to save your polis.";
-    }
   } else if (panel === "settings") {
     body.innerHTML = `<form id="settings-form"><label>Local player name<input name="name" required maxlength="24" autocomplete="off"></label><label>Animation<select name="motion"><option value="system">Follow device preference</option><option value="reduce">Reduce motion</option></select></label><fieldset><legend>Sound</legend><label>Master volume <output id="master-value"></output><input type="range" name="master" min="0" max="100" step="1"></label><label>Effects volume <output id="effects-value"></output><input type="range" name="effects" min="0" max="100" step="1"></label><label>Music volume <output id="music-value"></output><input type="range" name="music" min="0" max="100" step="1"></label><label class="check"><input type="checkbox" name="muted">Mute all sound</label><button type="button" id="sound-preview">Preview sound</button><p id="audio-status" role="status"></p></fieldset><fieldset><legend>Video</legend><label>Render resolution<select name="resolution"><option value="auto">Auto</option><option value="lower">Lower (1×)</option></select></label></fieldset><fieldset><legend>Input</legend><label>Camera pan speed <output id="pan-speed-value"></output><input type="range" name="panSpeed" min="0.5" max="2" step="0.1"></label><label class="check"><input type="checkbox" name="reverseWheel">Reverse mouse-wheel zoom</label><p>Pan speed changes drag and keyboard movement. Touch pinch keeps its natural direction.</p></fieldset><p>Your name and settings are saved in this browser.</p><button type="submit">Save settings</button><p id="form-status" role="status"></p></form>`;
     const form = document.getElementById("settings-form");
@@ -630,7 +605,7 @@ const tools: Tool[] = [
   {
     name: "inspect_menu",
     description:
-      "Main menu, local settings and available modes. Freeplay uses simulated practice opponents. Tutorial uses authored source armies and wilderness encounters. Ranked and unranked async PvP use submitted player warbands, and the server scores completed runs.",
+      "Main menu, local settings and available modes. Ranked Play and Freeplay use saved player warbands from separate online pools. Freeplay never changes ranked Elo. Tutorial uses authored source armies and wilderness encounters. The server scores completed online runs.",
     inputSchema: z.toJSONSchema(inspect),
     annotations: { readOnlyHint: true },
     execute: (input) => {
@@ -643,9 +618,8 @@ const tools: Tool[] = [
           playtest: appUrl("/play.html"),
           workshop: appUrl("/workshop.html"),
           art: appUrl("/art-review.html"),
-          freeplay: appUrl("/clans.html?mode=practice"),
+          freeplay: appUrl("/clans.html?mode=async"),
           tutorial: appUrl("/clans.html?mode=tutorial"),
-          async: appUrl("/clans.html?mode=async"),
           ranked: appUrl("/clans.html?mode=ranked"),
         },
         panels: panels.options,

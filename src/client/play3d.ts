@@ -97,7 +97,7 @@ function showAward(revision: number) {
           ? "Your result is saved to your profile."
           : elo
             ? `Elo ${elo.before} to ${elo.after} (${elo.change > 0 ? "+" : ""}${elo.change}), +${last.xp} XP`
-            : `+${last.xp} XP. Unranked runs never change your Elo.`,
+            : `+${last.xp} XP. Freeplay never changes your ranked Elo.`,
       );
     })
     .catch(() => {

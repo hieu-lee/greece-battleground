@@ -26,7 +26,7 @@ export function accountRecovery(onRecovered: () => void) {
       "This guest is protected by your account password. Use Account to sign in on another device.";
     return section;
   }
-  section.innerHTML = `<p>Your recovery code restores your online guest, current polis and profile. It does not restore local Freeplay saves. Keep it private: anyone with it can take over your guest session.</p>
+  section.innerHTML = `<p>Your recovery code restores your online guest, current polis and profile. It does not restore local practice saves. Keep it private: anyone with it can take over your guest session.</p>
 <section id="recovery-issue"><h3>Protect this guest</h3><p id="issue-status" role="status" tabindex="-1">Checking this browser's guest…</p></section>
 <section><h3>Restore a guest</h3><form id="recover-form" autocomplete="off">
 <label>Saved recovery code<input id="recover-secret" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="64" required></label>

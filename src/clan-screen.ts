@@ -149,17 +149,18 @@ let replacement: {
 let decide: ((abandon: boolean) => void) | null = null;
 const confirmAbandon = (current: Profile["current"]) =>
   new Promise<boolean>((resolve) => {
-    const next = queue === "ranked" ? "ranked" : "unranked";
-    const rating = current.queue === "ranked" ? "Ranked" : "Unranked";
+    const next = queue === "ranked" ? "Ranked Play" : "Freeplay";
+    const currentMode = current.queue === "ranked" ? "ranked" : "Freeplay";
+    const rating = current.queue === "ranked" ? "Ranked" : "Freeplay";
     const settlement =
       current.queue === "ranked" || current.round >= 3
-        ? `Your committed wins settle your ${rating} Elo and XP. This adds one ${current.queue} game to your profile.`
-        : "Leaving before round 3 grants no Unranked Elo or XP.";
-    element("replace-title").textContent = `Leave your ${current.queue} polis?`;
+        ? `Your committed wins settle your ${rating} Elo and XP. This adds one ${currentMode} game to your profile.`
+        : "Leaving before round 3 grants no Freeplay Elo or XP.";
+    element("replace-title").textContent = `Leave your ${currentMode} polis?`;
     element("replace-text").textContent =
-      `Entering ${next} play ends your ${current.queue} polis on round ${current.round}. ${settlement} A pending battle result is not claimed.`;
-    element("confirm-run").textContent = `Enter ${next} play`;
-    element("cancel-run").textContent = `Keep my ${current.queue} polis`;
+      `Entering ${next} ends your ${currentMode} polis on round ${current.round}. ${settlement} A pending battle result is not claimed.`;
+    element("confirm-run").textContent = `Enter ${next}`;
+    element("cancel-run").textContent = `Keep my ${currentMode} polis`;
     element("replace-status").textContent = "";
     decide = resolve;
     replaceDialog.showModal();

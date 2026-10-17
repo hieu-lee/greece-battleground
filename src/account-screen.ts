@@ -34,7 +34,7 @@ export function accountScreen(onChanged: () => void) {
     const intro = document.createElement("p");
     intro.textContent = guest
       ? `Create an account to keep ${guest.name} and this exact online polis. Signing in restores the account's own polis.`
-      : "Sign in to resume your online polis on this device, or create an account. Local Freeplay and Tutorial saves stay on this device.";
+      : "Sign in to resume your online polis on this device, or create an account. Local practice and Tutorial saves stay on this device.";
     const tabs = document.createElement("div");
     tabs.className = "account-tabs";
     for (const [value, label] of [
@@ -56,7 +56,7 @@ export function accountScreen(onChanged: () => void) {
     }
     const fields = document.createElement("form");
     fields.id = "account-form";
-    fields.innerHTML = `<label>Username<input id="account-username" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" minlength="3" maxlength="32" pattern="[A-Za-z0-9_]+" required></label><label>Password<input id="account-password" name="password" type="password" autocomplete="${mode === "signup" ? "new-password" : "current-password"}" minlength="15" maxlength="128" required></label><p class="account-help">${mode === "signup" ? "Use 3–32 letters, numbers or underscores and a password of 15–128 characters. " + (guest ? "Your existing guest and progress will be kept." : "Creates a new unranked polis with your selected clan and local player name.") : "Your saved account includes its online guest, current run and profile."}</p><button type="submit" id="account-submit">${mode === "signup" ? (guest ? "Protect this guest" : "Create account") : "Sign in"}</button>`;
+    fields.innerHTML = `<label>Username<input id="account-username" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" minlength="3" maxlength="32" pattern="[A-Za-z0-9_]+" required></label><label>Password<input id="account-password" name="password" type="password" autocomplete="${mode === "signup" ? "new-password" : "current-password"}" minlength="15" maxlength="128" required></label><p class="account-help">${mode === "signup" ? "Use 3–32 letters, numbers or underscores and a password of 15–128 characters. " + (guest ? "Your existing guest and progress will be kept." : "Creates a new Freeplay polis with your selected clan and local player name.") : "Your saved account includes its online guest, current run and profile."}</p><button type="submit" id="account-submit">${mode === "signup" ? (guest ? "Protect this guest" : "Create account") : "Sign in"}</button>`;
     fields.onsubmit = async (event) => {
       event.preventDefault();
       if (busy) return;

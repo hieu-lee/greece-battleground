@@ -564,7 +564,7 @@ export function createScreens(
       // The round counter has already advanced past the last round fought.
       const rounds = outcome === "round-limit" ? state.round - 1 : state.round;
       finished.querySelector("#run-detail")!.textContent =
-        `${state.wins} victories in ${rounds} rounds · ${queue === "ranked" ? "Ranked Play" : queue ? "Unranked Play" : state.mode === "tutorial" ? "Tutorial" : "Freeplay"}`;
+        `${state.wins} victories in ${rounds} rounds · ${queue === "ranked" ? "Ranked Play" : queue ? "Freeplay" : state.mode === "tutorial" ? "Tutorial" : "Practice"}`;
       const clan = clans[state.clan];
       finished.querySelector("#run-polis")!.textContent =
         `${clan.name} · ${clan.chief}`;

@@ -2,7 +2,7 @@
 
 This export uses greece-118-v31, save31, database
 schema14. Account data belongs to the online service;
-local Freeplay/tutorial saves remain separate.
+local practice/tutorial saves remain separate.
 
 Open Account on the menu to create an account or sign in. Creating credentials
 while a guest is open attaches them to the same guest ID, preserving the online

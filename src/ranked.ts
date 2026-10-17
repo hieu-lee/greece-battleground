@@ -269,9 +269,9 @@ export function profileView(profile: Profile) {
   const stats = node("dl", "profile-stats");
   for (const [term, value] of [
     ["Ranked Elo", String(profile.elo)],
-    ["Unranked Elo", String(profile.freeplayElo)],
+    ["Freeplay Elo", String(profile.freeplayElo)],
     ["Ranked games", String(profile.rankedGames)],
-    ["Unranked games", String(profile.freeplayGames)],
+    ["Freeplay games", String(profile.freeplayGames)],
     ["League", String(profile.league.band)],
     ["Tier", String(profile.league.tier)],
     ["Standing", profile.standing ? `#${profile.standing.rank}` : "Unplaced"],
@@ -286,8 +286,8 @@ export function profileView(profile: Profile) {
     "p",
     "profile-run",
     current.phase === "finished"
-      ? `Your ${current.queue} run has ended with ${current.wins} wins.`
-      : `Your ${current.queue} run: round ${current.round}, ${current.wins} wins, ${current.lives} lives.`,
+      ? `Your ${current.queue === "ranked" ? "ranked" : "Freeplay"} run has ended with ${current.wins} wins.`
+      : `Your ${current.queue === "ranked" ? "ranked" : "Freeplay"} run: round ${current.round}, ${current.wins} wins, ${current.lives} lives.`,
   );
   const history = node("ol", "profile-history");
   history.setAttribute("aria-label", "Recent results");
@@ -297,7 +297,7 @@ export function profileView(profile: Profile) {
       "span",
       "history-change",
       (entry.elo
-        ? `${entry.queue === "ranked" ? "Ranked" : "Unranked"} Elo ${entry.elo.before} to ${entry.elo.after} (${entry.elo.change > 0 ? "+" : ""}${entry.elo.change}${entry.elo.after === entry.elo.before + entry.elo.change ? "" : ", floor 0"}), `
+        ? `${entry.queue === "ranked" ? "Ranked" : "Freeplay"} Elo ${entry.elo.before} to ${entry.elo.after} (${entry.elo.change > 0 ? "+" : ""}${entry.elo.change}${entry.elo.after === entry.elo.before + entry.elo.change ? "" : ", floor 0"}), `
         : "") + `XP +${entry.xp}`,
     );
     if ((entry.elo?.after ?? 0) > (entry.elo?.before ?? 0) || entry.xp > 0)
@@ -306,7 +306,7 @@ export function profileView(profile: Profile) {
       node(
         "span",
         "",
-        `${entry.queue === "ranked" ? "Ranked" : "Unranked"}: ${entry.wins} wins, ${outcomes[entry.outcome] ?? entry.outcome}`,
+        `${entry.queue === "ranked" ? "Ranked" : "Freeplay"}: ${entry.wins} wins, ${outcomes[entry.outcome] ?? entry.outcome}`,
       ),
       change,
     );
@@ -319,7 +319,7 @@ export function profileView(profile: Profile) {
       : node(
           "p",
           "",
-          "No settled async runs yet. Ranked and unranked runs have separate Elo ratings.",
+          "No settled async runs yet. Ranked Play and Freeplay have separate Elo ratings.",
         ),
   );
   return view;

@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "e5df56eb98a7d72317e077de84b40fc12f0cd652",
+  "sourceCommit": "665abf5802e636dd2a7b1b0b22f6ea3da292d502",
   "runtime": {
     "rulesVersion": "greece-118-v31",
     "saveVersion": 31,
@@ -75,8 +75,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 1386,
-      "sha256": "b8601f8330b2b097bc8d1dcce18dad620c0486921f30ded97604e81df8617c4d",
+      "bytes": 1399,
+      "sha256": "2fd7dfaeaff2fd090d9bbc170ae657e8d3438b79022270069a6816990a8ca8a3",
       "origin": "derived"
     },
     {
@@ -112,7 +112,7 @@
     {
       "path": "docs/ACCOUNTS.md",
       "bytes": 2652,
-      "sha256": "7ba93d2357749155f70ceb477fba76767ead3fd82ecd72c138711951b534720b",
+      "sha256": "b8d896e3812d92472713fa5503c55fbbb35380b6f26a443ed5e31f3c5ee870d7",
       "origin": "derived"
     },
     {
@@ -3982,13 +3982,13 @@
     {
       "path": "src/account-recovery.ts",
       "bytes": 9322,
-      "sha256": "93bc7451b8950170654cb9fd7a18f8d268275ff3c4c4c0e1ebea358404ce504e",
+      "sha256": "0d8824cf9ab3344aad39bac16b435ea7298425e7a21e8c1b93b8d8454f7c302f",
       "origin": "tracked"
     },
     {
       "path": "src/account-screen.ts",
       "bytes": 9332,
-      "sha256": "d5ca50f4eff59730822d6b2951d63b7b9e458363a038a9bcf20b10b5c3527e67",
+      "sha256": "24223472763bb78e94ca4d182076c5560f52d83f1b27dc464ecea432559e49fc",
       "origin": "tracked"
     },
     {
@@ -4101,8 +4101,8 @@
     },
     {
       "path": "src/clan-screen.ts",
-      "bytes": 14628,
-      "sha256": "0b9052d2f7b3ddcccab11d19a48eb4ba1b05032721f0e5de2803e0a363543b79",
+      "bytes": 14691,
+      "sha256": "98c3fb458aac10b413b30f4811fd587eb4fd85f07f1c69a0ac602b2bcc76a057",
       "origin": "tracked"
     },
     {
@@ -4215,8 +4215,8 @@
     },
     {
       "path": "src/client/play3d.ts",
-      "bytes": 74622,
-      "sha256": "9c2d8a1b8791fdc0fdd512cda5722f517ed3afadd8a757799cccc3658bca64ce",
+      "bytes": 74625,
+      "sha256": "c9039cec95dcad1e809696eae8b0db9674f4b91a669ebb194720cc1995bec128",
       "origin": "tracked"
     },
     {
@@ -4239,8 +4239,8 @@
     },
     {
       "path": "src/client/screens.ts",
-      "bytes": 30634,
-      "sha256": "a3342a8fbd3fc74af10bd536270c9943948e56b61c214e57ecbb276678d2997f",
+      "bytes": 30629,
+      "sha256": "dc0f7bb465c5ca464dceb04845c0a3141148683b33dca3b8441b59a1d0a42791",
       "origin": "tracked"
     },
     {
@@ -4521,8 +4521,8 @@
     },
     {
       "path": "src/menu.ts",
-      "bytes": 30648,
-      "sha256": "b6c0d4ff03fc188d5657992a99dd2559952853d0cb111f03cb01584795df83f5",
+      "bytes": 29361,
+      "sha256": "8cb78859d47b9f0d7dde2cbab3bde1a361bd3ded4493e2a13c88b86f8bb7639a",
       "origin": "tracked"
     },
     {
@@ -4587,8 +4587,8 @@
     },
     {
       "path": "src/ranked.ts",
-      "bytes": 11428,
-      "sha256": "d3301d09a1fa7c7e69ed626e37adebca31256cc047f6f1bb58df2394cebddf0a",
+      "bytes": 11502,
+      "sha256": "90269ece8f13c5d11cc9254f53fb9819145aa514e0492700427dcbc6e25fa057",
       "origin": "tracked"
     },
     {

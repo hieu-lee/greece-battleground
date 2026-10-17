@@ -15,7 +15,7 @@ pnpm build
 pnpm verify
 ```
 
-Freeplay works locally. Online play requires a separately hosted API; see
+Ranked Play and Freeplay use separate online ghost pools and require a hosted API; see
 [operator instructions](docs/SELF-HOSTING.md). This snapshot does not configure
 the public API hostname or deploy anything by itself. The prepared
 [GitHub Pages workflow](docs/GITHUB-PAGES.md) publishes a development preview only.
