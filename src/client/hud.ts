@@ -7,6 +7,7 @@ import {
   describeEffect,
   fates,
   featureTags,
+  patronNames,
   troopNames,
 } from "../rules.ts";
 import type { BuildingId, Count, FateId, Rarity, TroopId } from "../rules.ts";
@@ -16,6 +17,7 @@ import {
   sourceUnit,
 } from "../source-numbers.ts";
 import { retainedAura } from "../warband.ts";
+import { unlockedFates } from "../game.ts";
 import type { PlayState } from "../read-model.ts";
 import type { Feature, TileId } from "../map.ts";
 import { canCharmTarget, itemHolds } from "../charm-targets.ts";
@@ -64,7 +66,7 @@ type HudHandlers = {
 };
 
 export type Tooltip = {
-  anchor?: "item";
+  anchor?: "item" | "favour";
   title: string;
   rarity?: string;
   // Colours the rarity line by shop tier.
@@ -315,6 +317,54 @@ function fateTooltip(id: FateId): Tooltip {
   };
 }
 
+function favourTooltip(
+  god: keyof PlayState["favor"],
+  favour: PlayState["favor"],
+): Tooltip {
+  const unlocked = new Set(unlockedFates(favour));
+  const tiers = [0, ...favorSteps]
+    .map((at) => {
+      const offers = Object.values(fates).filter((f) =>
+        f.unlock.some(
+          ([patron, threshold]) =>
+            (patron === god || patron === "generic") && threshold === at,
+        ),
+      );
+      if (!offers.length) return "";
+      const example = offers[0]!;
+      const prices = [...new Set(offers.map((f) => f.cost))].join("/");
+      const entries = offers
+        .map((f) => {
+          const alternative = f.unlock
+            .map(
+              ([patron, threshold]) =>
+                `${escapeHtml(patron === "generic" ? "Any god" : patronNames[patron])} ${threshold}`,
+            )
+            .join(" or ");
+          const shared = f.unlock.some(([patron]) => patron === "generic")
+            ? "<p>Shared gift pool: uses your highest favour with any god.</p>"
+            : f.unlock.length > 1
+              ? `<p>Unlock through either god: ${alternative}.</p>`
+              : "";
+          return `<li><b>${escapeHtml(f.name)}</b> · ${fateKindNames[f.kind]} · ${f.cost} Insight · ${unlocked.has(f.id) ? "Unlocked" : "Locked"}<br>${fateTooltip(f.id).body}${shared}</li>`;
+        })
+        .join("");
+      const available = offers.filter((f) => unlocked.has(f.id)).length;
+      const availability =
+        available === offers.length
+          ? "Unlocked"
+          : `${available}/${offers.length} unlocked`;
+      return `<details><summary><b>${at} favour</b> · ${prices} Insight · ${availability}<small>${escapeHtml(example.name)}: ${richText(example.text)}</small></summary><ul>${entries}</ul></details>`;
+    })
+    .join("");
+  return {
+    anchor: "favour",
+    title: `Favour of ${patronNames[god]}`,
+    body: `<p>${favour[god]} favour. Buying Fate offers bearing this god earns favour.</p><p>Thresholds add offers to future Fate rolls. Buy an offer to gain its effect; favour itself grants no combat bonus. Charms and spells still need a valid target.</p><p>Click or tap to pin, then expand a tier for all effects. Shared offers unlock through either god.</p><div class="favour-tiers">${tiers}</div>`,
+    accent: god === "athena" ? "blue" : "gold",
+  };
+}
+
 export function createHud(root: HTMLElement, given: HudHandlers) {
   // While an order awaits confirmation the HUD is locked: controls stay focusable (so keyboard
   // focus survives) but presses are refused with a notice instead of being sent.
@@ -518,6 +568,11 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
   let shownTip: Tooltip | null = null;
   addEventListener("keydown", (event) => {
     if (event.key !== "Escape" || !shownTip) return;
+    if (
+      details?.tip.anchor === "favour" &&
+      tooltip.contains(document.activeElement)
+    )
+      details.node.focus({ preventScroll: true });
     hideDetails();
   });
   addEventListener("pointerdown", (event) => {
@@ -773,13 +828,10 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
           item.dataset.god = god;
           item.innerHTML = `<img src="${appUrl(`/ui/god-${god}.webp`)}" alt=""><b></b>`;
           disclosure(item, () => {
-            const favor = current?.favor[god] ?? 0;
-            const next = nextFavorStep(favor);
-            return {
-              title: `Favour of ${god[0]!.toUpperCase() + god.slice(1)}`,
-              body: `${favor} favour, earned from Fate offers.${next === undefined ? " Every offer is unlocked." : ` At ${next}, more offers can join the Fate.`}`,
-              accent: god === "athena" ? "blue" : "gold",
-            };
+            return favourTooltip(
+              god,
+              current?.favor ?? { athena: 0, zeus: 0, apollo: 0 },
+            );
           });
           return item;
         }),
@@ -982,8 +1034,10 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
       // Season details sit clear of the round label they explain.
       tooltip.dataset.anchor = season ? "season" : (content?.anchor ?? "");
       tooltip.hidden = !content;
-      tooltip.setAttribute("role", details?.cancel ? "region" : "tooltip");
-      if (details?.cancel && content)
+      const interactive =
+        details && (details.cancel || content?.anchor === "favour");
+      tooltip.setAttribute("role", interactive ? "region" : "tooltip");
+      if (interactive && content)
         tooltip.setAttribute("aria-label", content.title);
       else tooltip.removeAttribute("aria-label");
       if (!content) return;
@@ -997,7 +1051,7 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
       );
       const body = el(
         "div",
-        "tip-body",
+        content.anchor === "favour" ? "tip-body tip-favour" : "tip-body",
         `${content.tags?.length ? `<p class="tip-tags">${content.tags.map(escapeHtml).join(" ")}</p>` : ""}${content.body}`,
       );
       if (details?.cancel) {

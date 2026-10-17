@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "665abf5802e636dd2a7b1b0b22f6ea3da292d502",
+  "sourceCommit": "d43445be7d89fcff57cf405e901aab031229dea2",
   "runtime": {
     "rulesVersion": "greece-118-v31",
     "saveVersion": 31,
@@ -46,9 +46,9 @@
     ]
   },
   "audit": {
-    "trackedFiles": 17255,
+    "trackedFiles": 17256,
     "retainedTrackedFiles": 794,
-    "excludedTrackedFiles": 16461,
+    "excludedTrackedFiles": 16462,
     "privateHistoryCopied": false,
     "releasesCopied": false,
     "sourceNativeBodiesCopied": false,
@@ -4167,14 +4167,14 @@
     },
     {
       "path": "src/client/hud.css",
-      "bytes": 29441,
-      "sha256": "a7cb84d717455a2ff35300ccdf298e9f7360f341b6508d56601e6e0b1144b5a4",
+      "bytes": 30217,
+      "sha256": "bb5897933961893c41fdf42371624e4673abd18b148f7738055e1809260c6f73",
       "origin": "tracked"
     },
     {
       "path": "src/client/hud.ts",
-      "bytes": 40893,
-      "sha256": "9199e9a79e4e875a0d6ba1ffdfcf00de7d341d1acec72fe9079ab2b386299346",
+      "bytes": 43283,
+      "sha256": "f7fafb19ff3221fea059ba8bc822266cb39a9499d4b1fb66fdd0e011e7d75053",
       "origin": "tracked"
     },
     {
@@ -4623,8 +4623,8 @@
     },
     {
       "path": "src/rules.ts",
-      "bytes": 51637,
-      "sha256": "388bba53efc8d242c4f176cb9193baadffcb9d450a26896a23b4ba6b0c3b23ed",
+      "bytes": 51644,
+      "sha256": "b4965165ba7d0fb51679f9a86c258c1fe6777d66f2068b2a17bbd505599529ca",
       "origin": "tracked"
     },
     {

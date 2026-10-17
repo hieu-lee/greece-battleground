@@ -795,6 +795,42 @@
   top: var(--polis-header-bottom, 112px);
   bottom: auto;
 }
+.hud-tooltip[data-anchor="favour"] {
+  inset: var(--polis-header-bottom, 112px) 12px auto auto;
+  width: min(460px, calc(100vw - 24px));
+}
+.hud-tooltip[data-anchor="favour"] .tip-card {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - var(--polis-header-bottom, 112px) - 12px);
+}
+.hud-tooltip[data-anchor="favour"] header {
+  flex-shrink: 0;
+}
+.tip-favour {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.favour-tiers details {
+  border-top: 1px solid #34495a;
+  margin-top: 10px;
+  padding-top: 8px;
+}
+.favour-tiers summary {
+  cursor: pointer;
+}
+.favour-tiers summary small {
+  display: block;
+  color: var(--ink);
+  font-weight: normal;
+}
+.favour-tiers ul {
+  padding-left: 20px;
+}
+.favour-tiers li + li {
+  margin-top: 12px;
+}
 @keyframes tip-in {
   from {
     opacity: 0;

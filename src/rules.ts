@@ -1601,7 +1601,7 @@ const rules = {
   },
 } satisfies Record<FateId, FateRule>;
 
-const patronNames = {
+export const patronNames = {
   zeus: "Zeus",
   athena: "Athena",
   apollo: "Apollo",
