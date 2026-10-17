@@ -1,0 +1,1669 @@
+/* Reduced motion (device setting or in-game preference): no decorative animation. */
+[data-motion="reduce"] *,
+[data-motion="reduce"] *::before,
+[data-motion="reduce"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  animation-delay: 0ms !important;
+  transition: none !important;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #0a0f1a;
+}
+.game {
+  position: fixed;
+  inset: 0;
+  font-family: var(--ui);
+  color: var(--ink);
+}
+.game #world {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+}
+.game::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 48%, #0000 55%, #04070dcc 100%);
+}
+/* Explicit display rules must not override the game's hidden elements. */
+.game [hidden] {
+  display: none !important;
+}
+.labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+#hud {
+  z-index: 2;
+}
+#hud:has(.hud-tooltip[data-pinned="true"]:not([hidden])) {
+  z-index: 3;
+}
+#screens {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Settlement labels */
+.badge {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 8px 0 0;
+  background: #0f1922e6;
+  border: 1.5px solid #4a5f6e;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #e8eef1;
+  white-space: nowrap;
+  will-change: transform;
+}
+.badge .hex {
+  width: 26px;
+  height: 30px;
+  margin: -4px 6px -4px -12px;
+  clip-path: var(--hex);
+  background: linear-gradient(#6c8293, #2b3c49);
+  display: grid;
+  place-items: center;
+}
+.badge .hex.melee,
+.badge .hex.ranged {
+  background: linear-gradient(#a2b6c4, #4a6273);
+}
+.badge .hex.civilian {
+  background: linear-gradient(#c8b07a, #7a6232);
+}
+.badge .hex.banner-hall {
+  background: linear-gradient(#f4d27a, #a0761f);
+}
+.badge .hex img {
+  width: 18px;
+  height: 18px;
+}
+.badge .pips {
+  display: flex;
+  gap: 1px;
+  margin-right: 6px;
+}
+.badge .pips i {
+  width: 12px;
+  height: 12px;
+  color: #56697a;
+}
+.badge .pips i.on {
+  color: #dfe7ec;
+}
+.badge .pips svg {
+  width: 12px;
+  height: 12px;
+}
+
+.tile-actions {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  display: grid;
+  gap: 4px;
+  box-sizing: border-box;
+  max-width: calc(100vw - 16px);
+  max-height: calc(100dvh - var(--polis-header-bottom, 112px) - 8px);
+  overflow: auto;
+  padding: 6px;
+  background: #0f1922f0;
+  border: 1.5px solid #4a5f6e;
+  border-radius: 6px;
+  pointer-events: auto;
+  box-shadow: 0 6px 16px #000a;
+}
+.tile-actions button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  font: 600 15px var(--ui);
+  color: var(--ink);
+  background: linear-gradient(#273746, #18242f);
+  border: 1px solid #3f5566;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.tile-actions #sell {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+.tile-actions button:hover:not(:disabled) {
+  border-color: var(--gold);
+}
+.tile-actions button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.tile-actions svg {
+  width: 14px;
+  height: 14px;
+}
+.tile-actions small {
+  color: var(--muted);
+}
+.tile-actions .role {
+  margin: 0;
+  padding: 0 2px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.tile-actions .item-details {
+  max-width: min(320px, calc(100vw - 32px));
+  font-size: 13px;
+  line-height: 1.35;
+}
+.tile-actions .item-details p {
+  margin: 4px 0 0;
+}
+
+/* Floating combat numbers */
+.float-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font: 800 18px var(--ui);
+  color: #fff;
+  -webkit-text-stroke: 3px #1a0d08;
+  paint-order: stroke fill;
+  will-change: transform, opacity;
+  white-space: nowrap;
+}
+.float-number.crit {
+  font-size: 28px;
+  color: #ffd84a;
+}
+.float-number.burn {
+  color: #ff9a4a;
+  font-size: 15px;
+}
+.float-number.poison {
+  color: #79e4bd;
+  font-size: 15px;
+}
+.float-number.stun {
+  color: #d6adff;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+.float-number.frost {
+  color: #99e0ff;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+}
+.float-number.haste {
+  color: #ffc74d;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+.float-number.heal {
+  color: #8ef08a;
+}
+.float-number.armor {
+  color: #9fd2ff;
+}
+.float-number.blocked {
+  color: #bfe6ff;
+  font-size: 14px;
+}
+
+/* Loading veil */
+.loading {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+  background: radial-gradient(circle, #16263a, #070b12);
+  font: 600 20px var(--ui);
+  letter-spacing: 0.08em;
+  transition: opacity 0.8s ease;
+}
+#startup-error {
+  max-width: 40em;
+  margin: 0;
+}
+.loading .startup-actions {
+  justify-content: center;
+}
+.loading.done {
+  opacity: 0;
+  pointer-events: none;
+}
+.loading-mark {
+  font: 800 72px var(--title);
+  color: var(--gold);
+  text-shadow: 0 0 24px #f3c75a88;
+  animation: breathe 2s ease-in-out infinite;
+}
+@keyframes breathe {
+  50% {
+    opacity: 0.6;
+  }
+}
+
+#preparation-art-status {
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  width: min(360px, calc(100vw - 48px));
+  padding: 18px;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--panel-edge);
+  border-radius: 8px;
+  box-shadow: 0 8px 28px #0008;
+}
+#preparation-art-status h2 {
+  margin: 0 0 10px;
+  font: 700 21px var(--title);
+  color: var(--gold);
+}
+#preparation-art-message {
+  margin: 0 0 14px;
+  font: 400 16px/1.5 var(--ui);
+}
+#retry-preparation-assets {
+  min-height: 44px;
+  padding: 8px 14px;
+  font: 700 16px var(--ui);
+  color: var(--ink);
+  background: #22313f;
+  border: 1px solid var(--panel-edge);
+  border-radius: 4px;
+  cursor: pointer;
+}
+#retry-preparation-assets:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+#retry-preparation-assets[aria-disabled="true"] {
+  cursor: wait;
+  opacity: 0.7;
+}
+@media (orientation: portrait) {
+  #preparation-art-status {
+    top: 34%;
+    left: 16px;
+    width: calc(100vw - 130px);
+    padding: 14px;
+    transform: none;
+  }
+}
+
+/* Screens */
+.screen {
+  position: absolute;
+  pointer-events: auto;
+}
+.screen[hidden] {
+  display: none;
+}
+.income-screen {
+  top: var(--polis-header-bottom, 112px);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.income-card {
+  box-sizing: border-box;
+  width: min(420px, calc(100vw - 32px));
+  padding: 12px 16px;
+  background: var(--panel);
+  border: 2px solid var(--panel-edge);
+  border-radius: 8px;
+  text-align: center;
+}
+.income-card h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+.income-card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.fate-screen {
+  inset: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-items: center;
+  align-items: center;
+  padding: 120px 40px 60px;
+}
+.fate-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 50% 60%, #6c4bb855, #0000 60%),
+    radial-gradient(ellipse at 50% 120%, #9a6bff44, #0000 50%),
+    linear-gradient(#120d2ae6, #1d1240f0);
+  backdrop-filter: blur(3px);
+  animation: fade-in 0.35s ease;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+.fate-screen header {
+  text-align: center;
+}
+.fate-screen h2 {
+  margin: 0;
+  font: 700 36px var(--title);
+  color: #f1e6ff;
+  text-shadow: 0 0 18px #a98bff88;
+}
+.fate-screen header p {
+  margin: 6px 0 0;
+  color: #cbbcf0;
+  font-size: 18px;
+}
+.fate-screen #fate-error {
+  color: #ffd0b8;
+  font-weight: 700;
+}
+/* Favour gates: each patron's favour and its next unlock threshold. */
+.fate-favor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.fate-favor li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 12px 3px 4px;
+  border: 1px solid #6b5aa8aa;
+  border-radius: 999px;
+  background: #17122ecc;
+  color: #e6dcff;
+  font-size: 14px;
+}
+.fate-favor img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+.fate-favor b {
+  color: #fff;
+  font-size: 16px;
+}
+.fate-favor small {
+  color: #a99bd6;
+  font-size: 12px;
+}
+.fate-cards {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+.fate-offer {
+  position: relative;
+  display: flex;
+}
+.fate-offer[hidden] {
+  display: none;
+}
+.fate-woven {
+  max-width: 420px;
+  margin: 0;
+  padding: 18px 26px;
+  border: 1px solid #6b5aa8;
+  border-radius: 10px;
+  background: #17122ee6;
+  color: #e6dcff;
+  font: 600 20px var(--title);
+  text-align: center;
+}
+.fate-card {
+  width: 250px;
+  min-height: 380px;
+  padding: 16px 18px 18px;
+  display: grid;
+  grid-template-rows: 150px auto auto 1fr;
+  justify-items: center;
+  gap: 6px;
+  border: 3px solid #5b6f86;
+  border-radius: 10px;
+  background: linear-gradient(#2a3f5ae6, #17233bf2);
+  box-shadow:
+    inset 0 0 0 2px #0d1524,
+    0 14px 30px #000b;
+  color: var(--ink);
+  font-family: var(--ui);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  animation: card-in 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2) backwards;
+}
+.fate-offer:nth-child(2) .fate-card {
+  animation-delay: 0.08s;
+}
+.fate-offer:nth-child(3) .fate-card {
+  animation-delay: 0.16s;
+}
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px) rotateY(80deg);
+  }
+}
+.fate-card[data-kind="rune"] {
+  border-color: #b48cff;
+  background: linear-gradient(#3b2a66e6, #1d1438f2);
+}
+.fate-card[data-kind="gift"] {
+  border-color: #8fd16a;
+  background: linear-gradient(#26432ce6, #142218f2);
+}
+.fate-card[data-kind="blessing"] {
+  border-color: #e8b860;
+  background: linear-gradient(#4a3a20e6, #241a0ef2);
+}
+.fate-card[data-kind="spell"] {
+  border-color: #6cc8e8;
+  background: linear-gradient(#1f3f52e6, #10202ef2);
+}
+/* Opens the list of source pieces this port does not apply. */
+.fate-partial {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+  padding: 2px 9px;
+  border: 1px solid #f0c674;
+  border-radius: 999px;
+  background: #2a1f0ce6;
+  color: #f6dca0;
+  font: 700 11px var(--ui);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: help;
+}
+.fate-partial:hover,
+.fate-partial:focus-visible {
+  background: #4a3712;
+}
+.fate-unknown {
+  max-width: min(420px, calc(100vw - 32px));
+  padding: 14px 18px;
+  border: 1px solid #f0c674;
+  border-radius: 10px;
+  background: #1a1430f7;
+  color: #efe6ff;
+  font: 14px/1.45 var(--ui);
+  box-shadow: 0 18px 40px #000c;
+}
+.fate-unknown::backdrop {
+  background: #0006;
+}
+.fate-unknown b {
+  color: #f6dca0;
+}
+.fate-unknown ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+.fate-card .gain {
+  justify-self: stretch;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #e6d29a;
+  text-align: center;
+}
+.fate-card:not(:disabled):hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow:
+    inset 0 0 0 2px #0d1524,
+    0 0 30px #c9a8ff99,
+    0 18px 34px #000c;
+}
+.fate-card:disabled:not(.taken) {
+  filter: saturate(0.5) brightness(0.75);
+  cursor: default;
+}
+.fate-card.taken {
+  opacity: 0.35;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 1fr;
+}
+.fate-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.fate-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(#0000 25%, #0d1222e8 58%, #0d1222 100%),
+    var(--art) center top / 100% auto no-repeat;
+}
+.card-art {
+  width: 150px;
+  height: 150px;
+  display: grid;
+  place-items: end center;
+}
+.card-art img {
+  width: 76px;
+  height: 76px;
+  padding: 8px;
+  border-radius: 50%;
+  background: #0d1222d0;
+  border: 2px solid #ffffff55;
+  filter: drop-shadow(0 6px 10px #000a);
+}
+.fate-card h3 {
+  margin: 0;
+  font: 700 20px var(--title);
+  text-align: center;
+}
+.fate-card .kind {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #cbbcf0;
+}
+.fate-card .text {
+  margin: 4px 0 0;
+  font-size: 14px;
+  line-height: 1.45;
+  text-align: center;
+  align-self: start;
+}
+.fate-card .cost {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--insight);
+}
+.fate-card .cost img {
+  width: 24px;
+  height: 24px;
+}
+.fate-screen footer {
+  display: flex;
+  gap: 18px;
+}
+.fate-screen footer button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  font: 600 17px var(--ui);
+  color: var(--ink);
+  background: linear-gradient(#2c2552, #17122e);
+  border: 2px solid #6b5aa8;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.fate-screen footer button:disabled {
+  opacity: 0.5;
+}
+.fate-screen footer svg {
+  width: 20px;
+  height: 20px;
+}
+.fate-screen footer b {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--insight);
+}
+.fate-screen footer b img {
+  width: 18px;
+  height: 18px;
+}
+
+.season-screen {
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle, #0b1420aa, #05080ee6);
+  animation: fade-in 0.4s ease;
+}
+.season-card {
+  max-width: calc(100vw - 24px);
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+  padding: 30px 40px 34px;
+  text-align: center;
+  background: var(--panel);
+  border: 2px solid var(--panel-edge);
+  border-radius: 8px;
+  box-shadow: 0 20px 50px #000c;
+}
+.season-card h2 {
+  margin: 0;
+  font: 700 34px var(--title);
+  color: var(--gold);
+}
+.season-card p {
+  margin: 6px 0 22px;
+  color: var(--muted);
+  font-size: 17px;
+}
+.season-options {
+  display: flex;
+  gap: 16px;
+}
+.season-option {
+  width: 170px;
+  padding: 18px 12px;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  font: 500 15px var(--ui);
+  color: var(--ink);
+  background: linear-gradient(#22313f, #141f29);
+  border: 2px solid #3f5566;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.season-option img {
+  width: 64px;
+  height: 64px;
+}
+.season-option b {
+  font-size: 18px;
+}
+.season-option span {
+  color: var(--muted);
+}
+.season-option .season-tier {
+  color: var(--gold);
+  font-weight: 700;
+}
+.season-effect {
+  line-height: 1.4;
+}
+.season-option:not(:disabled):hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+}
+.season-option:disabled {
+  opacity: 0.45;
+}
+
+/* Versus splash */
+.versus-screen {
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+.versus-screen::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 28%;
+  bottom: 22%;
+  background: linear-gradient(90deg, #0000, #10202ef0 18% 82%, #0000);
+}
+.versus-side {
+  position: absolute;
+  top: 10%;
+  bottom: 14%;
+  width: 46%;
+  display: flex;
+  align-items: flex-end;
+}
+.versus-side img {
+  /* Contained in its half of the screen (a portrait chief would otherwise overflow a phone);
+     the right one is mirrored, so both sit at their outer edge. */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left bottom;
+  filter: drop-shadow(0 10px 20px #000c);
+}
+.versus-side.left {
+  left: 0;
+  justify-content: flex-start;
+}
+.versus-side.right {
+  right: 0;
+  justify-content: flex-end;
+}
+.versus-side.right > img {
+  transform: scaleX(-1);
+}
+.versus-side .banner {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 92%;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 48px;
+  background: linear-gradient(90deg, #b8862e, #e2b552, #b8862e);
+  clip-path: polygon(3% 0, 97% 0, 100% 50%, 97% 100%, 3% 100%, 0 50%);
+  font: 700 34px var(--ui);
+  color: #fff;
+  text-shadow: 0 2px 3px #0008;
+}
+.versus-side .banner b {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.versus-side.left .banner {
+  left: 4%;
+}
+.versus-side.right .banner {
+  right: 4%;
+}
+.versus-side .shield {
+  flex-shrink: 0;
+  width: 48px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(#8a3b26, #5a2012);
+  clip-path: polygon(0 0, 100% 0, 100% 65%, 50% 100%, 0 65%);
+}
+.versus-side .shield img {
+  width: 38px;
+  height: 38px;
+}
+.versus-emblem {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  color: #e8edf0;
+  filter: drop-shadow(0 6px 10px #000c);
+}
+.versus-emblem svg {
+  width: 100%;
+  height: 100%;
+}
+#screens[data-paused="true"] .versus-screen,
+#screens[data-paused="true"] .versus-screen *,
+#screens[data-paused="true"] .versus-screen::before {
+  animation-play-state: paused;
+}
+#screens[data-loading-presentation="true"] .versus-screen,
+#screens[data-loading-presentation="true"] .versus-screen *,
+#screens[data-loading-presentation="true"] .versus-screen::before {
+  animation-play-state: paused;
+}
+.versus-screen.play .left {
+  animation: slide-left 2.3s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.versus-screen.play .right {
+  animation: slide-right 2.3s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.versus-screen.play .versus-emblem {
+  animation: emblem 2.3s ease both;
+}
+.versus-screen.play::before {
+  animation: band 2.3s ease both;
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  18%,
+  82% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+}
+@keyframes slide-right {
+  0% {
+    transform: translateX(100%);
+  }
+  18%,
+  82% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+}
+@keyframes emblem {
+  0%,
+  12% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+  24%,
+  82% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+}
+@keyframes band {
+  0%,
+  82% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Battle controls */
+.battle-bar {
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+.balance {
+  width: min(420px, 60vw);
+  height: 22px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 2px solid #4a5f6e;
+  border-radius: 4px;
+  background: #0f1922;
+  overflow: hidden;
+}
+@media (orientation: landscape) and (min-width: 640px) and (max-width: 900px),
+  (orientation: landscape) and (min-width: 640px) and (max-height: 640px) {
+  .battle-bar {
+    right: 0;
+    transform: none;
+  }
+  .balance {
+    width: min(420px, calc(50vw - 24px));
+  }
+}
+.balance .side {
+  height: 100%;
+  flex-basis: 0;
+  transition: flex-grow 0.3s ease;
+}
+.balance .polis {
+  background: linear-gradient(#a2e07a, #4f9a35);
+}
+.balance .opponent {
+  background: linear-gradient(#f07a5a, #a8321e);
+}
+.balance i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 26px;
+  height: 26px;
+  color: #fff;
+  filter: drop-shadow(0 1px 2px #000);
+}
+.balance i svg {
+  width: 100%;
+  height: 100%;
+}
+.speeds {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: #0f1922d0;
+  border: 1.5px solid #3f5566;
+  border-radius: 6px;
+}
+.speeds button {
+  min-width: 52px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font: 700 15px var(--ui);
+  color: #93a5b2;
+  background: #18242f;
+  border: 1px solid #2f4252;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.speeds button svg {
+  width: 26px;
+  height: 18px;
+}
+.speeds button[aria-pressed="true"] {
+  color: #fff;
+  background: linear-gradient(#3b5468, #22313f);
+  border-color: #8aa2b3;
+}
+.speeds .skip {
+  padding: 0 14px;
+}
+#battle-clock {
+  padding: 2px 9px;
+  color: var(--ink);
+  background: #0f1922d0;
+  border-radius: 4px;
+  font: 600 14px var(--ui);
+  font-variant-numeric: tabular-nums;
+}
+#battle-art-status {
+  max-width: min(420px, 85vw);
+  margin: 0;
+  padding: 6px 10px;
+  text-align: center;
+  color: var(--ink);
+  background: var(--panel);
+  border-radius: 4px;
+}
+#retry-battle-assets {
+  padding: 7px 14px;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--panel-edge);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.result-banner {
+  left: 50%;
+  top: 24%;
+  transform: translateX(-50%);
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  animation: banner-in 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.3);
+}
+@keyframes banner-in {
+  from {
+    transform: translateX(-50%) scale(0.6);
+    opacity: 0;
+  }
+}
+.result-banner .ribbon {
+  padding: 14px 120px 12px;
+  text-align: center;
+  background: linear-gradient(90deg, #0000, #2b3f8a 15% 85%, #0000);
+  border-top: 2px solid #8fa8ff88;
+  border-bottom: 2px solid #8fa8ff88;
+}
+.result-banner[data-outcome="opponent"] .ribbon {
+  background: linear-gradient(90deg, #0000, #7a2418 15% 85%, #0000);
+  border-color: #ff9a8a88;
+}
+.result-banner[data-outcome="draw"] .ribbon,
+.result-banner[data-outcome="loading"] .ribbon {
+  background: linear-gradient(90deg, #0000, #3a4652 15% 85%, #0000);
+}
+.result-banner h2 {
+  margin: 0;
+  font: 800 52px var(--title);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 20px #9fb4ff;
+}
+.result-banner[data-outcome="opponent"] h2 {
+  text-shadow: 0 0 20px #ff6a4a;
+}
+.result-banner p {
+  margin: 4px 0 0;
+  font-size: 17px;
+  color: #dbe3ea;
+}
+.result-banner .continue,
+.run-actions button,
+.run-actions a,
+.connection-banner button {
+  padding: 12px 34px;
+  font: 700 19px var(--ui);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1a1206;
+  background: linear-gradient(#f6d47a, #c9952e);
+  border: 2px solid #fff0b8;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px #000a;
+  text-decoration: none;
+}
+.result-banner .continue:disabled {
+  filter: grayscale(0.8);
+  cursor: default;
+}
+
+.run-screen {
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at 50% 55%, #0b142066 20%, #05080ee6 85%),
+    url("/ui/victory.webp") center / cover;
+  animation: fade-in 0.6s ease;
+}
+.run-screen[data-outcome="defeat"] {
+  background:
+    radial-gradient(ellipse at 50% 55%, #0b142066 20%, #05080ee6 85%),
+    url("/ui/defeat.webp") center / cover;
+}
+.run-card {
+  backdrop-filter: blur(4px);
+}
+.run-card {
+  box-sizing: border-box;
+  max-width: calc(100vw - 24px);
+  min-width: 0;
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  padding: clamp(20px, 4vw, 40px) clamp(20px, 5vw, 60px);
+  text-align: center;
+  background: var(--panel);
+  border: 2px solid var(--panel-edge);
+  border-radius: 10px;
+}
+.run-card h2 {
+  margin: 0;
+  font: 800 44px var(--title);
+  color: var(--gold);
+}
+.run-screen[data-outcome="defeat"] .run-card h2 {
+  color: #ff8a6a;
+}
+.run-card p {
+  font-size: 18px;
+  color: var(--muted);
+}
+.run-card .run-polis {
+  margin: 12px 0 0;
+  color: var(--gold);
+}
+.run-recap {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+  padding: 16px;
+  border-block: 1px solid var(--panel-edge);
+}
+.run-recap dt {
+  font-size: 13px;
+  color: var(--muted);
+}
+.run-recap dd {
+  margin: 4px 0 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.run-card .run-next {
+  max-width: 420px;
+  margin-inline: auto;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.run-card #run-award {
+  color: var(--gold);
+}
+.run-card #run-award:empty {
+  display: none;
+}
+.run-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.run-actions a {
+  background: linear-gradient(#2c3c4a, #18242f);
+  color: var(--ink);
+  border-color: #4a5f6e;
+}
+
+.connection-banner {
+  /* Centred without a transform so the box may use the full width, then wraps on phones. */
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: fit-content;
+  max-width: calc(100% - 24px);
+  flex-wrap: wrap;
+  justify-content: center;
+  top: 150px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--panel);
+  border: 2px solid var(--panel-edge);
+  border-radius: 8px;
+}
+.screen > .connection-banner {
+  /* Inside a dialog it rides above the centred card instead of covering its heading. */
+  top: 12px;
+}
+.connection-banner p {
+  margin: 0;
+  font-size: 16px;
+}
+.connection-banner a,
+.connection-banner a:visited {
+  color: var(--gold);
+  font-size: 14px;
+}
+.connection-banner button {
+  padding: 6px 14px;
+  font-size: 14px;
+}
+
+@media (max-width: 900px), (max-height: 640px) {
+  .card-art img {
+    width: 52px;
+    height: 52px;
+  }
+  .fate-screen {
+    padding: 70px 12px 20px;
+  }
+  /* Room for a (possibly two-row) connection banner above the heading. */
+  .fate-screen:has(> .connection-banner:not([hidden])) {
+    padding-top: 130px;
+  }
+  .fate-cards {
+    gap: 10px;
+  }
+  .fate-card {
+    width: 31vw;
+    max-width: 200px;
+    height: auto;
+    min-height: 260px;
+    grid-template-rows: 90px auto auto 1fr;
+    padding: 10px;
+  }
+  .card-art {
+    width: 84px;
+    height: 84px;
+  }
+  .card-art img {
+    width: 70px;
+    height: 70px;
+  }
+  .fate-card .text {
+    font-size: 13px;
+  }
+  .fate-screen h2 {
+    font-size: 24px;
+  }
+  .season-card {
+    padding: 20px 16px;
+  }
+  .season-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .season-option {
+    width: auto;
+    padding: 12px 10px;
+    gap: 6px;
+    font-size: 14px;
+  }
+  .season-option img {
+    width: 42px;
+    height: 42px;
+  }
+  .result-banner h2 {
+    font-size: 34px;
+  }
+  .result-banner .ribbon {
+    padding: 10px 50px;
+  }
+  .versus-side .banner {
+    font-size: 20px;
+    padding: 6px 24px;
+  }
+}
+
+/* Landscape phones: the whole Fate offer, footer included, fits the short screen. */
+@media (max-height: 500px) {
+  .versus-side .banner {
+    bottom: 90px;
+  }
+  .fate-screen {
+    padding: 8px 12px;
+    gap: 6px;
+    overflow-y: auto;
+  }
+  /* Scrolling content keeps the whole screen dimmed. */
+  .fate-backdrop {
+    position: fixed;
+  }
+  /* A one-row connection banner at this width. */
+  .fate-screen:has(> .connection-banner:not([hidden])) {
+    padding-top: 60px;
+  }
+  .fate-screen h2 {
+    font-size: 20px;
+  }
+  .fate-screen header p {
+    margin-top: 2px;
+    font-size: 13px;
+  }
+  .fate-card {
+    min-height: 0;
+    max-width: 220px;
+    grid-template-rows: 60px auto auto 1fr;
+    gap: 2px;
+    padding: 6px 10px 8px;
+  }
+  .card-art {
+    width: 60px;
+    height: 60px;
+  }
+  .card-art img {
+    width: 48px;
+    height: 48px;
+    padding: 5px;
+  }
+  .fate-card h3 {
+    font-size: 16px;
+  }
+  .fate-card .kind {
+    font-size: 11px;
+  }
+  .fate-card .text {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+  .fate-card .cost {
+    font-size: 16px;
+  }
+  .fate-screen footer button {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+}
+
+/* Portrait phones: smaller chiefs and emblem on the versus card, clear of the HUD; the three
+   Fate cards share the width (fixed widths overflowed a 390-wide screen). */
+@media (orientation: portrait) and (max-width: 600px) {
+  .connection-banner p {
+    flex-basis: 100%;
+    text-align: center;
+  }
+  .fate-screen {
+    grid-template-columns: minmax(0, 1fr);
+    overflow-y: auto;
+  }
+  .fate-backdrop {
+    position: fixed;
+  }
+  .fate-cards {
+    width: 100%;
+  }
+  .fate-offer {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .fate-card {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    padding: 10px 6px;
+    grid-template-rows: 70px auto auto 1fr;
+  }
+  .fate-card h3 {
+    font-size: 15px;
+  }
+  .card-art {
+    width: 64px;
+    height: 64px;
+  }
+  .card-art img {
+    width: 52px;
+    height: 52px;
+    padding: 6px;
+  }
+  .fate-screen footer {
+    gap: 10px;
+  }
+  .fate-screen footer button {
+    padding: 8px 12px;
+  }
+  .versus-side {
+    top: 18%;
+    bottom: 26%;
+  }
+  .versus-side .banner {
+    padding: 6px 12px;
+    gap: 8px;
+  }
+  .versus-side .shield {
+    width: 32px;
+    height: 38px;
+  }
+  .versus-side .shield img {
+    width: 26px;
+    height: 26px;
+  }
+  .versus-emblem {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+#tile-controls .tile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  pointer-events: none;
+  opacity: 0;
+}
+#tile-controls .tile:focus-visible {
+  opacity: 1;
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.settings-screen {
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #05080ec0;
+  z-index: 5;
+}
+.settings-card {
+  box-sizing: border-box;
+  width: min(404px, calc(100vw - 24px));
+  min-width: 0;
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  display: grid;
+  gap: 14px;
+  padding: 26px 30px;
+  background: var(--panel);
+  border: 2px solid var(--panel-edge);
+  border-radius: 10px;
+  box-shadow: 0 20px 50px #000c;
+  font-size: 17px;
+}
+.settings-card fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 10px;
+  display: grid;
+  gap: 12px;
+  border: 1px solid var(--panel-edge);
+}
+.settings-card select {
+  width: 100%;
+  min-width: 0;
+  font: inherit;
+}
+.settings-card h2 {
+  margin: 0 0 4px;
+  font: 700 28px var(--title);
+  color: var(--gold);
+}
+.settings-card label {
+  display: grid;
+  gap: 4px;
+}
+.settings-card label.check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.settings-card input[type="range"] {
+  accent-color: var(--gold);
+}
+.settings-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+.settings-actions button,
+.settings-actions a {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  font: 700 16px var(--ui);
+  color: var(--ink);
+  text-decoration: none;
+  background: linear-gradient(#2c3c4a, #18242f);
+  border: 1.5px solid #4a5f6e;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.settings-actions button {
+  color: #1a1206;
+  background: linear-gradient(#f6d47a, #c9952e);
+  border-color: #fff0b8;
+}
+/* The narrowest phones: long one-word titles ("Demeter's") and kinds ("Blessing") still fit
+   their card. */
+@media (orientation: portrait) and (max-width: 340px) {
+  .fate-card h3 {
+    font-size: 13px;
+  }
+  .fate-card .kind {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+}
+
+/* Phones (portrait) and short landscape screens: the three offers become full-width rows (icon,
+   words, cost) so long names and texts stay readable and the footer stays on screen. */
+@media (orientation: portrait) and (max-width: 600px), (max-height: 500px) {
+  .fate-screen {
+    padding: 12px;
+    gap: 8px;
+    align-content: center;
+  }
+  .fate-screen header p {
+    margin-top: 2px;
+    font-size: 13px;
+  }
+  .fate-favor {
+    gap: 4px;
+    margin-top: 6px;
+  }
+  .fate-favor li {
+    gap: 4px;
+    padding: 1px 8px 1px 2px;
+    font-size: 12px;
+  }
+  .fate-favor img {
+    width: 18px;
+    height: 18px;
+  }
+  .fate-favor b {
+    font-size: 13px;
+  }
+  .fate-favor small {
+    font-size: 11px;
+  }
+  .fate-cards {
+    flex-direction: column;
+    align-items: stretch;
+    width: min(100%, 720px);
+    gap: 8px;
+  }
+  .fate-offer {
+    flex: none;
+  }
+  .fate-card {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    grid-template-columns: 52px minmax(0, 1fr) auto;
+    grid-template-rows: none;
+    grid-auto-rows: auto;
+    column-gap: 10px;
+    row-gap: 1px;
+    justify-items: start;
+    align-items: center;
+    padding: 7px 12px 7px 8px;
+    text-align: left;
+  }
+  .fate-card:not(:disabled):hover {
+    transform: translateY(-2px);
+  }
+  .fate-card::before {
+    background:
+      linear-gradient(90deg, #0d1222a8, #0d1222f2 40%),
+      var(--art) left 25% / cover no-repeat;
+  }
+  .fate-card .card-art {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+    width: 52px;
+    height: 52px;
+    place-items: center;
+  }
+  .fate-card .card-art img {
+    width: 48px;
+    height: 48px;
+    padding: 5px;
+  }
+  .fate-card h3,
+  .fate-card .kind,
+  .fate-card .text,
+  .fate-card .gain {
+    grid-column: 2 / span 2;
+    justify-self: stretch;
+    text-align: left;
+  }
+  .fate-card h3 {
+    grid-column: 2;
+    font-size: 16px;
+  }
+  .fate-card .kind {
+    font-size: 10px;
+  }
+  .fate-card .text {
+    margin: 1px 0 0;
+    font-size: 12.5px;
+    line-height: 1.3;
+  }
+  .fate-card .gain {
+    font-size: 11.5px;
+  }
+  .fate-card .cost {
+    grid-column: 3;
+    grid-row: 1;
+    font-size: 17px;
+  }
+  .fate-partial {
+    top: auto;
+    bottom: 5px;
+    left: 5px;
+    padding: 1px 6px;
+    font-size: 9px;
+  }
+  .fate-woven {
+    font-size: 16px;
+  }
+}
+/* Short phones: the cards explain targeting themselves, so the subtitle gives way. */
+@media (orientation: portrait) and (max-width: 600px) and (max-height: 700px),
+  (max-height: 500px) {
+  .fate-screen {
+    gap: 6px;
+    padding: 8px 12px;
+  }
+  .fate-screen header p {
+    display: none;
+  }
+  .fate-screen h2 {
+    font-size: 19px;
+  }
+  .fate-cards {
+    gap: 6px;
+  }
+  .fate-card {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .fate-screen footer button {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+}
+
+/* Short landscape: the favour strip shares the heading's row. */
+@media (max-height: 500px) {
+  .fate-screen header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px 14px;
+  }
+  .fate-favor {
+    margin-top: 0;
+  }
+}

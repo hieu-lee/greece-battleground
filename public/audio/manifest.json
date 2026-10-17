@@ -1,0 +1,1917 @@
+[
+  {
+    "id": "ambience-autumn",
+    "gain": 0.35,
+    "loop": true,
+    "startDelay": 0,
+    "mode": "stream",
+    "variants": [
+      {
+        "gain": 0.5,
+        "path": "/audio/source-amb-nature-autumn-loop.ogg",
+        "duration": 146,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.07055682018079407,
+        "rms": 0.0030950074589173823,
+        "bytes": 2649703,
+        "sha256": "fd4e3c81a3d731e091da1669bdd4f51a9c74c669e777c04e1e7348042b1cc722",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "ambience-spring",
+    "gain": 0.35,
+    "loop": true,
+    "startDelay": 0,
+    "mode": "stream",
+    "variants": [
+      {
+        "gain": 0.5,
+        "path": "/audio/source-amb-nature-spring-loop.ogg",
+        "duration": 218.75972916666666,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.03623200353106736,
+        "rms": 0.004568630660232373,
+        "bytes": 4012745,
+        "sha256": "8ac7df6893d4fb4e3dee41a1fc7b95ce9aba599f75a82c84d2a25a95228653b2",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "ambience-summer",
+    "gain": 0.35,
+    "loop": true,
+    "startDelay": 0,
+    "mode": "stream",
+    "variants": [
+      {
+        "gain": 0.5,
+        "path": "/audio/source-amb-nature-summer-loop.ogg",
+        "duration": 173.25,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.023570413418737217,
+        "rms": 0.0028332793739518254,
+        "bytes": 3159723,
+        "sha256": "cf89f2097c98aa66615735d6923e1da9dd71fb192985720a2c3cfef7d876ef53",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "ambience-winter",
+    "gain": 0.35,
+    "loop": true,
+    "startDelay": 0,
+    "mode": "stream",
+    "variants": [
+      {
+        "gain": 0.5,
+        "path": "/audio/source-amb-nature-winter-loop.ogg",
+        "duration": 167.26052083333335,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.031877514355805575,
+        "rms": 0.0022158397554942312,
+        "bytes": 2841296,
+        "sha256": "8ba702aa0442b74d91add7122dfdc0bdb9c5e724fd944c8a2bbb1bbc1f1b00b2",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "armor",
+    "gain": 0.7,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/armor.ogg",
+        "duration": 0.6,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.646754,
+        "rms": 0.107841,
+        "bytes": 11011,
+        "sha256": "2269b19002eb65168ef05fce6c9d928493d4561a24080d9f8241e03d0d867acb",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "arrow",
+    "gain": 0.55,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-hit-01.ogg",
+        "duration": 0.4729375,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.33906561519381684,
+        "rms": 0.03806057542917175,
+        "bytes": 9098,
+        "sha256": "22834d722c72cdb7eeeb6296d9f0c22b7027e67fd33f86290e1b6a6508d1dfc2",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-hit-02.ogg",
+        "duration": 0.3810208333333333,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.3318343574669152,
+        "rms": 0.03788132402304382,
+        "bytes": 8110,
+        "sha256": "912da4910549fbcf18c8b0100fe26f5cdc8e4d0946e85d355069869f37e9f0cc",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-hit-03.ogg",
+        "duration": 0.37475,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.37283411994867455,
+        "rms": 0.03821192793273537,
+        "bytes": 8717,
+        "sha256": "44f82ddb385c16fe70657712cf2cabef81e73bb1c5cb30cb3d32086659b99946",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-hit-04.ogg",
+        "duration": 0.32347916666666665,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.33520219202672547,
+        "rms": 0.04303141230468858,
+        "bytes": 7873,
+        "sha256": "aadde7f4ebc97c5e404edbe4411023f678e6911365b8e22d765d116def6ef5eb",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-hit-05.ogg",
+        "duration": 0.4306041666666667,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.4013581627448844,
+        "rms": 0.0402365559332291,
+        "bytes": 9669,
+        "sha256": "167db8ec73875f73aabd8ff62c4702f9679a8839bf60da13a5099ee727688257",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-hit-06.ogg",
+        "duration": 0.34870833333333334,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.34424338216051853,
+        "rms": 0.039605554679198914,
+        "bytes": 7984,
+        "sha256": "f07e3b04285ae5d13ff88049bebec925d9675afb8a11c8d8579ebbd15f961823",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-hit-07.ogg",
+        "duration": 0.5884166666666667,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.3232203900352052,
+        "rms": 0.029562696854018244,
+        "bytes": 9907,
+        "sha256": "32e09e2bc5fb4b37579faba76685f07413f44622a08fc60700fd0b06b8783836",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-hit-08.ogg",
+        "duration": 0.687625,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.3185140175143417,
+        "rms": 0.03408569471777028,
+        "bytes": 11743,
+        "sha256": "fc3a0ba4f1723d98942e99316880cd96d2fc2056438be7f946070ea63ba5bdaf",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-hit-09.ogg",
+        "duration": 0.48185416666666664,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.35936059197863107,
+        "rms": 0.03687380884852784,
+        "bytes": 9605,
+        "sha256": "c634d69be46bdbf7d5a4f5aae9e9184c418c8a10e5b676c5213c512b41d5f09d",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "arrow-release",
+    "gain": 0.5,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-shoot-01.ogg",
+        "duration": 1.56,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.4763617696896863,
+        "rms": 0.02607742469834668,
+        "bytes": 17374,
+        "sha256": "18d6e26fcf2e964d53002fd59237edc3a12158e1fc3c20f0face421b19d53c1f",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-shoot-02.ogg",
+        "duration": 1.473375,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.49533047660754415,
+        "rms": 0.028277613225058337,
+        "bytes": 16756,
+        "sha256": "b3a6d4aa65aac7985cb41bd41c91b0b398435b34dc52c6200dfa388649697ccb",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-shoot-03.ogg",
+        "duration": 1.8737291666666667,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.47174265830752576,
+        "rms": 0.02448498261536556,
+        "bytes": 19816,
+        "sha256": "cb6d2a4e7ab09fdf13ff21e15ab17d5d2bbef966977b5b9877f50d6f8abd96a2",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-shoot-04.ogg",
+        "duration": 2.234875,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.491568448772341,
+        "rms": 0.02251337731452074,
+        "bytes": 20832,
+        "sha256": "fea875ea3ccd51a5edacdaaceebcf1a5127c57353f869ef6a77e01e2d46b8fb5",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-shoot-05.ogg",
+        "duration": 1.7540625,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.5110780157674695,
+        "rms": 0.025163781181288,
+        "bytes": 19037,
+        "sha256": "f14ffe00b92e7549c20aa637f0e8c6cd13f7b08a19cedcd7c8c18173cbf4e8b8",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-shoot-06.ogg",
+        "duration": 1.831125,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.39053094291005813,
+        "rms": 0.02304147356741507,
+        "bytes": 19462,
+        "sha256": "4e0b68850d8c64c24dd6dd5a172977fd3a018246769c4ca74bcb2ec0ddb4d2fd",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-shoot-07.ogg",
+        "duration": 1.8680833333333333,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.5140456637560881,
+        "rms": 0.025418144833762278,
+        "bytes": 19823,
+        "sha256": "7d09e1072ee4298e2492edc341ce81659d03d0065e990d9375de3e46b2f35bc1",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-shoot-08.ogg",
+        "duration": 1.8768541666666667,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.5011812904273079,
+        "rms": 0.023978019000401536,
+        "bytes": 19857,
+        "sha256": "005ed45d7e8dd2e013af88cff4c8404b782d571f1446846c448d9719f2160374",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-shoot-09.ogg",
+        "duration": 1.5517291666666666,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.5303310437944655,
+        "rms": 0.026205204307141232,
+        "bytes": 17205,
+        "sha256": "7a3236f708cbfd99eb0ffb17f0956898e8c162f75033543335ff5531a8dfa263",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-bow-shoot-10.ogg",
+        "duration": 1.0542708333333333,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.3909588062937604,
+        "rms": 0.02909634918220422,
+        "bytes": 13375,
+        "sha256": "c5723c1bdc9c92be6dd4cbe862c9d524d021016ccccb1b42328eb8d05602c9f2",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "battle-start",
+    "gain": 0.45,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-start-01.ogg",
+        "duration": 12.261958333333334,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.5979686973475004,
+        "rms": 0.061615659316931734,
+        "bytes": 202119,
+        "sha256": "609cf4dfbd0330d771bae52763cf979155db9b9c8cd01b231ccf7b12cfc1a13d",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "build",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-structure-place-01.ogg",
+        "duration": 3.3428958333333334,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.721353012790354,
+        "rms": 0.07251057515975827,
+        "bytes": 55262,
+        "sha256": "a2eee4a06e9989e45e35a97fc2a4731fade6695e37da14bc75d567147a42bfcd",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-structure-place-02.ogg",
+        "duration": 3.3024791666666666,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.7142102850518437,
+        "rms": 0.08439163481161487,
+        "bytes": 57035,
+        "sha256": "ee0dfdaa09b4d5130de2872ffcc52e35839985dcd57c9d9d104dc16125ae8360",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-structure-place-03.ogg",
+        "duration": 3.2291666666666665,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.6405918367192098,
+        "rms": 0.07331334751363552,
+        "bytes": 55877,
+        "sha256": "ecb5ea098496a741bff6024623ab03bd50a1ef6ec23893d8d2755a1a4f37fbde",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-structure-place-04.ogg",
+        "duration": 3.2900416666666668,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.6201523589238535,
+        "rms": 0.07829497684347975,
+        "bytes": 55096,
+        "sha256": "532e009511e1188288d524dbd8417649c7d4b8c91dbb4e090fba1bafa2219fa6",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "burn",
+    "gain": 0.25,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/burn.ogg",
+        "duration": 0.42,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.656352,
+        "rms": 0.090613,
+        "bytes": 8182,
+        "sha256": "897fadaa4f89c762df322fabc517dbb12a73d3c3aa201fc581e04acbe5f044dd",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "buy-apollo-fountain",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-buy-barenton-fountain.ogg",
+        "duration": 6.1070416666666665,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.6923507229040923,
+        "rms": 0.06257327702373265,
+        "bytes": 94824,
+        "sha256": "63819d8fdb0c6b72fe967cbbbe5f3a141471fd677f9f14a57c3196ef14a39d50",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "buy-brewery",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-purchase-structure-brewery-01.ogg",
+        "duration": 4.256770833333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.555395491521991,
+        "rms": 0.03191578273687885,
+        "bytes": 90195,
+        "sha256": "199038364823432c0aa90b45bea6e2c83ccf9cb55020fceca91b76d186d6797b",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "buy-silver-mine",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-purchase-structure-mine-01.ogg",
+        "duration": 3.088875,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.700099230006465,
+        "rms": 0.051796480376945626,
+        "bytes": 60299,
+        "sha256": "3b3c767de69294981aed6483a030aa36ee98bc3cc3393207df10cbe2dede914e",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-purchase-structure-mine-02.ogg",
+        "duration": 3.4908125,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.6528991451846005,
+        "rms": 0.04483717585341424,
+        "bytes": 63222,
+        "sha256": "2e5cc9c566c97ffb6ca6e023265d9cf7f040284b3a062f391f7797f5bc3eeb65",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-buy-mine.ogg",
+        "duration": 3.0305416666666667,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.8286760743223632,
+        "rms": 0.071641422410826,
+        "bytes": 60187,
+        "sha256": "4f484177a280eb507b5ca0eea45334032a9851a0287dae296e1f7dcacbef2763",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "buy-spear-camp",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-buy-warrior-camp-01.ogg",
+        "duration": 4.5740625,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.6529863456459368,
+        "rms": 0.04431589247929086,
+        "bytes": 67112,
+        "sha256": "b13c4e7a71514d0b43982417c39c0830794548e4d37fd5f6b9b0e0aaaa4e1fbf",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-purchase-structure-warrior-camp-01.ogg",
+        "duration": 2.1772916666666666,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.661362322910649,
+        "rms": 0.07206325089727354,
+        "bytes": 45840,
+        "sha256": "244f091665e16cf38349d9331158bc1e0eadb856faa0ae793ed03f846f9b5cf8",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-purchase-structure-warrior-camp-02.ogg",
+        "duration": 2.5831041666666668,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.7230514476971557,
+        "rms": 0.0716934946025743,
+        "bytes": 51524,
+        "sha256": "bec63cc6fcaa21c2d3177bc8119bdae25f43129d7a77ebfa2ffe52fc7f33052e",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "colonize",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-worker-assigned-01.ogg",
+        "duration": 5.013625,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.7815065098712964,
+        "rms": 0.09187781321552582,
+        "bytes": 79886,
+        "sha256": "95a304c38d891c7ad89bec0045f0cb3dd41d217cef9a3cda7dc97ea4c44fb0a2",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-worker-assigned-02.ogg",
+        "duration": 4.3670625,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.548514799770535,
+        "rms": 0.06864643689046025,
+        "bytes": 79258,
+        "sha256": "3c4f4a0940e01746f961cb6983c3732a97916b5408554f5062859bb8d1946b02",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-worker-assigned-03.ogg",
+        "duration": 4.1542916666666665,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.731758877701324,
+        "rms": 0.10097283498707083,
+        "bytes": 72612,
+        "sha256": "f4eb85a0125e1cad33c558dab187b021f13f75539b924b2c2c013f05d7e663d9",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "critical",
+    "gain": 0.8,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/critical.ogg",
+        "duration": 0.7,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.707207,
+        "rms": 0.074404,
+        "bytes": 11880,
+        "sha256": "c3f47bc5098fb9021e0fc3e22fbad18cad1c69888ac22f3da699d9387e2fb638",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "death",
+    "gain": 0.6,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-npc-death-06.ogg",
+        "duration": 2.0061875,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.4882706841986948,
+        "rms": 0.04492496526560495,
+        "bytes": 29969,
+        "sha256": "bb743b47bdb463ed3d39fa46cb1df8c8af8efc661d0471bdd34f10882590a84f",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-npc-death-07.ogg",
+        "duration": 1.1669583333333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.4438323460606787,
+        "rms": 0.061538350350609415,
+        "bytes": 24235,
+        "sha256": "e4a0caca3315a95e9fce83ae5196850d792ac53e5a8e08cc704fb1b81f3396f2",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-male-vocal-die-01.ogg",
+        "duration": 1.395625,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.10638976509896884,
+        "rms": 0.018797123724469,
+        "bytes": 15808,
+        "sha256": "144fa1473860843b4de2c4e47490ac326d7616d14febca9f1dd156f5447a5dc1",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-male-vocal-die-02.ogg",
+        "duration": 1.6822916666666667,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.11483890690266077,
+        "rms": 0.019837203565863517,
+        "bytes": 18544,
+        "sha256": "022199c63d9067942b5be89d8f813657bd7469f3a7b1ce3c71e4b294ef05bbc1",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-male-vocal-die-03.ogg",
+        "duration": 1.6196875,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.10632958038567375,
+        "rms": 0.01927217364223139,
+        "bytes": 17926,
+        "sha256": "fdc9982d2efc72135fca31f7d5cd72e17b97256aa9addcb452e1effe4f9d972f",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-male-vocal-die-04.ogg",
+        "duration": 1.5932708333333334,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.10597833691893324,
+        "rms": 0.02223014267254791,
+        "bytes": 17983,
+        "sha256": "6544d44d601e14b29c22262ecff310e03a02dae96bb597e9d090972340d70506",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-male-vocal-die-05.ogg",
+        "duration": 2.1930625,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.11040254884696245,
+        "rms": 0.017747010244472512,
+        "bytes": 22333,
+        "sha256": "51f66130f41af74be67ca7ad7f9e14a9887a691a4fc4d93eef1d73f4ac554909",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-male-vocal-die-06.ogg",
+        "duration": 1.5917291666666666,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.1091271718167065,
+        "rms": 0.02408261539821768,
+        "bytes": 18078,
+        "sha256": "b60d32d0a4cd868b9c0462d53995591e12960ec9109ae6393909d9a75ff9f04d",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "death-female",
+    "gain": 0.6,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-female-vocal-die.ogg",
+        "duration": 0.9843125,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.08212784929784657,
+        "rms": 0.014535571106877365,
+        "bytes": 12868,
+        "sha256": "167d0a98c1896042df9a63bb7e768b850baae3bfacbe3b3beca12706508e5d27",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "defeat",
+    "gain": 0.55,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-lost-01.ogg",
+        "duration": 8.3736875,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.5873572042837139,
+        "rms": 0.07557192762909608,
+        "bytes": 133985,
+        "sha256": "260f28aedbdd78a3fca2efdc16d361e0fba338ae543810c953cfef4000759681",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-lost-02.ogg",
+        "duration": 8.901041666666666,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.5589901432761685,
+        "rms": 0.07305019843533382,
+        "bytes": 141612,
+        "sha256": "b4efa8e3b9a5fb1758194cdc6cd9048d4dae951a6c445421071acd9660b548d8",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-lost-03.ogg",
+        "duration": 9.707020833333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.5474111636939332,
+        "rms": 0.0693544289194577,
+        "bytes": 155537,
+        "sha256": "473067bcdf34e6ce392079dc797703cc2fc012aaf3859d2c47402dbcb0f7029a",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "error",
+    "gain": 0.4,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/error.ogg",
+        "duration": 0.35,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.438563,
+        "rms": 0.13157,
+        "bytes": 6688,
+        "sha256": "b6225c3dedbc5d97199e25ac6a10918fde0b7e46598b1ddc8cd6f2340b3b4a47",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "fate",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-pick-01.ogg",
+        "duration": 11.739520833333334,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.7975408741685147,
+        "rms": 0.08263319594914106,
+        "bytes": 167379,
+        "sha256": "f27e2301906a1bc58da4cc1806943113fd6506bc7f4e768a8d6a437ae01f3314",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-pick-02.ogg",
+        "duration": 8.139270833333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.8073591098343835,
+        "rms": 0.09604487596050021,
+        "bytes": 111153,
+        "sha256": "5995fbdbac99ecaffe5280cfb5690bc0c9c29ea2c8b936cb15aa05d7ebd53cee",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-pick-03.ogg",
+        "duration": 7.300270833333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.8067789345193102,
+        "rms": 0.1008968946587926,
+        "bytes": 97617,
+        "sha256": "e060a8aacaf8694014608bedae922caebb13a90a852bad43485f1d6a0f77d217",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-pick-04.ogg",
+        "duration": 7.294333333333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.7498546690542135,
+        "rms": 0.096329864633728,
+        "bytes": 98787,
+        "sha256": "f4dd28b652810c4985b4cdacda4363563cff1ac8a6e31e466d6f066dfc234a76",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "fate-blessing",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-pick-01.ogg",
+        "duration": 11.739520833333334,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.7975408741685147,
+        "rms": 0.08263319594914106,
+        "bytes": 167379,
+        "sha256": "f27e2301906a1bc58da4cc1806943113fd6506bc7f4e768a8d6a437ae01f3314",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-pick-02.ogg",
+        "duration": 8.139270833333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.8073591098343835,
+        "rms": 0.09604487596050021,
+        "bytes": 111153,
+        "sha256": "5995fbdbac99ecaffe5280cfb5690bc0c9c29ea2c8b936cb15aa05d7ebd53cee",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-pick-03.ogg",
+        "duration": 7.300270833333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.8067789345193102,
+        "rms": 0.1008968946587926,
+        "bytes": 97617,
+        "sha256": "e060a8aacaf8694014608bedae922caebb13a90a852bad43485f1d6a0f77d217",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-pick-04.ogg",
+        "duration": 7.294333333333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.7498546690542135,
+        "rms": 0.096329864633728,
+        "bytes": 98787,
+        "sha256": "f4dd28b652810c4985b4cdacda4363563cff1ac8a6e31e466d6f066dfc234a76",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "fate-gift",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-pick-card-01.ogg",
+        "duration": 2.667708333333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.5447170259342305,
+        "rms": 0.054663753585928836,
+        "bytes": 45120,
+        "sha256": "9c571af09aaef2e5d08048a1842e118ad50403edff0cc80f8f96b89da1c41db6",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-pick-card-02.ogg",
+        "duration": 2.5079166666666666,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.4109132543321978,
+        "rms": 0.05626761406421332,
+        "bytes": 42136,
+        "sha256": "0a60652e1fb9b6dfe6eed051235db4a4b614e2b564803e0d7bcb02fbf85d8aab",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-pick-card-03.ogg",
+        "duration": 2.6075833333333334,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.4174038975347536,
+        "rms": 0.06123035113890157,
+        "bytes": 44767,
+        "sha256": "2a795bfd772ad158d76e993e78b3b6ed12e47f476d9a595ed26604b8e7840f57",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-pick-card-04.ogg",
+        "duration": 2.3163958333333334,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.4275268549725007,
+        "rms": 0.06019438061059396,
+        "bytes": 39645,
+        "sha256": "f96c47f53ba39e58e44493ea540cbedcd775c23e2f3fc43eccf9f20946ba1382",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "fate-open",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-start-01.ogg",
+        "duration": 12.37675,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.7933562547004048,
+        "rms": 0.07859818185678667,
+        "bytes": 203131,
+        "sha256": "448b6b2e705302b100ec32dc194019db34ad9f8f7897de361fd03ea475f3b5b4",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-start-02.ogg",
+        "duration": 13.022,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.8191778485487033,
+        "rms": 0.07592062942827073,
+        "bytes": 225266,
+        "sha256": "c5e86ff6ac3d88fbcae28170dd11c8c66ae8d68a298164ab1a5c67865e60da2b",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-start-03.ogg",
+        "duration": 8.455833333333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.8250656376754093,
+        "rms": 0.09185878568040816,
+        "bytes": 143534,
+        "sha256": "4100eec3e01c60d77bcb0b0ae72bfd82dd883cd23557721f7e2d893e406228be",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "fate-reveal",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-card-01.ogg",
+        "duration": 0.19695833333333335,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.21155402861563222,
+        "rms": 0.015034233808583172,
+        "bytes": 6171,
+        "sha256": "822c7c5d10be18b879acf9ad475e7a2866b43fa0c50d3e9195696fca77792736",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-card-02.ogg",
+        "duration": 0.2598958333333333,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.13430189790441716,
+        "rms": 0.009340913491713254,
+        "bytes": 6343,
+        "sha256": "3853ee9abf6938487cbbf4148dc8f36fa0a1fa2521f19398195d392c20a86941",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-card-03.ogg",
+        "duration": 0.21522916666666667,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.3649206165897598,
+        "rms": 0.017110949123696602,
+        "bytes": 6016,
+        "sha256": "302bef6d821f6d38c70f62b319b48c3d589936f201c30c6e2241bd3557067c82",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "fate-rune",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-apply-charm-01.ogg",
+        "duration": 4,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.3009747414164456,
+        "rms": 0.036519170132778875,
+        "bytes": 67606,
+        "sha256": "0194c34e105c2eeecb1056783582465a19b8957d2e51ee20975f52bea6688e15",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-threads-of-fate-apply-charm-02.ogg",
+        "duration": 4,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.2978107360671323,
+        "rms": 0.039946685464219193,
+        "bytes": 67458,
+        "sha256": "60abdc031ad9e9f9e857a4b70b111cf8cb2879df573cb2909585ae915170b09c",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "fire",
+    "gain": 0.8,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/fire.ogg",
+        "duration": 1.8,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.700566,
+        "rms": 0.073332,
+        "bytes": 26599,
+        "sha256": "5d33bf68e47553a9a91af1ad63e6c8bb789e4fdf5790b3562a2f522635446d65",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "footstep",
+    "gain": 0.2,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/footstep.ogg",
+        "duration": 0.17,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.704216,
+        "rms": 0.103743,
+        "bytes": 6325,
+        "sha256": "c163c3b920ff54095097a87c52c8be6b54775b89586b40ace179e83bf692be06",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "frost",
+    "gain": 0.34,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/frost.ogg",
+        "duration": 0.7,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.663774,
+        "rms": 0.102845,
+        "bytes": 14418,
+        "sha256": "66e6dac3fceaa702fab5594d930ae7afc17e4bb237d1f7cab54a6f821a2f16c5",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "haste",
+    "gain": 0.34,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/haste.ogg",
+        "duration": 0.65,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.685416,
+        "rms": 0.118307,
+        "bytes": 12545,
+        "sha256": "010f68ee50a4634f75522df914bc21e1a9cb86ea83d5dde5ebe1501e58490ee9",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "heal",
+    "gain": 0.35,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/heal.ogg",
+        "duration": 1.3,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.69748,
+        "rms": 0.129282,
+        "bytes": 19620,
+        "sha256": "75c1c91657f8276823a79192a0816084956aaa188666c513edfd3f402248aee1",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "kopis",
+    "gain": 0.55,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-sword-hit-01.ogg",
+        "duration": 1.5259375,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.4220660306282233,
+        "rms": 0.03878537546287333,
+        "bytes": 18517,
+        "sha256": "6c4e7093bc57d26b155b927f74777e00b19b81a8f14b555d20bbfa5066fb04e9",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-sword-hit-02.ogg",
+        "duration": 1.5905625,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.4243937212024135,
+        "rms": 0.03726709581782694,
+        "bytes": 18520,
+        "sha256": "9064304d13ae6a7a9e31b2cfaf96ebbcc17df3f2912002540863a4b4875d825b",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-sword-hit-03.ogg",
+        "duration": 1.5302708333333332,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.38346766590213643,
+        "rms": 0.038749571111038224,
+        "bytes": 18493,
+        "sha256": "7c1922e5c569e902a9b47b342b488599c28d8bbe05428b05c2b9bed3225a5269",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-sword-hit-04.ogg",
+        "duration": 1.3449375,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.373260986899951,
+        "rms": 0.03151445492822013,
+        "bytes": 15851,
+        "sha256": "dbbe94edf27c15009f7298fb954a6230d219a70fb3e3ed9f605ceb3666f5c0b9",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-sword-hit-05.ogg",
+        "duration": 1.4103125,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.40589555935150684,
+        "rms": 0.03718995475498986,
+        "bytes": 16320,
+        "sha256": "55972fe6f239a3d1f381d5dd06db078d8e855e953451198135ea487eeb2733c9",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-sword-hit-06.ogg",
+        "duration": 1.393875,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.4440075959918094,
+        "rms": 0.033438408574941555,
+        "bytes": 16382,
+        "sha256": "1dfc7d9516d4c47177c0cac8507820daf8d1a4ff86f5f8c84bff2c0c3133921f",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "lightning",
+    "gain": 0.8,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/lightning.ogg",
+        "duration": 2.6,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.698477,
+        "rms": 0.082336,
+        "bytes": 28298,
+        "sha256": "72f24984dab94d08ade8dd247e426b87aace0fb20451b1125dde19524747f392",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "music",
+    "gain": 0.5,
+    "loop": true,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/music.ogg",
+        "duration": 24,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.701766,
+        "rms": 0.11004,
+        "bytes": 272892,
+        "sha256": "0edb7a6eb0666422d6bb3148fb4a70106c5eff9fe3eb66f8facf2676dbdf654b",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "poison",
+    "gain": 0.32,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/poison.ogg",
+        "duration": 0.58,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.641605,
+        "rms": 0.128399,
+        "bytes": 8487,
+        "sha256": "f04f911dfc9ae242c712b05171b227fd266eda6f30a97cc61bbc807aa0dce64e",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "purchase",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-coin-receive-01.ogg",
+        "duration": 0.7080416666666667,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.3789690996976433,
+        "rms": 0.019487904827188464,
+        "bytes": 18663,
+        "sha256": "7a4ca452a888fe4f916ca5c53ed92f4a1a622c5a350971942e0fc27d0eead92c",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-coin-receive-02.ogg",
+        "duration": 0.9392291666666667,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.30248942753369273,
+        "rms": 0.018352122522284416,
+        "bytes": 20490,
+        "sha256": "9a54aee02617c4856851343e0fbe1387b4c2d961200526cec4d3e0ee48c25592",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-coin-receive-03.ogg",
+        "duration": 1.5392083333333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.3539818543511924,
+        "rms": 0.018126218047928584,
+        "bytes": 28127,
+        "sha256": "0828c6fc6a7715879705a9f6c4932c844b9ebe9428a87214936cc16a56978038",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-coin-receive-04.ogg",
+        "duration": 1.7616041666666666,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.33953656445205416,
+        "rms": 0.018568169844859986,
+        "bytes": 28614,
+        "sha256": "c4b8aa154502f16401d2db7b80018c912611de699aeffeb151a8d997d207e122",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-coin-receive-05.ogg",
+        "duration": 1.3525,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.4293262568601712,
+        "rms": 0.02033148732125877,
+        "bytes": 26127,
+        "sha256": "654ef53d7fd0f9fd3351374a068de231557191fa2495aaebacbbe1570da46263",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-coin-receive-06.ogg",
+        "duration": 1.4109375,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.3067083855796205,
+        "rms": 0.017753492458616085,
+        "bytes": 27617,
+        "sha256": "4ef0188546e4814376e2e4d4f7c0735f45d6a6358639f41c24bb4df69d25e45e",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-coin-receive-07.ogg",
+        "duration": 1.6359583333333334,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.3207776858631201,
+        "rms": 0.017538366851078842,
+        "bytes": 29243,
+        "sha256": "06d44ca5a02209e9cc2b6ed3c25690109c75c69db2586e338fd16c79537adfe6",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "reroll",
+    "gain": 0.5,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/reroll.ogg",
+        "duration": 0.4,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.678449,
+        "rms": 0.077178,
+        "bytes": 8012,
+        "sha256": "48c1cae896c3c5e4dbff24bfc3a903f553dbe73a364a53531e353aaa00cb0a04",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "select",
+    "gain": 0.55,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-ui-click-button-01.ogg",
+        "duration": 0.055125,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.690789615048674,
+        "rms": 0.0403167485470843,
+        "bytes": 4832,
+        "sha256": "5bdda21a1929a993d83214c655f02c908c1c8a3ac752ac2d82e0336225e102c9",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-ui-click-button-03.ogg",
+        "duration": 0.0456875,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.680517033237486,
+        "rms": 0.05020943680994256,
+        "bytes": 4679,
+        "sha256": "385d2cecd39f103e310ccab0cb6ec48b9b6e0036164cfd9965bf6c68f1595feb",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-ui-click-button-04.ogg",
+        "duration": 0.06179166666666667,
+        "channels": 1,
+        "sampleRate": 48000,
+        "peak": 0.7082201027527325,
+        "rms": 0.03839028621771948,
+        "bytes": 4851,
+        "sha256": "5b199313e636f738577fbed25c997c3b1b3a7b563917666ef3b20308c94bbaf6",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "spear",
+    "gain": 0.55,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-sword-impact-01.ogg",
+        "duration": 1.3969583333333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.39412260985698905,
+        "rms": 0.03689789579363634,
+        "bytes": 25526,
+        "sha256": "50fca5711ec31cf224d1879049c975249cd0e84bd9d5a1eaef876f63eb142919",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-sword-impact-02.ogg",
+        "duration": 1.4723958333333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.4231717817006662,
+        "rms": 0.036561621638470695,
+        "bytes": 25827,
+        "sha256": "cd1e33de46edd965aeef793d04ac962e2a962e8bdfa78cdc6a8727e3c00dd685",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-sword-impact-03.ogg",
+        "duration": 1.4437916666666666,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.3757786051212162,
+        "rms": 0.039639092211532015,
+        "bytes": 26803,
+        "sha256": "9438e9e0cdf93b52a6b1e3282d2a10e2c6e94b2cd329e9d26b88f2bb5c8c5dc9",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-sword-impact-04.ogg",
+        "duration": 1.4541875,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.3426975503158403,
+        "rms": 0.03621157795191045,
+        "bytes": 26644,
+        "sha256": "23314c0aadd0d5175f66fd85c1e9bc86c92d57ccf0f97fd2c3c9aede751d9988",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-sword-impact-05.ogg",
+        "duration": 1.4906041666666667,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.4566978846178623,
+        "rms": 0.034477042164759795,
+        "bytes": 25801,
+        "sha256": "1e8846a2cf037ae252b74f8b921428e2dd45c6cf50a07684287a7514caa3ae9a",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-sword-impact-06.ogg",
+        "duration": 1.3995625,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.39267341553125507,
+        "rms": 0.03541104962938817,
+        "bytes": 24998,
+        "sha256": "a1ef59e8feda3c6e78cd65a7d7dc60ab1b2c7de75d4abb329ecc75de26c2c958",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "stun",
+    "gain": 0.38,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/stun.ogg",
+        "duration": 0.52,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.62961,
+        "rms": 0.130677,
+        "bytes": 11275,
+        "sha256": "b94fdd3bee4d89f317517e1d3e67dba24ab9503eb67ae54ef9786b10094133c9",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "upgrade",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-upgrade-building-01.ogg",
+        "duration": 7.434854166666667,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.7507858000157064,
+        "rms": 0.05374715120419567,
+        "bytes": 122338,
+        "sha256": "38fe6de8e667a8be06f24f60667c41726b457757fb75c926d47a00858ff144d0",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-upgrade-building-02.ogg",
+        "duration": 5.039375,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.8113476825024254,
+        "rms": 0.06575547207159589,
+        "bytes": 86077,
+        "sha256": "4bb209928f5c791ede1f84c7e11b38e431873abdbd80f0b5c03d8d16f4c4096b",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-upgrade-building-03.ogg",
+        "duration": 6.786083333333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.7044741309883928,
+        "rms": 0.05417142998694216,
+        "bytes": 112272,
+        "sha256": "0237ab47d239f4b17c7e0ced71dfb289089d6d98fd7cd8f2fcbc516dab8fceb1",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-upgrade-building-04.ogg",
+        "duration": 5.3222708333333335,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.7677101809155423,
+        "rms": 0.06375322371673796,
+        "bytes": 90596,
+        "sha256": "ce3101b7bb1afcb13d61fa4855e84923e206ac704a4fee818e9c02e6cd130f01",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "victory",
+    "gain": 0.55,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-won-01.ogg",
+        "duration": 4.159583333333333,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.8475277950717365,
+        "rms": 0.09011267874771549,
+        "bytes": 70460,
+        "sha256": "26c0d237e6cb977bf7d11c13c9402b87862b12000ac37910c805a124ac026cd9",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-won-02.ogg",
+        "duration": 3.4213541666666667,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.8556875240327358,
+        "rms": 0.11100691926437409,
+        "bytes": 63210,
+        "sha256": "01f2b47242fdff60216015ed7e68ee174b27fbd8e75fa5136298bd97b05ce8ff",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-battle-won-03.ogg",
+        "duration": 3.453625,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.8621138060085314,
+        "rms": 0.10925408898078832,
+        "bytes": 62653,
+        "sha256": "e424d60102d8eae5eebb07b178061f154d113896612d4682a28d058aadb4b55a",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  },
+  {
+    "id": "ward",
+    "gain": 0.7,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/ward.ogg",
+        "duration": 1.1,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.699162,
+        "rms": 0.077521,
+        "bytes": 19569,
+        "sha256": "e0a74078f5d8baf961e93dc49c4f78720dacaf3433cc9213ca2847b464e5d9e4",
+        "sourceKind": "original"
+      }
+    ]
+  },
+  {
+    "id": "worker-assign",
+    "gain": 0.65,
+    "loop": false,
+    "startDelay": 0,
+    "mode": "buffer",
+    "variants": [
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-worker-assigned-01.ogg",
+        "duration": 5.013625,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.7815065098712964,
+        "rms": 0.09187781321552582,
+        "bytes": 79886,
+        "sha256": "95a304c38d891c7ad89bec0045f0cb3dd41d217cef9a3cda7dc97ea4c44fb0a2",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-worker-assigned-02.ogg",
+        "duration": 4.3670625,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.548514799770535,
+        "rms": 0.06864643689046025,
+        "bytes": 79258,
+        "sha256": "3c4f4a0940e01746f961cb6983c3732a97916b5408554f5062859bb8d1946b02",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      },
+      {
+        "gain": 1,
+        "path": "/audio/source-sfx-worker-assigned-03.ogg",
+        "duration": 4.1542916666666665,
+        "channels": 2,
+        "sampleRate": 48000,
+        "peak": 0.731758877701324,
+        "rms": 0.10097283498707083,
+        "bytes": 72612,
+        "sha256": "f4eb85a0125e1cad33c558dab187b021f13f75539b924b2c2c013f05d7e663d9",
+        "encodingGainDb": -2,
+        "sourceKind": "permitted-demo-sfx"
+      }
+    ]
+  }
+]

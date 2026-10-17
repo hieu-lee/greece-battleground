@@ -1,0 +1,447 @@
+:root {
+  font-family: "Jost", "Segoe UI", system-ui, sans-serif;
+  color: #e7e7de;
+  background: #101922;
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  font: inherit;
+}
+dialog {
+  width: min(520px, calc(100% - 32px));
+  max-height: calc(100svh - 32px);
+  overflow: auto;
+  padding: 28px;
+  border: 1px solid #a78c59;
+  border-radius: 8px;
+  background: #172c38;
+  color: #e7e7de;
+  box-shadow: 0 20px 80px #0009;
+}
+dialog::backdrop {
+  background: #071017bd;
+}
+dialog h2 {
+  margin-top: 0;
+}
+dialog p {
+  line-height: 1.6;
+}
+dialog div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+dialog button {
+  padding: 12px 18px;
+  border: 1px solid #899d9d;
+  border-radius: 4px;
+  color: #eee6d4;
+  background: #294453;
+  cursor: pointer;
+}
+#replace-status {
+  color: #ffcf9d;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #fff4b5;
+  outline-offset: 5px;
+}
+.clan-selection {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(370px, 40%) 1fr;
+  grid-template-rows: auto 1fr auto auto;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 20% 25%, #30454e, #0e1921 75%);
+}
+.clan-banner {
+  z-index: 1;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin: 32px 5% 24px;
+  padding: 16px 24px;
+  background: linear-gradient(105deg, #6c5228ed, #2d352eda 55%, #101c25da);
+  border-block: 1px solid #a58a50;
+  box-shadow: 0 4px 20px #0005;
+}
+.clan-banner > img {
+  width: 80px;
+  height: 80px;
+}
+.eyebrow {
+  font:
+    12px/1.4 "Jost",
+    system-ui,
+    sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #d8c490;
+}
+h1 {
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1.05;
+  margin: 4px 0 0;
+  font-weight: normal;
+}
+.back {
+  margin-left: auto;
+  color: #e4e5dd;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+  font:
+    14px "Jost",
+    system-ui,
+    sans-serif;
+  white-space: nowrap;
+}
+.clan-details {
+  z-index: 1;
+  grid-row: 2;
+  padding: 5px 20px 10px max(28px, 12.5%);
+}
+h2 {
+  font-size: 21px;
+  color: #ead799;
+  margin: 0 0 10px;
+  font-weight: normal;
+}
+.tier-note {
+  font:
+    12px "Jost",
+    system-ui,
+    sans-serif;
+  color: #aebbc2;
+  margin: 0 0 24px;
+}
+.skill {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+}
+.skill > img {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  padding: 4px;
+  border: 1px solid #b7a5686b;
+  border-radius: 50%;
+  background: #152831;
+}
+h3 {
+  font:
+    600 14px "Jost",
+    system-ui,
+    sans-serif;
+  letter-spacing: 0.035em;
+  color: #f0e7cc;
+  margin: 3px 0 7px;
+}
+.skill p {
+  font:
+    15px/1.65 "Jost",
+    system-ui,
+    sans-serif;
+  margin: 0;
+  color: #d8dfe0;
+}
+.stat {
+  white-space: nowrap;
+  font-weight: 650;
+}
+.stat img {
+  width: 19px;
+  height: 19px;
+  vertical-align: -4px;
+  margin-left: 3px;
+}
+.drachma {
+  color: #eed17f;
+}
+.insight {
+  color: #83d4e6;
+}
+.health {
+  color: #9dd982;
+}
+.ward {
+  color: #e0d591;
+}
+.damage {
+  color: #ed9787;
+}
+.clan-extras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+  border-top: 1px solid #8899a033;
+  padding-top: 20px;
+  margin-top: 8px;
+}
+.clan-extras h2 {
+  font-size: 18px;
+}
+.clan-extras ul {
+  padding-left: 18px;
+  margin: 0;
+}
+.clan-extras li,
+.clan-extras p {
+  font:
+    14px/1.8 "Jost",
+    system-ui,
+    sans-serif;
+  margin: 0;
+}
+.play {
+  width: min(100%, 250px);
+  margin-top: 24px;
+  padding: 16px;
+  background: linear-gradient(#40626b, #1b3540);
+  border: 2px solid #c7ab6e;
+  box-shadow: inset 0 0 0 2px #142630;
+  color: #fff2c7;
+  cursor: pointer;
+  text-transform: uppercase;
+  font:
+    700 18px "Jost",
+    system-ui,
+    sans-serif;
+}
+.play:disabled {
+  background: linear-gradient(#284350, #13252f);
+  border-color: #6f939e;
+  color: #aebdc2;
+  cursor: not-allowed;
+}
+.play:not(:disabled):hover {
+  filter: brightness(1.15);
+}
+.development {
+  font:
+    12px/1.5 "Jost",
+    system-ui,
+    sans-serif;
+  color: #b8c5c9;
+}
+.chief-scene {
+  grid-column: 2;
+  grid-row: 2 / 5;
+  min-width: 0;
+  position: relative;
+  background: #2b403d;
+}
+.chief-scene:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #15232bcc, transparent 20%),
+    linear-gradient(0deg, #0e1b23, transparent 40%);
+  pointer-events: none;
+}
+#portrait {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: contain;
+  object-position: center;
+}
+#portrait[hidden] {
+  display: none;
+}
+.portrait-fallback {
+  position: absolute;
+  inset: 40% 10% auto;
+  text-align: center;
+  color: #cedbd9;
+  font:
+    16px "Jost",
+    system-ui,
+    sans-serif;
+}
+.chief-caption {
+  position: absolute;
+  bottom: 130px;
+  left: 14%;
+  right: 8%;
+  z-index: 1;
+  text-shadow: 0 2px 5px #000;
+}
+.chief-caption h2 {
+  font-size: clamp(30px, 4vw, 54px);
+  margin: 5px 0;
+  color: #f3e8c9;
+}
+.chief-caption p {
+  font:
+    15px "Jost",
+    system-ui,
+    sans-serif;
+  color: #e7e7dc;
+}
+.clan-picker {
+  grid-column: 2;
+  grid-row: 3;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  padding: 10px 24px 0;
+}
+.clan-picker button {
+  background: #132631ed;
+  border: 1px solid #7c979c;
+  border-radius: 12px;
+  padding: 8px 20px;
+  color: #d4dddc;
+  font:
+    14px "Jost",
+    system-ui,
+    sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+.clan-picker button:hover {
+  background: #24404a;
+}
+.clan-picker button[aria-pressed="true"] {
+  border-color: #ecd48a;
+  box-shadow: 0 0 0 2px #ecd48a80;
+  color: #f4df9e;
+}
+.clan-picker img {
+  width: 44px;
+  height: 44px;
+}
+.selection-status {
+  grid-column: 2;
+  grid-row: 4;
+  z-index: 1;
+  margin: 10px 24px 16px;
+  min-height: 17px;
+  font:
+    12px "Jost",
+    system-ui,
+    sans-serif;
+  text-align: center;
+  color: #ded4b2;
+}
+#app[data-clan="raven"] .clan-banner {
+  background: linear-gradient(105deg, #3b5837ed, #233b36da 55%, #101c25da);
+}
+@media (min-width: 1600px) {
+  .clan-details {
+    padding-right: 60px;
+  }
+  .skill p {
+    font-size: 17px;
+  }
+  .skill {
+    margin-bottom: 36px;
+  }
+}
+@media (max-width: 800px) {
+  .clan-selection {
+    grid-template-columns: 1fr;
+  }
+  .clan-banner {
+    margin: 16px 20px;
+    gap: 12px;
+    padding: 12px;
+    flex-wrap: wrap;
+  }
+  .clan-banner > img {
+    width: 52px;
+    height: 52px;
+  }
+  .back {
+    font-size: 12px;
+  }
+  .eyebrow {
+    font-size: 10px;
+  }
+  .chief-scene {
+    grid-column: 1;
+    grid-row: 2;
+    height: 430px;
+    margin: 0 20px;
+    border: 1px solid #7f987a55;
+  }
+  .chief-scene:after {
+    background: linear-gradient(0deg, #0e1b23, transparent 55%);
+  }
+  .chief-caption {
+    bottom: 10px;
+    left: 8%;
+  }
+  .clan-picker {
+    grid-column: 1;
+    grid-row: 3;
+    padding-top: 18px;
+  }
+  .selection-status {
+    grid-column: 1;
+    grid-row: 4;
+    margin-bottom: 12px;
+  }
+  .clan-details {
+    grid-column: 1;
+    grid-row: 5;
+    padding: 12px 24px 24px;
+  }
+  .skill {
+    gap: 12px;
+  }
+  .skill > img {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+  }
+  .skill p {
+    font-size: 14px;
+  }
+  .tier-note {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 390px) {
+  .clan-banner {
+    margin-inline: 12px;
+  }
+  .back {
+    width: 100%;
+    margin-left: 64px;
+  }
+  .chief-scene {
+    margin-inline: 12px;
+    height: 360px;
+  }
+  .clan-details {
+    padding-inline: 16px;
+  }
+  .clan-picker {
+    gap: 16px;
+  }
+}

@@ -1,0 +1,4871 @@
+{
+  "sourceCommit": "d5e9713e098280196e1d2dd916852066420d0f70",
+  "runtime": {
+    "rulesVersion": "greece-118-v31",
+    "saveVersion": 31,
+    "schemaVersion": 13
+  },
+  "policy": {
+    "directories": [
+      "src/",
+      "server/",
+      "public/"
+    ],
+    "files": [
+      ".gitignore",
+      "package.json",
+      "pnpm-lock.yaml",
+      "tsconfig.json",
+      "vite.config.ts",
+      "index.html",
+      "workshop.html",
+      "art-review.html",
+      "clans.html",
+      "play.html",
+      "effects.html",
+      "public/draco/LICENSE",
+      "public/draco/AUTHORS",
+      "public/licenses/three-LICENSE.txt",
+      "public/licenses/zod-LICENSE.txt",
+      "public/licenses/vite-LICENSE.md",
+      "scripts/test.mjs",
+      "deploy/Caddyfile",
+      "deploy/greece.service"
+    ],
+    "excluded": [
+      ".git/",
+      "art-source/",
+      "evidence/",
+      "rule-source/",
+      "tools/",
+      "docs/",
+      "GOAL.md",
+      "GOAL-HISTORY-2026-10-16.md",
+      "private references and releases",
+      "local state and environment files"
+    ]
+  },
+  "audit": {
+    "trackedFiles": 17229,
+    "retainedTrackedFiles": 792,
+    "excludedTrackedFiles": 16437,
+    "privateHistoryCopied": false,
+    "releasesCopied": false,
+    "sourceNativeBodiesCopied": false,
+    "publicationReadinessClaimed": false
+  },
+  "files": [
+    {
+      "path": ".github/workflows/pages.yml",
+      "bytes": 1418,
+      "sha256": "2258cb0857904a046f8a04446879c2a667524bed249039cfec6e33946dbaab64",
+      "origin": "derived"
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "bytes": 426,
+      "sha256": "6dc182501a6d0b3bfc21e4e7aebdd12255c31a6a396ec793d3aed520faa1ab67",
+      "origin": "derived"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 291,
+      "sha256": "defb16564534dafe65197e2e963062220c4abae0cb37c5935ee26ab2de6b9d29",
+      "origin": "derived"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1386,
+      "sha256": "f848432348759262aef88fba725b6f384bed444e7e30e43d0180f04ea8bb6f9c",
+      "origin": "derived"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.md",
+      "bytes": 2010,
+      "sha256": "fb59453e20c2af212d2a97e62e9edd4b5c19a6c3c5244f77e704725966a4669b",
+      "origin": "derived"
+    },
+    {
+      "path": "art-review.html",
+      "bytes": 2163,
+      "sha256": "f119268000be92500e1215f16da6484970f179224d26e5d2c687eeb1a18b52ed",
+      "origin": "tracked"
+    },
+    {
+      "path": "clans.html",
+      "bytes": 2229,
+      "sha256": "1001a00792e49a6a89d9a7d92bcb694fa8205a9bd1c93f48a7b377b3ef08f1ef",
+      "origin": "tracked"
+    },
+    {
+      "path": "deploy/Caddyfile",
+      "bytes": 220,
+      "sha256": "e78049d92ec918c59957d717849cdcd96386422e5f32ff933054435775491ae4",
+      "origin": "tracked"
+    },
+    {
+      "path": "deploy/greece.service",
+      "bytes": 633,
+      "sha256": "c8ea793c40baee3e6f7b7172d0215e37a2bfa550729cd28dc4119f3b8dd47d14",
+      "origin": "tracked"
+    },
+    {
+      "path": "docs/ACCOUNTS.md",
+      "bytes": 2538,
+      "sha256": "f3c95ba573ec93bb7119c325470fbd2c4bd43e39d8d44858ee3c35269eae6c4e",
+      "origin": "derived"
+    },
+    {
+      "path": "docs/GITHUB-PAGES.md",
+      "bytes": 3274,
+      "sha256": "b77b4d9ae298043e1ebe4971dc2563220d4991b3f6b9393b57d12ed2b1f55504",
+      "origin": "derived"
+    },
+    {
+      "path": "docs/SELF-HOSTING.md",
+      "bytes": 2051,
+      "sha256": "7a60f682b216726cca8a995c395396ec57515a1d413397a81515c814435bacf1",
+      "origin": "derived"
+    },
+    {
+      "path": "effects.html",
+      "bytes": 2228,
+      "sha256": "d3a7ed1a6b7c298384338dcc8d3e7dcd19e84a1e9fd83c5a401c7e5ef8240873",
+      "origin": "tracked"
+    },
+    {
+      "path": "index.html",
+      "bytes": 2365,
+      "sha256": "fee0aea1042b241e557447980cafbbca455cf5e7fc5612f889e44b1ebd1bb921",
+      "origin": "tracked"
+    },
+    {
+      "path": "package.json",
+      "bytes": 798,
+      "sha256": "596a81e4621c59c3581d5536dda00b5a1aef742e358def16bbbd4a0290fd06f9",
+      "origin": "derived"
+    },
+    {
+      "path": "play.html",
+      "bytes": 2351,
+      "sha256": "4708fc1f46c63f303062aca04e67f9e457280bf2fa626bd89c20373e9b5011ca",
+      "origin": "tracked"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 47465,
+      "sha256": "ac5e83ab0cce7476ce5211405c77d464a60542445c4e3a031a7410266805a235",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/aegeus-attack.webp",
+      "bytes": 215724,
+      "sha256": "0cc245e8621f623ca75d8eab34cf0ac608606b502db6d9c5649ccdbdc6851bdf",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/aegeus-death.webp",
+      "bytes": 203202,
+      "sha256": "252b71839a54aa45226770b66321c0f14681b9e550f99b992c1cc66d2174fa95",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/aegeus-hit.webp",
+      "bytes": 101152,
+      "sha256": "5f60e57347ecaf531d95540286b45b1239afc4cb7fbbf147f1dfeac5394a5999",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/aegeus-idle.webp",
+      "bytes": 45644,
+      "sha256": "f883b14cb1be5acad0d4d3b2a177745302a5d27b3301f8863befb7caeec32e38",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/aegeus-walk.webp",
+      "bytes": 403346,
+      "sha256": "1518fd15d51e5403695a4139ea1c36e265b791a3101c8f99108c12f4ca7e17b0",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/aegeus.webp",
+      "bytes": 206548,
+      "sha256": "b64068b2e3583939fdd394cc906194f997ab45626c0dc61b1fe012576e8a664e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/agora.webp",
+      "bytes": 54232,
+      "sha256": "9c8d18930dfe8b89853d2c5ebd3b4fae318047c922a578a0c5014297674190f6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/altar-of-kings.webp",
+      "bytes": 58512,
+      "sha256": "37f8def8df9eed4010aa50b1572637ac8415e34ebcc50d8668dd863787e3f020",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/altar-of-olympus.webp",
+      "bytes": 53608,
+      "sha256": "44ad7eb2f35d3ab0737cf22c6e5d038b96c406bdcf6eee61983efef6d50978e2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/apollo-fountain.webp",
+      "bytes": 60708,
+      "sha256": "a44ab988beb2b84908eb5388b7abb51697e5c70899a6982ab98afd8963400419",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/arcadia-hall.webp",
+      "bytes": 63110,
+      "sha256": "b6890150b30e33f0cc504f5fa5b419e36d5dfa4a89b99aca24b89b171d812c0d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/arcadian-wolf-attack.webp",
+      "bytes": 68016,
+      "sha256": "44fcecdc65dcd68f8b2485e96c08e3af04753d613945acad16816304b1503582",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/arcadian-wolf-death.webp",
+      "bytes": 50766,
+      "sha256": "001d15d9e6eeaaf130e1bf0ada0cb36a33528b4f30ff0e239785ecef041c203d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/arcadian-wolf-hit.webp",
+      "bytes": 46322,
+      "sha256": "d60d185343b6e327b8cc7ebc67657f8c145620bec062fa65ff1ea5cc580fea8c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/arcadian-wolf-idle.webp",
+      "bytes": 23774,
+      "sha256": "6656f8def8fd82a5a43e7974c34a42e19092f9b02cf292af144738bddc7b6071",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/arcadian-wolf-walk.webp",
+      "bytes": 188836,
+      "sha256": "ce0a13ea486879120154ae90b3b53257b8113a1a7a663b3e932123e250523552",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/archer-camp.webp",
+      "bytes": 63518,
+      "sha256": "edb6ad3adef4df4d209d841e7d763381022f53cc14968318d109ce850021b670",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/asclepiad-attack.webp",
+      "bytes": 95264,
+      "sha256": "159e94d0eb005f0a1c739f46bbb7f86e06cc8221c246b38f9ba3b875091a3f71",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/asclepiad-death.webp",
+      "bytes": 93720,
+      "sha256": "fbcfcf16d634fc6a1c0b9cd66f9fdf7f42200bb33a23c10302acb31561725436",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/asclepiad-hit.webp",
+      "bytes": 67382,
+      "sha256": "b000d05a945fdc034dbb495b08db6e1f31e0d2b0adc21e6d1b520d9858a3622a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/asclepiad-idle.webp",
+      "bytes": 28666,
+      "sha256": "f8c19590049efbaa6e6bd58834109879e86e301209e1d663a76c7dfdbdd1a601",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/asclepiad-walk.webp",
+      "bytes": 238580,
+      "sha256": "90430111fe489c07e54c72e1cd9cad638d427d6277a4c8752ffe282c12de933d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/atalanta-attack.webp",
+      "bytes": 183808,
+      "sha256": "b0e985a2d670b18e94f173c3b8abf90a5cf443cff3e2e13634df8501520df4e8",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/atalanta-death.webp",
+      "bytes": 174190,
+      "sha256": "5638d5386dc043430cdadb360067735ef7b3d99cc810260431c377f60e4dcaf9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/atalanta-hit.webp",
+      "bytes": 92418,
+      "sha256": "1a88fbf60b8edf537d923039ffc2dee0efcca9d9471ebec562c468b2eb3a39c7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/atalanta-idle.webp",
+      "bytes": 41254,
+      "sha256": "315a37b0cf7623d5ac54d293b8bc62cd37a7c37ea2562c644b090a5cc15fb6f0",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/atalanta-walk.webp",
+      "bytes": 346776,
+      "sha256": "1506bdcafdfe2913a432b3c393cdb94e0b32e918ab0fddbccfdc898fb3a295ae",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/atalanta.webp",
+      "bytes": 269358,
+      "sha256": "bf6aa784dbe463bbfd7fb64167dce88bd0115053b82e58851dcfcf7432301a19",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/battle-physician-attack.webp",
+      "bytes": 86542,
+      "sha256": "a172d5e4cf690cfc032fd8b6b3262431d23f9980324d6aa9c7bc9fe3420c0bb6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/battle-physician-death.webp",
+      "bytes": 77436,
+      "sha256": "fa05410dcbb441ad84b0364840463aaf07e8b9acfcdff9aa10f32408a7badb3d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/battle-physician-hit.webp",
+      "bytes": 56908,
+      "sha256": "8ac99aa6c140d5bce803900ed1a7c214ccaf7058c8f81be8c75653171e293bfb",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/battle-physician-idle.webp",
+      "bytes": 25086,
+      "sha256": "b168396f184e2fabcf4faa4cf43864525e8c6c99f89064e6d70cac06206583f2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/battle-physician-walk.webp",
+      "bytes": 206156,
+      "sha256": "761e3c5fd27fb00f800b5e3d2610b6424067c28d9da1f64d1e796df8a9373b1b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/battleground-autumn.webp",
+      "bytes": 347496,
+      "sha256": "c86580f703aef91f8426151377301266ae98f456988942dfcd9b8a6504de20ac",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/battleground-spring.webp",
+      "bytes": 348862,
+      "sha256": "83d60515888d71731d20397389f5b66d4e48311228455d5730c2a7f509ed7fb7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/battleground-summer.webp",
+      "bytes": 337118,
+      "sha256": "3062e843802998687052d9d9cc290589cb0d3f9fcfc452c970282a5332a1cb8c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/battleground-winter.webp",
+      "bytes": 389716,
+      "sha256": "5bbf296d8dc74e6aae1fabf617afc37aa82d39a9fab1b2c1747a99e3d65ffe1c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/bear-attack.webp",
+      "bytes": 160036,
+      "sha256": "a9e74cbf23f52bdfe675f872d06b2db15248f009cc2e8b845a02bc3c4087010a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/bear-death.webp",
+      "bytes": 137888,
+      "sha256": "5ec2c2c107a5e78ce44ba69c289176b4201d80eac0622018d1f7fe66814100a9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/bear-hit.webp",
+      "bytes": 122356,
+      "sha256": "626631684f83947b00a9a6874f596fa587e63151dbd0ccb29ab949fe57e03c23",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/bear-idle.webp",
+      "bytes": 55758,
+      "sha256": "f8a1f482f10244d7d1790f50add5d872d4d2f71e9a0de5c3daa0087b96ae7039",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/bear-walk.webp",
+      "bytes": 444998,
+      "sha256": "1055bce1ea09217b053509c51c4fd44629dc101d483941d40604d515e49fd7aa",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/boar-attack.webp",
+      "bytes": 75896,
+      "sha256": "6719ae37cb1de0b415df122189aaaebbc2184baa11e9736c509703b005c2dbc3",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/boar-death.webp",
+      "bytes": 68232,
+      "sha256": "db48899f0ecf3ba655f400a368310a5b53069f5e12ffc042d1ed611c6199702d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/boar-hit.webp",
+      "bytes": 55546,
+      "sha256": "09e3e426461afe945f75a6be3fe3345dc81fdff1e84d99451e06dda429af96ca",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/boar-idle.webp",
+      "bytes": 26136,
+      "sha256": "e2ab9b29688dc7fb2fb38df77f6c5ba8d7e78a0ce80b581cb357eafdf6daa273",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/boar-walk.webp",
+      "bytes": 205414,
+      "sha256": "a65471429d868b10220e3b663e2746e8044c997684c78780f2d5120e7e8edfb0",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/boreal-giant-attack.webp",
+      "bytes": 145240,
+      "sha256": "f2c489229f19e1e0a7b0aeca4c59be7e29bf9314835a25949bdd8aebf7106c28",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/boreal-giant-death.webp",
+      "bytes": 142152,
+      "sha256": "a146708bf1e4cdfd486059fe5c502872c50513d11bab2343f3f12ba6a11d9f37",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/boreal-giant-hit.webp",
+      "bytes": 104964,
+      "sha256": "dc6453b8c6fded3a5d68a4738e72bd5d1afee2e724cd7bcd18dda0dd1c45bdff",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/boreal-giant-idle.webp",
+      "bytes": 49746,
+      "sha256": "cfde0efcc9ad380766ae4f88c5ea92af915eaf9aa6dd25f5eeafdc7d74520a9e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/boreal-giant-walk.webp",
+      "bytes": 405242,
+      "sha256": "f49ce4001854d9049ec68918bcd3c52444f843f962bebd5bcafc7e641c3197da",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/brewery.webp",
+      "bytes": 50522,
+      "sha256": "b01e20fd5ce60baa60c5b97b588d6b0467a77749f20e7cebde155adebb899ced",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/charons-barge.webp",
+      "bytes": 44226,
+      "sha256": "f2a8cb234d8460db31d33313b78d81b768d80c18ca4be3700c60fbdb479a1417",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/cyclops-attack.webp",
+      "bytes": 135384,
+      "sha256": "359ce4f2fed5096d921fc645fce290d0d1840180950ce86999b5c5f47feb9dfd",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/cyclops-death.webp",
+      "bytes": 117584,
+      "sha256": "bc6c4906fd72af45260383cdd4599956ddeeb2335ae330b010bd476fbead58a9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/cyclops-hit.webp",
+      "bytes": 89062,
+      "sha256": "b1d46b289f9e1db3947d173c9f0f162b0dc0f04341af64f163de0bc49df50a12",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/cyclops-idle.webp",
+      "bytes": 40804,
+      "sha256": "4c29304be87fb36971917f0e41a9f93faf4c80519bee97ae1e794be98cd565d1",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/cyclops-walk.webp",
+      "bytes": 327622,
+      "sha256": "cd9bf709772da64fb7bd38c221b30130398a5d9c1966be84b6184e3b0f11cb72",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/dactyl-attack.webp",
+      "bytes": 47024,
+      "sha256": "c57cae281e91ac04d2d3a907579375c1ece4eca3a2e36ee63d393bd364e2488e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/dactyl-camp.webp",
+      "bytes": 53194,
+      "sha256": "1de8d4823764e8c22d68ed10157ac940b872424cd1c766fb421d054aa26f4e5f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/dactyl-death.webp",
+      "bytes": 41146,
+      "sha256": "b5e90f83a45cfebda0f7a3cc061525e6e6b650e42b577cb195cb679ce1e9f9d0",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/dactyl-hit.webp",
+      "bytes": 31292,
+      "sha256": "275428f1c708308152979f7cb6f598191ce11958e09823ca209002ce2622e0ab",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/dactyl-idle.webp",
+      "bytes": 16180,
+      "sha256": "48564b10fc96cdb0d251a106349950df8fd052cb26c99cd23b5e9f8c3df11831",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/dactyl-walk.webp",
+      "bytes": 111080,
+      "sha256": "15b0cbb34b676ae27b8899e760ffb3365090ecd595950d4883dc0d9788ecf6f2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/defense-tower.webp",
+      "bytes": 57158,
+      "sha256": "95c8f605d113b69901bf450e01c203d854b72b3ad56e42c1cc720a2264bd46ac",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/drakon-attack.webp",
+      "bytes": 199930,
+      "sha256": "c52f90faeffd6356de902238a653c0bd1b0fa0155ebe82d65dceefd20bd003f5",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/drakon-colossus-attack.webp",
+      "bytes": 158888,
+      "sha256": "7afb63475b6277062f5a7b48cfa11313768bfe917040391d0f754cfe50dec406",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/drakon-colossus-death.webp",
+      "bytes": 149620,
+      "sha256": "ba37750b59e0a7944f72cc15588d1e8c29edacdf8a97ca911b2c71c12b8d6e11",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/drakon-colossus-hit.webp",
+      "bytes": 106640,
+      "sha256": "14d7c11d6d34539ae42c670fbc1ce2e3b42a48fdebf23d8a23d8d49121de4b9e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/drakon-colossus-idle.webp",
+      "bytes": 56278,
+      "sha256": "834de3ba6953b3cf1cbd3c494dae9ff36df6b9627081e2c255e05e9a45337558",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/drakon-colossus-walk.webp",
+      "bytes": 426192,
+      "sha256": "1b1dcbffd3e23098f3a9dd43617083ba1f7cbddf20e4b9daf4f6a4a60e87521a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/drakon-death.webp",
+      "bytes": 142098,
+      "sha256": "fafeebf35521a8147b776ff8e67d08a4c675ba29118ff838ed1164db3d92b674",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/drakon-hit.webp",
+      "bytes": 134858,
+      "sha256": "5f863805847fba076fdb7003dc9c476df7913a285b3fc70c19021eaad4a377d9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/drakon-idle.webp",
+      "bytes": 57874,
+      "sha256": "0c484b14c6695e94b9cbebd13110ddbf378c699391139b8ac342c7087a3b21c6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/drakon-nest.webp",
+      "bytes": 36636,
+      "sha256": "026701823fface57dfa590ba4ec9cfeb81efe516cfbb1fba1b2fbecac56e76ce",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/drakon-walk.webp",
+      "bytes": 493560,
+      "sha256": "a76c9af21abc185f4c075129c743da314ceb7e500e87a573ce82f6bb4cfd3eb2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/elysian-champion-attack.webp",
+      "bytes": 136866,
+      "sha256": "584920b2ca59ae057b35e966f891fb83252c56edcdfcccd195210e3e165b40c3",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/elysian-champion-death.webp",
+      "bytes": 117632,
+      "sha256": "372d995b92216a19b470ae70796f71101f840bfea79b4d8b5eec14ea00789b02",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/elysian-champion-hit.webp",
+      "bytes": 85242,
+      "sha256": "8699d86cc0377568a671ccdeaffd52d4a9978af0d957ab67adf755137fa8f01a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/elysian-champion-idle.webp",
+      "bytes": 36556,
+      "sha256": "2739848a7826fb9d6222eee1114af4d1e2bcfacf9ade6dbced1ee8040bbc6126",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/elysian-champion-revive.webp",
+      "bytes": 119470,
+      "sha256": "c07b88d6c6ef20304c2d44c95f34526e305949ffce1d27a8bd45d2dcf7a2155d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/elysian-champion-walk.webp",
+      "bytes": 166776,
+      "sha256": "81fca0f749061f31dde8fdc6ca56fa531b84f54ae39a46a74e1f3a7f90a7f35a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/erinys-attack.webp",
+      "bytes": 103020,
+      "sha256": "ec212ad138785bc08cc98f5d7c006e085bb202473c868c2378856cb27c136873",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/erinys-death.webp",
+      "bytes": 87976,
+      "sha256": "5a980d5a01c36ef8bd390e9e9f26e1053e9208812a4140e8c8f85aafaff05da2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/erinys-hit.webp",
+      "bytes": 68194,
+      "sha256": "5f5ca181c32d872b5be3e90d2e2560232341af2fbbb255d4a1c0a582202e9e53",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/erinys-idle.webp",
+      "bytes": 28598,
+      "sha256": "7dd7cc8811540d7762d24982fb88035f8602f481f118e6908ab137e2149d4703",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/erinys-walk.webp",
+      "bytes": 234870,
+      "sha256": "a9d60033c8b66643557df49383518a130179fbe46052874cad4460d66476e6f5",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/farm.webp",
+      "bytes": 51000,
+      "sha256": "4e1a67a6fd43070fff8e7035ed7bb39715144f49f96c368fcc60881c68812d6b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/a-heros-ascension.webp",
+      "bytes": 9586,
+      "sha256": "9913dab778011e31018072521848843a4fdc9042926b5c80fde0c0b6c29d0228",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/a-heros-last-breath.webp",
+      "bytes": 5564,
+      "sha256": "8be1d76e3a92ba21c81e437a2de2e1c942327b64230634c157588da4bd9e86ba",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/achilles-charge.webp",
+      "bytes": 10688,
+      "sha256": "b076775bb05be255bc9eb0669dad3600286d013977d5c2545d7b620f9f992fe0",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/achilles-opening.webp",
+      "bytes": 7176,
+      "sha256": "4592280c7d357c16cdebee51c3589b05d4c5708be169cba691da9c852a5aded6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/aegean-salvage.webp",
+      "bytes": 9720,
+      "sha256": "27305ce5e97b27e91287aa1f697f20422a4f32b36b66dfd0c540d3906f9f383c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/aegis-of-thought.webp",
+      "bytes": 12824,
+      "sha256": "35ef9f66d276b594651978feddc8ddbf0d93e1064db114aaef177095506ec997",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/aegis-strike.webp",
+      "bytes": 10048,
+      "sha256": "d9082d7b21cb368aef2e22143797752e24732960c62aa850a0355c9813df7270",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/aeolus-counsel.webp",
+      "bytes": 11344,
+      "sha256": "7f36c72f63d52c7acdddd42523e175bccda264a2eaa8aadd4b0cd66104fcac55",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/ambrosial-vitality.webp",
+      "bytes": 9238,
+      "sha256": "d766c66932a81881ecb0d1dfa45d4e163bf67f0fe21e074b004ca45d099c006e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/apollos-champion.webp",
+      "bytes": 10826,
+      "sha256": "6a1bb5b3ba67ddd883b0939eea4902f7f4add622a337990bbbf1ebdd4cbca32d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/apollos-conduit.webp",
+      "bytes": 11890,
+      "sha256": "1dab4ed932297560dc18c4f4196259969a88fa5ba586574926f52d32e33712c4",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/apollos-sentinels.webp",
+      "bytes": 8362,
+      "sha256": "27d2572e5b373b7adcee6f568f6f8e6ea15221c29dcde1a737da9aee507c5969",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/ares-cleaving-strike.webp",
+      "bytes": 7546,
+      "sha256": "c73802adc8fce6eea83f8af9fc9d63973f1266fe16f06c7918e6fb03a4c2e35d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/ares-swordstorm.webp",
+      "bytes": 11882,
+      "sha256": "a299c9e21b8d82252e1bd346c972fbea8968c1ee25f508c1daeb1b94fd72a435",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/arrows-of-prometheus.webp",
+      "bytes": 5722,
+      "sha256": "6003aafb5042fee4ad269abaf92369dc399be2616daa95813dc2b46255d18261",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/arsenal-of-hephaestus.webp",
+      "bytes": 9522,
+      "sha256": "00a6ee925422d6ac904d1510106c72103268b1eb2731c95d961c3174073c3ee7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/artemis-arrowstorm.webp",
+      "bytes": 8526,
+      "sha256": "08c49521d8687b721621444cfd8686018c560cb141e57356b996cd100f773639",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/artemis-power-shot.webp",
+      "bytes": 6638,
+      "sha256": "d005655c11a1e0bee74187f1f6ba2bcafbd2b947d81b54f5e9c2ce750a7e8510",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/artemis-precision.webp",
+      "bytes": 4114,
+      "sha256": "4a70dc0a898d18f6b24ee81c0714d6eefd8ee48096338b6bafed7740b1df8c41",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/artemis-true-aim.webp",
+      "bytes": 11560,
+      "sha256": "6c3acdc9591c6d9fccfb0592274d057b4cd58dca97ea8df74d561c9ef9d473d4",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/asclepius-battle-healers.webp",
+      "bytes": 9704,
+      "sha256": "6a8d5a7e86a7ee9cb35f5bc8f62f7cfa4f7724f88836f6244d1fa38fb85c7fed",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/asclepius-second-wind.webp",
+      "bytes": 9484,
+      "sha256": "26ff85a82833e291c7146fca77315e743bef10b09ad9b0265f5b6aad6085f4a3",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/asclepius-surge.webp",
+      "bytes": 8748,
+      "sha256": "7fcc162930a9e9cf69f72c397799e224df1caab701e8a12746a8423da263fb1f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/athenas-apprentices.webp",
+      "bytes": 8800,
+      "sha256": "a4900d788a0ed5e80e1e7c4a4c3e8020a035bce9718653ebedb0a9260716cf24",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/athenas-bastion.webp",
+      "bytes": 6830,
+      "sha256": "7b171143646f529f674fc8ce47a42797983e1bc942439ffb0883843606ac3b5f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/athenas-design.webp",
+      "bytes": 8836,
+      "sha256": "00a2b090c9082b627ba962025488c8c156bae574017bea2fee79fec8598f36d7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/athenas-might.webp",
+      "bytes": 8962,
+      "sha256": "c690d8fdfcb386f37b420582d9eccc87c287641a9d5ccd9a2333708c874ef4eb",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/athenas-shield-wall.webp",
+      "bytes": 11850,
+      "sha256": "9fbe57b832a17d0eaac9eea27864a8e10cabd57519ca8c94587a0a1365f235f2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/athenas-war-lessons.webp",
+      "bytes": 9506,
+      "sha256": "00772a2761ca01a73d0270f8c6469bbd19aa894dd7a4a7778ee7af066d0315db",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/beseech-apollo.webp",
+      "bytes": 9108,
+      "sha256": "4bf6099e0a811bcc4899806db2e0bcd2e2c3a0c365c8910c8888772ae9b0584f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/beseech-athena.webp",
+      "bytes": 8378,
+      "sha256": "bb00687851c92f0077c26a926c6da86e8b3ed718601d91801fbc52176cbae50f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/beseech-zeus.webp",
+      "bytes": 9352,
+      "sha256": "39477ad930015b44236e5e9bf9966fc1db7049308a5256f9c844f76eac125130",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/blood-of-ares.webp",
+      "bytes": 6626,
+      "sha256": "3f13b86a247593bd701a9cffd06576cde20f84cc3422889a2fabeddd7cdae79c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/bolt-of-zeus.webp",
+      "bytes": 7000,
+      "sha256": "d36f770ca45aa2ff6c090f4f953f771256476f8df6d9f261e757b708043a3d91",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/bond-of-the-phalanx.webp",
+      "bytes": 7276,
+      "sha256": "4635022d0b3b8a9551f50506faea2d7c6957600b537ca9c42c387337172cca1c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/breath-of-boreas.webp",
+      "bytes": 10120,
+      "sha256": "9bca5090bf9f2c544b4268821933723ae2d22ec409db9993bb7575f9f603f35d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/breeze-of-zephyrus.webp",
+      "bytes": 9894,
+      "sha256": "a9602f4e91bba8fc163bd8742f276b7ea462451148358787a800a491797ee48c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/bronze-of-hephaestus.webp",
+      "bytes": 11358,
+      "sha256": "d4cb82e8cea88b5e29ff5eae35c06f9e878883c66d051cfd3d23ece9c9a1caeb",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/burning-blades.webp",
+      "bytes": 7440,
+      "sha256": "a005b050fd1edccba6edbbc8ce7a883e784f29cee9c6294efe3b34abcd6ec14d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/call-to-learning.webp",
+      "bytes": 9788,
+      "sha256": "cb2fdeee867e7494be07cae376ea50f77c2769812d955f77938f1704fde19cad",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/call-to-peace.webp",
+      "bytes": 10872,
+      "sha256": "d6020c082cab071c4b863a70b6d72326c788ec5e388cc2de28df71798b87219d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/call-to-war.webp",
+      "bytes": 10452,
+      "sha256": "90d1593bd97feafc9f2b57e82e1afedbf8c4a0817f73c961e093ce1104f35a7d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/citizens-answer.webp",
+      "bytes": 7394,
+      "sha256": "d653ca833fc3f5e483eebb7f192a1a3f9ba9683693bdef7775b56053da7e3bda",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/echidnas-hide.webp",
+      "bytes": 10008,
+      "sha256": "6128d98f273b93984ff1aeefc841ade63ac9c2eda9b490d93d5b076fc3e6c327",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/eyes-of-the-eagle.webp",
+      "bytes": 9196,
+      "sha256": "e93ea9fac211d63d3cc99bd3f38441afc3889fce981dff0d83a3317d6935fb89",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/flurry-of-blows.webp",
+      "bytes": 4694,
+      "sha256": "188843f30f10390f61efd92dfb7be4fe6cd33530464069fe126c585650f5f5d2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/fury-of-the-titans.webp",
+      "bytes": 8098,
+      "sha256": "53f56e705783c79d9d461127c489c9aa537cd3508f63f2533e60e86275edfe06",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/gleaming-aegis.webp",
+      "bytes": 11960,
+      "sha256": "10028c58f0b359c7cacbfdf3acdc1b21590963db4635a60ecd7ff03d761b9271",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/growing-might-of-heracles.webp",
+      "bytes": 5374,
+      "sha256": "71e0ea06a598556840d4a76a68c5579a7ada52b536fc3a74fda47b8ecf4f155a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/guardians-of-the-frontier.webp",
+      "bytes": 5412,
+      "sha256": "5c5a3d45f8274cc601fda3368463d28b12fa0d8327843035550c1d57b4ad23f9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/guardians-of-the-polis.webp",
+      "bytes": 11042,
+      "sha256": "9146c8eb104efa712b5b4ded1da7dc4721a251b58791212a35f11351318514b6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/hands-of-asclepius.webp",
+      "bytes": 9270,
+      "sha256": "2f985eb39d03a80a2464fad7cafa95cc3c5a3f2b17ccd5c4b23c4577a46e71bf",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/hephaestus-edge.webp",
+      "bytes": 8790,
+      "sha256": "00cc480c6c4821a9418d776b547b317c4d977f75b5cca3f6323b1d20b50b26f9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/heracles-great-swing.webp",
+      "bytes": 11602,
+      "sha256": "8e61cf751f8ab3d989d15d831e93ae2839081d769b0996a3bb0ed8d2feedc2a9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/heracles-heavy-blow.webp",
+      "bytes": 6946,
+      "sha256": "6bacbc555c41de1f34d2a55d6c7a332dc86057fe03c1b573fa68d1e5fbd4ad28",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/heracles-resolve.webp",
+      "bytes": 9850,
+      "sha256": "fbecee429b7c03571d75b7bc26909fae027310b651e01d183fe9b6fd3229ac6c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/hermes-fair-trade.webp",
+      "bytes": 10062,
+      "sha256": "7392d6e25b60cfe356f3f98a463fcc5cbddfd9ac659f5a3e2baef134c5599ba7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/hermes-pathfinders.webp",
+      "bytes": 8240,
+      "sha256": "a2ff90388d0c9372eff89b7604af931e92c625fba2eb872dbf3afc2c5dd79518",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/hermes-swift-hands.webp",
+      "bytes": 5300,
+      "sha256": "9173eff61ebefccba08d9686269313c052f0096aa92cc604fe1ecaf923befd0a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/in-the-heros-wake.webp",
+      "bytes": 9782,
+      "sha256": "421e53c97fa415afcbbb3d50a769f733b00ab4f35f540bac35e669b9795e5ea3",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/invoke-apollo.webp",
+      "bytes": 8416,
+      "sha256": "b2c43fc843cae9080254041d9bcd2f2cff030f79638a2ce7dce87868822597cb",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/invoke-athena.webp",
+      "bytes": 7924,
+      "sha256": "c07849862339802133f86398bacd33305500bb67e900e2988403d9754ef2fd5d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/invoke-zeus.webp",
+      "bytes": 8326,
+      "sha256": "d80b92dfa7f38e7daee767dcb452c17fde6536dddf5eb11c8f0423520692bb02",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/lost-wanderer.webp",
+      "bytes": 9934,
+      "sha256": "e015a0d33bb0bc4f9754b9a39cc04c8141dd36698e244868c4d769d2ee523ccf",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/memory-of-the-polis.webp",
+      "bytes": 10122,
+      "sha256": "7cc9b5e015dcf1819113e57de35a01f771fc7aa9ae82b33d0ae4ef7a1f50d901",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/mines-of-laurion.webp",
+      "bytes": 11870,
+      "sha256": "07fceddd7a56e7ea9ccaa5a24607d90eef94cd6bfce4b79d04cddd8ae25b833e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/padded-armor.webp",
+      "bytes": 9946,
+      "sha256": "a3bc38a2445f208c3e0c5506cd6bb4d964028d4080e73ea0894a6fd52bc62383",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/phalanx-discipline.webp",
+      "bytes": 9310,
+      "sha256": "41b2bce5f27f1da4d26aed2add4ed8930722a53b9d818aaf31a3350fc737fe10",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/pray-to-apollo.webp",
+      "bytes": 10458,
+      "sha256": "a3f54d6e127c7512bbcca4a28d9b185b7d11adc87aeb5c3780987e1506d30ccf",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/pray-to-athena.webp",
+      "bytes": 11854,
+      "sha256": "f3aaa8a10fc8e59c5a02cc02135de736613b7f3b5a61802898a8553f1092572c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/pray-to-zeus.webp",
+      "bytes": 11448,
+      "sha256": "ac579b5e6ec888df964165affc76db2b3ffb150c28619eadc8559328cb7275a8",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/prometheus-flame.webp",
+      "bytes": 9432,
+      "sha256": "8d42bc8008408412a70ccb338dc7bdc5bfae7444bd8e58a232461d6665d699fd",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/protect-the-weak.webp",
+      "bytes": 12180,
+      "sha256": "7e2f55bc44dd91dc34e74275178d64437245e538acf900bc7f7e990b61c4e228",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/read-the-oracle.webp",
+      "bytes": 10362,
+      "sha256": "cba9e75830af22ca5565b65d35e858d355122bd0931fdf9c9328c263030f07b6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/rite-of-ares.webp",
+      "bytes": 5626,
+      "sha256": "b67b55b86c32a5706b0e8b7aa45cca414c4ed42b7429b38a53fd06d0b069701a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/rite-of-athena.webp",
+      "bytes": 9654,
+      "sha256": "6bca86c89a86c1298b033cc8a537367618fc31ea47c8b83cd4bfe6efca8ae8ea",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/rite-of-hestia.webp",
+      "bytes": 5116,
+      "sha256": "c43494ef0e29d304d9c36d54ca5bbdb9a4a9119b27a22c4aec04967ee9960a49",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/rites-of-eleusis.webp",
+      "bytes": 11856,
+      "sha256": "7ac4864b5dfba7e35ab380e97388748d843459e26348443fe4b2ca723311adb9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/ruins-of-delphi.webp",
+      "bytes": 8582,
+      "sha256": "a0d1093ddc5bc7fa92f462620dc1896ac42c69b7efe2aae5fe78a9688c01e21e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/secrets-of-the-oracle.webp",
+      "bytes": 10316,
+      "sha256": "986aac722da2262afc0715b76bbf848f781c8c59e63796c38cd29ba353da5e54",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/seek-the-oracle.webp",
+      "bytes": 9110,
+      "sha256": "1d4b7f89f60cda577ddcf4de906f173b86bb7cf4ac16f61e7a0394f5bd85065e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/ships-from-corinth.webp",
+      "bytes": 11108,
+      "sha256": "1094d54c966615f13e951ffa0a8632763eacefa945f47eecf1efb9a20510d057",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/sky-of-artemis.webp",
+      "bytes": 8366,
+      "sha256": "f291285c2c58c2b8932d2735293a995b6f8019659c3f98bd4dd89b42e183f85c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/spartan-discipline.webp",
+      "bytes": 10404,
+      "sha256": "d2edf3cd7bd750a750f00ea340021ca5f089a15126c2c2786af015799f01fb05",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/the-sacred-guard.webp",
+      "bytes": 9296,
+      "sha256": "a7d6a3d839b62996d8cc27d2f45063ec3a3b5bfb686a6ef8b193702aeb3cff53",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/the-unbroken-phalanx.webp",
+      "bytes": 11272,
+      "sha256": "d19eb51bf94c267107e3664c66fdb433a85538fdad6f26330789102b523af2dd",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/warriors-ascension.webp",
+      "bytes": 10098,
+      "sha256": "b0ce2be1175b2fb275af97704b626641a262d588647e7706cbf06e0dfb8d61a1",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/watch-of-the-polis.webp",
+      "bytes": 6836,
+      "sha256": "3b5a5f9af4fac2c382af957838070d43e30f3ea5a3516af969254eed708d91b9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/well-fed.webp",
+      "bytes": 12208,
+      "sha256": "25e5ad78957627b10432f46cf0b31a3efbaabd273669038ae9ca05f9c16652e8",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/wisdom-into-wealth.webp",
+      "bytes": 10810,
+      "sha256": "50e717a4ec085398f6bf129a9e6523459f2ab9c80467f53e4ecdf36f1ee3374b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/wisdom-of-the-ancients.webp",
+      "bytes": 10050,
+      "sha256": "6b5907cdfe4f8163343220efbe1bc826946b7b940bc76d1f2c2aa961be70fd17",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/wrath-of-the-ancients.webp",
+      "bytes": 9902,
+      "sha256": "8e3354247986405a9895485281cf5c92e6a8fc46cc9792caad1c4c8d7b508966",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/wrath-of-the-titans.webp",
+      "bytes": 10652,
+      "sha256": "228f4a6a09442d989f35569cbfafb72cfbccd715cbeb0f65cb693f624d2a7a07",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fates/zeus-war-council.webp",
+      "bytes": 8728,
+      "sha256": "7af131b906bf22b578c65b6a106485daf6be062b2199173cc5ee247853b01893",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fire-titan-attack.webp",
+      "bytes": 142398,
+      "sha256": "f8623ba321a954c80d8cfb21cafc6e8ec802aa230b8d9e095e980f5b6a6d78f8",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fire-titan-death.webp",
+      "bytes": 125094,
+      "sha256": "4ae46bdb0adfcab285f5ddbd88884a7767cd17b6e8607f801056995e794e7796",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fire-titan-hit.webp",
+      "bytes": 94598,
+      "sha256": "18aed9c76edc43afd549dae8829e846e3f73c805289aa11b8a38a1a7967defbd",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fire-titan-idle.webp",
+      "bytes": 50184,
+      "sha256": "2a3cb0fad1cda709a1a224763e9348d2a4e190310d39fc28d59f9a7920aeb8f9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fire-titan-walk.webp",
+      "bytes": 379792,
+      "sha256": "0d1c1ef1295f4c3805013b165c7f775c51e2d8047b0d62cef8f5f8654ae7712b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/forge.webp",
+      "bytes": 53246,
+      "sha256": "b1aaf29262f355c7abb99c67ff2d659f3653fbb49cb9f12b17d8634909d57c06",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fox-attack.webp",
+      "bytes": 28224,
+      "sha256": "6b357d0bea9d45b0b613b0ce8c8927958e4c868768ec3259d8325578d5c5d037",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fox-death.webp",
+      "bytes": 22150,
+      "sha256": "abb468f1612f528d9e4c08e51b9f1e60cae17261754dad6a8df0a9c64ae74214",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fox-hit.webp",
+      "bytes": 18660,
+      "sha256": "bdcc44993dbc839d55ec2c2cd842e978dad50e4beab8486080009d2e8cdbc9dd",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fox-idle.webp",
+      "bytes": 10262,
+      "sha256": "e6640e3789c83f04e3f2bfca9ed1e758d5515a5fdd504ed0b9677ccd2614cbae",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/fox-walk.webp",
+      "bytes": 72692,
+      "sha256": "03a945e9c23593b103cfd9e809c3cffcbadd28e7a4762a88f46ff628eb55aff2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/gate-of-etna.webp",
+      "bytes": 64104,
+      "sha256": "21f0be2fd7dc783c767fcc527a514fa7dd38f4d3282a6a6d987890a2c61d3f43",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/gate-of-hades.webp",
+      "bytes": 53666,
+      "sha256": "81e2b3a92d00839d104f2cdbbfae3809cb42d5433594d0806837a1b20263dec5",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/gigantes-camp.webp",
+      "bytes": 50352,
+      "sha256": "6590bd1efced3eb38b6957896a511340d2d424e5d155becf1abad5618db6e321",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/hall-of-rhapsodes.webp",
+      "bytes": 55068,
+      "sha256": "b5ae1388b5b86a16b4f50cbc670b46fde4ec637fe6987b1c1a5e89cb394e7c2f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/healers-hut.webp",
+      "bytes": 50648,
+      "sha256": "8880b7d852cf07d1bbc0c96daf21d776e0a79fa3da09a8b94f7381a980e853f3",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/hephaestus-forge.webp",
+      "bytes": 60934,
+      "sha256": "cc217ce7199489be27694b856c462cefebc9a36f1ef7747e11af83949e1f01af",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/hesperides-tree.webp",
+      "bytes": 56296,
+      "sha256": "d7651260e67c1d052bb14363423bdb0633e7d071d212a6951dc3558dea5cbf29",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/hoplite-attack.webp",
+      "bytes": 136486,
+      "sha256": "ffcb3f6835b5ffff3039d9509d65bf43ec755ab490263d623c54c6f91b2b2f98",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/hoplite-death.webp",
+      "bytes": 158202,
+      "sha256": "167c96f8097907be9584242187e145ccc42ce5c0322f510678758ab9f94156de",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/hoplite-hit.webp",
+      "bytes": 89486,
+      "sha256": "cc6185e1fe75f5cfe1c0200c980f46bd9a293203279fd2584dc46aaaf5532d1f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/hoplite-idle.webp",
+      "bytes": 40080,
+      "sha256": "c9078de752c28bef4ad2140562fc212baaae4b281d2548ebc21142e3b5b42c0a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/hoplite-walk.webp",
+      "bytes": 346778,
+      "sha256": "69e9939f86e8bc31425692f2372e1e801348bb144c65a14a67c432ad5e3efc76",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/house.webp",
+      "bytes": 54698,
+      "sha256": "5acdb037f433aac037056f8ec0dfb20b38adf0826e3a44b6e6739530eccd2d4b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/hunters-lodge.webp",
+      "bytes": 56500,
+      "sha256": "0580eb2b4624060ca9afd2f2b404af994e4513aac38d83936320ba3e4a3f6df2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/hypaspist-attack.webp",
+      "bytes": 174984,
+      "sha256": "1baa8459b2512eb5a5d69c436548db2b088401cfaf7af253f45aed97975d023e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/hypaspist-death.webp",
+      "bytes": 148810,
+      "sha256": "94b95b21aa93436eecf8c55e212aa50ab28834ca14147e98cd0a81ccd334619f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/hypaspist-hit.webp",
+      "bytes": 110614,
+      "sha256": "d75229f29c7fec888a9901cd9fad3e660d00e9a04bd294126e62e526790e09a9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/hypaspist-idle.webp",
+      "bytes": 50350,
+      "sha256": "8bb5f066baf81f2f4527bc208b8a38bc2214cf5efba435b788c62941072a9c19",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/hypaspist-walk.webp",
+      "bytes": 427150,
+      "sha256": "191cc9671042618742e1d64b31ede1939838fd503fcf093b324e9292386d8d96",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-action-speed.webp",
+      "bytes": 8850,
+      "sha256": "9344336e9f703638f94ff599b0d79d2daa8f662091991346a6453f6bcf052211",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-agora-supplies.webp",
+      "bytes": 8478,
+      "sha256": "06d1b4c4758916f7665ab51b08c63ccffcc9352374effbc99402dc43e0f9c3ff",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-arcadia.webp",
+      "bytes": 11804,
+      "sha256": "0d10b2739961ed396f8ac1fa463909730f8f4494b817df773b90d14a435fb825",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-armor.webp",
+      "bytes": 11544,
+      "sha256": "c3b58d3afd31a0e01adb76a4c7210472c5d6bedeb7be45139e2010607596945f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-athens.webp",
+      "bytes": 13284,
+      "sha256": "4ff48089e6966396e55d099cd290acec23b5d3db802fd4570e336914bf6e1dc3",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-burn.webp",
+      "bytes": 7350,
+      "sha256": "2c71a140f9a3aca7a8280878cae64362d5454b491effa711f735ef4b45aa61f2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-civic-splendour.webp",
+      "bytes": 9062,
+      "sha256": "7e272ca7597340a9c4afae0cddf62de3aecba17e58405b07de54bef984d5e7d6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-cleave.webp",
+      "bytes": 9168,
+      "sha256": "75f849d41c208a37e9c96aa94770153c0c112ba7e3ab77d37a1b965528bba6f2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-crit.webp",
+      "bytes": 5594,
+      "sha256": "f84aecfdb29178f3a44d9e9b276883267d2d4368a24db3f7bdfe3d3ff68758da",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-damage.webp",
+      "bytes": 3956,
+      "sha256": "6628979d78860eb7bc1f44e4abd75040f986b6fe69b3219e2941549d8e172e8f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-drachma.webp",
+      "bytes": 11024,
+      "sha256": "1a03ffc273c7a4d1ab50aea8493afc7aed04d652b9eaa04e97f8688eb125d4dc",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-frost.webp",
+      "bytes": 8112,
+      "sha256": "7f76ac67085b9985bec7599bb0fcafcf37566ce3f89b4b9fd0dac5dff7d68246",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-healing.webp",
+      "bytes": 10258,
+      "sha256": "82a2c1013c853be3d1da8c2e224f600c1df0359107b90b14c4392327995bad3b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-health.webp",
+      "bytes": 10828,
+      "sha256": "f1f517a43f97c5ffcdc059e7f5b7b7e945f140395d2ce8b23e6a4ef3ebf17f4e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-hunters-cunning.webp",
+      "bytes": 7502,
+      "sha256": "832d6bd8c6d5bdf04dfafc46b98026852c62a176c8be795e9997ce04cb44ada0",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-insight.webp",
+      "bytes": 9260,
+      "sha256": "ac875d5ee55186af0fbbfa94c36b71d2478e807f037abf6e92ed044432e80088",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-kings-resolve.webp",
+      "bytes": 13180,
+      "sha256": "12e30f5f0c1f5bddc1c0b5ce3bb23c3b170fe62371bb3079078aeaa95ffe8712",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-movement.webp",
+      "bytes": 7572,
+      "sha256": "aa6c35ec6ee7a4a94c06db59cfd070c5ce782f88ba37c5afc88077c9cb423283",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-poison.webp",
+      "bytes": 7700,
+      "sha256": "b481623e48ba7bd5f70cb891cfe2bf17ee2e7f8ca00437987eeedd7009b8cfa5",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-tempered-arms.webp",
+      "bytes": 5016,
+      "sha256": "9334bbf3be6a322c767fce0dd50cff4bf6ae15d3b8563e9ad0200591aeee7795",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-thorns.webp",
+      "bytes": 6564,
+      "sha256": "caa40636da54de6dcf264242e8232a085fa359134af237e1358c2d26129fcc10",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-trailblazers.webp",
+      "bytes": 6948,
+      "sha256": "e397ccfe3f96a4c79509549462b3d614e4f7f8ab9da62dd6a2d19e031d76246e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-villager.webp",
+      "bytes": 8446,
+      "sha256": "7dae8a50c84996fb3ae4d76b51f0b2453e8b90eab0ea9360cc79dcc13fc98f5a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/icon-ward.webp",
+      "bytes": 10544,
+      "sha256": "d4b5c3a31f6607c8dc818ecd4b75eefebd418e0042d74147176204a93c7295cf",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/iris-bridge.webp",
+      "bytes": 47142,
+      "sha256": "68d7531df0ac34786bbcfb2c1c0495e5ab6a35c8ce9b55d0ffb88647fa163576",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/javelin-camp.webp",
+      "bytes": 57946,
+      "sha256": "25d01a22db1953c97728a8d0f57f04d5b8e56159da38a634ea91d62cf8d11481",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/lykaon-attack.webp",
+      "bytes": 151002,
+      "sha256": "ec00bf85d1cd11896e6725d3b1f817992ff060fdbe315ca3670ba3511e65e773",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/lykaon-death.webp",
+      "bytes": 111098,
+      "sha256": "931c59edbd9c8fe9d762b776490a15b1aeec76bf3045a0e7dde16be3e6499880",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/lykaon-hit.webp",
+      "bytes": 95042,
+      "sha256": "5a3111f6ea0d3a94056858d7b5e6f98ead2f3c3af6bc9225a30093c1efc2bdba",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/lykaon-idle.webp",
+      "bytes": 43124,
+      "sha256": "63f542d45f6c45ab80e158a430aad84de29316f2680ff0f6ba8524e04de21f10",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/lykaon-walk.webp",
+      "bytes": 370974,
+      "sha256": "03c1d3e92265cf621c7afd79e39a3b825e4e71e1eb9e3baee1750d6abf572c98",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/main-menu.webp",
+      "bytes": 415182,
+      "sha256": "0ebb8cc809c128bdfc0653a517182d7d84e1e48aa0c9ad821e5dd624243ef3e6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/manifest.json",
+      "bytes": 114099,
+      "sha256": "8282d6ec7c0a1f361db5795b0f88e2d02b83459a5069fc6beb5144fed08f8a3f",
+      "origin": "derived"
+    },
+    {
+      "path": "public/art/menders-hut.webp",
+      "bytes": 46970,
+      "sha256": "8662a21a3cf73cf14528325c5c20c52f8fb3f0654661a03f3a752c2fabb55edc",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/misthophoros-attack.webp",
+      "bytes": 119114,
+      "sha256": "fb13956471efff62337b95c9834b29806fe7ad61b96e88553318458abdf076bd",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/misthophoros-camp.webp",
+      "bytes": 47540,
+      "sha256": "2630cea91f4feed6fde5ca0848f35f23d663d3fe7f6111787114bc2208316056",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/misthophoros-death.webp",
+      "bytes": 129694,
+      "sha256": "a86dbffffbc53db7ba777193b04aac1e189d13565ca4fa4899fccdcbe7c30bcb",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/misthophoros-hit.webp",
+      "bytes": 81546,
+      "sha256": "ed39a363fa2a837ef04c2541e09d79fdccbf37118f43fecef63beb8c6bfe1b2b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/misthophoros-idle.webp",
+      "bytes": 38400,
+      "sha256": "eee7717869dd00b8bf389fa2d87b1bc2514af65ad98fc28192aec900741c5208",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/misthophoros-walk.webp",
+      "bytes": 315648,
+      "sha256": "fd4a6d989ed669b312f939412ed2f9a34ed2d2f393a2fec96302aff4cd1f2cb3",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/offering-well.webp",
+      "bytes": 48352,
+      "sha256": "49849c16f97162aa320d3ec11c2e609f64e17038abc29a477f9affb633c0492a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/peltast-attack.webp",
+      "bytes": 115518,
+      "sha256": "588d7b9a19cf2f01a701550092c76ae09fa8255b5e64ddb40a736b019b4fd960",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/peltast-death.webp",
+      "bytes": 123712,
+      "sha256": "7b9b6487baab3470c9c0778fee587a958667a78d9d3e300fa4611804e2051663",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/peltast-hit.webp",
+      "bytes": 78774,
+      "sha256": "e6bd306651b440b10bdd27f168f39a1595499c2500e6145264803b8eed965ffd",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/peltast-idle.webp",
+      "bytes": 37160,
+      "sha256": "a32abc64e05deca257db88e7567b12c44c7b8164b9d8385ef39d419397ba9a7a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/peltast-walk.webp",
+      "bytes": 306258,
+      "sha256": "064962164154f72909897f9c123af608f6645c517ae672339b56ac221087b3ab",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/peripolos-attack.webp",
+      "bytes": 101762,
+      "sha256": "d6d8a6bad06e16f087d95aecca8b5c3e5ef731193abb5b7d87837ce72577a4a2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/peripolos-death.webp",
+      "bytes": 93620,
+      "sha256": "09cd3970f164d143135875486666afa65310b44a50c122f8a19c9a02ef288588",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/peripolos-hit.webp",
+      "bytes": 67016,
+      "sha256": "a6f809e5f29d0111fb840f0c44bfac7e50bd9b9f0a0cef84691bb7ad2067de56",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/peripolos-idle.webp",
+      "bytes": 31858,
+      "sha256": "cf4dc460a7d28bc07d6d3bab0b61add2813ec3295b2d9aa861d73c35230f4bcc",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/peripolos-walk.webp",
+      "bytes": 256268,
+      "sha256": "087542cb848a518f3dc4664f6aec1d5b0e23ad71877c0ef1739e51a7f97df03d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/pit-of-tartarus.webp",
+      "bytes": 48462,
+      "sha256": "6d7f3ce97578ba1061e0fd07416d37eae77951a8f4d60dc7407ad0e55fb14f7d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/polis-hall.webp",
+      "bytes": 93616,
+      "sha256": "2dca7c7dd5eda75ab61bb731e1ee1c1f16aa83527e1001af92a249f3ac044441",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/rhapsode-attack.webp",
+      "bytes": 112934,
+      "sha256": "879515534f7e05d56e4a830690a452b68b1c9adaff8b78fff674ff4e1b4ebf6b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/rhapsode-death.webp",
+      "bytes": 111104,
+      "sha256": "9fe125e3904154567b3a968c8cab2267fa3be9c99c3d83631a3c286531cefb50",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/rhapsode-hit.webp",
+      "bytes": 75788,
+      "sha256": "a95c203458705ffead58315b561dc90e812a10db2c2202948f72c3c0d0d4b412",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/rhapsode-idle.webp",
+      "bytes": 35860,
+      "sha256": "8163358bd3583cd950f508188080deeb9bb4978f487cdb3bee8e79dc4939801f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/rhapsode-walk.webp",
+      "bytes": 304374,
+      "sha256": "bd4bb4ff5148a06f0e83cf219b26e06b11640879c99a91ec6376d44c413bb4f7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/sacred-fire.webp",
+      "bytes": 52654,
+      "sha256": "de57ab99b8a97a1091ba112c46e6ee6e7e80671887d741a12f4510ab9d11f70c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/sanctuary.webp",
+      "bytes": 18090,
+      "sha256": "d5ccd39a0d087a6270aaee98a57492d7b5a5fc54eb1bcf4b3bd434aa129da90c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/scout-camp.webp",
+      "bytes": 53762,
+      "sha256": "ad8ef8e727567e68303a32c6f9774c77d809e189fdc6fac03b93666e2b0e302d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/sentry-camp.webp",
+      "bytes": 51638,
+      "sha256": "455d07d29d53a4d0be03ad90677ab68b96e174fc05239680cf0aba6a1164b9f8",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/shade-attack.webp",
+      "bytes": 125224,
+      "sha256": "43f6170e6a6e40eda4046163289aceef1d0ca1c56f7e2eb6c7d347da03dc8b00",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/shade-death.webp",
+      "bytes": 112188,
+      "sha256": "3065f250105c2a4b36281b0e99e6ec7ff729b11d1993a20b49b7d7cd197a9bf4",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/shade-hit.webp",
+      "bytes": 82014,
+      "sha256": "d603e0920ff51226ea675e17a3d08e9950a51acd3a0b9f48c87be5afc723b0f3",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/shade-idle.webp",
+      "bytes": 33774,
+      "sha256": "2237ce7e46953580658c915fd4319533d2d7309c521b83fd0727519856e5e243",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/shade-walk.webp",
+      "bytes": 278248,
+      "sha256": "7d152e7743c2a41b7007deb77159bb1cc2fb5996c29e5c5d065f5bfa25ca7e3d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/sheepfold.webp",
+      "bytes": 53388,
+      "sha256": "2730b8aef9ddc4eb0e9ad2a066ae3e67c435dc168a9cb8daaef7f7035a79131a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/shield-camp.webp",
+      "bytes": 60770,
+      "sha256": "62b4b5da3960c5c0dfd589c5b9d1d62e9c46d5422fd0ea3d93d82c505ffc6b4d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/silver-mine.webp",
+      "bytes": 53006,
+      "sha256": "be842f56ae7f6b5b549a9fc358cdd9dd08c7d89c63a30d7637590bce424a9432",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/skull-of-typhon.webp",
+      "bytes": 56292,
+      "sha256": "aa3d39e860d3101b6a453f3da0bd1a26b615498124eaa85dd24b98fc99350eac",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/spartoi-attack.webp",
+      "bytes": 113762,
+      "sha256": "61c47f2ddf81c224397bf9c33a0b069deaf1dc94a2e57ab183b66079774cadb0",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/spartoi-death.webp",
+      "bytes": 103598,
+      "sha256": "73f78de9fb88fd0f8ddb15a13f7500c06aec02a04adaf49830ed80a3fde098b3",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/spartoi-hit.webp",
+      "bytes": 68356,
+      "sha256": "b03f4ad26f58cbfa2076afa01a1beb62c3609bbe76401fa0f061ce59eb7223cf",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/spartoi-idle.webp",
+      "bytes": 31046,
+      "sha256": "8fb8e8c72074e27f3c53f0dc410ce586d7b3d63cf7c06ff45538e5a68c63a07f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/spartoi-walk.webp",
+      "bytes": 245402,
+      "sha256": "84fa2bea76daf2b3b2a27c9c62738ce21750669d10f3893535da624033913e2c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/spear-camp.webp",
+      "bytes": 68384,
+      "sha256": "413b08ab84a46b3afb6d3c7dbca016a441d5d2a43de70552a19fee14dc44e88f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/spring-of-mnemosyne.webp",
+      "bytes": 57618,
+      "sha256": "198d06c3145f11afe613687183dd6778ae0aac8ee7a422ebc85f550851dd99f9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/thracian-raider-attack.webp",
+      "bytes": 100758,
+      "sha256": "cc9aac0094f0c2d454c98b76eeb171f596262253590b8697d60e4417bc0cf2ce",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/thracian-raider-death.webp",
+      "bytes": 91414,
+      "sha256": "9a66088682e99137913878e668a3da64e4c744e164d102077ebde05702e5b8d1",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/thracian-raider-hit.webp",
+      "bytes": 70542,
+      "sha256": "ac9a79337d5d43dd4436bd0fc10bf6d4f0d3486b2c9acc8aa74c175236632479",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/thracian-raider-idle.webp",
+      "bytes": 32508,
+      "sha256": "0fee2fec3f634fe2e6e48072feac8a3efa65ebe609b499be968ec976c4ed8d58",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/thracian-raider-walk.webp",
+      "bytes": 263314,
+      "sha256": "e5fc0174dbd966642cc87d24b424c6a811e09c87a5e2fb1b91bfd76bfd7359d8",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/throne-of-zeus.webp",
+      "bytes": 66688,
+      "sha256": "4bfcb0584bdad0cd9326210c60605c19abcd689d598e1c357fe23aebd6ad91ec",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/thunderbolt-of-zeus.webp",
+      "bytes": 53218,
+      "sha256": "c73d8f655053db3a7e2498e515efa4fb3e48618ed02be457f754b79fe2ac9d56",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/tombs-of-erebus.webp",
+      "bytes": 50458,
+      "sha256": "6e05f9ef69186e79e3c2c637de7edec23964ebdf46e4590761e5333be4fe3b61",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/tracker-attack.webp",
+      "bytes": 162308,
+      "sha256": "c50594c87b8d08af90b88f755a46fad3031196394d4a2ab08d157c2c31701fcc",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/tracker-death.webp",
+      "bytes": 158442,
+      "sha256": "e8ea5f04c8a1511075e7b5dc95d4b115455df46278627fa49580a2e23f0809fd",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/tracker-hit.webp",
+      "bytes": 77780,
+      "sha256": "3254ceb25383beee46d8cd554f5d4d3b18462926dc31fbae5b2bb674e7431966",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/tracker-idle.webp",
+      "bytes": 35950,
+      "sha256": "b6e5191dd74def2299cf04c40b4a1e26ec3b54a0c7aeeadf2c6c5d9c7a2b3300",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/tracker-walk.webp",
+      "bytes": 340642,
+      "sha256": "2780918f99560af63cf10a5f5ab4c93ceabbb57a8a843cb71fa3e99f3e35a2a0",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/tritons-conch.webp",
+      "bytes": 48764,
+      "sha256": "b21e7f7446164a88b268474a8fcae0b741626ee895808e88b4f97dea3e65e1fc",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/watchtower.webp",
+      "bytes": 61706,
+      "sha256": "00ed33cf76a388006fb890dd68f59f7a3fe254cff46e3b19b0d41d9f6a0e6301",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/wheat-field.webp",
+      "bytes": 16352,
+      "sha256": "8948345847e8ff15932b731e28152c617c9596f3897d27d683ed3bf56aa2b375",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/wolf-den.webp",
+      "bytes": 56994,
+      "sha256": "7c745607f5ec3a882407195cf750f07ff3e38e926c6d48943369899efd947161",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/art/woodcutter.webp",
+      "bytes": 41876,
+      "sha256": "93133ca37c0ce61618eb62d6a9c54cb3a8db3c10ea1fbeedf781f29c8227a797",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/armor.ogg",
+      "bytes": 11011,
+      "sha256": "2269b19002eb65168ef05fce6c9d928493d4561a24080d9f8241e03d0d867acb",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/burn.ogg",
+      "bytes": 8182,
+      "sha256": "897fadaa4f89c762df322fabc517dbb12a73d3c3aa201fc581e04acbe5f044dd",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/critical.ogg",
+      "bytes": 11880,
+      "sha256": "c3f47bc5098fb9021e0fc3e22fbad18cad1c69888ac22f3da699d9387e2fb638",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/error.ogg",
+      "bytes": 6688,
+      "sha256": "b6225c3dedbc5d97199e25ac6a10918fde0b7e46598b1ddc8cd6f2340b3b4a47",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/fire.ogg",
+      "bytes": 26599,
+      "sha256": "5d33bf68e47553a9a91af1ad63e6c8bb789e4fdf5790b3562a2f522635446d65",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/footstep.ogg",
+      "bytes": 6325,
+      "sha256": "c163c3b920ff54095097a87c52c8be6b54775b89586b40ace179e83bf692be06",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/frost.ogg",
+      "bytes": 14418,
+      "sha256": "66e6dac3fceaa702fab5594d930ae7afc17e4bb237d1f7cab54a6f821a2f16c5",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/haste.ogg",
+      "bytes": 12545,
+      "sha256": "010f68ee50a4634f75522df914bc21e1a9cb86ea83d5dde5ebe1501e58490ee9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/heal.ogg",
+      "bytes": 19620,
+      "sha256": "75c1c91657f8276823a79192a0816084956aaa188666c513edfd3f402248aee1",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/lightning.ogg",
+      "bytes": 28298,
+      "sha256": "72f24984dab94d08ade8dd247e426b87aace0fb20451b1125dde19524747f392",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/manifest.json",
+      "bytes": 56414,
+      "sha256": "e71c5707d42be68fd809ee309437379c4bd991b938491b6c15b66630436016dd",
+      "origin": "derived"
+    },
+    {
+      "path": "public/audio/music.ogg",
+      "bytes": 272892,
+      "sha256": "0edb7a6eb0666422d6bb3148fb4a70106c5eff9fe3eb66f8facf2676dbdf654b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/poison.ogg",
+      "bytes": 8487,
+      "sha256": "f04f911dfc9ae242c712b05171b227fd266eda6f30a97cc61bbc807aa0dce64e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/reroll.ogg",
+      "bytes": 8012,
+      "sha256": "48c1cae896c3c5e4dbff24bfc3a903f553dbe73a364a53531e353aaa00cb0a04",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-amb-nature-autumn-loop.ogg",
+      "bytes": 2649703,
+      "sha256": "fd4e3c81a3d731e091da1669bdd4f51a9c74c669e777c04e1e7348042b1cc722",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-amb-nature-spring-loop.ogg",
+      "bytes": 4012745,
+      "sha256": "8ac7df6893d4fb4e3dee41a1fc7b95ce9aba599f75a82c84d2a25a95228653b2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-amb-nature-summer-loop.ogg",
+      "bytes": 3159723,
+      "sha256": "cf89f2097c98aa66615735d6923e1da9dd71fb192985720a2c3cfef7d876ef53",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-amb-nature-winter-loop.ogg",
+      "bytes": 2841296,
+      "sha256": "8ba702aa0442b74d91add7122dfdc0bdb9c5e724fd944c8a2bbb1bbc1f1b00b2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-hit-01.ogg",
+      "bytes": 9098,
+      "sha256": "22834d722c72cdb7eeeb6296d9f0c22b7027e67fd33f86290e1b6a6508d1dfc2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-hit-02.ogg",
+      "bytes": 8110,
+      "sha256": "912da4910549fbcf18c8b0100fe26f5cdc8e4d0946e85d355069869f37e9f0cc",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-hit-03.ogg",
+      "bytes": 8717,
+      "sha256": "44f82ddb385c16fe70657712cf2cabef81e73bb1c5cb30cb3d32086659b99946",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-hit-04.ogg",
+      "bytes": 7873,
+      "sha256": "aadde7f4ebc97c5e404edbe4411023f678e6911365b8e22d765d116def6ef5eb",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-hit-05.ogg",
+      "bytes": 9669,
+      "sha256": "167db8ec73875f73aabd8ff62c4702f9679a8839bf60da13a5099ee727688257",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-hit-06.ogg",
+      "bytes": 7984,
+      "sha256": "f07e3b04285ae5d13ff88049bebec925d9675afb8a11c8d8579ebbd15f961823",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-hit-07.ogg",
+      "bytes": 9907,
+      "sha256": "32e09e2bc5fb4b37579faba76685f07413f44622a08fc60700fd0b06b8783836",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-hit-08.ogg",
+      "bytes": 11743,
+      "sha256": "fc3a0ba4f1723d98942e99316880cd96d2fc2056438be7f946070ea63ba5bdaf",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-hit-09.ogg",
+      "bytes": 9605,
+      "sha256": "c634d69be46bdbf7d5a4f5aae9e9184c418c8a10e5b676c5213c512b41d5f09d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-shoot-01.ogg",
+      "bytes": 17374,
+      "sha256": "18d6e26fcf2e964d53002fd59237edc3a12158e1fc3c20f0face421b19d53c1f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-shoot-02.ogg",
+      "bytes": 16756,
+      "sha256": "b3a6d4aa65aac7985cb41bd41c91b0b398435b34dc52c6200dfa388649697ccb",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-shoot-03.ogg",
+      "bytes": 19816,
+      "sha256": "cb6d2a4e7ab09fdf13ff21e15ab17d5d2bbef966977b5b9877f50d6f8abd96a2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-shoot-04.ogg",
+      "bytes": 20832,
+      "sha256": "fea875ea3ccd51a5edacdaaceebcf1a5127c57353f869ef6a77e01e2d46b8fb5",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-shoot-05.ogg",
+      "bytes": 19037,
+      "sha256": "f14ffe00b92e7549c20aa637f0e8c6cd13f7b08a19cedcd7c8c18173cbf4e8b8",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-shoot-06.ogg",
+      "bytes": 19462,
+      "sha256": "4e0b68850d8c64c24dd6dd5a172977fd3a018246769c4ca74bcb2ec0ddb4d2fd",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-shoot-07.ogg",
+      "bytes": 19823,
+      "sha256": "7d09e1072ee4298e2492edc341ce81659d03d0065e990d9375de3e46b2f35bc1",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-shoot-08.ogg",
+      "bytes": 19857,
+      "sha256": "005ed45d7e8dd2e013af88cff4c8404b782d571f1446846c448d9719f2160374",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-shoot-09.ogg",
+      "bytes": 17205,
+      "sha256": "7a3236f708cbfd99eb0ffb17f0956898e8c162f75033543335ff5531a8dfa263",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-bow-shoot-10.ogg",
+      "bytes": 13375,
+      "sha256": "c5723c1bdc9c92be6dd4cbe862c9d524d021016ccccb1b42328eb8d05602c9f2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-female-vocal-die.ogg",
+      "bytes": 12868,
+      "sha256": "167d0a98c1896042df9a63bb7e768b850baae3bfacbe3b3beca12706508e5d27",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-lost-01.ogg",
+      "bytes": 133985,
+      "sha256": "260f28aedbdd78a3fca2efdc16d361e0fba338ae543810c953cfef4000759681",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-lost-02.ogg",
+      "bytes": 141612,
+      "sha256": "b4efa8e3b9a5fb1758194cdc6cd9048d4dae951a6c445421071acd9660b548d8",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-lost-03.ogg",
+      "bytes": 155537,
+      "sha256": "473067bcdf34e6ce392079dc797703cc2fc012aaf3859d2c47402dbcb0f7029a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-male-vocal-die-01.ogg",
+      "bytes": 15808,
+      "sha256": "144fa1473860843b4de2c4e47490ac326d7616d14febca9f1dd156f5447a5dc1",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-male-vocal-die-02.ogg",
+      "bytes": 18544,
+      "sha256": "022199c63d9067942b5be89d8f813657bd7469f3a7b1ce3c71e4b294ef05bbc1",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-male-vocal-die-03.ogg",
+      "bytes": 17926,
+      "sha256": "fdc9982d2efc72135fca31f7d5cd72e17b97256aa9addcb452e1effe4f9d972f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-male-vocal-die-04.ogg",
+      "bytes": 17983,
+      "sha256": "6544d44d601e14b29c22262ecff310e03a02dae96bb597e9d090972340d70506",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-male-vocal-die-05.ogg",
+      "bytes": 22333,
+      "sha256": "51f66130f41af74be67ca7ad7f9e14a9887a691a4fc4d93eef1d73f4ac554909",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-male-vocal-die-06.ogg",
+      "bytes": 18078,
+      "sha256": "b60d32d0a4cd868b9c0462d53995591e12960ec9109ae6393909d9a75ff9f04d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-start-01.ogg",
+      "bytes": 202119,
+      "sha256": "609cf4dfbd0330d771bae52763cf979155db9b9c8cd01b231ccf7b12cfc1a13d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-sword-hit-01.ogg",
+      "bytes": 18517,
+      "sha256": "6c4e7093bc57d26b155b927f74777e00b19b81a8f14b555d20bbfa5066fb04e9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-sword-hit-02.ogg",
+      "bytes": 18520,
+      "sha256": "9064304d13ae6a7a9e31b2cfaf96ebbcc17df3f2912002540863a4b4875d825b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-sword-hit-03.ogg",
+      "bytes": 18493,
+      "sha256": "7c1922e5c569e902a9b47b342b488599c28d8bbe05428b05c2b9bed3225a5269",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-sword-hit-04.ogg",
+      "bytes": 15851,
+      "sha256": "dbbe94edf27c15009f7298fb954a6230d219a70fb3e3ed9f605ceb3666f5c0b9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-sword-hit-05.ogg",
+      "bytes": 16320,
+      "sha256": "55972fe6f239a3d1f381d5dd06db078d8e855e953451198135ea487eeb2733c9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-sword-hit-06.ogg",
+      "bytes": 16382,
+      "sha256": "1dfc7d9516d4c47177c0cac8507820daf8d1a4ff86f5f8c84bff2c0c3133921f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-won-01.ogg",
+      "bytes": 70460,
+      "sha256": "26c0d237e6cb977bf7d11c13c9402b87862b12000ac37910c805a124ac026cd9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-won-02.ogg",
+      "bytes": 63210,
+      "sha256": "01f2b47242fdff60216015ed7e68ee174b27fbd8e75fa5136298bd97b05ce8ff",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-battle-won-03.ogg",
+      "bytes": 62653,
+      "sha256": "e424d60102d8eae5eebb07b178061f154d113896612d4682a28d058aadb4b55a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-buy-barenton-fountain.ogg",
+      "bytes": 94824,
+      "sha256": "63819d8fdb0c6b72fe967cbbbe5f3a141471fd677f9f14a57c3196ef14a39d50",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-buy-mine.ogg",
+      "bytes": 60187,
+      "sha256": "4f484177a280eb507b5ca0eea45334032a9851a0287dae296e1f7dcacbef2763",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-buy-warrior-camp-01.ogg",
+      "bytes": 67112,
+      "sha256": "b13c4e7a71514d0b43982417c39c0830794548e4d37fd5f6b9b0e0aaaa4e1fbf",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-card-01.ogg",
+      "bytes": 6171,
+      "sha256": "822c7c5d10be18b879acf9ad475e7a2866b43fa0c50d3e9195696fca77792736",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-card-02.ogg",
+      "bytes": 6343,
+      "sha256": "3853ee9abf6938487cbbf4148dc8f36fa0a1fa2521f19398195d392c20a86941",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-card-03.ogg",
+      "bytes": 6016,
+      "sha256": "302bef6d821f6d38c70f62b319b48c3d589936f201c30c6e2241bd3557067c82",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-coin-receive-01.ogg",
+      "bytes": 18663,
+      "sha256": "7a4ca452a888fe4f916ca5c53ed92f4a1a622c5a350971942e0fc27d0eead92c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-coin-receive-02.ogg",
+      "bytes": 20490,
+      "sha256": "9a54aee02617c4856851343e0fbe1387b4c2d961200526cec4d3e0ee48c25592",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-coin-receive-03.ogg",
+      "bytes": 28127,
+      "sha256": "0828c6fc6a7715879705a9f6c4932c844b9ebe9428a87214936cc16a56978038",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-coin-receive-04.ogg",
+      "bytes": 28614,
+      "sha256": "c4b8aa154502f16401d2db7b80018c912611de699aeffeb151a8d997d207e122",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-coin-receive-05.ogg",
+      "bytes": 26127,
+      "sha256": "654ef53d7fd0f9fd3351374a068de231557191fa2495aaebacbbe1570da46263",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-coin-receive-06.ogg",
+      "bytes": 27617,
+      "sha256": "4ef0188546e4814376e2e4d4f7c0735f45d6a6358639f41c24bb4df69d25e45e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-coin-receive-07.ogg",
+      "bytes": 29243,
+      "sha256": "06d44ca5a02209e9cc2b6ed3c25690109c75c69db2586e338fd16c79537adfe6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-npc-death-06.ogg",
+      "bytes": 29969,
+      "sha256": "bb743b47bdb463ed3d39fa46cb1df8c8af8efc661d0471bdd34f10882590a84f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-npc-death-07.ogg",
+      "bytes": 24235,
+      "sha256": "e4a0caca3315a95e9fce83ae5196850d792ac53e5a8e08cc704fb1b81f3396f2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-purchase-structure-brewery-01.ogg",
+      "bytes": 90195,
+      "sha256": "199038364823432c0aa90b45bea6e2c83ccf9cb55020fceca91b76d186d6797b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-purchase-structure-mine-01.ogg",
+      "bytes": 60299,
+      "sha256": "3b3c767de69294981aed6483a030aa36ee98bc3cc3393207df10cbe2dede914e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-purchase-structure-mine-02.ogg",
+      "bytes": 63222,
+      "sha256": "2e5cc9c566c97ffb6ca6e023265d9cf7f040284b3a062f391f7797f5bc3eeb65",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-purchase-structure-warrior-camp-01.ogg",
+      "bytes": 45840,
+      "sha256": "244f091665e16cf38349d9331158bc1e0eadb856faa0ae793ed03f846f9b5cf8",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-purchase-structure-warrior-camp-02.ogg",
+      "bytes": 51524,
+      "sha256": "bec63cc6fcaa21c2d3177bc8119bdae25f43129d7a77ebfa2ffe52fc7f33052e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-structure-place-01.ogg",
+      "bytes": 55262,
+      "sha256": "a2eee4a06e9989e45e35a97fc2a4731fade6695e37da14bc75d567147a42bfcd",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-structure-place-02.ogg",
+      "bytes": 57035,
+      "sha256": "ee0dfdaa09b4d5130de2872ffcc52e35839985dcd57c9d9d104dc16125ae8360",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-structure-place-03.ogg",
+      "bytes": 55877,
+      "sha256": "ecb5ea098496a741bff6024623ab03bd50a1ef6ec23893d8d2755a1a4f37fbde",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-structure-place-04.ogg",
+      "bytes": 55096,
+      "sha256": "532e009511e1188288d524dbd8417649c7d4b8c91dbb4e090fba1bafa2219fa6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-sword-impact-01.ogg",
+      "bytes": 25526,
+      "sha256": "50fca5711ec31cf224d1879049c975249cd0e84bd9d5a1eaef876f63eb142919",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-sword-impact-02.ogg",
+      "bytes": 25827,
+      "sha256": "cd1e33de46edd965aeef793d04ac962e2a962e8bdfa78cdc6a8727e3c00dd685",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-sword-impact-03.ogg",
+      "bytes": 26803,
+      "sha256": "9438e9e0cdf93b52a6b1e3282d2a10e2c6e94b2cd329e9d26b88f2bb5c8c5dc9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-sword-impact-04.ogg",
+      "bytes": 26644,
+      "sha256": "23314c0aadd0d5175f66fd85c1e9bc86c92d57ccf0f97fd2c3c9aede751d9988",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-sword-impact-05.ogg",
+      "bytes": 25801,
+      "sha256": "1e8846a2cf037ae252b74f8b921428e2dd45c6cf50a07684287a7514caa3ae9a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-sword-impact-06.ogg",
+      "bytes": 24998,
+      "sha256": "a1ef59e8feda3c6e78cd65a7d7dc60ab1b2c7de75d4abb329ecc75de26c2c958",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-threads-of-fate-apply-charm-01.ogg",
+      "bytes": 67606,
+      "sha256": "0194c34e105c2eeecb1056783582465a19b8957d2e51ee20975f52bea6688e15",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-threads-of-fate-apply-charm-02.ogg",
+      "bytes": 67458,
+      "sha256": "60abdc031ad9e9f9e857a4b70b111cf8cb2879df573cb2909585ae915170b09c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-threads-of-fate-pick-01.ogg",
+      "bytes": 167379,
+      "sha256": "f27e2301906a1bc58da4cc1806943113fd6506bc7f4e768a8d6a437ae01f3314",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-threads-of-fate-pick-02.ogg",
+      "bytes": 111153,
+      "sha256": "5995fbdbac99ecaffe5280cfb5690bc0c9c29ea2c8b936cb15aa05d7ebd53cee",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-threads-of-fate-pick-03.ogg",
+      "bytes": 97617,
+      "sha256": "e060a8aacaf8694014608bedae922caebb13a90a852bad43485f1d6a0f77d217",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-threads-of-fate-pick-04.ogg",
+      "bytes": 98787,
+      "sha256": "f4dd28b652810c4985b4cdacda4363563cff1ac8a6e31e466d6f066dfc234a76",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-threads-of-fate-pick-card-01.ogg",
+      "bytes": 45120,
+      "sha256": "9c571af09aaef2e5d08048a1842e118ad50403edff0cc80f8f96b89da1c41db6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-threads-of-fate-pick-card-02.ogg",
+      "bytes": 42136,
+      "sha256": "0a60652e1fb9b6dfe6eed051235db4a4b614e2b564803e0d7bcb02fbf85d8aab",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-threads-of-fate-pick-card-03.ogg",
+      "bytes": 44767,
+      "sha256": "2a795bfd772ad158d76e993e78b3b6ed12e47f476d9a595ed26604b8e7840f57",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-threads-of-fate-pick-card-04.ogg",
+      "bytes": 39645,
+      "sha256": "f96c47f53ba39e58e44493ea540cbedcd775c23e2f3fc43eccf9f20946ba1382",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-threads-of-fate-start-01.ogg",
+      "bytes": 203131,
+      "sha256": "448b6b2e705302b100ec32dc194019db34ad9f8f7897de361fd03ea475f3b5b4",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-threads-of-fate-start-02.ogg",
+      "bytes": 225266,
+      "sha256": "c5e86ff6ac3d88fbcae28170dd11c8c66ae8d68a298164ab1a5c67865e60da2b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-threads-of-fate-start-03.ogg",
+      "bytes": 143534,
+      "sha256": "4100eec3e01c60d77bcb0b0ae72bfd82dd883cd23557721f7e2d893e406228be",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-upgrade-building-01.ogg",
+      "bytes": 122338,
+      "sha256": "38fe6de8e667a8be06f24f60667c41726b457757fb75c926d47a00858ff144d0",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-upgrade-building-02.ogg",
+      "bytes": 86077,
+      "sha256": "4bb209928f5c791ede1f84c7e11b38e431873abdbd80f0b5c03d8d16f4c4096b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-upgrade-building-03.ogg",
+      "bytes": 112272,
+      "sha256": "0237ab47d239f4b17c7e0ced71dfb289089d6d98fd7cd8f2fcbc516dab8fceb1",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-upgrade-building-04.ogg",
+      "bytes": 90596,
+      "sha256": "ce3101b7bb1afcb13d61fa4855e84923e206ac704a4fee818e9c02e6cd130f01",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-worker-assigned-01.ogg",
+      "bytes": 79886,
+      "sha256": "95a304c38d891c7ad89bec0045f0cb3dd41d217cef9a3cda7dc97ea4c44fb0a2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-worker-assigned-02.ogg",
+      "bytes": 79258,
+      "sha256": "3c4f4a0940e01746f961cb6983c3732a97916b5408554f5062859bb8d1946b02",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-sfx-worker-assigned-03.ogg",
+      "bytes": 72612,
+      "sha256": "f4eb85a0125e1cad33c558dab187b021f13f75539b924b2c2c013f05d7e663d9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-ui-click-button-01.ogg",
+      "bytes": 4832,
+      "sha256": "5bdda21a1929a993d83214c655f02c908c1c8a3ac752ac2d82e0336225e102c9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-ui-click-button-03.ogg",
+      "bytes": 4679,
+      "sha256": "385d2cecd39f103e310ccab0cb6ec48b9b6e0036164cfd9965bf6c68f1595feb",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/source-ui-click-button-04.ogg",
+      "bytes": 4851,
+      "sha256": "5b199313e636f738577fbed25c997c3b1b3a7b563917666ef3b20308c94bbaf6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/stun.ogg",
+      "bytes": 11275,
+      "sha256": "b94fdd3bee4d89f317517e1d3e67dba24ab9503eb67ae54ef9786b10094133c9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/audio/ward.ogg",
+      "bytes": 19569,
+      "sha256": "e0a74078f5d8baf961e93dc49c4f78720dacaf3433cc9213ca2847b464e5d9e4",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/draco/AUTHORS",
+      "bytes": 317,
+      "sha256": "7399754545fa82fbf402e3e91d50de0b63772870fd807c48dd9af25c042efb10",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/draco/LICENSE",
+      "bytes": 13898,
+      "sha256": "d3709b0fb4b8a94bbb1d02b8a2e484f258b0d9c5c5a01f940391f3fe662cd1a4",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/draco/draco_decoder.wasm",
+      "bytes": 192420,
+      "sha256": "a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/draco/draco_wasm_wrapper.js",
+      "bytes": 58456,
+      "sha256": "8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/fonts/OFL-Cinzel.txt",
+      "bytes": 4382,
+      "sha256": "f5a242cf68ad6ebd0603b3359a74c593ca080318a681035be5296ba2c6b04ae6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/fonts/OFL-Jost.txt",
+      "bytes": 4383,
+      "sha256": "82b806b20fb9d8f2c64669c12a44efb87d27971e743f38a78365e83641626dd2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/fonts/cinzel.woff2",
+      "bytes": 25904,
+      "sha256": "09941fb1c169c38fd414536b37690057fc01b3117a5c63dd6571186540c8f370",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/fonts/jost.woff2",
+      "bytes": 26576,
+      "sha256": "7726a5cd6f3c0e876c028ea2a643d45f7aad4b0f164b70966c669f4a4668f4b9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/licenses/three-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/licenses/vite-LICENSE.md",
+      "bytes": 108460,
+      "sha256": "8f1715f772cf26b4b91fb4a8401a160ab841ecb2b4ef2b9bcca12b65c5ebe2fd",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/licenses/zod-LICENSE.txt",
+      "bytes": 1072,
+      "sha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/agora-l1.glb",
+      "bytes": 192680,
+      "sha256": "d29473d1b23854ba05bc9b8d96dbe738c3ba30300afa51aeccde962359b2aaec",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/agora-l2.glb",
+      "bytes": 265052,
+      "sha256": "a14de346251abfd438903e7936cc102b3666c6d153844993003ae2b468fc2350",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/agora-l3.glb",
+      "bytes": 294716,
+      "sha256": "3a09e3b0e708a1283ec630e82a4b5afe05035634b46ad8045d35acbcc3c8b23c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/altar-of-kings-l1.glb",
+      "bytes": 146228,
+      "sha256": "f0bd88e8c73b60bb52c76ddf160bcebe986dcfbed7e51980968f1d0622f9cd49",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/altar-of-kings-l2.glb",
+      "bytes": 282348,
+      "sha256": "425f770d5d3155b0a98d2af98638e99529de07c2d04ccae782f07ffca8315ed7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/altar-of-kings-l3.glb",
+      "bytes": 292620,
+      "sha256": "129fd394e4212e25e5ab2f773f4721a9aa6eb6b504ce4ba47ca92beb84ff60a0",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/altar-of-olympus-l1.glb",
+      "bytes": 148716,
+      "sha256": "79d3ad94b340f125ef7c27ea221ab1fa8d4304b47d43aa7b764ea5337f130503",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/altar-of-olympus-l2.glb",
+      "bytes": 193704,
+      "sha256": "792cf17448aa1c973be8c6e6fbfbf5eb8840741332a9d30fc00c5d513f2f5de9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/altar-of-olympus-l3.glb",
+      "bytes": 239156,
+      "sha256": "b899d5d42a9aaad9a71e29d9bf7d396f0ffa92617e215b2d229f423e7a3c69a7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/apollo-fountain-l1.glb",
+      "bytes": 169636,
+      "sha256": "5f173feaf7e8e606515e0854d0807048ff2c4834146c972f26fafbdb68037ad1",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/apollo-fountain-l2.glb",
+      "bytes": 172220,
+      "sha256": "6155822afce0815775c48d4d3fec11b8d6b7a6c4c37700a10bc7a30bd09cec25",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/apollo-fountain-l3.glb",
+      "bytes": 282352,
+      "sha256": "74338e0716947e6f32c7d3c9b70fd9d5322827eb843da054411e00a90de6024f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/arcadia-hall-l1.glb",
+      "bytes": 120760,
+      "sha256": "2e877f1919626e81e2301bb75b6b8aec1966cb597e7d5ab615116ddb9bf425fa",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/arcadia-hall-l2.glb",
+      "bytes": 163064,
+      "sha256": "ac4d7745c76d6dc07589cff050b3a65426cc76cc6668adfc95f6edb75638a39c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/arcadia-hall-l3.glb",
+      "bytes": 219604,
+      "sha256": "d369940c619b8a25994636c48f778f25617a0605da41985f8964fae6cf757265",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/arcadia-hall-l4.glb",
+      "bytes": 287652,
+      "sha256": "ffb411429ac9362717928a8be9fc418fc5df22ee8ecebd7cf7d3b2305c05676e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/archer-camp-l1.glb",
+      "bytes": 176200,
+      "sha256": "bda21f1c6ee91120027bf64f19f0fa6fee67e8e6bdf1d0837400c7379fc84db6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/archer-camp-l2.glb",
+      "bytes": 234904,
+      "sha256": "45f389b503cdae0b294c685f2a6244e5f26630fb66519ccc4cb7e5820c454565",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/archer-camp-l3.glb",
+      "bytes": 298964,
+      "sha256": "656e4d67619f81cae817b0aae5638afa4ded97d928cf05e7db82e80a8b281d55",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/bear-cave-l1.glb",
+      "bytes": 209652,
+      "sha256": "212fde4d5a4bee966fb42cbe1b1434cc49f1681382223fa44d92f387570b5c2c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/bear-cave-l2.glb",
+      "bytes": 261156,
+      "sha256": "c2d63d6463463990da3a06f903ab124eb76c9f117fd2e4dca39f676575d66e74",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/bear-cave-l3.glb",
+      "bytes": 272284,
+      "sha256": "adaef6ebacbc90ab00527117d1b5f6eabfeeee1d4be74c116fcf7c32aa35c06e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/boar-den-l1.glb",
+      "bytes": 196976,
+      "sha256": "b6e8d05562966b4dbe44a49bab14fd1188e4d2fe5aad0ea5147a181d8a52da4a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/boar-den-l2.glb",
+      "bytes": 226680,
+      "sha256": "a7dd6d35a73479535c8d6d9eff32f879ea1d36b07059bc9145aa65ca2c8b969b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/boar-den-l3.glb",
+      "bytes": 237700,
+      "sha256": "0e2709280ff2828a0024aa27fd6041512e8d6cdcd726abc674bc2c64b9fb3e1b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/brewery-l1.glb",
+      "bytes": 171272,
+      "sha256": "640ed108b9b62bfe9e2413b17f882ff21cd0001ae1174e9e62e8df1b8fad9664",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/brewery-l2.glb",
+      "bytes": 235660,
+      "sha256": "f66203f0c903f9d5039353bc9a08717f31a415fb3265ac5592f8ea088c85b41e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/brewery-l3.glb",
+      "bytes": 289648,
+      "sha256": "d18f369290c6bd125c23934ea4a48fe289c90c5142121ab23ce2516b988e8bcb",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/charons-barge-l1.glb",
+      "bytes": 177544,
+      "sha256": "47aad061eea9b8aa5586ec686ca7011794b1c2047b461a40332cf78f2804cacf",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/charons-barge-l2.glb",
+      "bytes": 206148,
+      "sha256": "48ffef544f54ecf78059acf2205fc47884b321e6f3ea10da2a88544b8ef0c543",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/charons-barge-l3.glb",
+      "bytes": 262124,
+      "sha256": "462bd872ebbe9c3f3c28cb6cf2a018936ee29c4a9250bb88bf99fb5b6de529a6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/dactyl-camp-l1.glb",
+      "bytes": 134252,
+      "sha256": "cebcf5ac8814c173c1b053b299902c96a4b42b736c47be325afa16c5e748b26a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/dactyl-camp-l2.glb",
+      "bytes": 159616,
+      "sha256": "62d98831a8ca5eb5f630e36ce9c48afc390e770f872ed1c266203cb79ab2c296",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/dactyl-camp-l3.glb",
+      "bytes": 199532,
+      "sha256": "980fadc1a7de813ee773e88788259ccfbba2288ad4f0508f383a8fc7064f5086",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/defense-tower-l1.glb",
+      "bytes": 168196,
+      "sha256": "1e04ad08b0370f7d55cde7d94b3fd2abe3ed51c15a8e48f30e4bfaca6b872bb9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/defense-tower-l2.glb",
+      "bytes": 206664,
+      "sha256": "2e2027d206ce5fe8c1854c3ad3de8861bb6789b06e39692013a61145428e0ed7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/defense-tower-l3.glb",
+      "bytes": 279908,
+      "sha256": "ac1e1350713abb581b05b98de2f93e00081bc6cc7390b1a1259be9acfd9d37e6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/drakon-nest-l1.glb",
+      "bytes": 146796,
+      "sha256": "8c331ff49a1e60d7461e6c6b9a7c253524492d11d03b0598954837ee75eb05e6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/drakon-nest-l2.glb",
+      "bytes": 197140,
+      "sha256": "140b1882f2f536aa601aa6e179ec00b915ddc7d170f28e3a132ad9cb1e397c0d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/drakon-nest-l3.glb",
+      "bytes": 248352,
+      "sha256": "c8dc3592aaf677b9ccbff65f503e50a985b5b78bc65628fc728318fed88a7811",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/farm-l1.glb",
+      "bytes": 194120,
+      "sha256": "e891dad647d26c2a74b8e7c40bd7ea354c323668e9b22aac616e83e4dbd1a177",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/farm-l2.glb",
+      "bytes": 235556,
+      "sha256": "32e66d24a1d4c9e7635a5964530dd98c9b307a5fa9d8eaa099a154d4574d61a7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/farm-l3.glb",
+      "bytes": 280412,
+      "sha256": "aaebd00eb520b9fd3e75b29d1cca7448297552a7e9d2ce2b030c76a1ae1c076e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/forge-l1.glb",
+      "bytes": 139240,
+      "sha256": "1df1b6014b2ec33d691aafd3b5a2419685e54db26cd6762d567ac13032ca812a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/forge-l2.glb",
+      "bytes": 169660,
+      "sha256": "52da7bb8df805bfa125872ba4269512362b45f1f38353f4409d1298ebe300802",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/forge-l3.glb",
+      "bytes": 207648,
+      "sha256": "e08e992e0472620995a87ca7ad3aa216d0251d7c584a5291f0a7402160385920",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/fox-den-l1.glb",
+      "bytes": 201260,
+      "sha256": "a6cf9abe852c5c29a7a4fd110200193e34ddd0b18b0d5bf177e6ede4da0d7266",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/fox-den-l2.glb",
+      "bytes": 254692,
+      "sha256": "4acf0c84b7b02ea46f6be1f3205e16e5a10784be276f5d1538491a2df0b7a334",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/fox-den-l3.glb",
+      "bytes": 279480,
+      "sha256": "f42f0306f5cd346a92e60dad82b84ac9c49f5e1c1384d022d7a112409d130f28",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/gate-of-etna-l1.glb",
+      "bytes": 141072,
+      "sha256": "d89fc9c260f338452ea53d2f37ab199a4219fdc910205c41bc0f35458a1fd0f4",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/gate-of-etna-l2.glb",
+      "bytes": 193704,
+      "sha256": "169492f7bbdf7665144242be50f73d595f5bcad465a6eef5e8ce1c2032fdbce7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/gate-of-etna-l3.glb",
+      "bytes": 261676,
+      "sha256": "7ce7994ba91731741a054334614841bc301a2d335a49b189b85f3f1ccfca02d2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/gate-of-hades-l1.glb",
+      "bytes": 151588,
+      "sha256": "87974dbcbdd6613bb4bdf32b758f2b86b39b257d685378083324da4fa0000722",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/gate-of-hades-l2.glb",
+      "bytes": 212152,
+      "sha256": "2ea6601671bf28717c096a280fecb05c18937b5df54bad129ab4cd9027abc6d8",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/gate-of-hades-l3.glb",
+      "bytes": 257852,
+      "sha256": "b23f4aff11e8a35d117a329c18f094f2d5bfa0a1ac77ca9f6827b44234b7a697",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/gigantes-camp-l1.glb",
+      "bytes": 156856,
+      "sha256": "579bf05da0eff1e8b33f7c1f91b8bf3e0946f8dddd75a04ec050bbb814fbe6b0",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/gigantes-camp-l2.glb",
+      "bytes": 191032,
+      "sha256": "e4418b81603b5d17ca67061d0a7244c4a22cec043fe7cd4304fdb9c6986ac356",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/gigantes-camp-l3.glb",
+      "bytes": 245812,
+      "sha256": "810d67398619dc4a253de9933c65ca0346843e085d68871b2a275c3b2f3c2a91",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/hall-of-rhapsodes-l1.glb",
+      "bytes": 150484,
+      "sha256": "8b24c74c6a53aa3fd01333ae77d56ba1d4f211e0d25ae7253d3a446c5a19538a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/hall-of-rhapsodes-l2.glb",
+      "bytes": 204576,
+      "sha256": "16cf26a060c76fb0fb64eaeb18a81c1f358072143f2d1615024b9969bb3c5785",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/hall-of-rhapsodes-l3.glb",
+      "bytes": 295164,
+      "sha256": "81943120b524ee116e58fd700719b1fc0cd7698533643f403700f8cfd071d71c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/healers-hut-l1.glb",
+      "bytes": 155408,
+      "sha256": "e20e8c9927e670c971ebdadb66443dda068391daffad8898b4e06d15006e6162",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/healers-hut-l2.glb",
+      "bytes": 181232,
+      "sha256": "5caa66e41482929f254a903e4ad91e6dad96e0608ce46d1b957cf04efc680732",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/healers-hut-l3.glb",
+      "bytes": 273348,
+      "sha256": "cdd1ece14478481900aadae7ce5e53f0f3a22b24c2592677dc3f3e37e53f2b80",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/hephaestus-forge-l1.glb",
+      "bytes": 135748,
+      "sha256": "b99595f6a46995aab54468993dbb60dd7e56a8a22862fcf41d215c70e8b80dcd",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/hephaestus-forge-l2.glb",
+      "bytes": 168952,
+      "sha256": "8e84892fc341137c22667737b9391c7c43aee3044cc68c66c419a1f329049b90",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/hephaestus-forge-l3.glb",
+      "bytes": 250764,
+      "sha256": "56640f8857750e18b105654a501cdfdfb0a15fde6795e737b201d969ba68b858",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/hesperides-tree-l1.glb",
+      "bytes": 160556,
+      "sha256": "f951b471b03f338901704a4166c68e2b04a73c98b5ed76bfb7e23a35d8f3b741",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/hesperides-tree-l2.glb",
+      "bytes": 221252,
+      "sha256": "18b6874d15c078b86d1147cf7cc0bbe3b583116e739bdbc7586cb1b17b5d72da",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/hesperides-tree-l3.glb",
+      "bytes": 279764,
+      "sha256": "9624d732db24e461ac3d7ead65cb1b4e83177468dda47ada16fb49a50f30a4e7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/horn-of-lycaon-l1.glb",
+      "bytes": 196660,
+      "sha256": "9f9515fd21e2d94221ac655ae99c3a172bc9237986dabfe77c47cba82addd7c2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/horn-of-lycaon-l2.glb",
+      "bytes": 235380,
+      "sha256": "d7d537abd4de38eb6c6a0771c600b3506c0a049b86befd734863ba307d5e057c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/horn-of-lycaon-l3.glb",
+      "bytes": 280032,
+      "sha256": "32dadba19d3cf7fbf3cb795b14bc2c930283573d102af7dcb8704b6e1782ca11",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/house-l1.glb",
+      "bytes": 151620,
+      "sha256": "cd0b415f92186084e00bbf48fd0b9b7846643b33462239736abd1a9d18bc0904",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/house-l2.glb",
+      "bytes": 225984,
+      "sha256": "13e1bc4392ec5d32267ab801f04149657c304c4c282f8447cdc620be181dbc8c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/house-l3.glb",
+      "bytes": 298296,
+      "sha256": "d235619424a227cf6e7c6a270f26e4653e47fa39a191d392534f7906040cc6f5",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/hunters-lodge-l1.glb",
+      "bytes": 180120,
+      "sha256": "542466cc379ff1ab7ef3de8d9cb59fbcab2c2ffb7c2faae167f4966fcc29f80f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/hunters-lodge-l2.glb",
+      "bytes": 223152,
+      "sha256": "a89332bd7cacc0929ac59e8d9f05ab5626e9ac3667b5e74117e83045e786c824",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/hunters-lodge-l3.glb",
+      "bytes": 271052,
+      "sha256": "231e53586c4e967e4e1bd841aa4b19a85edbc0672c65f2db6fbff31e67942727",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/iris-bridge-l1.glb",
+      "bytes": 128612,
+      "sha256": "b069a731498df43455c9ef1fed4810633cd12d86c8f157ca42889cdc76e9a28b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/iris-bridge-l2.glb",
+      "bytes": 171936,
+      "sha256": "10fb5bd739a0c5ab1c75ca7bcfce5e4c6b96bb912bc12fb26a9143119984bb99",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/iris-bridge-l3.glb",
+      "bytes": 238392,
+      "sha256": "2c8b21b8e2a6bfb6bf1777a3030f56b68e55849f17fa1ace4a827752c162d150",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/javelin-camp-l1.glb",
+      "bytes": 152016,
+      "sha256": "ad60ec323eab06e83afd16221cf7c6ec0a8c92b2e078c9b97707c164b74d2e43",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/javelin-camp-l2.glb",
+      "bytes": 240032,
+      "sha256": "d2ac1dd0baf29ec7e5ba43d157775fbc07048342989068d767c3c4da94707229",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/javelin-camp-l3.glb",
+      "bytes": 297496,
+      "sha256": "faed558494af6981f1c89e75a88b919457f7e521ba099110cc9d9ba3d782d8b9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/menders-hut-l1.glb",
+      "bytes": 114892,
+      "sha256": "997019655c0a74c5c7bb119199882708ad7cf5db3d06134b6fbc63fc9b7d3d9e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/menders-hut-l2.glb",
+      "bytes": 137200,
+      "sha256": "dd6bc95b55a11f62d81690a97949bfb9608f6b363a2c6812ed91f7540f82c8e1",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/menders-hut-l3.glb",
+      "bytes": 193728,
+      "sha256": "29a94f0a33da5592e37358f47a9ae493f6c283beacbaf42819930e9914dad4c0",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/misthophoros-camp-l1.glb",
+      "bytes": 141752,
+      "sha256": "d83ff197f962a6f2d435b31ff776f953bdea2fc1cbee144f53bd9af24681113d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/misthophoros-camp-l2.glb",
+      "bytes": 132000,
+      "sha256": "ac8ce7e01a976497b3aa0f836883bc4ec889e8df2603748e25085566e34c9298",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/misthophoros-camp-l3.glb",
+      "bytes": 185308,
+      "sha256": "2c198f38bdf8e8ca6f6ea82efc8518ebd9187b75bd092f2ba721a8d51da6fc96",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/offering-well-l1.glb",
+      "bytes": 162952,
+      "sha256": "92ba92519834bec006fc4c12b2dc1e7a77d3beeb478f265ebe73d06c5e0cfb35",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/offering-well-l2.glb",
+      "bytes": 215972,
+      "sha256": "7735d1b609a47d2566dacb975eb304eaa2e5be0f7dabc2d0bc6bd8c58e485fe6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/offering-well-l3.glb",
+      "bytes": 262272,
+      "sha256": "b72f25a5dcb4f27e8bb45bfb0169f9498f0e542ac0104e7e579a1dad8220b84a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/pit-of-tartarus-l1.glb",
+      "bytes": 127120,
+      "sha256": "a596f89eb7a0da5465cb97577eee96652dc759b21bef8eb9faa693f6a378ebe6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/pit-of-tartarus-l2.glb",
+      "bytes": 205776,
+      "sha256": "2bed2ff19b882dbcc0a4f2073a2e3a48755bb6bca466dd785032f6c8a0a8e3d9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/pit-of-tartarus-l3.glb",
+      "bytes": 251704,
+      "sha256": "123927da0db689c44de887134d0be013e7cd0232aa50f5411fb515d1d76c9f70",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/polis-hall-l1.glb",
+      "bytes": 171208,
+      "sha256": "18ffe7a946e11ec42f5d89075c00f39a1400d31a23e48b6bec79ad3314dd1825",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/polis-hall-l2.glb",
+      "bytes": 253168,
+      "sha256": "071906734dffd38188f19c0c7f9d3397d91565b680a409488aeb8b118086aeca",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/polis-hall-l3.glb",
+      "bytes": 295676,
+      "sha256": "7c65f79baa9252faf66a19f4b876efce9f1e6196dbe1d4114900c75ac4623af6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/polis-hall-l4.glb",
+      "bytes": 294932,
+      "sha256": "6a4e920cb10a99047d9ee9b14917a0063a702377183d550d09be75577f51980a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/sacred-fire-l1.glb",
+      "bytes": 148740,
+      "sha256": "9666f8b23e5c9b3c9674d3540664a33d8b5fe4afef5cf605d3f462b6fb90d722",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/sacred-fire-l2.glb",
+      "bytes": 239504,
+      "sha256": "b4ced4e73e5d8cac7396f0dd098e6504ee7f76da7f83567d25349f02e1b291e1",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/sacred-fire-l3.glb",
+      "bytes": 297436,
+      "sha256": "e4305866341ab0a1ae85b0775b95ea39e738bc14c1be652ad43a59c1f3cced50",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/scout-camp-l1.glb",
+      "bytes": 185764,
+      "sha256": "a69419e8670f4078ff46829488f9a19cc7af0c9b0b41b4db1765db70c1f993da",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/scout-camp-l2.glb",
+      "bytes": 222724,
+      "sha256": "1c9db66ed96a21942de6ed01f016af9072081e2b9c0f1b51482ee97a1cba8c34",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/scout-camp-l3.glb",
+      "bytes": 253268,
+      "sha256": "95df199b73d20486f997f3613364cb9da19a5b9180806860f987584c6871b3a1",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/sentry-camp-l1.glb",
+      "bytes": 144260,
+      "sha256": "01ae3588ec8ebe4c747f6ca0061870ceb2fe3202c1eca12854e6ba83a367f134",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/sentry-camp-l2.glb",
+      "bytes": 161296,
+      "sha256": "4ccb820a0f3587c2e6f1f2d3855054a70d2dd0cacbdd33d61b250da461e14c33",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/sentry-camp-l3.glb",
+      "bytes": 185212,
+      "sha256": "3fa9bdc88d4fa8fef14be2f98ef7f2a08a6d05ec01f74c5b58d62cf1803a5ff7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/sheepfold-l1.glb",
+      "bytes": 217452,
+      "sha256": "31eff8d7d4ecabec076cee717a76b923bd4bae79a6bcc76c4235a616e2bb0815",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/sheepfold-l2.glb",
+      "bytes": 261256,
+      "sha256": "0004ecb5e867e49ab7e15419523bcf5357362e48296ecd1b79c1e3cd9ddafec7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/sheepfold-l3.glb",
+      "bytes": 287424,
+      "sha256": "ba51854cb4e0372e64a7704a0e47aef88964b30b9b92dbbd7176c5fc9226d300",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/shield-camp-l1.glb",
+      "bytes": 164368,
+      "sha256": "b54ab622e60a6e74194fb7a082d6da80ad4b958c5796a94d53fdbef11746db58",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/shield-camp-l2.glb",
+      "bytes": 212440,
+      "sha256": "ca62814289837e62f5fa964605058915c5852fb90a9e11364b5bb357d0660345",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/shield-camp-l3.glb",
+      "bytes": 253624,
+      "sha256": "c7829f6882715e4f4edfb08526d481ba32cd15acea05a425e775838da353095f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/silver-mine-l1.glb",
+      "bytes": 139596,
+      "sha256": "ee7fc8ebf866fc1f17c0647959f3168027dfbced55520d4eeb2fdb4b2c483e9e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/silver-mine-l2.glb",
+      "bytes": 205468,
+      "sha256": "b886894959dd3c206403811736f578b195132703c6a375e545d08c670be9dc93",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/silver-mine-l3.glb",
+      "bytes": 250272,
+      "sha256": "2c8bbef108276e560a16f260923d06625313531fb2841e85444889d275cae412",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/skull-of-typhon-l1.glb",
+      "bytes": 125372,
+      "sha256": "5ae7ee718abc685c7feadce60373d269044586dcda0e9a9e8d6b7e3e29cf92e1",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/skull-of-typhon-l2.glb",
+      "bytes": 191616,
+      "sha256": "ca9c1e30204d7c49b693c393c36397b4212361b61afa60919c19f25e44e4a117",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/skull-of-typhon-l3.glb",
+      "bytes": 270540,
+      "sha256": "bb9c3cddf055c93d804a35b1ed90de2655476cf320368f18f2c565876bf6e352",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/spear-camp-l1.glb",
+      "bytes": 244912,
+      "sha256": "d7a502cba16a4d0a4014312e3ed2f314cae84add057794a444a91315daecc560",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/spear-camp-l2.glb",
+      "bytes": 293508,
+      "sha256": "f9d483990c67a789c407b84bd544ee0690dc43c73bd47ab0cfb49437d7f644f9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/spear-camp-l3.glb",
+      "bytes": 299180,
+      "sha256": "7b37a3e01ad9eddc0b41ea39735735a3f59347bca00886bf66c602b0fec05b4c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/spring-of-mnemosyne-l1.glb",
+      "bytes": 170804,
+      "sha256": "042f4990d8486b5a55fecc7bd4e08b56175958eec3cf6ddc3db82ce34cf794db",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/spring-of-mnemosyne-l2.glb",
+      "bytes": 227236,
+      "sha256": "976562845c91c15574dd212a30dba82f67e4d4f5bdb141bea24f41cd95e65621",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/spring-of-mnemosyne-l3.glb",
+      "bytes": 291080,
+      "sha256": "66d1b0cc7541bdbac729f207a3e2bcd31403b1570fbb83985d510553ce2e17af",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/throne-of-zeus-l1.glb",
+      "bytes": 145100,
+      "sha256": "6cd71034f0971e40fa97388eaaf8d727728c348e4e1a16a26815b9d7acf619b6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/throne-of-zeus-l2.glb",
+      "bytes": 236228,
+      "sha256": "b309bc68db641534b4e8741a2ae11c3e1df3fd2bf84ea7b842cdc4c051cbd704",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/throne-of-zeus-l3.glb",
+      "bytes": 285848,
+      "sha256": "3c48ef0d96351458f351d4578f124363a877b9220ad0b9881be1db7cb4e3fb38",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/thunderbolt-of-zeus-l1.glb",
+      "bytes": 133536,
+      "sha256": "4b363c6fdcf8fcb8c8d879a807302ab8d949b540dac7bc14cd839a4fb218bfa9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/thunderbolt-of-zeus-l2.glb",
+      "bytes": 144192,
+      "sha256": "1937b1d373c4432df675963acf8c6e716a7b6e597be396f8cdb38ebccbb27ce5",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/thunderbolt-of-zeus-l3.glb",
+      "bytes": 207184,
+      "sha256": "71dbf59b10f27325f321cf05e202fb2c8ded32c6efe57ebd5ddac8cc18858287",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/tombs-of-erebus-l1.glb",
+      "bytes": 142480,
+      "sha256": "5b0b494f8455d8d5e704b56a0372eabaeaf00de6d3558bf68c677cc78ef6fe33",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/tombs-of-erebus-l2.glb",
+      "bytes": 206652,
+      "sha256": "39c40c72d232071cd1e8108cc8aec38697f5fd13e5d44ca5c3737ad7427b9f8c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/tombs-of-erebus-l3.glb",
+      "bytes": 219944,
+      "sha256": "6ace63daa5de33707bad37b8a27c8a1ad3393ebd93154aec938554bd673fe3da",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/tritons-conch-l1.glb",
+      "bytes": 137580,
+      "sha256": "8fccf995b3c157b15eeef34f2f3a3253dacda7850c44aaf84f89ad61e0bf01f3",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/tritons-conch-l2.glb",
+      "bytes": 165488,
+      "sha256": "8a39e031a3bda33d8ee037236fe38faf77dd3767aa4ebf8ad4988d6dce47e72a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/tritons-conch-l3.glb",
+      "bytes": 174096,
+      "sha256": "280fdc51d14d2d9d7904ff6ac64d5981dcf79e1eb9db8982fddfa31bfd448992",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/watchtower-l1.glb",
+      "bytes": 165428,
+      "sha256": "c9699d2934bdfcad30f5eb6822187d02183e1c9e63a0191b964868dbb441966c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/watchtower-l2.glb",
+      "bytes": 212348,
+      "sha256": "6538d20895e6c0a77f6f5d886d4f8ac7eedf7fac2bc6733f30d46857fdbaac54",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/watchtower-l3.glb",
+      "bytes": 209328,
+      "sha256": "1bd228257988decef09a57c84a9f6b9bbcd05ed7ccdaea151fc2bcf9231d5b5c",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/wolf-den-l1.glb",
+      "bytes": 220432,
+      "sha256": "08f9c1c72a58c53e6b583a9162edead6995d593e8885f15883e43160c50d6d58",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/wolf-den-l2.glb",
+      "bytes": 286100,
+      "sha256": "814f1a4ad1ae3a3da2b79199448fe9022bfa3a21a752d9b60c81d88757a5fb8f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/wolf-den-l3.glb",
+      "bytes": 297552,
+      "sha256": "a6015c16c69ea5281f8a9412180256582e9d29218a7717a288c64b876683fbc9",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/woodcutter-l1.glb",
+      "bytes": 139300,
+      "sha256": "671698d2f8ad4ece11f2bb4583849725b50e1e6ca4c817a336fed243f5bb8b60",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/woodcutter-l2.glb",
+      "bytes": 192648,
+      "sha256": "35d045e304336ada7b067a2fdbc23c6520ef79128e5ed9fad7c614e7ebf179f5",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/models/woodcutter-l3.glb",
+      "bytes": 258872,
+      "sha256": "996f00c5f749d5da63f99fcd954210dc955ebda0e380391dc2ffa32e7b33fc55",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/textures/bronze.webp",
+      "bytes": 43960,
+      "sha256": "053dbf58106c7e94654979d85bcb78d8aa74f2b731a86f071b68e2c4f5a334a7",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/textures/cloth.webp",
+      "bytes": 47874,
+      "sha256": "3ae8be3c1ec062f9451b0b23e7d2745490a3a1b9e4380eaca6008e9bf61474df",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/textures/cobble.webp",
+      "bytes": 72916,
+      "sha256": "cad621fc5a0f369ab999dfe8468ba4cc6fdd1796588eec70621ee2f341ce78e6",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/textures/ground-dirt.webp",
+      "bytes": 113348,
+      "sha256": "cd1f095ff6e46a60c1dab2640d8c4a9e510b31e35c93a72e4898def3942b9a4f",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/textures/ground-grass.webp",
+      "bytes": 189010,
+      "sha256": "45f9d4c271d4180cbcfa8822e07b32f830ca014eb5d44414c470a1996f35da0b",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/textures/ground-rock.webp",
+      "bytes": 146660,
+      "sha256": "33cdbf86b0cd12e6e7f4327286ef05523e27c106ed39888a81da38f14cc3ec8d",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/textures/limestone.webp",
+      "bytes": 41090,
+      "sha256": "11c42bcb619e565398c8d0cdcdacb2e93d7acf6c71c6da6dc5b44f2111213d86",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/textures/marble.webp",
+      "bytes": 20470,
+      "sha256": "dce07fd499bf2f079eb4545f9d55d1a3541f5bbf21316bbcb3d6edb2a986c492",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/textures/plaster.webp",
+      "bytes": 36212,
+      "sha256": "f42aaba5993789c9c5b8eb73784d0df6b554a9a71627a6ca2f4d07ccb5406f38",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/textures/roof.webp",
+      "bytes": 40920,
+      "sha256": "db2600e2d9bb63f416da0c10a8bcda51cb7f1caa0a101cb2e6d289edeefbc5bd",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/textures/wood.webp",
+      "bytes": 35418,
+      "sha256": "47f39ad6632e61f03f93bd946f0e6c6d438907a853d68ca196aefcbb1d77d6fa",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/ui/card-apollo.webp",
+      "bytes": 50380,
+      "sha256": "152f7f3f2fe8221623869ea70dcc398db11418235be49515afd6e2e0d2489dbf",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/ui/card-athena.webp",
+      "bytes": 55342,
+      "sha256": "e83c919a2ceac123be8bbea8c60ac041cf39235cc1381d9e7b6b37cbd9e755e2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/ui/card-zeus.webp",
+      "bytes": 49588,
+      "sha256": "fab1d735d90200782b28c1e6fc2a145fc7cefb9dcc842d3771c3aefbf435e9ce",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/ui/chief-aegeus.webp",
+      "bytes": 154644,
+      "sha256": "9d5c5aaa0be2caac0c4356b5799a40c12f53140d13d2576edc1fdfaf65e50e9e",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/ui/chief-atalanta.webp",
+      "bytes": 138710,
+      "sha256": "b8c894b9897e05ee3962cfdd459545e0d54812c44ad9feaf50027648fceae5b3",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/ui/defeat.webp",
+      "bytes": 230662,
+      "sha256": "b4bb528962200969d669adb01225593169fd234293355b7c10bbaa10c7f7bacb",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/ui/god-apollo.webp",
+      "bytes": 8976,
+      "sha256": "9bc10bbd7fc1ef78ce835da6b0e6b49335973398fb2ae0df097e51ce9ccd87d4",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/ui/god-athena.webp",
+      "bytes": 12942,
+      "sha256": "8306d5174e32bb09e9418d0f7c3798d72cd11cc2a88596910cabe85cdd5577de",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/ui/god-zeus.webp",
+      "bytes": 11622,
+      "sha256": "55f15490cc4db2e996347f2cd74cca0ccf03ec7c01570c0ac098c8975969fede",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/ui/insight.webp",
+      "bytes": 7876,
+      "sha256": "f8e674114bb805f6acd68cb8405cd51312047dfaf0726a5274ed9a872e35ce12",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/ui/victory.webp",
+      "bytes": 257262,
+      "sha256": "033d248a1dc594870a21d02ea85abf3d511fed1eaf03cb0ab26286979ffeb496",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/vfx/fire.webp",
+      "bytes": 138556,
+      "sha256": "dc4527040dac003014d9d2706e3ed0782d21e3592f93d8bc36b079e66cfed8b2",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/vfx/kopis.webp",
+      "bytes": 18932,
+      "sha256": "81903c512f9ad1917a0a2e25d6433c79856abf02eaf9a873907d6b4435b51c5a",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/vfx/manifest.json",
+      "bytes": 1180,
+      "sha256": "46d6ef1f855c7cf153b62555f95c4753dc5903b95bfe84bac95eb465158854c8",
+      "origin": "derived"
+    },
+    {
+      "path": "public/vfx/smoke.webp",
+      "bytes": 54142,
+      "sha256": "4aa49c0db9177003f74afb365b30b75cb93ffead6a1362be6a261b45ac69c969",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/vfx/spark.webp",
+      "bytes": 30152,
+      "sha256": "f5a966d99369baa413605447a606b6a1abc32adb15a07477fc4dc97a1ae03a45",
+      "origin": "tracked"
+    },
+    {
+      "path": "public/vfx/ward.webp",
+      "bytes": 80438,
+      "sha256": "0da1c85a3e78f1dc0df32cf465d48d8cef0b72edd5b139f451c6975dcce13093",
+      "origin": "tracked"
+    },
+    {
+      "path": "scripts/check-pages-config.mjs",
+      "bytes": 507,
+      "sha256": "cd05f32e32d53a1b8bee8566fce1ccbbb64901d7d96b17fe958f808e38cbadc4",
+      "origin": "derived"
+    },
+    {
+      "path": "scripts/check-public-assets.mjs",
+      "bytes": 1505,
+      "sha256": "3d5c477d2a1538496ce5238b26535cce7dc9bf7d19fe8992b2f2910e18299111",
+      "origin": "derived"
+    },
+    {
+      "path": "scripts/test.mjs",
+      "bytes": 991,
+      "sha256": "3b7676c2b07a83267f0d66ef534b5e51bf0e2a6a7cfa646cff06229a47388cb4",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/account-revocation.test.ts",
+      "bytes": 6278,
+      "sha256": "356791e0a8ed5d6c8c1675f0b48af6346d2f2fa1b0c02e8b21445942e457dcb1",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/accounts-http.test.ts",
+      "bytes": 20536,
+      "sha256": "a312f88004538050959eb05557abda5eb715a1974d1ba3ba5eb2c57abadcfbda",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/accounts-migration.test.ts",
+      "bytes": 3764,
+      "sha256": "547b5a5b51129da81aaef0172808026ff31764138810e9d2ca75c9826b13280e",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/accounts.ts",
+      "bytes": 2291,
+      "sha256": "0e822ec9354b15df81f463249fec55b2f720b3bd7c582e00f2c1f71fc7e5fdb3",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/haste.test.ts",
+      "bytes": 3519,
+      "sha256": "016a24a03176848bad030b19175421c2bf064ea6bd64805ebf67380c3db6fffe",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/host-boundaries.test.ts",
+      "bytes": 3134,
+      "sha256": "e4ca161c0f975caf4277f4745fe2c935fac4160730696e8d8ab95843c55a30b7",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/http.ts",
+      "bytes": 17249,
+      "sha256": "5258eccc7ecb7799345e0725638d0e872b471fa464c4758ab9d831dcae6d9ba5",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/income-resume.test.ts",
+      "bytes": 3077,
+      "sha256": "248ced2f336f8d70926ae2fe31ec5ace33f6de0f7553533897b7815c8ace2b62",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/income-timeline.test.ts",
+      "bytes": 11176,
+      "sha256": "cec94b782f98d64c1138a0e9c3931e4b2b4039f43b83231a0d628cb1859330b2",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/migrate-accounts.ts",
+      "bytes": 4815,
+      "sha256": "d8d70d213774ad61800adc6033b953373ad043ce981c5f21c116aa7c3cbb3672",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/pve.test.ts",
+      "bytes": 5537,
+      "sha256": "0f5d490ab036456b765dce19c2cda195b374dc215ebcfe75ac668748ef9b89fc",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/ranking-contract.test.ts",
+      "bytes": 22666,
+      "sha256": "1457fc621440eb04cb473d78100680a0c81a75399173f513907191566efc4dbd",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/ranking.test.ts",
+      "bytes": 10825,
+      "sha256": "d7faf83642f01c388f0b6e227734af734b8d18bcdd27d44013fa34815793f737",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/ranking.ts",
+      "bytes": 2102,
+      "sha256": "50a7b31c0cc1ef15dab478f121379acd6058d8a2cda2a342e728c851d65d0a85",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/rules-version.test.ts",
+      "bytes": 9412,
+      "sha256": "7f25026175f9655558b6f89991a622027510a2ebc95dcf4c19db7537f1c4bc34",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/sentry-mercenary.test.ts",
+      "bytes": 5105,
+      "sha256": "c1762cd55474bb6bd838e9f8c357d436b9aaa9d0785cf7e1ce49e52880a4f6b4",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/snapshot.ts",
+      "bytes": 4389,
+      "sha256": "43c31e128425b3489b90f8396551fbb9c86928d33c5c6e67a33fb8b0ef708054",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/start.ts",
+      "bytes": 2005,
+      "sha256": "06015ca7081aa9a497f76a7b8874b98e3192c73de2288c3634bde95d794e30ee",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/static.ts",
+      "bytes": 3034,
+      "sha256": "e684edf4a0fe670c98346b28b3ccfa5cef26f3aa850a7cdcaa8c028c6d21f8e2",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/store.ts",
+      "bytes": 50036,
+      "sha256": "3117f6f7894f254ed6b45bb06f4f179c0e1bb9a71518f8f23580e19594a7a22c",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/tower.test.ts",
+      "bytes": 5349,
+      "sha256": "037d3327f3fcc86f1ef4665b25ce23cc1af13116fd8b239ced9df7057b91a967",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/tsconfig.json",
+      "bytes": 61,
+      "sha256": "3884c64fe86cacd8a33dd016dbb843b3bbb6c625090eda74ed06a9a58a13d92c",
+      "origin": "tracked"
+    },
+    {
+      "path": "server/war-lessons.test.ts",
+      "bytes": 5754,
+      "sha256": "d64dc9f2a1233e963b8067fd9810e454a796975a3a9e5a725b17548cb77ad4b7",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/account-recovery.ts",
+      "bytes": 9322,
+      "sha256": "93bc7451b8950170654cb9fd7a18f8d268275ff3c4c4c0e1ebea358404ce504e",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/account-screen.ts",
+      "bytes": 9332,
+      "sha256": "d5ca50f4eff59730822d6b2951d63b7b9e458363a038a9bcf20b10b5c3527e67",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/accounts.ts",
+      "bytes": 1569,
+      "sha256": "f41ee9003b1bd35ccdb04581e9d66ed2606717c17c00c984fd2b320be5f17b7b",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/action-dispatch.test.ts",
+      "bytes": 9093,
+      "sha256": "a70dce84b1cfc092dce94bbc412f90d511242561613c50a9a60f36df1dd9719f",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/action-dispatch.ts",
+      "bytes": 1154,
+      "sha256": "f190ca7eec5fccf64871d6635d4766d1abfbb879b5a9119725275d1427aaaf94",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/api.ts",
+      "bytes": 2133,
+      "sha256": "90098368fe42d83827969f1452a9ad416f16de05faf9368cba494770bd0b0b22",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/appearance-snapshot.test.ts",
+      "bytes": 5823,
+      "sha256": "ed6d1835005c45a84fc860008c8f01410fe22068e7cb1282efba68bfae6e3252",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/art-review.ts",
+      "bytes": 8610,
+      "sha256": "9190813816a3af807733c44e7fa045bbe088b2c0e37734dc3feb29697670608d",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/async-context-intent.test.ts",
+      "bytes": 6160,
+      "sha256": "15dc4a44881f37dfdd12f80cf2509d98ce9bb6629b774c0d37002d677f5a3b5e",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/async-income-refresh.test.ts",
+      "bytes": 7625,
+      "sha256": "0522f0b1d21e1230f3bd748e45c6b67dec8df3b20eedfedd58c7c942c38248b2",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/async-wallet-intent.test.ts",
+      "bytes": 12306,
+      "sha256": "c0481c0e4509008fad60716e98a14b2abc68bd8fa86ff4d916feffbe339a612a",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/audio-routing.test.ts",
+      "bytes": 1898,
+      "sha256": "58b6f4660a077bb2ad771c6cbdc56193a9fc18cccd5cb1e704205959f91aa878",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/audio-timing.test.ts",
+      "bytes": 21167,
+      "sha256": "918a9de7f3b3e0f990ba2aa45833f679609546637f2d13fb008508acfd40fc92",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/audio.ts",
+      "bytes": 20593,
+      "sha256": "a3e27bcf81b3efc92f559e47233765ef1d71343183204ff8e56ec6f1c0e75bd5",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/battle-scene.ts",
+      "bytes": 5567,
+      "sha256": "92c3ef4275c1db12a7d09e12d1f9495105f8ece982ec562a569ae714cb7ab40c",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/battle-view.ts",
+      "bytes": 347,
+      "sha256": "af85073e26bc98cab9df9dbab5b4f3061cb60237b722c9f2f23ee8a548a6a50e",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/charm-receiver.test.ts",
+      "bytes": 1275,
+      "sha256": "61be31c6965c7d561ec9406f85bd9f702ecba9adc2f2e88be786d3b22d497bb1",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/charm-targets.ts",
+      "bytes": 3140,
+      "sha256": "141a59e03d4dd7214edb78d30d7472028389739fee015d4dcac0df027c720667",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/chief-art.test.ts",
+      "bytes": 979,
+      "sha256": "f331a060537006c821f67251d9c13a1d6c01007cf641ff5648bf4b417478c226",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/chief-growth.test.ts",
+      "bytes": 2718,
+      "sha256": "4ff2325da66f93a5aa07495047b2254ad877d954b6ece3fce6a23e369f52da93",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/clan-screen.ts",
+      "bytes": 15482,
+      "sha256": "7cee0c22abe2e24b36ad3050ffedead41b0c1f9c669246d0f94b456f2f96e8e8",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/clans.css",
+      "bytes": 7555,
+      "sha256": "b5ddf1553643607226009006ba913555ab1b0c67bbac40069713459bcd25a0e9",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/clans.ts",
+      "bytes": 4184,
+      "sha256": "0473ba74764f123ceedbdf217632079ece9047ab2241bcb1dd1045fa59e021c8",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/cleave.test.ts",
+      "bytes": 9376,
+      "sha256": "0fd570b6d41f748c11ebdcdab4d14f8fe2196f69e139543e575bbc7b560b7658",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/battle3d.ts",
+      "bytes": 15616,
+      "sha256": "0110de742fb34f8c0100c00b55f7d746967d690eaacae6114bfa53db40a8f33f",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/buildings.ts",
+      "bytes": 6393,
+      "sha256": "8ed64c14dcbebb98a6bfa66b7c0273be2f1ef6782683f855d9d8ef9255bc2921",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/client.css",
+      "bytes": 32903,
+      "sha256": "5bd31ecdafb78c5858b2a10a5dc6605c48cfbb22c4f0a7f6129a6a5c518f5b9e",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/coast.ts",
+      "bytes": 4527,
+      "sha256": "4bc109ec712c0bca4d17c582c8300eb603d8848795bc30eefb3c6386899ef05e",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/display.ts",
+      "bytes": 932,
+      "sha256": "3c60b812fad1a23818804266f7b147241997303b57f7b5e9527cbce54096b107",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/flora.ts",
+      "bytes": 12786,
+      "sha256": "e4d4467f1e784d41ea1695dfde6ae18022246353f34179fb7aefbd8654ace36f",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/hex.ts",
+      "bytes": 1738,
+      "sha256": "5fe5f69370e0e3eed2ec21bebd6186e5abd9cc878d1928881d86d01dc7ad6493",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/hud.css",
+      "bytes": 27253,
+      "sha256": "0884f9450560a5ec7029588795cc1251b2fe521f30241ab72a196671bdcc85ea",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/hud.ts",
+      "bytes": 33966,
+      "sha256": "35c6f383556a17b466fa3e11814d7abf709cf82d42fc6bfaaba9e60111354de5",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/icons.ts",
+      "bytes": 2935,
+      "sha256": "67371613e5e26e9c397b04472098a272816320802da3f60d92a92de238858918",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/island.ts",
+      "bytes": 3391,
+      "sha256": "711b95324ab03b4c5325c8555d8de41f14d67359f96b31b7b910d69da24b1b68",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/lab.ts",
+      "bytes": 2816,
+      "sha256": "d9130abec66e6e953b54cf1b4b252580f4b89f89cc323d6f3fe0fbfc621c54b0",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/materials.ts",
+      "bytes": 4548,
+      "sha256": "1cac3436c34d83c07d900505b41321ca230dd1e71ae28ed2d55c87a5391ed7b1",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/noise.ts",
+      "bytes": 1145,
+      "sha256": "49d2065ee492947dc42b92294183f57ce8e398c141ca3b3b9e284eb72b610525",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/overlay.ts",
+      "bytes": 7986,
+      "sha256": "b15305c22ac5fce355d5d2e7993f63e8e29f1a894f27318516a8141135d5f115",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/play3d.ts",
+      "bytes": 72935,
+      "sha256": "b59e442d04f46b1ac2b16599883ddc59734119acb01dffe83348f76e8b6f8f3b",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/projectile-sockets.ts",
+      "bytes": 1274,
+      "sha256": "3a9b777a3130e3cdf0063189d54bd411dc32f50b471d5eca9cdf3e5e7269e429",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/rock-data.ts",
+      "bytes": 310779,
+      "sha256": "29fd1386202b310591b227c672bae084b2e63bfa8226810e23762795c9d57fb7",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/rocks.ts",
+      "bytes": 615,
+      "sha256": "3f44d909e156b5a4c3cb8f5bc20e818f9520fd0935a6e0f749523ad57feb8ed8",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/screens.ts",
+      "bytes": 31333,
+      "sha256": "64a641433f6bd7ebb13000712b881c4aae2de289039788d58a43ad5832afa3a5",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/shaders.ts",
+      "bytes": 3226,
+      "sha256": "99c175cfe7cc41519681d09426641404ed15e2fb41ac842ee187844889afe8c5",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/sky.ts",
+      "bytes": 11602,
+      "sha256": "9441de343493c5ef9ecfd43dcd4c9c1d011a337e740aa18ba81cafa95075c9c0",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/sprites.ts",
+      "bytes": 1812,
+      "sha256": "4e2d7b30408ad4fa4b8caccdde81e9067dd6a558732c2df2db4a826992906cda",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/terrain.ts",
+      "bytes": 16430,
+      "sha256": "e9464de7becd02d72af97b8a274aaa5aa04c92236484f0cc7b5ba41bdb9b2689",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/thumbnails.ts",
+      "bytes": 2524,
+      "sha256": "4a9b92cc6244074a58a295e72e29a7b7500ad5465f5e016530dce188b18ada28",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/tree-data.ts",
+      "bytes": 251248,
+      "sha256": "8913a4b89d173561a62cb19aaf3c40a54da5bc3e50220f659eaa110ce274cd3e",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/units.ts",
+      "bytes": 11918,
+      "sha256": "684bf34a65648e3e5e15bb31363f4d25fd2f6fd6177cab03caedefcd7fad8025",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/vfx.ts",
+      "bytes": 35147,
+      "sha256": "0f9d481aed89d4880a49d3dd7a797a57330dd78cdb0023acd38019062dca0c27",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/weather.ts",
+      "bytes": 6849,
+      "sha256": "9f92b9ab798cde4ac48b67322bca11ab828c04b0db8bb3f9c1fe74294d43ad21",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/client/world.ts",
+      "bytes": 19290,
+      "sha256": "18b256af8c5d94d016e20459e998d21f87abd8c65d8f04dab29714061992be9d",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/combat-health.test.ts",
+      "bytes": 15269,
+      "sha256": "e8ec985aca92636c11c2340d12680c62e176dda5ae5dea80a61636bd0d5859fe",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/combat-motion.test.ts",
+      "bytes": 10420,
+      "sha256": "82b8aac181b8ac21252168c8ca2b074ac1f2612c01238504ba63e81e8b1ed82d",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/combat-source.test.ts",
+      "bytes": 10808,
+      "sha256": "0c066fde7fb91507f8bf7f77dcc5b6fc216c5c70d93e166b69a4a22ead0188d9",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/combat.test.ts",
+      "bytes": 10147,
+      "sha256": "27180eafbc42356570bb29b27647c4e5b407e731b3894e6ab1b60fe2932ccf49",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/combat.ts",
+      "bytes": 64448,
+      "sha256": "69457651a3888b1c75c8889b99e3fcb3ea50bfc83125ad51521b348783c0c19b",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/effect-renderer.ts",
+      "bytes": 22134,
+      "sha256": "a4c89af8429095c1aa7ed8f1f07851a9c91ab19633f49b766a243c6329847865",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/effects-lab.css",
+      "bytes": 1478,
+      "sha256": "a8e53cb44f5b9b0f78a5d2854d676dab2e64e462ae0c258626ee106ff39ce012",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/effects-lab.ts",
+      "bytes": 9400,
+      "sha256": "43fa267b5642d39172b1071c263a0dd67b4d2328d57cb5eeba51d0a63fc41234",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/effects.test.ts",
+      "bytes": 7141,
+      "sha256": "be3a03a563a608daa4d2fb2cb03a5940d85a5bbcf3acc6207f65e62cb02297e8",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/effects.ts",
+      "bytes": 5459,
+      "sha256": "c28e8992abb1a3e1ca34e5cc89a83a76d4c24062f1c221a99dfdac1f0352f04d",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/encounter-layout.test.ts",
+      "bytes": 9037,
+      "sha256": "4ba9ea7cc77a0da552c0b0c9a69453865fac2db6b46b6fd0d3850b91189e2300",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/encounter-layout.ts",
+      "bytes": 4341,
+      "sha256": "6e9a3313986f97b0f436776a3bdb024355cc7419c1efafd8dc1e2746d182bc1f",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/fate-lifecycle.test.ts",
+      "bytes": 8520,
+      "sha256": "f560018fb5e96f5777620a68dffdb64999030455cc96a2689b04b6db6311cbe8",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/fate-source.ts",
+      "bytes": 34059,
+      "sha256": "95c5d4d41eabbe52cd9db411a275f341a7be63732c482f02b8dec2525ceb9ba1",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/fate.test.ts",
+      "bytes": 32096,
+      "sha256": "d7bf5a9145303b5f665c6c7f8989e227170b21ccc56400271622ddb9db9a9f52",
+      "origin": "derived"
+    },
+    {
+      "path": "src/feature-fate.test.ts",
+      "bytes": 11646,
+      "sha256": "aac81b3d572fcff324aa23ee4b8772cfaef3ceeb3475be91ca0b7004ad311552",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/float-stat.ts",
+      "bytes": 748,
+      "sha256": "e7af8e16215a9c26702170a07143bfed8d53523ae660c9e971cff66e65d38dba",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/fonts.css",
+      "bytes": 270,
+      "sha256": "7192e7d43ddb245b53a07d5aaea6ddeacaf7b9bc15139e7b89067ed0c03367f1",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/frost.test.ts",
+      "bytes": 6386,
+      "sha256": "4ecb594f4341b385d2507df12a038d85953bec4e43f24d4dd1d68fca64977cd8",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/game.test.ts",
+      "bytes": 26261,
+      "sha256": "91f979f6d83f276370bcda91f432f30a3b58e1d7390570bf6a2d9e12e4267588",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/game.ts",
+      "bytes": 49736,
+      "sha256": "296be3ee095e84121205ddce80ece8c06b1df299b738aa62951cafc87029a7bc",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/haste.test.ts",
+      "bytes": 6144,
+      "sha256": "c43f45d0dcff777afcfa2f06bb234ec009d17ed4a0a2568e4cdd52575fc34bdf",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/income-client.test.ts",
+      "bytes": 1770,
+      "sha256": "9ba5c817f89f5d854ccd98291f8acd8eb30a480a9dc21399209ea26d43318f11",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/income-integration.test.ts",
+      "bytes": 10570,
+      "sha256": "a9406e4efc7847ad7283b7f9befea179f7f1276b3f0de17e53f637f0afbeffe3",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/income-resume.test.ts",
+      "bytes": 2184,
+      "sha256": "f5c00966841e83aaef779977b418cfcdf49910ad9f9aefa16168fff558f1be2a",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/income-runtime.test.ts",
+      "bytes": 6417,
+      "sha256": "0aa4c57037f1a8f10afc2d227dd0d1aae10908eebdd98feef24ddfb194eed6e8",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/income-runtime.ts",
+      "bytes": 2084,
+      "sha256": "a44146a9d838be65caf4e42e33384d398ae380a84dd126cd042fff4c6944867e",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/income-timeline.test.ts",
+      "bytes": 6221,
+      "sha256": "6aa5f39038ff95d113f0a39eddb8efbf7031e045ac875cc6a81725b256c78d69",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/installed-numbers.test.ts",
+      "bytes": 12196,
+      "sha256": "8e6e9c429abffbb1ddc5c8067a5422de40e81d783425c4ac9bdd1d8b30fec361",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/item-entries.ts",
+      "bytes": 2649,
+      "sha256": "70f7044fedab82a8604b8f1cf3eaef70734b6d1951d3918fc52cc32fc2c74776",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/last-breath.test.ts",
+      "bytes": 6176,
+      "sha256": "005c1ac1e437d4d0bc53e8f4a7106563d35f64771067237d332b2717d48d8c0d",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/main.ts",
+      "bytes": 9314,
+      "sha256": "f0f0600237b9c5ce2114402acdb96b2f52012e7f569da58b32dda4b98163d0d1",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/map.test.ts",
+      "bytes": 6900,
+      "sha256": "6b5875f01d339ca2c9ebfba576aa4714b86bd74eca7ff23cd34e6a07edfd3ab0",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/map.ts",
+      "bytes": 7102,
+      "sha256": "ccb4b9136f1c7b3726b2127c07d2b07f86761437751bcf7f17fe8a825509e06a",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/memory-timeline.test.ts",
+      "bytes": 2540,
+      "sha256": "f30bb8720f30f490e4caaf909d31eaaea277a154494b742c934ca3ab9a3f601d",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/menu.css",
+      "bytes": 16786,
+      "sha256": "8decdadbf3c11dbcbff07824e6be877eac09b1fa64fcbabe5a840b486b28165f",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/menu.ts",
+      "bytes": 31868,
+      "sha256": "73809ee94214fc0c72de6bf8bcd6357945fb5a33dd6bd9e34bbdf4446be2654c",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/play-catalog.ts",
+      "bytes": 5963,
+      "sha256": "6b83c0ac05a54ea66684d12d52bb4a11ce5e1290148f9245ccb7860bf0e7eb53",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/play-session.ts",
+      "bytes": 20068,
+      "sha256": "fac1fe2bedc6e05a4925178ec6ce6a2d89aa7ec936f97e7e31e14fa171ec202c",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/play-tools.ts",
+      "bytes": 5556,
+      "sha256": "384b9df1350eac82dc0ad6e3e24f9fcae6abb1dc35b5f4e5368c9d41710f4138",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/preferences.ts",
+      "bytes": 1159,
+      "sha256": "b21af56ca918d52284c7e8dd730746e770cf7cf5102b3ede2aa35fb830c472c8",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/projectile-cancel.test.ts",
+      "bytes": 3312,
+      "sha256": "5c1c2c934c4d8d1468a69ff1d380b1b57ef1ac44e9042cf46331bf8439071fc6",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/projectile-flight.test.ts",
+      "bytes": 7569,
+      "sha256": "490562a721fbe1fdde631f8a6ca7cd105884edf1926512d97e274f29d1e0854d",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/projectile-presentation.test.ts",
+      "bytes": 4369,
+      "sha256": "ccedd9ab5641042d720d47b012b684c4e4300dcc0bd076baccb2296c702c0387",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/projectile-visual.ts",
+      "bytes": 693,
+      "sha256": "609b7551dedeea70b31a84c1dfc225301c19ca9654a5fab24c2e33aeba818010",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/pve-data.ts",
+      "bytes": 10348,
+      "sha256": "f5cb730b3eb0171425e0de5cf104dacde18020ee5fb28c114d79618c5646ff53",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/pve.ts",
+      "bytes": 1878,
+      "sha256": "d8aa702a66208cff09cafee38fe1d3ba166c87df91e26bd1a18ecf80d6680530",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/ranked.ts",
+      "bytes": 11428,
+      "sha256": "d3301d09a1fa7c7e69ed626e37adebca31256cc047f6f1bb58df2394cebddf0a",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/read-model.ts",
+      "bytes": 4257,
+      "sha256": "0e7df26c79e633a64e17ff8f47f53be6bb9fbd4753cefbeb7c0015da05e66507",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/regen-revival.test.ts",
+      "bytes": 3009,
+      "sha256": "a3be0d77f1e4eb4d9b42076c836a314a2c15ec117dffd0b2afa58473b23509ec",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/replay-identity.test.ts",
+      "bytes": 1430,
+      "sha256": "e0cfe12aa0fced0cdc91f2f7511b60a5bd29d57888e7093121da79d086e613a5",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/rules-version.test.ts",
+      "bytes": 7481,
+      "sha256": "eed73ab8e1cc153e6b686d3c6c8d2f3e5ea6873189ea63c5e6bc43b596356abd",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/rules-version.ts",
+      "bytes": 581,
+      "sha256": "cb86063380e4c40716c51131a78f90748a315f714674c7b4bde903a07a136984",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/rules.ts",
+      "bytes": 51637,
+      "sha256": "388bba53efc8d242c4f176cb9193baadffcb9d450a26896a23b4ba6b0c3b23ed",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/run-archive.css",
+      "bytes": 574,
+      "sha256": "0ab2dc9b3c8e2bedae9ebaa65c79024b7150947d4da748acddfca72d6b6a26fa",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/run-archive.ts",
+      "bytes": 1224,
+      "sha256": "b9cdc926374b330a736a7f9cbc1366fe591f4eae08a84e5ce5d5fc228201b117",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/run-mode.test.ts",
+      "bytes": 883,
+      "sha256": "507a0f5c58a9a9cdacd11181fe220122e541cb9ef24ad9106286416fd20a0471",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/run-storage.test.ts",
+      "bytes": 16637,
+      "sha256": "e5f38d03bf45457e9b7bc0e71e7d1264877fd21cd4a1644945b90919c7f6b460",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/run-storage.ts",
+      "bytes": 3173,
+      "sha256": "791852e556679a21fe6713ccf0ac48d0ea4f4bc16fb6427a396405240348630f",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/scene.ts",
+      "bytes": 8547,
+      "sha256": "c04f03a3a5f6fe191c098c9ca4cc5b0e08612417bfec4119e21c29968bda32e1",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/sentry-mercenary.test.ts",
+      "bytes": 7592,
+      "sha256": "fff868a76d7a128a1ce362607b26c60d599904ca3bd6298156409e758213e423",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/sheepfold-activation-integration.test.ts",
+      "bytes": 7200,
+      "sha256": "39b72146eafbb53d6e4c7a44778647e03f5884d54876af6bcbae658c50d69699",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/shop-effects.test.ts",
+      "bytes": 13217,
+      "sha256": "68f0a910aa8838e8cb85d4c33e88ea0a2e157a93b3a76eb3e880dfbf640db439",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/shop.test.ts",
+      "bytes": 12111,
+      "sha256": "befa4adff40d726df2f5f423545b4a71d9ee35e4e84891b2cca529a521e0ba0f",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/skull.test.ts",
+      "bytes": 1954,
+      "sha256": "d5cd2d4cd56c6ceaae6c7292e918bd874fcfaa1c976783688f87f18c5f8f5803",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/source-numbers-provenance.json",
+      "bytes": 23465,
+      "sha256": "a5becf5a0c2dda41821bff7d817d6749302849c184b5c76547874f4071ef2345",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/source-numbers.ts",
+      "bytes": 35438,
+      "sha256": "c5e999b2c7862e4c34b849769c0b8cbfe1636b640d257b087d89ee614d4c9ede",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/startup.css",
+      "bytes": 1007,
+      "sha256": "824ffb161109adbd9507e916763a804ff9b5ce9227d90475fd852753805fc0ae",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/struck.test.ts",
+      "bytes": 6768,
+      "sha256": "345f07689a92926ad1d0019d4eea07b8d76f775f47f3e78bdcfc6cd94c572313",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/stun.test.ts",
+      "bytes": 4745,
+      "sha256": "68c9f1887277bb63f89e3924efcac319f8ca553a95e1c625442ce9076fef471e",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/style.css",
+      "bytes": 5779,
+      "sha256": "7bdc3c2f481793db99df180654dc6a4546cd706323931c93aa6f37b5ba9311de",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/tower-deployment.test.ts",
+      "bytes": 3648,
+      "sha256": "d37d3257db97b29e7e531ab71d7b4376b23e20b21cfb27db4a515839248cf5de",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/tower.test.ts",
+      "bytes": 8242,
+      "sha256": "20f37fa2d5ba9cc15f9d8cbe74201cca7ab3f38e16557778d55aa9d3137496df",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/troop-poses.ts",
+      "bytes": 336,
+      "sha256": "8b0ff0460dce0a9ef05f0de130411ff7ab2ef10ef1df8ffb1dbb0f1dc3e27578",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/tutorial-domain.ts",
+      "bytes": 3675,
+      "sha256": "3519a3da1b0ff2a24f535637da9ba601af2a70bd7883f5fa5f176f0f2077337c",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/tutorial-fate-stage.test.ts",
+      "bytes": 2091,
+      "sha256": "0b8311ac97bb4d2dfa11395af9443aa9bb3cf4880ecd3b5707dfd9282692c189",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/tutorial-fate.test.ts",
+      "bytes": 2160,
+      "sha256": "115fda07490646e7984d128de97a423160aa87dcd3545e84643f78fa29e2153d",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/tutorial-leave.test.ts",
+      "bytes": 3246,
+      "sha256": "943ffec7332b0fc5f1a7ff0de585f7633c402faa3d7e5c5ceea3f0ef94e159df",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/tutorial-opponents-data.ts",
+      "bytes": 69744,
+      "sha256": "e5d2780bec97ded99d8f9545b7b04bb7af88301d71718325ca8d70c435a024d5",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/tutorial-opponents.test.ts",
+      "bytes": 8917,
+      "sha256": "720840405b1cdefe8ce70053b2069e09c4b6423076eab676d64ad63a075eec44",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/tutorial-opponents.ts",
+      "bytes": 2109,
+      "sha256": "06c53a61588414d0cd5b1d5affbdb449f957ec2c3f69b3c6ca3bca9ba08a8c8e",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/tutorial-progression.test.ts",
+      "bytes": 12290,
+      "sha256": "90452576d5a9c01f5a2b3cba03b14b7f30c4e23551100721f5d8a7a86164174e",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/tutorial-start.test.ts",
+      "bytes": 3460,
+      "sha256": "fc88536c7c64045e4d82ff0c3e37e63f30cff98aaebe00cdb2ce5fadb3091afc",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/tutorial.css",
+      "bytes": 3201,
+      "sha256": "14de251e5888fe1acd9722270f2b012cb01bb9c35cecde6c3fa4d4a162a49ad7",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/tutorial.ts",
+      "bytes": 11209,
+      "sha256": "221286f9b3f424888e797aa41f44d5103dfad70d4c7bb952127ffd3a29b0f87c",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/urls.ts",
+      "bytes": 1115,
+      "sha256": "82fc2a897d2eb50889aaff6a9a65da6e270824731afa4c43408a22e2fe611ba0",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/war-lessons-presentation.test.ts",
+      "bytes": 2444,
+      "sha256": "4490280f8010de9c3e922553696bc4ad41a175e9adfd4a8df8d3fd5e480b2d85",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/war-lessons.test.ts",
+      "bytes": 3510,
+      "sha256": "65c385f07907ac720ec98f2e97732743dfc7384eafe3716a21f17f73bccafe50",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/warband.ts",
+      "bytes": 21099,
+      "sha256": "e0f410ca8abcf7b9699b6b03b2c6eb3565ed49cec3fc4d16d4041b2d4e804748",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/webmcp.ts",
+      "bytes": 2334,
+      "sha256": "511ac376d7e057d201e09bf8b94c2343bed0631a65c2b42c4d0dcc069f995dee",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/workshop.test.ts",
+      "bytes": 4471,
+      "sha256": "4ddf138e9073466fb583cbdee33ac3b9347fc426c022373b0fca353f5b339b7f",
+      "origin": "tracked"
+    },
+    {
+      "path": "src/workshop.ts",
+      "bytes": 6498,
+      "sha256": "3809cc215cac5e006be3585062d6356806bb7a75f6b53fc66212c972e328bcde",
+      "origin": "tracked"
+    },
+    {
+      "path": "test-fixtures/fate-offers.json",
+      "bytes": 7616,
+      "sha256": "d0d5fb2ed67dd51a5544d387746e1376874b89f7cbec3fdf3694cdf3f6b7b880",
+      "origin": "derived"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 515,
+      "sha256": "c77efbc991d092a90df21be83ac7e0e4c7baffcdbbb389fdb3ba0acfc2b71c6e",
+      "origin": "tracked"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 559,
+      "sha256": "3a40589f87d4a39de8e055bf844c1ac5a98704ee29d95befdd73de1c320687eb",
+      "origin": "tracked"
+    },
+    {
+      "path": "workshop.html",
+      "bytes": 2225,
+      "sha256": "4bab3c54c5e9cbf70cd8058ea27a434f57d21e5ba4b31ccffa1af9db021a8d6c",
+      "origin": "tracked"
+    }
+  ]
+}

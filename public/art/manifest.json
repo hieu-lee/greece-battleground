@@ -1,0 +1,4744 @@
+[
+  {
+    "id": "icon-action-speed",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-action-speed.webp",
+    "bytes": 8850,
+    "sha256": "9344336e9f703638f94ff599b0d79d2daa8f662091991346a6453f6bcf052211"
+  },
+  {
+    "id": "icon-agora-supplies",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-agora-supplies.webp",
+    "bytes": 8478,
+    "sha256": "06d1b4c4758916f7665ab51b08c63ccffcc9352374effbc99402dc43e0f9c3ff"
+  },
+  {
+    "id": "icon-arcadia",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-arcadia.webp",
+    "bytes": 11804,
+    "sha256": "0d10b2739961ed396f8ac1fa463909730f8f4494b817df773b90d14a435fb825"
+  },
+  {
+    "id": "icon-armor",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-armor.webp",
+    "bytes": 11544,
+    "sha256": "c3b58d3afd31a0e01adb76a4c7210472c5d6bedeb7be45139e2010607596945f"
+  },
+  {
+    "id": "icon-athens",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-athens.webp",
+    "bytes": 13284,
+    "sha256": "4ff48089e6966396e55d099cd290acec23b5d3db802fd4570e336914bf6e1dc3"
+  },
+  {
+    "id": "icon-burn",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-burn.webp",
+    "bytes": 7350,
+    "sha256": "2c71a140f9a3aca7a8280878cae64362d5454b491effa711f735ef4b45aa61f2"
+  },
+  {
+    "id": "icon-civic-splendour",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-civic-splendour.webp",
+    "bytes": 9062,
+    "sha256": "7e272ca7597340a9c4afae0cddf62de3aecba17e58405b07de54bef984d5e7d6"
+  },
+  {
+    "id": "icon-cleave",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-cleave.webp",
+    "bytes": 9168,
+    "sha256": "75f849d41c208a37e9c96aa94770153c0c112ba7e3ab77d37a1b965528bba6f2"
+  },
+  {
+    "id": "icon-crit",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-crit.webp",
+    "bytes": 5594,
+    "sha256": "f84aecfdb29178f3a44d9e9b276883267d2d4368a24db3f7bdfe3d3ff68758da"
+  },
+  {
+    "id": "icon-damage",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-damage.webp",
+    "bytes": 3956,
+    "sha256": "6628979d78860eb7bc1f44e4abd75040f986b6fe69b3219e2941549d8e172e8f"
+  },
+  {
+    "id": "icon-drachma",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-drachma.webp",
+    "bytes": 11024,
+    "sha256": "1a03ffc273c7a4d1ab50aea8493afc7aed04d652b9eaa04e97f8688eb125d4dc"
+  },
+  {
+    "id": "icon-frost",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-frost.webp",
+    "bytes": 8112,
+    "sha256": "7f76ac67085b9985bec7599bb0fcafcf37566ce3f89b4b9fd0dac5dff7d68246"
+  },
+  {
+    "id": "icon-healing",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-healing.webp",
+    "bytes": 10258,
+    "sha256": "82a2c1013c853be3d1da8c2e224f600c1df0359107b90b14c4392327995bad3b"
+  },
+  {
+    "id": "icon-health",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-health.webp",
+    "bytes": 10828,
+    "sha256": "f1f517a43f97c5ffcdc059e7f5b7b7e945f140395d2ce8b23e6a4ef3ebf17f4e"
+  },
+  {
+    "id": "icon-hunters-cunning",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-hunters-cunning.webp",
+    "bytes": 7502,
+    "sha256": "832d6bd8c6d5bdf04dfafc46b98026852c62a176c8be795e9997ce04cb44ada0"
+  },
+  {
+    "id": "icon-insight",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-insight.webp",
+    "bytes": 9260,
+    "sha256": "ac875d5ee55186af0fbbfa94c36b71d2478e807f037abf6e92ed044432e80088"
+  },
+  {
+    "id": "icon-kings-resolve",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-kings-resolve.webp",
+    "bytes": 13180,
+    "sha256": "12e30f5f0c1f5bddc1c0b5ce3bb23c3b170fe62371bb3079078aeaa95ffe8712"
+  },
+  {
+    "id": "icon-movement",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-movement.webp",
+    "bytes": 7572,
+    "sha256": "aa6c35ec6ee7a4a94c06db59cfd070c5ce782f88ba37c5afc88077c9cb423283"
+  },
+  {
+    "id": "icon-poison",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-poison.webp",
+    "bytes": 7700,
+    "sha256": "b481623e48ba7bd5f70cb891cfe2bf17ee2e7f8ca00437987eeedd7009b8cfa5"
+  },
+  {
+    "id": "icon-tempered-arms",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-tempered-arms.webp",
+    "bytes": 5016,
+    "sha256": "9334bbf3be6a322c767fce0dd50cff4bf6ae15d3b8563e9ad0200591aeee7795"
+  },
+  {
+    "id": "icon-thorns",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-thorns.webp",
+    "bytes": 6564,
+    "sha256": "caa40636da54de6dcf264242e8232a085fa359134af237e1358c2d26129fcc10"
+  },
+  {
+    "id": "icon-trailblazers",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-trailblazers.webp",
+    "bytes": 6948,
+    "sha256": "e397ccfe3f96a4c79509549462b3d614e4f7f8ab9da62dd6a2d19e031d76246e"
+  },
+  {
+    "id": "icon-villager",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-villager.webp",
+    "bytes": 8446,
+    "sha256": "7dae8a50c84996fb3ae4d76b51f0b2453e8b90eab0ea9360cc79dcc13fc98f5a"
+  },
+  {
+    "id": "icon-ward",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/icon-ward.webp",
+    "bytes": 10544,
+    "sha256": "d4b5c3a31f6607c8dc818ecd4b75eefebd418e0042d74147176204a93c7295cf"
+  },
+  {
+    "id": "fate-a-heros-ascension",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/a-heros-ascension.webp",
+    "bytes": 9586,
+    "sha256": "9913dab778011e31018072521848843a4fdc9042926b5c80fde0c0b6c29d0228"
+  },
+  {
+    "id": "fate-a-heros-last-breath",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/a-heros-last-breath.webp",
+    "bytes": 5564,
+    "sha256": "8be1d76e3a92ba21c81e437a2de2e1c942327b64230634c157588da4bd9e86ba"
+  },
+  {
+    "id": "fate-achilles-charge",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/achilles-charge.webp",
+    "bytes": 10688,
+    "sha256": "b076775bb05be255bc9eb0669dad3600286d013977d5c2545d7b620f9f992fe0"
+  },
+  {
+    "id": "fate-achilles-opening",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/achilles-opening.webp",
+    "bytes": 7176,
+    "sha256": "4592280c7d357c16cdebee51c3589b05d4c5708be169cba691da9c852a5aded6"
+  },
+  {
+    "id": "fate-aegean-salvage",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/aegean-salvage.webp",
+    "bytes": 9720,
+    "sha256": "27305ce5e97b27e91287aa1f697f20422a4f32b36b66dfd0c540d3906f9f383c"
+  },
+  {
+    "id": "fate-aegis-of-thought",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/aegis-of-thought.webp",
+    "bytes": 12824,
+    "sha256": "35ef9f66d276b594651978feddc8ddbf0d93e1064db114aaef177095506ec997"
+  },
+  {
+    "id": "fate-aegis-strike",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/aegis-strike.webp",
+    "bytes": 10048,
+    "sha256": "d9082d7b21cb368aef2e22143797752e24732960c62aa850a0355c9813df7270"
+  },
+  {
+    "id": "fate-aeolus-counsel",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/aeolus-counsel.webp",
+    "bytes": 11344,
+    "sha256": "7f36c72f63d52c7acdddd42523e175bccda264a2eaa8aadd4b0cd66104fcac55"
+  },
+  {
+    "id": "fate-ambrosial-vitality",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/ambrosial-vitality.webp",
+    "bytes": 9238,
+    "sha256": "d766c66932a81881ecb0d1dfa45d4e163bf67f0fe21e074b004ca45d099c006e"
+  },
+  {
+    "id": "fate-apollos-champion",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/apollos-champion.webp",
+    "bytes": 10826,
+    "sha256": "6a1bb5b3ba67ddd883b0939eea4902f7f4add622a337990bbbf1ebdd4cbca32d"
+  },
+  {
+    "id": "fate-apollos-conduit",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/apollos-conduit.webp",
+    "bytes": 11890,
+    "sha256": "1dab4ed932297560dc18c4f4196259969a88fa5ba586574926f52d32e33712c4"
+  },
+  {
+    "id": "fate-apollos-sentinels",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/apollos-sentinels.webp",
+    "bytes": 8362,
+    "sha256": "27d2572e5b373b7adcee6f568f6f8e6ea15221c29dcde1a737da9aee507c5969"
+  },
+  {
+    "id": "fate-ares-cleaving-strike",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/ares-cleaving-strike.webp",
+    "bytes": 7546,
+    "sha256": "c73802adc8fce6eea83f8af9fc9d63973f1266fe16f06c7918e6fb03a4c2e35d"
+  },
+  {
+    "id": "fate-ares-swordstorm",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/ares-swordstorm.webp",
+    "bytes": 11882,
+    "sha256": "a299c9e21b8d82252e1bd346c972fbea8968c1ee25f508c1daeb1b94fd72a435"
+  },
+  {
+    "id": "fate-arrows-of-prometheus",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/arrows-of-prometheus.webp",
+    "bytes": 5722,
+    "sha256": "6003aafb5042fee4ad269abaf92369dc399be2616daa95813dc2b46255d18261"
+  },
+  {
+    "id": "fate-arsenal-of-hephaestus",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/arsenal-of-hephaestus.webp",
+    "bytes": 9522,
+    "sha256": "00a6ee925422d6ac904d1510106c72103268b1eb2731c95d961c3174073c3ee7"
+  },
+  {
+    "id": "fate-artemis-arrowstorm",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/artemis-arrowstorm.webp",
+    "bytes": 8526,
+    "sha256": "08c49521d8687b721621444cfd8686018c560cb141e57356b996cd100f773639"
+  },
+  {
+    "id": "fate-artemis-power-shot",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/artemis-power-shot.webp",
+    "bytes": 6638,
+    "sha256": "d005655c11a1e0bee74187f1f6ba2bcafbd2b947d81b54f5e9c2ce750a7e8510"
+  },
+  {
+    "id": "fate-artemis-precision",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/artemis-precision.webp",
+    "bytes": 4114,
+    "sha256": "4a70dc0a898d18f6b24ee81c0714d6eefd8ee48096338b6bafed7740b1df8c41"
+  },
+  {
+    "id": "fate-artemis-true-aim",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/artemis-true-aim.webp",
+    "bytes": 11560,
+    "sha256": "6c3acdc9591c6d9fccfb0592274d057b4cd58dca97ea8df74d561c9ef9d473d4"
+  },
+  {
+    "id": "fate-asclepius-battle-healers",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/asclepius-battle-healers.webp",
+    "bytes": 9704,
+    "sha256": "6a8d5a7e86a7ee9cb35f5bc8f62f7cfa4f7724f88836f6244d1fa38fb85c7fed"
+  },
+  {
+    "id": "fate-asclepius-second-wind",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/asclepius-second-wind.webp",
+    "bytes": 9484,
+    "sha256": "26ff85a82833e291c7146fca77315e743bef10b09ad9b0265f5b6aad6085f4a3"
+  },
+  {
+    "id": "fate-asclepius-surge",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/asclepius-surge.webp",
+    "bytes": 8748,
+    "sha256": "7fcc162930a9e9cf69f72c397799e224df1caab701e8a12746a8423da263fb1f"
+  },
+  {
+    "id": "fate-athenas-apprentices",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/athenas-apprentices.webp",
+    "bytes": 8800,
+    "sha256": "a4900d788a0ed5e80e1e7c4a4c3e8020a035bce9718653ebedb0a9260716cf24"
+  },
+  {
+    "id": "fate-athenas-bastion",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/athenas-bastion.webp",
+    "bytes": 6830,
+    "sha256": "7b171143646f529f674fc8ce47a42797983e1bc942439ffb0883843606ac3b5f"
+  },
+  {
+    "id": "fate-athenas-design",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/athenas-design.webp",
+    "bytes": 8836,
+    "sha256": "00a2b090c9082b627ba962025488c8c156bae574017bea2fee79fec8598f36d7"
+  },
+  {
+    "id": "fate-athenas-might",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/athenas-might.webp",
+    "bytes": 8962,
+    "sha256": "c690d8fdfcb386f37b420582d9eccc87c287641a9d5ccd9a2333708c874ef4eb"
+  },
+  {
+    "id": "fate-athenas-shield-wall",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/athenas-shield-wall.webp",
+    "bytes": 11850,
+    "sha256": "9fbe57b832a17d0eaac9eea27864a8e10cabd57519ca8c94587a0a1365f235f2"
+  },
+  {
+    "id": "fate-athenas-war-lessons",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/athenas-war-lessons.webp",
+    "bytes": 9506,
+    "sha256": "00772a2761ca01a73d0270f8c6469bbd19aa894dd7a4a7778ee7af066d0315db"
+  },
+  {
+    "id": "fate-beseech-apollo",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/beseech-apollo.webp",
+    "bytes": 9108,
+    "sha256": "4bf6099e0a811bcc4899806db2e0bcd2e2c3a0c365c8910c8888772ae9b0584f"
+  },
+  {
+    "id": "fate-beseech-athena",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/beseech-athena.webp",
+    "bytes": 8378,
+    "sha256": "bb00687851c92f0077c26a926c6da86e8b3ed718601d91801fbc52176cbae50f"
+  },
+  {
+    "id": "fate-beseech-zeus",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/beseech-zeus.webp",
+    "bytes": 9352,
+    "sha256": "39477ad930015b44236e5e9bf9966fc1db7049308a5256f9c844f76eac125130"
+  },
+  {
+    "id": "fate-blood-of-ares",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/blood-of-ares.webp",
+    "bytes": 6626,
+    "sha256": "3f13b86a247593bd701a9cffd06576cde20f84cc3422889a2fabeddd7cdae79c"
+  },
+  {
+    "id": "fate-bolt-of-zeus",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/bolt-of-zeus.webp",
+    "bytes": 7000,
+    "sha256": "d36f770ca45aa2ff6c090f4f953f771256476f8df6d9f261e757b708043a3d91"
+  },
+  {
+    "id": "fate-bond-of-the-phalanx",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/bond-of-the-phalanx.webp",
+    "bytes": 7276,
+    "sha256": "4635022d0b3b8a9551f50506faea2d7c6957600b537ca9c42c387337172cca1c"
+  },
+  {
+    "id": "fate-breath-of-boreas",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/breath-of-boreas.webp",
+    "bytes": 10120,
+    "sha256": "9bca5090bf9f2c544b4268821933723ae2d22ec409db9993bb7575f9f603f35d"
+  },
+  {
+    "id": "fate-breeze-of-zephyrus",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/breeze-of-zephyrus.webp",
+    "bytes": 9894,
+    "sha256": "a9602f4e91bba8fc163bd8742f276b7ea462451148358787a800a491797ee48c"
+  },
+  {
+    "id": "fate-bronze-of-hephaestus",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/bronze-of-hephaestus.webp",
+    "bytes": 11358,
+    "sha256": "d4cb82e8cea88b5e29ff5eae35c06f9e878883c66d051cfd3d23ece9c9a1caeb"
+  },
+  {
+    "id": "fate-burning-blades",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/burning-blades.webp",
+    "bytes": 7440,
+    "sha256": "a005b050fd1edccba6edbbc8ce7a883e784f29cee9c6294efe3b34abcd6ec14d"
+  },
+  {
+    "id": "fate-call-to-learning",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/call-to-learning.webp",
+    "bytes": 9788,
+    "sha256": "cb2fdeee867e7494be07cae376ea50f77c2769812d955f77938f1704fde19cad"
+  },
+  {
+    "id": "fate-call-to-peace",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/call-to-peace.webp",
+    "bytes": 10872,
+    "sha256": "d6020c082cab071c4b863a70b6d72326c788ec5e388cc2de28df71798b87219d"
+  },
+  {
+    "id": "fate-call-to-war",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/call-to-war.webp",
+    "bytes": 10452,
+    "sha256": "90d1593bd97feafc9f2b57e82e1afedbf8c4a0817f73c961e093ce1104f35a7d"
+  },
+  {
+    "id": "fate-citizens-answer",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/citizens-answer.webp",
+    "bytes": 7394,
+    "sha256": "d653ca833fc3f5e483eebb7f192a1a3f9ba9683693bdef7775b56053da7e3bda"
+  },
+  {
+    "id": "fate-echidnas-hide",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/echidnas-hide.webp",
+    "bytes": 10008,
+    "sha256": "6128d98f273b93984ff1aeefc841ade63ac9c2eda9b490d93d5b076fc3e6c327"
+  },
+  {
+    "id": "fate-eyes-of-the-eagle",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/eyes-of-the-eagle.webp",
+    "bytes": 9196,
+    "sha256": "e93ea9fac211d63d3cc99bd3f38441afc3889fce981dff0d83a3317d6935fb89"
+  },
+  {
+    "id": "fate-flurry-of-blows",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/flurry-of-blows.webp",
+    "bytes": 4694,
+    "sha256": "188843f30f10390f61efd92dfb7be4fe6cd33530464069fe126c585650f5f5d2"
+  },
+  {
+    "id": "fate-fury-of-the-titans",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/fury-of-the-titans.webp",
+    "bytes": 8098,
+    "sha256": "53f56e705783c79d9d461127c489c9aa537cd3508f63f2533e60e86275edfe06"
+  },
+  {
+    "id": "fate-gleaming-aegis",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/gleaming-aegis.webp",
+    "bytes": 11960,
+    "sha256": "10028c58f0b359c7cacbfdf3acdc1b21590963db4635a60ecd7ff03d761b9271"
+  },
+  {
+    "id": "fate-growing-might-of-heracles",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/growing-might-of-heracles.webp",
+    "bytes": 5374,
+    "sha256": "71e0ea06a598556840d4a76a68c5579a7ada52b536fc3a74fda47b8ecf4f155a"
+  },
+  {
+    "id": "fate-guardians-of-the-frontier",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/guardians-of-the-frontier.webp",
+    "bytes": 5412,
+    "sha256": "5c5a3d45f8274cc601fda3368463d28b12fa0d8327843035550c1d57b4ad23f9"
+  },
+  {
+    "id": "fate-guardians-of-the-polis",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/guardians-of-the-polis.webp",
+    "bytes": 11042,
+    "sha256": "9146c8eb104efa712b5b4ded1da7dc4721a251b58791212a35f11351318514b6"
+  },
+  {
+    "id": "fate-hands-of-asclepius",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/hands-of-asclepius.webp",
+    "bytes": 9270,
+    "sha256": "2f985eb39d03a80a2464fad7cafa95cc3c5a3f2b17ccd5c4b23c4577a46e71bf"
+  },
+  {
+    "id": "fate-hephaestus-edge",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/hephaestus-edge.webp",
+    "bytes": 8790,
+    "sha256": "00cc480c6c4821a9418d776b547b317c4d977f75b5cca3f6323b1d20b50b26f9"
+  },
+  {
+    "id": "fate-heracles-great-swing",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/heracles-great-swing.webp",
+    "bytes": 11602,
+    "sha256": "8e61cf751f8ab3d989d15d831e93ae2839081d769b0996a3bb0ed8d2feedc2a9"
+  },
+  {
+    "id": "fate-heracles-heavy-blow",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/heracles-heavy-blow.webp",
+    "bytes": 6946,
+    "sha256": "6bacbc555c41de1f34d2a55d6c7a332dc86057fe03c1b573fa68d1e5fbd4ad28"
+  },
+  {
+    "id": "fate-heracles-resolve",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/heracles-resolve.webp",
+    "bytes": 9850,
+    "sha256": "fbecee429b7c03571d75b7bc26909fae027310b651e01d183fe9b6fd3229ac6c"
+  },
+  {
+    "id": "fate-hermes-fair-trade",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/hermes-fair-trade.webp",
+    "bytes": 10062,
+    "sha256": "7392d6e25b60cfe356f3f98a463fcc5cbddfd9ac659f5a3e2baef134c5599ba7"
+  },
+  {
+    "id": "fate-hermes-pathfinders",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/hermes-pathfinders.webp",
+    "bytes": 8240,
+    "sha256": "a2ff90388d0c9372eff89b7604af931e92c625fba2eb872dbf3afc2c5dd79518"
+  },
+  {
+    "id": "fate-hermes-swift-hands",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/hermes-swift-hands.webp",
+    "bytes": 5300,
+    "sha256": "9173eff61ebefccba08d9686269313c052f0096aa92cc604fe1ecaf923befd0a"
+  },
+  {
+    "id": "fate-in-the-heros-wake",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/in-the-heros-wake.webp",
+    "bytes": 9782,
+    "sha256": "421e53c97fa415afcbbb3d50a769f733b00ab4f35f540bac35e669b9795e5ea3"
+  },
+  {
+    "id": "fate-invoke-apollo",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/invoke-apollo.webp",
+    "bytes": 8416,
+    "sha256": "b2c43fc843cae9080254041d9bcd2f2cff030f79638a2ce7dce87868822597cb"
+  },
+  {
+    "id": "fate-invoke-athena",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/invoke-athena.webp",
+    "bytes": 7924,
+    "sha256": "c07849862339802133f86398bacd33305500bb67e900e2988403d9754ef2fd5d"
+  },
+  {
+    "id": "fate-invoke-zeus",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/invoke-zeus.webp",
+    "bytes": 8326,
+    "sha256": "d80b92dfa7f38e7daee767dcb452c17fde6536dddf5eb11c8f0423520692bb02"
+  },
+  {
+    "id": "fate-lost-wanderer",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/lost-wanderer.webp",
+    "bytes": 9934,
+    "sha256": "e015a0d33bb0bc4f9754b9a39cc04c8141dd36698e244868c4d769d2ee523ccf"
+  },
+  {
+    "id": "fate-memory-of-the-polis",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/memory-of-the-polis.webp",
+    "bytes": 10122,
+    "sha256": "7cc9b5e015dcf1819113e57de35a01f771fc7aa9ae82b33d0ae4ef7a1f50d901"
+  },
+  {
+    "id": "fate-mines-of-laurion",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/mines-of-laurion.webp",
+    "bytes": 11870,
+    "sha256": "07fceddd7a56e7ea9ccaa5a24607d90eef94cd6bfce4b79d04cddd8ae25b833e"
+  },
+  {
+    "id": "fate-padded-armor",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/padded-armor.webp",
+    "bytes": 9946,
+    "sha256": "a3bc38a2445f208c3e0c5506cd6bb4d964028d4080e73ea0894a6fd52bc62383"
+  },
+  {
+    "id": "fate-phalanx-discipline",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/phalanx-discipline.webp",
+    "bytes": 9310,
+    "sha256": "41b2bce5f27f1da4d26aed2add4ed8930722a53b9d818aaf31a3350fc737fe10"
+  },
+  {
+    "id": "fate-pray-to-apollo",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/pray-to-apollo.webp",
+    "bytes": 10458,
+    "sha256": "a3f54d6e127c7512bbcca4a28d9b185b7d11adc87aeb5c3780987e1506d30ccf"
+  },
+  {
+    "id": "fate-pray-to-athena",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/pray-to-athena.webp",
+    "bytes": 11854,
+    "sha256": "f3aaa8a10fc8e59c5a02cc02135de736613b7f3b5a61802898a8553f1092572c"
+  },
+  {
+    "id": "fate-pray-to-zeus",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/pray-to-zeus.webp",
+    "bytes": 11448,
+    "sha256": "ac579b5e6ec888df964165affc76db2b3ffb150c28619eadc8559328cb7275a8"
+  },
+  {
+    "id": "fate-prometheus-flame",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/prometheus-flame.webp",
+    "bytes": 9432,
+    "sha256": "8d42bc8008408412a70ccb338dc7bdc5bfae7444bd8e58a232461d6665d699fd"
+  },
+  {
+    "id": "fate-protect-the-weak",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/protect-the-weak.webp",
+    "bytes": 12180,
+    "sha256": "7e2f55bc44dd91dc34e74275178d64437245e538acf900bc7f7e990b61c4e228"
+  },
+  {
+    "id": "fate-read-the-oracle",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/read-the-oracle.webp",
+    "bytes": 10362,
+    "sha256": "cba9e75830af22ca5565b65d35e858d355122bd0931fdf9c9328c263030f07b6"
+  },
+  {
+    "id": "fate-rite-of-ares",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/rite-of-ares.webp",
+    "bytes": 5626,
+    "sha256": "b67b55b86c32a5706b0e8b7aa45cca414c4ed42b7429b38a53fd06d0b069701a"
+  },
+  {
+    "id": "fate-rite-of-athena",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/rite-of-athena.webp",
+    "bytes": 9654,
+    "sha256": "6bca86c89a86c1298b033cc8a537367618fc31ea47c8b83cd4bfe6efca8ae8ea"
+  },
+  {
+    "id": "fate-rite-of-hestia",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/rite-of-hestia.webp",
+    "bytes": 5116,
+    "sha256": "c43494ef0e29d304d9c36d54ca5bbdb9a4a9119b27a22c4aec04967ee9960a49"
+  },
+  {
+    "id": "fate-rites-of-eleusis",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/rites-of-eleusis.webp",
+    "bytes": 11856,
+    "sha256": "7ac4864b5dfba7e35ab380e97388748d843459e26348443fe4b2ca723311adb9"
+  },
+  {
+    "id": "fate-ruins-of-delphi",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/ruins-of-delphi.webp",
+    "bytes": 8582,
+    "sha256": "a0d1093ddc5bc7fa92f462620dc1896ac42c69b7efe2aae5fe78a9688c01e21e"
+  },
+  {
+    "id": "fate-secrets-of-the-oracle",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/secrets-of-the-oracle.webp",
+    "bytes": 10316,
+    "sha256": "986aac722da2262afc0715b76bbf848f781c8c59e63796c38cd29ba353da5e54"
+  },
+  {
+    "id": "fate-seek-the-oracle",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/seek-the-oracle.webp",
+    "bytes": 9110,
+    "sha256": "1d4b7f89f60cda577ddcf4de906f173b86bb7cf4ac16f61e7a0394f5bd85065e"
+  },
+  {
+    "id": "fate-ships-from-corinth",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/ships-from-corinth.webp",
+    "bytes": 11108,
+    "sha256": "1094d54c966615f13e951ffa0a8632763eacefa945f47eecf1efb9a20510d057"
+  },
+  {
+    "id": "fate-sky-of-artemis",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/sky-of-artemis.webp",
+    "bytes": 8366,
+    "sha256": "f291285c2c58c2b8932d2735293a995b6f8019659c3f98bd4dd89b42e183f85c"
+  },
+  {
+    "id": "fate-spartan-discipline",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/spartan-discipline.webp",
+    "bytes": 10404,
+    "sha256": "d2edf3cd7bd750a750f00ea340021ca5f089a15126c2c2786af015799f01fb05"
+  },
+  {
+    "id": "fate-the-sacred-guard",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/the-sacred-guard.webp",
+    "bytes": 9296,
+    "sha256": "a7d6a3d839b62996d8cc27d2f45063ec3a3b5bfb686a6ef8b193702aeb3cff53"
+  },
+  {
+    "id": "fate-the-unbroken-phalanx",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/the-unbroken-phalanx.webp",
+    "bytes": 11272,
+    "sha256": "d19eb51bf94c267107e3664c66fdb433a85538fdad6f26330789102b523af2dd"
+  },
+  {
+    "id": "fate-warriors-ascension",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/warriors-ascension.webp",
+    "bytes": 10098,
+    "sha256": "b0ce2be1175b2fb275af97704b626641a262d588647e7706cbf06e0dfb8d61a1"
+  },
+  {
+    "id": "fate-watch-of-the-polis",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/watch-of-the-polis.webp",
+    "bytes": 6836,
+    "sha256": "3b5a5f9af4fac2c382af957838070d43e30f3ea5a3516af969254eed708d91b9"
+  },
+  {
+    "id": "fate-well-fed",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/well-fed.webp",
+    "bytes": 12208,
+    "sha256": "25e5ad78957627b10432f46cf0b31a3efbaabd273669038ae9ca05f9c16652e8"
+  },
+  {
+    "id": "fate-wisdom-into-wealth",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/wisdom-into-wealth.webp",
+    "bytes": 10810,
+    "sha256": "50e717a4ec085398f6bf129a9e6523459f2ab9c80467f53e4ecdf36f1ee3374b"
+  },
+  {
+    "id": "fate-wisdom-of-the-ancients",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/wisdom-of-the-ancients.webp",
+    "bytes": 10050,
+    "sha256": "6b5907cdfe4f8163343220efbe1bc826946b7b940bc76d1f2c2aa961be70fd17"
+  },
+  {
+    "id": "fate-wrath-of-the-ancients",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/wrath-of-the-ancients.webp",
+    "bytes": 9902,
+    "sha256": "8e3354247986405a9895485281cf5c92e6a8fc46cc9792caad1c4c8d7b508966"
+  },
+  {
+    "id": "fate-wrath-of-the-titans",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/wrath-of-the-titans.webp",
+    "bytes": 10652,
+    "sha256": "228f4a6a09442d989f35569cbfafb72cfbccd715cbeb0f65cb693f624d2a7a07"
+  },
+  {
+    "id": "fate-zeus-war-council",
+    "kind": "icon",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 96,
+    "height": 96,
+    "path": "/art/fates/zeus-war-council.webp",
+    "bytes": 8728,
+    "sha256": "7af131b906bf22b578c65b6a106485daf6be062b2199173cc5ee247853b01893"
+  },
+  {
+    "id": "wheat-field",
+    "kind": "building",
+    "width": 256,
+    "height": 256,
+    "path": "/art/wheat-field.webp",
+    "bytes": 16352,
+    "sha256": "8948345847e8ff15932b731e28152c617c9596f3897d27d683ed3bf56aa2b375",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 1
+  },
+  {
+    "id": "sanctuary",
+    "kind": "building",
+    "width": 256,
+    "height": 256,
+    "path": "/art/sanctuary.webp",
+    "bytes": 18090,
+    "sha256": "d5ccd39a0d087a6270aaee98a57492d7b5a5fc54eb1bcf4b3bd434aa129da90c",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 1
+  },
+  {
+    "id": "agora",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/agora.webp",
+    "bytes": 54232,
+    "sha256": "9c8d18930dfe8b89853d2c5ebd3b4fae318047c922a578a0c5014297674190f6",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "altar-of-kings",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/altar-of-kings.webp",
+    "bytes": 58512,
+    "sha256": "37f8def8df9eed4010aa50b1572637ac8415e34ebcc50d8668dd863787e3f020",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "altar-of-olympus",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/altar-of-olympus.webp",
+    "bytes": 53608,
+    "sha256": "44ad7eb2f35d3ab0737cf22c6e5d038b96c406bdcf6eee61983efef6d50978e2",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "apollo-fountain",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/apollo-fountain.webp",
+    "bytes": 60708,
+    "sha256": "a44ab988beb2b84908eb5388b7abb51697e5c70899a6982ab98afd8963400419",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "arcadia-hall",
+    "kind": "building",
+    "width": 1024,
+    "height": 256,
+    "path": "/art/arcadia-hall.webp",
+    "bytes": 63110,
+    "sha256": "b6890150b30e33f0cc504f5fa5b419e36d5dfa4a89b99aca24b89b171d812c0d",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 4
+  },
+  {
+    "id": "archer-camp",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/archer-camp.webp",
+    "bytes": 63518,
+    "sha256": "edb6ad3adef4df4d209d841e7d763381022f53cc14968318d109ce850021b670",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "brewery",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/brewery.webp",
+    "bytes": 50522,
+    "sha256": "b01e20fd5ce60baa60c5b97b588d6b0467a77749f20e7cebde155adebb899ced",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "charons-barge",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/charons-barge.webp",
+    "bytes": 44226,
+    "sha256": "f2a8cb234d8460db31d33313b78d81b768d80c18ca4be3700c60fbdb479a1417",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "dactyl-camp",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/dactyl-camp.webp",
+    "bytes": 53194,
+    "sha256": "1de8d4823764e8c22d68ed10157ac940b872424cd1c766fb421d054aa26f4e5f",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "defense-tower",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/defense-tower.webp",
+    "bytes": 57158,
+    "sha256": "95c8f605d113b69901bf450e01c203d854b72b3ad56e42c1cc720a2264bd46ac",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "drakon-nest",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/drakon-nest.webp",
+    "bytes": 36636,
+    "sha256": "026701823fface57dfa590ba4ec9cfeb81efe516cfbb1fba1b2fbecac56e76ce",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "farm",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/farm.webp",
+    "bytes": 51000,
+    "sha256": "4e1a67a6fd43070fff8e7035ed7bb39715144f49f96c368fcc60881c68812d6b",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "forge",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/forge.webp",
+    "bytes": 53246,
+    "sha256": "b1aaf29262f355c7abb99c67ff2d659f3653fbb49cb9f12b17d8634909d57c06",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "gate-of-etna",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/gate-of-etna.webp",
+    "bytes": 64104,
+    "sha256": "21f0be2fd7dc783c767fcc527a514fa7dd38f4d3282a6a6d987890a2c61d3f43",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "gate-of-hades",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/gate-of-hades.webp",
+    "bytes": 53666,
+    "sha256": "81e2b3a92d00839d104f2cdbbfae3809cb42d5433594d0806837a1b20263dec5",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "gigantes-camp",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/gigantes-camp.webp",
+    "bytes": 50352,
+    "sha256": "6590bd1efced3eb38b6957896a511340d2d424e5d155becf1abad5618db6e321",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "hall-of-rhapsodes",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/hall-of-rhapsodes.webp",
+    "bytes": 55068,
+    "sha256": "b5ae1388b5b86a16b4f50cbc670b46fde4ec637fe6987b1c1a5e89cb394e7c2f",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "healers-hut",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/healers-hut.webp",
+    "bytes": 50648,
+    "sha256": "8880b7d852cf07d1bbc0c96daf21d776e0a79fa3da09a8b94f7381a980e853f3",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "hephaestus-forge",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/hephaestus-forge.webp",
+    "bytes": 60934,
+    "sha256": "cc217ce7199489be27694b856c462cefebc9a36f1ef7747e11af83949e1f01af",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "hesperides-tree",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/hesperides-tree.webp",
+    "bytes": 56296,
+    "sha256": "d7651260e67c1d052bb14363423bdb0633e7d071d212a6951dc3558dea5cbf29",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "house",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/house.webp",
+    "bytes": 54698,
+    "sha256": "5acdb037f433aac037056f8ec0dfb20b38adf0826e3a44b6e6739530eccd2d4b",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "hunters-lodge",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/hunters-lodge.webp",
+    "bytes": 56500,
+    "sha256": "0580eb2b4624060ca9afd2f2b404af994e4513aac38d83936320ba3e4a3f6df2",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "iris-bridge",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/iris-bridge.webp",
+    "bytes": 47142,
+    "sha256": "68d7531df0ac34786bbcfb2c1c0495e5ab6a35c8ce9b55d0ffb88647fa163576",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "javelin-camp",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/javelin-camp.webp",
+    "bytes": 57946,
+    "sha256": "25d01a22db1953c97728a8d0f57f04d5b8e56159da38a634ea91d62cf8d11481",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "menders-hut",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/menders-hut.webp",
+    "bytes": 46970,
+    "sha256": "8662a21a3cf73cf14528325c5c20c52f8fb3f0654661a03f3a752c2fabb55edc",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "misthophoros-camp",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/misthophoros-camp.webp",
+    "bytes": 47540,
+    "sha256": "2630cea91f4feed6fde5ca0848f35f23d663d3fe7f6111787114bc2208316056",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "offering-well",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/offering-well.webp",
+    "bytes": 48352,
+    "sha256": "49849c16f97162aa320d3ec11c2e609f64e17038abc29a477f9affb633c0492a",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "pit-of-tartarus",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/pit-of-tartarus.webp",
+    "bytes": 48462,
+    "sha256": "6d7f3ce97578ba1061e0fd07416d37eae77951a8f4d60dc7407ad0e55fb14f7d",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "polis-hall",
+    "kind": "building",
+    "width": 1024,
+    "height": 256,
+    "path": "/art/polis-hall.webp",
+    "bytes": 93616,
+    "sha256": "2dca7c7dd5eda75ab61bb731e1ee1c1f16aa83527e1001af92a249f3ac044441",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 4
+  },
+  {
+    "id": "sacred-fire",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/sacred-fire.webp",
+    "bytes": 52654,
+    "sha256": "de57ab99b8a97a1091ba112c46e6ee6e7e80671887d741a12f4510ab9d11f70c",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "scout-camp",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/scout-camp.webp",
+    "bytes": 53762,
+    "sha256": "ad8ef8e727567e68303a32c6f9774c77d809e189fdc6fac03b93666e2b0e302d",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "sentry-camp",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/sentry-camp.webp",
+    "bytes": 51638,
+    "sha256": "455d07d29d53a4d0be03ad90677ab68b96e174fc05239680cf0aba6a1164b9f8",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "sheepfold",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/sheepfold.webp",
+    "bytes": 53388,
+    "sha256": "2730b8aef9ddc4eb0e9ad2a066ae3e67c435dc168a9cb8daaef7f7035a79131a",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "shield-camp",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/shield-camp.webp",
+    "bytes": 60770,
+    "sha256": "62b4b5da3960c5c0dfd589c5b9d1d62e9c46d5422fd0ea3d93d82c505ffc6b4d",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "silver-mine",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/silver-mine.webp",
+    "bytes": 53006,
+    "sha256": "be842f56ae7f6b5b549a9fc358cdd9dd08c7d89c63a30d7637590bce424a9432",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "skull-of-typhon",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/skull-of-typhon.webp",
+    "bytes": 56292,
+    "sha256": "aa3d39e860d3101b6a453f3da0bd1a26b615498124eaa85dd24b98fc99350eac",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "spear-camp",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/spear-camp.webp",
+    "bytes": 68384,
+    "sha256": "413b08ab84a46b3afb6d3c7dbca016a441d5d2a43de70552a19fee14dc44e88f",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "spring-of-mnemosyne",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/spring-of-mnemosyne.webp",
+    "bytes": 57618,
+    "sha256": "198d06c3145f11afe613687183dd6778ae0aac8ee7a422ebc85f550851dd99f9",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "throne-of-zeus",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/throne-of-zeus.webp",
+    "bytes": 66688,
+    "sha256": "4bfcb0584bdad0cd9326210c60605c19abcd689d598e1c357fe23aebd6ad91ec",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "thunderbolt-of-zeus",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/thunderbolt-of-zeus.webp",
+    "bytes": 53218,
+    "sha256": "c73d8f655053db3a7e2498e515efa4fb3e48618ed02be457f754b79fe2ac9d56",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "tombs-of-erebus",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/tombs-of-erebus.webp",
+    "bytes": 50458,
+    "sha256": "6e05f9ef69186e79e3c2c637de7edec23964ebdf46e4590761e5333be4fe3b61",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "tritons-conch",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/tritons-conch.webp",
+    "bytes": 48764,
+    "sha256": "b21e7f7446164a88b268474a8fcae0b741626ee895808e88b4f97dea3e65e1fc",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "watchtower",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/watchtower.webp",
+    "bytes": 61706,
+    "sha256": "00ed33cf76a388006fb890dd68f59f7a3fe254cff46e3b19b0d41d9f6a0e6301",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "wolf-den",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/wolf-den.webp",
+    "bytes": 56994,
+    "sha256": "7c745607f5ec3a882407195cf750f07ff3e38e926c6d48943369899efd947161",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "woodcutter",
+    "kind": "building",
+    "width": 768,
+    "height": 256,
+    "path": "/art/woodcutter.webp",
+    "bytes": 41876,
+    "sha256": "93133ca37c0ce61618eb62d6a9c54cb3a8db3c10ea1fbeedf781f29c8227a797",
+    "anchor": [
+      128,
+      175.72
+    ],
+    "pixelsPerUnit": 18.5507,
+    "frameWidth": 256,
+    "frames": 3
+  },
+  {
+    "id": "main-menu",
+    "kind": "background",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 1024,
+    "path": "/art/main-menu.webp",
+    "bytes": 415182,
+    "sha256": "0ebb8cc809c128bdfc0653a517182d7d84e1e48aa0c9ad821e5dd624243ef3e6"
+  },
+  {
+    "id": "battleground-spring",
+    "kind": "background",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 1024,
+    "path": "/art/battleground-spring.webp",
+    "bytes": 348862,
+    "sha256": "83d60515888d71731d20397389f5b66d4e48311228455d5730c2a7f509ed7fb7"
+  },
+  {
+    "id": "battleground-summer",
+    "kind": "background",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 1024,
+    "path": "/art/battleground-summer.webp",
+    "bytes": 337118,
+    "sha256": "3062e843802998687052d9d9cc290589cb0d3f9fcfc452c970282a5332a1cb8c"
+  },
+  {
+    "id": "battleground-autumn",
+    "kind": "background",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 1024,
+    "path": "/art/battleground-autumn.webp",
+    "bytes": 347496,
+    "sha256": "c86580f703aef91f8426151377301266ae98f456988942dfcd9b8a6504de20ac"
+  },
+  {
+    "id": "battleground-winter",
+    "kind": "background",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 1024,
+    "path": "/art/battleground-winter.webp",
+    "bytes": 389716,
+    "sha256": "5bbf296d8dc74e6aae1fabf617afc37aa82d39a9fab1b2c1747a99e3d65ffe1c"
+  },
+  {
+    "id": "aegeus",
+    "kind": "portrait",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 768,
+    "height": 1152,
+    "path": "/art/aegeus.webp",
+    "bytes": 206548,
+    "sha256": "b64068b2e3583939fdd394cc906194f997ab45626c0dc61b1fe012576e8a664e"
+  },
+  {
+    "id": "atalanta",
+    "kind": "portrait",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 768,
+    "height": 1152,
+    "path": "/art/atalanta.webp",
+    "bytes": 269358,
+    "sha256": "bf6aa784dbe463bbfd7fb64167dce88bd0115053b82e58851dcfcf7432301a19"
+  },
+  {
+    "id": "hoplite-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/hoplite-idle.webp",
+    "bytes": 40080,
+    "sha256": "c9078de752c28bef4ad2140562fc212baaae4b281d2548ebc21142e3b5b42c0a",
+    "anchor": [
+      192,
+      240
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "hoplite-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/hoplite-walk.webp",
+    "bytes": 346778,
+    "sha256": "69e9939f86e8bc31425692f2372e1e801348bb144c65a14a67c432ad5e3efc76",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "hoplite-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/hoplite-attack.webp",
+    "bytes": 136486,
+    "sha256": "ffcb3f6835b5ffff3039d9509d65bf43ec755ab490263d623c54c6f91b2b2f98",
+    "anchor": [
+      192,
+      240
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 2
+  },
+  {
+    "id": "hoplite-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/hoplite-hit.webp",
+    "bytes": 89486,
+    "sha256": "cc6185e1fe75f5cfe1c0200c980f46bd9a293203279fd2584dc46aaaf5532d1f",
+    "anchor": [
+      192,
+      240
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "hoplite-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/hoplite-death.webp",
+    "bytes": 158202,
+    "sha256": "167c96f8097907be9584242187e145ccc42ce5c0322f510678758ab9f94156de",
+    "anchor": [
+      192,
+      240
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 3
+  },
+  {
+    "id": "tracker-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/tracker-idle.webp",
+    "bytes": 35950,
+    "sha256": "b6e5191dd74def2299cf04c40b4a1e26ec3b54a0c7aeeadf2c6c5d9c7a2b3300",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 127.3529,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "tracker-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/tracker-walk.webp",
+    "bytes": 340642,
+    "sha256": "2780918f99560af63cf10a5f5ab4c93ceabbb57a8a843cb71fa3e99f3e35a2a0",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 127.3529,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "tracker-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1920,
+    "height": 320,
+    "path": "/art/tracker-attack.webp",
+    "bytes": 162308,
+    "sha256": "c50594c87b8d08af90b88f755a46fad3031196394d4a2ab08d157c2c31701fcc",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 127.3529,
+    "frameWidth": 384,
+    "frames": 5,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 3
+  },
+  {
+    "id": "tracker-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/tracker-hit.webp",
+    "bytes": 77780,
+    "sha256": "3254ceb25383beee46d8cd554f5d4d3b18462926dc31fbae5b2bb674e7431966",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 127.3529,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "tracker-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/tracker-death.webp",
+    "bytes": 158442,
+    "sha256": "e8ea5f04c8a1511075e7b5dc95d4b115455df46278627fa49580a2e23f0809fd",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 127.3529,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 3
+  },
+  {
+    "id": "aegeus-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/aegeus-idle.webp",
+    "bytes": 45644,
+    "sha256": "f883b14cb1be5acad0d4d3b2a177745302a5d27b3301f8863befb7caeec32e38",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "aegeus-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/aegeus-walk.webp",
+    "bytes": 403346,
+    "sha256": "1518fd15d51e5403695a4139ea1c36e265b791a3101c8f99108c12f4ca7e17b0",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "aegeus-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1920,
+    "height": 320,
+    "path": "/art/aegeus-attack.webp",
+    "bytes": 215724,
+    "sha256": "0cc245e8621f623ca75d8eab34cf0ac608606b502db6d9c5649ccdbdc6851bdf",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 5,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 2
+  },
+  {
+    "id": "aegeus-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/aegeus-hit.webp",
+    "bytes": 101152,
+    "sha256": "5f60e57347ecaf531d95540286b45b1239afc4cb7fbbf147f1dfeac5394a5999",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "aegeus-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/aegeus-death.webp",
+    "bytes": 203202,
+    "sha256": "252b71839a54aa45226770b66321c0f14681b9e550f99b992c1cc66d2174fa95",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 3
+  },
+  {
+    "id": "atalanta-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/atalanta-idle.webp",
+    "bytes": 41254,
+    "sha256": "315a37b0cf7623d5ac54d293b8bc62cd37a7c37ea2562c644b090a5cc15fb6f0",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 127.3529,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "atalanta-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/atalanta-walk.webp",
+    "bytes": 346776,
+    "sha256": "1506bdcafdfe2913a432b3c393cdb94e0b32e918ab0fddbccfdc898fb3a295ae",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 127.3529,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "atalanta-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1920,
+    "height": 320,
+    "path": "/art/atalanta-attack.webp",
+    "bytes": 183808,
+    "sha256": "b0e985a2d670b18e94f173c3b8abf90a5cf443cff3e2e13634df8501520df4e8",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 127.3529,
+    "frameWidth": 384,
+    "frames": 5,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 2
+  },
+  {
+    "id": "atalanta-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/atalanta-hit.webp",
+    "bytes": 92418,
+    "sha256": "1a88fbf60b8edf537d923039ffc2dee0efcca9d9471ebec562c468b2eb3a39c7",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 127.3529,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "atalanta-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/atalanta-death.webp",
+    "bytes": 174190,
+    "sha256": "5638d5386dc043430cdadb360067735ef7b3d99cc810260431c377f60e4dcaf9",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 127.3529,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 3
+  },
+  {
+    "id": "peltast-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/peltast-idle.webp",
+    "bytes": 37160,
+    "sha256": "a32abc64e05deca257db88e7567b12c44c7b8164b9d8385ef39d419397ba9a7a",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "peltast-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/peltast-walk.webp",
+    "bytes": 306258,
+    "sha256": "064962164154f72909897f9c123af608f6645c517ae672339b56ac221087b3ab",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "peltast-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/peltast-attack.webp",
+    "bytes": 115518,
+    "sha256": "588d7b9a19cf2f01a701550092c76ae09fa8255b5e64ddb40a736b019b4fd960",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "peltast-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/peltast-hit.webp",
+    "bytes": 78774,
+    "sha256": "e6bd306651b440b10bdd27f168f39a1595499c2500e6145264803b8eed965ffd",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "peltast-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/peltast-death.webp",
+    "bytes": 123712,
+    "sha256": "7b9b6487baab3470c9c0778fee587a958667a78d9d3e300fa4611804e2051663",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "hypaspist-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/hypaspist-idle.webp",
+    "bytes": 50350,
+    "sha256": "8bb5f066baf81f2f4527bc208b8a38bc2214cf5efba435b788c62941072a9c19",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "hypaspist-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/hypaspist-walk.webp",
+    "bytes": 427150,
+    "sha256": "191cc9671042618742e1d64b31ede1939838fd503fcf093b324e9292386d8d96",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "hypaspist-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/hypaspist-attack.webp",
+    "bytes": 174984,
+    "sha256": "1baa8459b2512eb5a5d69c436548db2b088401cfaf7af253f45aed97975d023e",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "hypaspist-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/hypaspist-hit.webp",
+    "bytes": 110614,
+    "sha256": "d75229f29c7fec888a9901cd9fad3e660d00e9a04bd294126e62e526790e09a9",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "hypaspist-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/hypaspist-death.webp",
+    "bytes": 148810,
+    "sha256": "94b95b21aa93436eecf8c55e212aa50ab28834ca14147e98cd0a81ccd334619f",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "peripolos-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/peripolos-idle.webp",
+    "bytes": 31858,
+    "sha256": "cf4dc460a7d28bc07d6d3bab0b61add2813ec3295b2d9aa861d73c35230f4bcc",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "peripolos-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/peripolos-walk.webp",
+    "bytes": 256268,
+    "sha256": "087542cb848a518f3dc4664f6aec1d5b0e23ad71877c0ef1739e51a7f97df03d",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "peripolos-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/peripolos-attack.webp",
+    "bytes": 101762,
+    "sha256": "d6d8a6bad06e16f087d95aecca8b5c3e5ef731193abb5b7d87837ce72577a4a2",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "peripolos-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/peripolos-hit.webp",
+    "bytes": 67016,
+    "sha256": "a6f809e5f29d0111fb840f0c44bfac7e50bd9b9f0a0cef84691bb7ad2067de56",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "peripolos-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/peripolos-death.webp",
+    "bytes": 93620,
+    "sha256": "09cd3970f164d143135875486666afa65310b44a50c122f8a19c9a02ef288588",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "misthophoros-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/misthophoros-idle.webp",
+    "bytes": 38400,
+    "sha256": "eee7717869dd00b8bf389fa2d87b1bc2514af65ad98fc28192aec900741c5208",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "misthophoros-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/misthophoros-walk.webp",
+    "bytes": 315648,
+    "sha256": "fd4a6d989ed669b312f939412ed2f9a34ed2d2f393a2fec96302aff4cd1f2cb3",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "misthophoros-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/misthophoros-attack.webp",
+    "bytes": 119114,
+    "sha256": "fb13956471efff62337b95c9834b29806fe7ad61b96e88553318458abdf076bd",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "misthophoros-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/misthophoros-hit.webp",
+    "bytes": 81546,
+    "sha256": "ed39a363fa2a837ef04c2541e09d79fdccbf37118f43fecef63beb8c6bfe1b2b",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "misthophoros-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/misthophoros-death.webp",
+    "bytes": 129694,
+    "sha256": "a86dbffffbc53db7ba777193b04aac1e189d13565ca4fa4899fccdcbe7c30bcb",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "asclepiad-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/asclepiad-idle.webp",
+    "bytes": 28666,
+    "sha256": "f8c19590049efbaa6e6bd58834109879e86e301209e1d663a76c7dfdbdd1a601",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "asclepiad-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/asclepiad-walk.webp",
+    "bytes": 238580,
+    "sha256": "90430111fe489c07e54c72e1cd9cad638d427d6277a4c8752ffe282c12de933d",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "asclepiad-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/asclepiad-attack.webp",
+    "bytes": 95264,
+    "sha256": "159e94d0eb005f0a1c739f46bbb7f86e06cc8221c246b38f9ba3b875091a3f71",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "asclepiad-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/asclepiad-hit.webp",
+    "bytes": 67382,
+    "sha256": "b000d05a945fdc034dbb495b08db6e1f31e0d2b0adc21e6d1b520d9858a3622a",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "asclepiad-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/asclepiad-death.webp",
+    "bytes": 93720,
+    "sha256": "fbcfcf16d634fc6a1c0b9cd66f9fdf7f42200bb33a23c10302acb31561725436",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "rhapsode-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/rhapsode-idle.webp",
+    "bytes": 35860,
+    "sha256": "8163358bd3583cd950f508188080deeb9bb4978f487cdb3bee8e79dc4939801f",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "rhapsode-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/rhapsode-walk.webp",
+    "bytes": 304374,
+    "sha256": "bd4bb4ff5148a06f0e83cf219b26e06b11640879c99a91ec6376d44c413bb4f7",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "rhapsode-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/rhapsode-attack.webp",
+    "bytes": 112934,
+    "sha256": "879515534f7e05d56e4a830690a452b68b1c9adaff8b78fff674ff4e1b4ebf6b",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "rhapsode-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/rhapsode-hit.webp",
+    "bytes": 75788,
+    "sha256": "a95c203458705ffead58315b561dc90e812a10db2c2202948f72c3c0d0d4b412",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "rhapsode-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/rhapsode-death.webp",
+    "bytes": 111104,
+    "sha256": "9fe125e3904154567b3a968c8cab2267fa3be9c99c3d83631a3c286531cefb50",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "battle-physician-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/battle-physician-idle.webp",
+    "bytes": 25086,
+    "sha256": "b168396f184e2fabcf4faa4cf43864525e8c6c99f89064e6d70cac06206583f2",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "battle-physician-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/battle-physician-walk.webp",
+    "bytes": 206156,
+    "sha256": "761e3c5fd27fb00f800b5e3d2610b6424067c28d9da1f64d1e796df8a9373b1b",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "battle-physician-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/battle-physician-attack.webp",
+    "bytes": 86542,
+    "sha256": "a172d5e4cf690cfc032fd8b6b3262431d23f9980324d6aa9c7bc9fe3420c0bb6",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "battle-physician-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/battle-physician-hit.webp",
+    "bytes": 56908,
+    "sha256": "8ac99aa6c140d5bce803900ed1a7c214ccaf7058c8f81be8c75653171e293bfb",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "battle-physician-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/battle-physician-death.webp",
+    "bytes": 77436,
+    "sha256": "fa05410dcbb441ad84b0364840463aaf07e8b9acfcdff9aa10f32408a7badb3d",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "elysian-champion-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/elysian-champion-idle.webp",
+    "bytes": 36556,
+    "sha256": "2739848a7826fb9d6222eee1114af4d1e2bcfacf9ade6dbced1ee8040bbc6126",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "elysian-champion-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/elysian-champion-walk.webp",
+    "bytes": 166776,
+    "sha256": "81fca0f749061f31dde8fdc6ca56fa531b84f54ae39a46a74e1f3a7f90a7f35a",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "elysian-champion-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/elysian-champion-attack.webp",
+    "bytes": 136866,
+    "sha256": "584920b2ca59ae057b35e966f891fb83252c56edcdfcccd195210e3e165b40c3",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "elysian-champion-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/elysian-champion-hit.webp",
+    "bytes": 85242,
+    "sha256": "8699d86cc0377568a671ccdeaffd52d4a9978af0d957ab67adf755137fa8f01a",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "elysian-champion-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/elysian-champion-death.webp",
+    "bytes": 117632,
+    "sha256": "372d995b92216a19b470ae70796f71101f840bfea79b4d8b5eec14ea00789b02",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "spartoi-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/spartoi-idle.webp",
+    "bytes": 31046,
+    "sha256": "8fb8e8c72074e27f3c53f0dc410ce586d7b3d63cf7c06ff45538e5a68c63a07f",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "spartoi-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/spartoi-walk.webp",
+    "bytes": 245402,
+    "sha256": "84fa2bea76daf2b3b2a27c9c62738ce21750669d10f3893535da624033913e2c",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "spartoi-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/spartoi-attack.webp",
+    "bytes": 113762,
+    "sha256": "61c47f2ddf81c224397bf9c33a0b069deaf1dc94a2e57ab183b66079774cadb0",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "spartoi-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/spartoi-hit.webp",
+    "bytes": 68356,
+    "sha256": "b03f4ad26f58cbfa2076afa01a1beb62c3609bbe76401fa0f061ce59eb7223cf",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "spartoi-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/spartoi-death.webp",
+    "bytes": 103598,
+    "sha256": "73f78de9fb88fd0f8ddb15a13f7500c06aec02a04adaf49830ed80a3fde098b3",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "erinys-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/erinys-idle.webp",
+    "bytes": 28598,
+    "sha256": "7dd7cc8811540d7762d24982fb88035f8602f481f118e6908ab137e2149d4703",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "erinys-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/erinys-walk.webp",
+    "bytes": 234870,
+    "sha256": "a9d60033c8b66643557df49383518a130179fbe46052874cad4460d66476e6f5",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "erinys-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/erinys-attack.webp",
+    "bytes": 103020,
+    "sha256": "ec212ad138785bc08cc98f5d7c006e085bb202473c868c2378856cb27c136873",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "erinys-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/erinys-hit.webp",
+    "bytes": 68194,
+    "sha256": "5f5ca181c32d872b5be3e90d2e2560232341af2fbbb255d4a1c0a582202e9e53",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "erinys-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/erinys-death.webp",
+    "bytes": 87976,
+    "sha256": "5a980d5a01c36ef8bd390e9e9f26e1053e9208812a4140e8c8f85aafaff05da2",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "fox-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/fox-idle.webp",
+    "bytes": 10262,
+    "sha256": "e6640e3789c83f04e3f2bfca9ed1e758d5515a5fdd504ed0b9677ccd2614cbae",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "fox-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/fox-walk.webp",
+    "bytes": 72692,
+    "sha256": "03a945e9c23593b103cfd9e809c3cffcbadd28e7a4762a88f46ff628eb55aff2",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "fox-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/fox-attack.webp",
+    "bytes": 28224,
+    "sha256": "6b357d0bea9d45b0b613b0ce8c8927958e4c868768ec3259d8325578d5c5d037",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "fox-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/fox-hit.webp",
+    "bytes": 18660,
+    "sha256": "bdcc44993dbc839d55ec2c2cd842e978dad50e4beab8486080009d2e8cdbc9dd",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "fox-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/fox-death.webp",
+    "bytes": 22150,
+    "sha256": "abb468f1612f528d9e4c08e51b9f1e60cae17261754dad6a8df0a9c64ae74214",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "fire-titan-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/fire-titan-idle.webp",
+    "bytes": 50184,
+    "sha256": "2a3cb0fad1cda709a1a224763e9348d2a4e190310d39fc28d59f9a7920aeb8f9",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 50,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "fire-titan-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/fire-titan-walk.webp",
+    "bytes": 379792,
+    "sha256": "0d1c1ef1295f4c3805013b165c7f775c51e2d8047b0d62cef8f5f8654ae7712b",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 50,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "fire-titan-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/fire-titan-attack.webp",
+    "bytes": 142398,
+    "sha256": "f8623ba321a954c80d8cfb21cafc6e8ec802aa230b8d9e095e980f5b6a6d78f8",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 50,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "fire-titan-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/fire-titan-hit.webp",
+    "bytes": 94598,
+    "sha256": "18aed9c76edc43afd549dae8829e846e3f73c805289aa11b8a38a1a7967defbd",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 50,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "fire-titan-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/fire-titan-death.webp",
+    "bytes": 125094,
+    "sha256": "4ae46bdb0adfcab285f5ddbd88884a7767cd17b6e8607f801056995e794e7796",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 50,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "cyclops-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/cyclops-idle.webp",
+    "bytes": 40804,
+    "sha256": "4c29304be87fb36971917f0e41a9f93faf4c80519bee97ae1e794be98cd565d1",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 62,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "cyclops-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/cyclops-walk.webp",
+    "bytes": 327622,
+    "sha256": "cd9bf709772da64fb7bd38c221b30130398a5d9c1966be84b6184e3b0f11cb72",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 62,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "cyclops-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/cyclops-attack.webp",
+    "bytes": 135384,
+    "sha256": "359ce4f2fed5096d921fc645fce290d0d1840180950ce86999b5c5f47feb9dfd",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 62,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "cyclops-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/cyclops-hit.webp",
+    "bytes": 89062,
+    "sha256": "b1d46b289f9e1db3947d173c9f0f162b0dc0f04341af64f163de0bc49df50a12",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 62,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "cyclops-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/cyclops-death.webp",
+    "bytes": 117584,
+    "sha256": "bc6c4906fd72af45260383cdd4599956ddeeb2335ae330b010bd476fbead58a9",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 62,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "boreal-giant-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/boreal-giant-idle.webp",
+    "bytes": 49746,
+    "sha256": "cfde0efcc9ad380766ae4f88c5ea92af915eaf9aa6dd25f5eeafdc7d74520a9e",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 58,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "boreal-giant-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/boreal-giant-walk.webp",
+    "bytes": 405242,
+    "sha256": "f49ce4001854d9049ec68918bcd3c52444f843f962bebd5bcafc7e641c3197da",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 58,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "boreal-giant-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/boreal-giant-attack.webp",
+    "bytes": 145240,
+    "sha256": "f2c489229f19e1e0a7b0aeca4c59be7e29bf9314835a25949bdd8aebf7106c28",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 58,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "boreal-giant-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/boreal-giant-hit.webp",
+    "bytes": 104964,
+    "sha256": "dc6453b8c6fded3a5d68a4738e72bd5d1afee2e724cd7bcd18dda0dd1c45bdff",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 58,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "boreal-giant-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/boreal-giant-death.webp",
+    "bytes": 142152,
+    "sha256": "a146708bf1e4cdfd486059fe5c502872c50513d11bab2343f3f12ba6a11d9f37",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 58,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "drakon-colossus-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/drakon-colossus-idle.webp",
+    "bytes": 56278,
+    "sha256": "834de3ba6953b3cf1cbd3c494dae9ff36df6b9627081e2c255e05e9a45337558",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 54,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "drakon-colossus-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/drakon-colossus-walk.webp",
+    "bytes": 426192,
+    "sha256": "1b1dcbffd3e23098f3a9dd43617083ba1f7cbddf20e4b9daf4f6a4a60e87521a",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 54,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "drakon-colossus-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/drakon-colossus-attack.webp",
+    "bytes": 158888,
+    "sha256": "7afb63475b6277062f5a7b48cfa11313768bfe917040391d0f754cfe50dec406",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 54,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "drakon-colossus-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/drakon-colossus-hit.webp",
+    "bytes": 106640,
+    "sha256": "14d7c11d6d34539ae42c670fbc1ce2e3b42a48fdebf23d8a23d8d49121de4b9e",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 54,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "drakon-colossus-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/drakon-colossus-death.webp",
+    "bytes": 149620,
+    "sha256": "ba37750b59e0a7944f72cc15588d1e8c29edacdf8a97ca911b2c71c12b8d6e11",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 54,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "shade-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/shade-idle.webp",
+    "bytes": 33774,
+    "sha256": "2237ce7e46953580658c915fd4319533d2d7309c521b83fd0727519856e5e243",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "shade-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/shade-walk.webp",
+    "bytes": 278248,
+    "sha256": "7d152e7743c2a41b7007deb77159bb1cc2fb5996c29e5c5d065f5bfa25ca7e3d",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "shade-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/shade-attack.webp",
+    "bytes": 125224,
+    "sha256": "43f6170e6a6e40eda4046163289aceef1d0ca1c56f7e2eb6c7d347da03dc8b00",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "shade-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/shade-hit.webp",
+    "bytes": 82014,
+    "sha256": "d603e0920ff51226ea675e17a3d08e9950a51acd3a0b9f48c87be5afc723b0f3",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "shade-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/shade-death.webp",
+    "bytes": 112188,
+    "sha256": "3065f250105c2a4b36281b0e99e6ec7ff729b11d1993a20b49b7d7cd197a9bf4",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "dactyl-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/dactyl-idle.webp",
+    "bytes": 16180,
+    "sha256": "48564b10fc96cdb0d251a106349950df8fd052cb26c99cd23b5e9f8c3df11831",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "dactyl-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/dactyl-walk.webp",
+    "bytes": 111080,
+    "sha256": "15b0cbb34b676ae27b8899e760ffb3365090ecd595950d4883dc0d9788ecf6f2",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "dactyl-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/dactyl-attack.webp",
+    "bytes": 47024,
+    "sha256": "c57cae281e91ac04d2d3a907579375c1ece4eca3a2e36ee63d393bd364e2488e",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "dactyl-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/dactyl-hit.webp",
+    "bytes": 31292,
+    "sha256": "275428f1c708308152979f7cb6f598191ce11958e09823ca209002ce2622e0ab",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "dactyl-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/dactyl-death.webp",
+    "bytes": 41146,
+    "sha256": "b5e90f83a45cfebda0f7a3cc061525e6e6b650e42b577cb195cb679ce1e9f9d0",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 2
+  },
+  {
+    "id": "arcadian-wolf-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/arcadian-wolf-idle.webp",
+    "bytes": 23774,
+    "sha256": "6656f8def8fd82a5a43e7974c34a42e19092f9b02cf292af144738bddc7b6071",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "arcadian-wolf-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/arcadian-wolf-walk.webp",
+    "bytes": 188836,
+    "sha256": "ce0a13ea486879120154ae90b3b53257b8113a1a7a663b3e932123e250523552",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "arcadian-wolf-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/arcadian-wolf-attack.webp",
+    "bytes": 68016,
+    "sha256": "44fcecdc65dcd68f8b2485e96c08e3af04753d613945acad16816304b1503582",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "arcadian-wolf-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/arcadian-wolf-hit.webp",
+    "bytes": 46322,
+    "sha256": "d60d185343b6e327b8cc7ebc67657f8c145620bec062fa65ff1ea5cc580fea8c",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "arcadian-wolf-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/arcadian-wolf-death.webp",
+    "bytes": 50766,
+    "sha256": "001d15d9e6eeaaf130e1bf0ada0cb36a33528b4f30ff0e239785ecef041c203d",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null,
+    "groundedFromFrame": 1
+  },
+  {
+    "id": "boar-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/boar-idle.webp",
+    "bytes": 26136,
+    "sha256": "e2ab9b29688dc7fb2fb38df77f6c5ba8d7e78a0ce80b581cb357eafdf6daa273",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "boar-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/boar-walk.webp",
+    "bytes": 205414,
+    "sha256": "a65471429d868b10220e3b663e2746e8044c997684c78780f2d5120e7e8edfb0",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "boar-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/boar-attack.webp",
+    "bytes": 75896,
+    "sha256": "6719ae37cb1de0b415df122189aaaebbc2184baa11e9736c509703b005c2dbc3",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "boar-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/boar-hit.webp",
+    "bytes": 55546,
+    "sha256": "09e3e426461afe945f75a6be3fe3345dc81fdff1e84d99451e06dda429af96ca",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "boar-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/boar-death.webp",
+    "bytes": 68232,
+    "sha256": "db48899f0ecf3ba655f400a368310a5b53069f5e12ffc042d1ed611c6199702d",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "bear-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/bear-idle.webp",
+    "bytes": 55758,
+    "sha256": "f8a1f482f10244d7d1790f50add5d872d4d2f71e9a0de5c3daa0087b96ae7039",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "bear-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/bear-walk.webp",
+    "bytes": 444998,
+    "sha256": "1055bce1ea09217b053509c51c4fd44629dc101d483941d40604d515e49fd7aa",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "bear-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/bear-attack.webp",
+    "bytes": 160036,
+    "sha256": "a9e74cbf23f52bdfe675f872d06b2db15248f009cc2e8b845a02bc3c4087010a",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "bear-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/bear-hit.webp",
+    "bytes": 122356,
+    "sha256": "626631684f83947b00a9a6874f596fa587e63151dbd0ccb29ab949fe57e03c23",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "bear-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/bear-death.webp",
+    "bytes": 137888,
+    "sha256": "5ec2c2c107a5e78ce44ba69c289176b4201d80eac0622018d1f7fe66814100a9",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "drakon-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/drakon-idle.webp",
+    "bytes": 57874,
+    "sha256": "0c484b14c6695e94b9cbebd13110ddbf378c699391139b8ac342c7087a3b21c6",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "drakon-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/drakon-walk.webp",
+    "bytes": 493560,
+    "sha256": "a76c9af21abc185f4c075129c743da314ceb7e500e87a573ce82f6bb4cfd3eb2",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "drakon-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/drakon-attack.webp",
+    "bytes": 199930,
+    "sha256": "c52f90faeffd6356de902238a653c0bd1b0fa0155ebe82d65dceefd20bd003f5",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "drakon-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/drakon-hit.webp",
+    "bytes": 134858,
+    "sha256": "5f863805847fba076fdb7003dc9c476df7913a285b3fc70c19021eaad4a377d9",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "drakon-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/drakon-death.webp",
+    "bytes": 142098,
+    "sha256": "fafeebf35521a8147b776ff8e67d08a4c675ba29118ff838ed1164db3d92b674",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "elysian-champion-revive",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/elysian-champion-revive.webp",
+    "bytes": 119470,
+    "sha256": "c07b88d6c6ef20304c2d44c95f34526e305949ffce1d27a8bd45d2dcf7a2155d",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "lykaon-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/lykaon-idle.webp",
+    "bytes": 43124,
+    "sha256": "63f542d45f6c45ab80e158a430aad84de29316f2680ff0f6ba8524e04de21f10",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "lykaon-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/lykaon-walk.webp",
+    "bytes": 370974,
+    "sha256": "03c1d3e92265cf621c7afd79e39a3b825e4e71e1eb9e3baee1750d6abf572c98",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "lykaon-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/lykaon-attack.webp",
+    "bytes": 151002,
+    "sha256": "ec00bf85d1cd11896e6725d3b1f817992ff060fdbe315ca3670ba3511e65e773",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "lykaon-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/lykaon-hit.webp",
+    "bytes": 95042,
+    "sha256": "5a3111f6ea0d3a94056858d7b5e6f98ead2f3c3af6bc9225a30093c1efc2bdba",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "lykaon-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/lykaon-death.webp",
+    "bytes": 111098,
+    "sha256": "931c59edbd9c8fe9d762b776490a15b1aeec76bf3045a0e7dde16be3e6499880",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "thracian-raider-idle",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 384,
+    "height": 320,
+    "path": "/art/thracian-raider-idle.webp",
+    "bytes": 32508,
+    "sha256": "0fee2fec3f634fe2e6e48072feac8a3efa65ebe609b499be968ec976c4ed8d58",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 1,
+    "fps": 1,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "thracian-raider-walk",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 3072,
+    "height": 320,
+    "path": "/art/thracian-raider-walk.webp",
+    "bytes": 263314,
+    "sha256": "e5fc0174dbd966642cc87d24b424c6a811e09c87a5e2fb1b91bfd76bfd7359d8",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 8,
+    "fps": 8,
+    "loop": true,
+    "contactFrame": null
+  },
+  {
+    "id": "thracian-raider-attack",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/thracian-raider-attack.webp",
+    "bytes": 100758,
+    "sha256": "cc9aac0094f0c2d454c98b76eeb171f596262253590b8697d60e4417bc0cf2ce",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": 1
+  },
+  {
+    "id": "thracian-raider-hit",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1152,
+    "height": 320,
+    "path": "/art/thracian-raider-hit.webp",
+    "bytes": 70542,
+    "sha256": "ac9a79337d5d43dd4436bd0fc10bf6d4f0d3486b2c9acc8aa74c175236632479",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 3,
+    "fps": 8,
+    "loop": false,
+    "contactFrame": null
+  },
+  {
+    "id": "thracian-raider-death",
+    "kind": "animation",
+    "model": "gpt-image-2.5-sunburst",
+    "width": 1536,
+    "height": 320,
+    "path": "/art/thracian-raider-death.webp",
+    "bytes": 91414,
+    "sha256": "9a66088682e99137913878e668a3da64e4c744e164d102077ebde05702e5b8d1",
+    "anchor": [
+      192,
+      256
+    ],
+    "pixelsPerUnit": 117.6471,
+    "frameWidth": 384,
+    "frames": 4,
+    "fps": 5,
+    "loop": false,
+    "contactFrame": null
+  }
+]

@@ -1,0 +1,54 @@
+name: Publish development preview
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    env:
+      VITE_API_ORIGIN: ${{ vars.VITE_API_ORIGIN }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.7.0
+      - run: pnpm install --frozen-lockfile
+      - name: Validate HTTPS API configuration
+        run: node scripts/check-pages-config.mjs
+      - name: Require reviewed Pages runtime support
+        run: test -f src/urls.ts && test -f src/api.ts
+      - run: pnpm test
+      - run: pnpm assets:verify
+      - run: pnpm exec tsc --noEmit -p server
+      - run: pnpm build --base=/greece-battleground/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

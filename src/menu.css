@@ -1,0 +1,908 @@
+:root {
+  font-family: "Jost", "Segoe UI", system-ui, sans-serif;
+  color: #f5f0db;
+  background: #132a36;
+  color-scheme: dark;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: default;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #ffe1a0;
+  outline-offset: 4px;
+}
+.menu-background {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+}
+#app:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      #07131bd9 0%,
+      #07131b6b 26%,
+      transparent 49%,
+      #142b3e26 67%,
+      #10243280 100%
+    ),
+    linear-gradient(0deg, #081921b0, transparent 35%);
+}
+.main-menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  min-height: calc(100dvh - 65px);
+  padding: clamp(20px, 3vw, 50px) clamp(24px, 4vw, 70px);
+}
+.menu-left {
+  width: min(510px, 45%);
+  padding-top: clamp(25px, 9vh, 130px);
+}
+h1 {
+  margin: 0;
+  font-family: "Cinzel", Georgia, serif;
+  color: #fff9e8;
+  font-size: clamp(34px, 4.3vw, 72px);
+  line-height: 1.05;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  text-shadow: 0 3px 12px #07131b;
+}
+h1 span {
+  display: block;
+  font:
+    400 clamp(18px, 2vw, 30px) "Cinzel",
+    Georgia,
+    serif;
+  letter-spacing: 0.5em;
+  margin: 0 0 14px 5px;
+}
+.menu-buttons {
+  display: grid;
+  gap: 11px;
+  margin: 55px 0 0 55px;
+  max-width: 330px;
+}
+.menu-buttons button,
+.dialog-heading + div button {
+  color: #f8f4e4;
+  background: linear-gradient(#2c4555f2, #152b3af5);
+  border: 2px solid #7a99a8;
+  box-shadow:
+    inset 0 0 0 3px #182f3e,
+    0 3px 9px #08151b55;
+  min-height: 47px;
+  padding: 10px 18px;
+  font:
+    650 16px "Jost",
+    system-ui,
+    sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.menu-buttons button:hover:enabled {
+  border-color: #e8cc87;
+  background: linear-gradient(#426271, #233e4b);
+}
+.menu-buttons button:disabled {
+  color: #b7bcc1;
+  border-color: #65818e;
+}
+.menu-buttons .menu-gap {
+  margin-top: 23px;
+}
+.development-note,
+.development-links {
+  margin: 14px 0 0 55px;
+  max-width: 330px;
+  font:
+    12px/1.6 "Jost",
+    system-ui,
+    sans-serif;
+  color: #dfdfce;
+}
+.development-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.development-links a {
+  color: #ffe3a0;
+  text-underline-offset: 4px;
+}
+.menu-right {
+  width: 300px;
+  align-self: flex-start;
+  display: grid;
+  gap: 13px;
+}
+.panel {
+  border: 2px solid #72909f;
+  background: #183042e8;
+  box-shadow:
+    inset 0 0 0 4px #314b5d,
+    0 2px 12px #0b263852;
+  padding: 18px;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  color: inherit;
+  width: 100%;
+  min-height: 108px;
+}
+.rank-badge {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 62px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #ad9458, #59472f);
+  border: 3px double #eadab3;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+  font-size: 30px;
+  padding-bottom: 8px;
+}
+.profile-details {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  width: 100%;
+  font:
+    14px "Jost",
+    system-ui,
+    sans-serif;
+}
+.profile-details strong {
+  overflow-wrap: anywhere;
+}
+.rank-badge {
+  font-family: "Cinzel", Georgia, serif;
+  font-weight: 600;
+}
+/* The rank emblem: the menu's bronze shield inside a laurel wreath. */
+.rank-emblem {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 76px;
+  height: 76px;
+}
+.rank-emblem .laurel {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: #c9a865;
+  stroke: #c9a865;
+  filter: drop-shadow(0 1px 1px #050e14b0);
+}
+.rank-emblem .rank-badge {
+  width: 40px;
+  height: 48px;
+  border-width: 2px;
+  font-size: 22px;
+  padding-bottom: 6px;
+}
+.rank-track {
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+  background: #081722;
+  clip-path: polygon(5% 0, 95% 0, 100% 50%, 95% 100%, 5% 100%, 0 50%);
+  font-size: 11px;
+  padding: 3px;
+  color: #e9e1c6;
+}
+/* XP progress toward the next rank fills the ribbon in bronze. */
+.rank-track:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform-origin: left;
+  transform: scaleX(var(--fill, 0));
+  background: linear-gradient(90deg, #6b5532, #a88a4f);
+}
+.profile small {
+  color: #b7c6cc;
+  font-size: 10px;
+}
+.leaderboard h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font:
+    400 22px "Jost",
+    system-ui,
+    sans-serif;
+  margin: 4px 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #789dac88;
+}
+.empty-board {
+  font:
+    12px/1.6 "Jost",
+    system-ui,
+    sans-serif;
+  text-align: center;
+  color: #d2dde1;
+  margin: 0 0 18px;
+}
+.standings {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font:
+    14px "Jost",
+    system-ui,
+    sans-serif;
+  color: #d5dee2;
+}
+.standings th {
+  padding: 0 8px 6px;
+  font:
+    500 11px "Cinzel",
+    Georgia,
+    serif;
+  letter-spacing: 0.06em;
+  color: #d3bb80;
+  text-align: left;
+  border-bottom: 1px solid #a88a4f80;
+}
+/* Positions 1–3 sit in gold, silver and bronze medallions; shared ranks share the medal. */
+.standing-rank span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+}
+.standing-rank [data-medal] {
+  color: #1a1408;
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px #fff6;
+}
+.standing-rank [data-medal="1"] {
+  background: radial-gradient(circle at 35% 30%, #fbe7a8, #c79a3e);
+}
+.standing-rank [data-medal="2"] {
+  background: radial-gradient(circle at 35% 30%, #f1f4f6, #8f9ca5);
+}
+.standing-rank [data-medal="3"] {
+  background: radial-gradient(circle at 35% 30%, #e7b98a, #8a5a2e);
+}
+.standings th:nth-child(1) {
+  width: 2.6em;
+}
+.standings th:nth-child(3) {
+  width: 3.8em;
+  text-align: center;
+}
+.standings th:nth-child(4) {
+  width: 3.8em;
+  text-align: right;
+}
+.standing td {
+  padding: 7px 8px;
+  border-top: 1px solid #789dac2e;
+}
+.standing-rank,
+.standing-elo {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.standing-rank {
+  color: #d3bb80;
+}
+.standing-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.standing-band {
+  font-family: "Cinzel", Georgia, serif;
+  color: #9fb4bf;
+  font-size: 12px;
+  text-align: center;
+}
+.standing-elo {
+  text-align: right;
+  color: #fff9e8;
+}
+/* The viewer's own standing: a bronze edge and a warm wash, readable without colour alone. */
+.standing.you td {
+  background: #a88a4f33;
+  color: #fff9e8;
+}
+.standing.you td:first-child {
+  box-shadow: inset 3px 0 #e8cc87;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.standing-name em {
+  margin-left: 8px;
+  padding: 1px 6px;
+  border: 1px solid #e8cc87;
+  font:
+    italic 11px "Jost",
+    system-ui,
+    sans-serif;
+  color: #ffe3a0;
+}
+.own-standing,
+.tie-note {
+  font:
+    12px/1.5 "Jost",
+    system-ui,
+    sans-serif;
+  color: #c0d1d7;
+  margin: 12px 0 0;
+}
+.leaderboard .board-more,
+.leaderboard .retry {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px;
+  color: #ffe3a0;
+  background: none;
+  border: none;
+  border-top: 1px solid #789dac88;
+  font:
+    13px "Jost",
+    system-ui,
+    sans-serif;
+  text-underline-offset: 4px;
+}
+.leaderboard .board-more:hover,
+.leaderboard .retry:hover {
+  text-decoration: underline;
+}
+.announcement {
+  text-align: center;
+}
+.small-title {
+  font:
+    11px "Jost",
+    system-ui,
+    sans-serif;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #d3bb80;
+}
+.announcement p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 12px 0 0;
+}
+.menu-footer {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding: 10px clamp(24px, 4vw, 70px) 18px;
+  font:
+    12px "Jost",
+    system-ui,
+    sans-serif;
+  color: #dedfcf;
+}
+.menu-footer small {
+  margin-left: auto;
+  color: #b8c7cc;
+}
+.menu-footer button {
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 8px;
+  font: inherit;
+}
+dialog {
+  width: min(480px, calc(100% - 32px));
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  border: 2px solid #829ead;
+  padding: 24px;
+  background: #193240;
+  color: #eee6d2;
+  box-shadow: 0 10px 80px #07141aa0;
+}
+dialog::backdrop {
+  background: #051119a6;
+  backdrop-filter: blur(4px);
+}
+.dialog-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+.dialog-heading h2 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 500;
+}
+.dialog-heading button {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #ded7bd;
+  min-width: 36px;
+  min-height: 36px;
+}
+form {
+  display: grid;
+  gap: 18px;
+}
+form label {
+  display: grid;
+  gap: 8px;
+  font:
+    14px "Jost",
+    system-ui,
+    sans-serif;
+}
+input,
+select,
+textarea {
+  min-width: 0;
+  width: 100%;
+  border: 1px solid #839ca9;
+  background: #0e2531;
+  color: #eee6d2;
+  padding: 10px;
+  line-height: 1.5;
+}
+textarea {
+  resize: vertical;
+}
+.account-recovery > section + section {
+  border-top: 1px solid #839ca9;
+  margin-top: 24px;
+  padding-top: 16px;
+}
+.account-recovery label {
+  display: grid;
+  gap: 8px;
+}
+.account-recovery textarea {
+  overflow-wrap: anywhere;
+  font-family: monospace;
+}
+.account-recovery .recovery-confirm {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.recovery-confirm input {
+  width: 20px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+#dialog-body p {
+  font:
+    13px/1.6 "Jost",
+    system-ui,
+    sans-serif;
+  color: #c0d1d7;
+  margin: 4px 0;
+}
+#form-status:empty {
+  display: none;
+}
+#report-preview:not([hidden]) {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+#report-preview h3 {
+  margin: 0;
+}
+#report-preview pre {
+  margin: 0;
+  padding: 12px;
+  background: #0e2531;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.mode-links {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+.menu-link {
+  color: #ffe3a0;
+  border: 1px solid #829ead;
+  background: #294757;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+.menu-link[hidden] {
+  display: none;
+}
+dialog[data-panel="profile"],
+dialog[data-panel="leaderboard"] {
+  width: min(560px, calc(100% - 32px));
+}
+/* Ranked dialogs share the menu panels' double frame under a bronze Greek-key band. */
+dialog[data-panel="ranked"],
+dialog[data-panel="profile"],
+dialog[data-panel="leaderboard"] {
+  padding-top: 38px;
+  border-color: #72909f;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M0 10.5H9.5V1.5H1.5V8H6.5V4.5H4.5M9.5 10.5H12' fill='none' stroke='%23a88a4f' stroke-width='1.4'/%3E%3C/svg%3E")
+      repeat-x 0 10px / 16px 16px,
+    linear-gradient(#1b3647, #132a38);
+  box-shadow:
+    inset 0 0 0 4px #314b5d,
+    inset 0 0 0 5px #a88a4f40,
+    0 10px 80px #07141aa0;
+}
+dialog[data-panel="ranked"] .dialog-heading h2,
+dialog[data-panel="profile"] .dialog-heading h2,
+dialog[data-panel="leaderboard"] .dialog-heading h2 {
+  font:
+    500 25px "Cinzel",
+    Georgia,
+    serif;
+  color: #fff9e8;
+  letter-spacing: 0.02em;
+}
+.panel-switch,
+.pager {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+.panel-switch button {
+  flex: 1;
+}
+.pager {
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #c0d1d7;
+}
+.pager button:disabled {
+  color: #8d9ba3;
+  border-color: #4f6a77;
+}
+#dialog-body .find-me,
+#dialog-body .retry {
+  width: 100%;
+  margin-top: 12px;
+}
+.profile-head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.profile-head .rank-emblem {
+  width: 104px;
+  height: 104px;
+}
+.profile-head .rank-emblem .rank-badge {
+  width: 52px;
+  height: 62px;
+  border-width: 3px;
+  font-size: 30px;
+  padding-bottom: 8px;
+}
+.profile-head div {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+  color: #c0d1d7;
+}
+.profile-head strong {
+  font:
+    500 22px "Cinzel",
+    Georgia,
+    serif;
+  color: #fff9e8;
+  overflow-wrap: anywhere;
+}
+.xp-bar {
+  height: 12px;
+  margin: 16px 0 18px;
+  background: #081722;
+  border: 1px solid #a88a4f;
+  box-shadow: 0 0 0 2px #081722;
+  clip-path: polygon(
+    6px 0,
+    calc(100% - 6px) 0,
+    100% 50%,
+    calc(100% - 6px) 100%,
+    6px 100%,
+    0 50%
+  );
+  overflow: hidden;
+}
+.xp-bar:before {
+  content: "";
+  display: block;
+  height: 100%;
+  transform-origin: left;
+  transform: scaleX(var(--fill, 0));
+  background: linear-gradient(90deg, #6b5532, #e0be77);
+}
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  background: #a88a4f66;
+  border: 1px solid #a88a4f66;
+}
+.profile-stats div {
+  padding: 10px 8px;
+  background: linear-gradient(#173141, #112532);
+  text-align: center;
+}
+.profile-stats dt {
+  font:
+    500 11px "Cinzel",
+    Georgia,
+    serif;
+  letter-spacing: 0.05em;
+  color: #d3bb80;
+}
+.profile-stats dd {
+  margin: 4px 0 0;
+  font:
+    500 20px "Jost",
+    system-ui,
+    sans-serif;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: #fff9e8;
+}
+#dialog-body .profile-run {
+  margin: 16px 0;
+  color: #e9e1c6;
+}
+.profile-view h3 {
+  margin: 18px 0 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #a88a4f80;
+  font:
+    500 15px "Cinzel",
+    Georgia,
+    serif;
+  color: #d3bb80;
+}
+.profile-history {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 13px;
+}
+.profile-history li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  padding: 8px 0;
+  border-top: 1px solid #789dac2e;
+}
+.history-change {
+  color: #c0d1d7;
+  font-variant-numeric: tabular-nums;
+}
+.history-change[data-trend="up"] {
+  color: #ffe3a0;
+}
+@media (max-width: 560px) {
+  .profile-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  dialog {
+    padding: 18px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .rank-track:before,
+  .xp-bar:before {
+    transition: transform 0.6s ease-out;
+  }
+}
+#app.background-unavailable:before {
+  background: radial-gradient(ellipse at center, #315569, #112c3b);
+}
+@media (max-width: 800px) {
+  .main-menu {
+    gap: 24px;
+    padding: 24px;
+    min-height: calc(100dvh - 80px);
+  }
+  .menu-left {
+    width: 55%;
+    padding-top: 65px;
+  }
+  h1 {
+    font-size: clamp(28px, 4.5vw, 42px);
+    overflow-wrap: anywhere;
+  }
+  h1 span {
+    font-size: 20px;
+  }
+  .menu-buttons {
+    margin: 40px 0 0;
+    max-width: 300px;
+  }
+  .development-note,
+  .development-links {
+    margin-left: 0;
+  }
+  .menu-right {
+    width: 250px;
+  }
+  .menu-footer {
+    padding-inline: 24px;
+    gap: 15px;
+  }
+  .menu-footer small {
+    max-width: 150px;
+  }
+  .panel {
+    padding: 16px;
+  }
+}
+@media (max-width: 560px) {
+  .main-menu {
+    display: block;
+    padding: 28px 22px;
+  }
+  .menu-left {
+    width: 100%;
+    padding-top: 28px;
+  }
+  h1 {
+    font-size: clamp(25px, 7.4vw, 40px);
+    overflow-wrap: normal;
+  }
+  h1 span {
+    font-size: 20px;
+  }
+  .menu-buttons {
+    margin: 35px 0 0;
+    max-width: none;
+  }
+  .menu-buttons button {
+    min-height: 49px;
+  }
+  .development-note,
+  .development-links {
+    max-width: none;
+  }
+  .menu-right {
+    width: 100%;
+    margin-top: 35px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .menu-footer {
+    flex-wrap: wrap;
+    gap: 8px 20px;
+  }
+  .menu-footer small {
+    margin-left: 0;
+    max-width: none;
+    width: 100%;
+  }
+  .menu-background {
+    object-position: 42% center;
+  }
+  #app:before {
+    background: #071c2890;
+  }
+  .announcement {
+    display: none;
+  }
+}
+#settings-form fieldset {
+  border: 1px solid #668b96;
+  margin: 16px 0;
+  padding: 12px;
+}
+#settings-form legend {
+  color: #ffe3a0;
+}
+#settings-form input[type="range"] {
+  width: 100%;
+  accent-color: #e0be77;
+  padding: 0;
+}
+#settings-form output {
+  float: right;
+}
+#settings-form .check {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+#settings-form input[type="checkbox"] {
+  width: 20px;
+  min-height: 20px;
+}
+
+.account-screen form {
+  display: grid;
+  gap: 1rem;
+}
+.account-screen label {
+  display: grid;
+  gap: 0.4rem;
+}
+.account-screen input {
+  width: 100%;
+  box-sizing: border-box;
+}
+.account-tabs {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.account-tabs [aria-pressed="true"] {
+  border-color: #e7c574;
+  color: #ffe4a0;
+}
+.account-screen .menu-link {
+  display: block;
+  margin: 1rem 0;
+}
+.account-help {
+  font-size: 0.9rem;
+  color: #dbd0b3;
+}
+#account-status {
+  min-height: 1.4em;
+  overflow-wrap: anywhere;
+}

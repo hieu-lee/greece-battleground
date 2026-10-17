@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      addEventListener(
+        "error",
+        (event) => {
+          if (
+            !(event.target instanceof HTMLScriptElement) ||
+            event.target.type !== "module"
+          )
+            return;
+          const recover = () => {
+            const startup = document.getElementById("module-startup");
+            if (!startup) return;
+            const title = startup.querySelector("h1");
+            title.textContent = "This page could not load";
+            startup.querySelector("p").textContent =
+              "A game file could not load. Reload to try again, or return to the menu. Your saved campaigns are kept.";
+            title.focus();
+          };
+          if (document.readyState === "loading")
+            addEventListener("DOMContentLoaded", recover, { once: true });
+          else recover();
+        },
+        true,
+      );
+    </script>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0a0f1a" />
+    <link rel="icon" type="image/webp" href="/art/icon-athens.webp" />
+    <link
+      rel="preload"
+      href="/fonts/jost.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <title>Your polis · Greece Battleground</title>
+    <link rel="stylesheet" href="/src/startup.css" />
+  </head>
+  <body>
+    <div id="app">
+      <main id="module-startup" aria-labelledby="module-startup-title">
+        <h1 id="module-startup-title" tabindex="-1">
+          Loading Greece Battleground…
+        </h1>
+        <p role="status">
+          If loading does not finish, reload to try again. Reload retries this
+          page without clearing your saved campaigns.
+        </p>
+        <noscript
+          ><p>
+            JavaScript is required to open the game. Enable JavaScript, then
+            reload.
+          </p></noscript
+        >
+        <nav aria-label="Page recovery">
+          <a
+            id="reload-module"
+            href=""
+            onclick="
+              location.reload();
+              return false;
+            "
+            >Reload</a
+          >
+          <a href="%BASE_URL%">Back to menu</a>
+        </nav>
+      </main>
+    </div>
+    <script type="module" src="/src/client/play3d.ts"></script>
+  </body>
+</html>

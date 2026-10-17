@@ -1,0 +1,25 @@
+node_modules/
+dist/
+__pycache__/
+.venv/
+.env
+.env.*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+.DS_Store
+.claude/
+.local-evidence/
+
+# Private research and development handoff inputs
+/evidence/
+/rule-source/
+/reference/
+/references/
+/art-source/
+/tools/
+/GOAL.md
+/GOAL-HISTORY*.md

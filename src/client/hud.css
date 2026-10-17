@@ -1,0 +1,1427 @@
+:root {
+  --ink: #eef1f0;
+  --muted: #a9b6bd;
+  --panel: rgba(14, 24, 34, 0.9);
+  --panel-edge: #34495a;
+  --bronze: #b98b45;
+  --gold: #f3c75a;
+  --insight: #6db8ff;
+  --tag: #b48cff;
+  --good: #8fd16a;
+  --bad: #f06a4f;
+  /* Shop tiers (price 4/8/12/18/24): each reads on the dark panel and behind near-black text. */
+  --common: #c3ccd2;
+  --uncommon: #7dd36a;
+  --rare: #5aa9ff;
+  --epic: #c48cff;
+  --legendary: #ffae3d;
+  --hex: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  --ui: "Jost", "Segoe UI", system-ui, sans-serif;
+  --title: "Cinzel", Georgia, serif;
+}
+
+.hud {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  font-family: var(--ui);
+  color: var(--ink);
+  user-select: none;
+  -webkit-user-select: none;
+}
+.hud button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.hud button:disabled,
+.hud button[aria-disabled="true"] {
+  cursor: default;
+}
+.hud > * {
+  pointer-events: auto;
+}
+.hud :focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+.hud svg {
+  width: 1em;
+  height: 1em;
+  display: block;
+}
+
+/* Crest: emblem diamond with victories and lives */
+.hud-crest {
+  position: absolute;
+  left: 18px;
+  top: 14px;
+  display: flex;
+  align-items: center;
+}
+.crest-emblem {
+  width: 92px;
+  height: 92px;
+  transform: rotate(45deg);
+  background: linear-gradient(135deg, #2a3b4b, #101b26);
+  border: 3px solid #4d6578;
+  box-shadow:
+    0 0 0 2px #0b131b,
+    inset 0 0 0 2px #1a2a38,
+    0 6px 18px #0009;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+.crest-emblem img {
+  width: 82px;
+  height: 82px;
+  transform: rotate(-45deg);
+  filter: drop-shadow(0 2px 3px #000a);
+}
+.crest-track {
+  margin-left: -10px;
+  display: grid;
+  gap: 8px;
+  padding: 8px 18px 14px 22px;
+  background: linear-gradient(90deg, #0e1822ee, #0e182200);
+  /* A soft lower edge: a hard line shows against the pale fog. */
+  mask-image: linear-gradient(180deg, #000 calc(100% - 10px), #0000);
+}
+.wins,
+.lives {
+  display: flex;
+  gap: 4px;
+}
+.wins i {
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+  border: 2px solid #5f7686;
+  background: #1a2733;
+}
+.wins i.won {
+  background: linear-gradient(135deg, #c8f0ff, #59a9df);
+  border-color: #d7f3ff;
+  box-shadow: 0 0 8px #6ec5ff;
+}
+.lives i {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #4c5d69;
+  background: #1a2530;
+}
+.lives i.alive {
+  background: radial-gradient(
+    circle at 50% 45%,
+    #e9a06a 0 26%,
+    #a4552e 27% 48%,
+    #6d3519 49% 100%
+  );
+  border-color: #c88b5c;
+  box-shadow: inset 0 0 0 2px #0006;
+}
+
+.hud-favor {
+  position: absolute;
+  left: 24px;
+  top: 128px;
+  display: flex;
+  gap: 10px;
+}
+.hud .favor {
+  padding: 0;
+  border: 0;
+  background: none;
+  width: 50px;
+  display: grid;
+  justify-items: center;
+  gap: 0;
+  font-weight: 700;
+  font-size: 15px;
+  text-shadow: 0 1px 3px #000;
+}
+.favor img {
+  width: 46px;
+  height: 46px;
+  padding: 3px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2b3d4d, #121c25);
+  border: 2px solid #5f7686;
+}
+
+/* Season track */
+.hud-season {
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  transform: translateX(-50%);
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+}
+.season-banner {
+  width: min(520px, 44vw);
+  height: 60px;
+  clip-path: polygon(4% 0, 96% 0, 100% 50%, 96% 100%, 4% 100%, 0 50%);
+  background:
+    linear-gradient(180deg, #0000 55%, #0b1520aa),
+    url("/art/battleground-spring.webp") center 62% / cover;
+  border: 0;
+  position: relative;
+  box-shadow: inset 0 0 0 3px #556d80;
+}
+.season-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: inherit;
+  box-shadow:
+    inset 0 0 0 3px #7f97a8,
+    inset 0 0 0 5px #0d1822;
+  pointer-events: none;
+}
+.season-banner[data-season="summer"] {
+  background-image:
+    linear-gradient(180deg, #0000 55%, #0b1520aa),
+    url("/art/battleground-summer.webp");
+}
+.season-banner[data-season="autumn"] {
+  background-image:
+    linear-gradient(180deg, #0000 55%, #0b1520aa),
+    url("/art/battleground-autumn.webp");
+}
+.season-banner[data-season="winter"] {
+  background-image:
+    linear-gradient(180deg, #0000 55%, #0b1520aa),
+    url("/art/battleground-winter.webp");
+}
+.season-marks {
+  position: absolute;
+  inset: 0 8%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+.mark {
+  width: 26px;
+  height: 26px;
+  color: #f4f7f8;
+  filter: drop-shadow(0 1px 2px #000);
+}
+.mark svg {
+  width: 100%;
+  height: 100%;
+}
+.mark.beast {
+  color: #ffc58a;
+}
+.mark.past {
+  opacity: 0.45;
+}
+.mark.current {
+  width: 38px;
+  height: 38px;
+  color: #fff;
+  filter: drop-shadow(0 0 6px #fff8) drop-shadow(0 1px 2px #000);
+}
+.mark.void {
+  opacity: 0;
+}
+.season-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px #000c;
+  /* A soft dark plate keeps it legible over the pale fog. */
+  padding: 2px 22px;
+  background: radial-gradient(closest-side, #0a101cb3, #0a101c00);
+}
+.info {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #eef4f8 !important;
+}
+.info svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Resources */
+.hud-resources {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.resource {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 26px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px #000c;
+}
+.resource img {
+  width: 34px;
+  height: 34px;
+  filter: drop-shadow(0 2px 3px #000a);
+}
+.resource.insight b {
+  color: var(--insight);
+}
+.resource.drachma b {
+  color: var(--gold);
+}
+.hud-gear {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 2px solid #4b6172;
+  border-radius: 6px;
+  background: linear-gradient(#2a3a49, #172430);
+  color: #c9d5dc !important;
+  box-shadow: 0 3px 8px #0008;
+  margin-left: 20px;
+}
+.hud-gear svg {
+  width: 30px;
+  height: 30px;
+}
+.hud-gear:hover {
+  color: #fff !important;
+  border-color: #8aa2b3;
+}
+
+/* Hex cards (shop, villager) */
+.hud-shop {
+  position: absolute;
+  right: 18px;
+  top: 92px;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+.shop-cards {
+  display: grid;
+  gap: 10px;
+}
+.hex-card {
+  --size: clamp(92px, 8.4vw, 124px);
+  width: var(--size);
+  height: calc(var(--size) * 1.1);
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: none;
+  transition: transform 0.15s ease;
+}
+.hex-card .hex-art {
+  position: absolute;
+  inset: 0;
+  clip-path: var(--hex);
+  background: linear-gradient(160deg, #7f97a6, #3a4e5d 45%, #20303c);
+  display: grid;
+  place-items: center;
+}
+.hex-card .hex-art::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  clip-path: var(--hex);
+  background: radial-gradient(
+    circle at 50% 38%,
+    #3e5a6c 0 35%,
+    #1d2c38 75%,
+    #121c25 100%
+  );
+}
+.hex-card .hex-art img {
+  position: relative;
+  width: 86%;
+  height: 86%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 4px #0008);
+}
+.hex-card .hex-art img.model {
+  width: 118%;
+  height: 118%;
+  margin-top: -6%;
+}
+.hex-card .hex-art img.strip {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  margin-top: 0;
+  object-fit: cover;
+  object-position: left center;
+}
+.shop-card {
+  --tier: #7f97a6;
+}
+[data-rarity="common"] {
+  --tier: var(--common);
+}
+[data-rarity="uncommon"] {
+  --tier: var(--uncommon);
+}
+[data-rarity="rare"] {
+  --tier: var(--rare);
+}
+[data-rarity="epic"] {
+  --tier: var(--epic);
+}
+[data-rarity="legendary"] {
+  --tier: var(--legendary);
+}
+.shop-card .hex-art {
+  background: linear-gradient(
+    160deg,
+    var(--tier),
+    color-mix(in srgb, var(--tier) 45%, #121c25)
+  );
+}
+.hex-card .price {
+  position: absolute;
+  left: 50%;
+  bottom: -9px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1px 9px 1px 5px;
+  border-radius: 12px;
+  background: #0f1922;
+  border: 2px solid #4a5f6e;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--gold);
+}
+.hex-card .price img {
+  width: 18px;
+  height: 18px;
+}
+.hex-card .price.short b {
+  color: var(--bad);
+}
+.hex-card:not(:disabled):hover,
+.hex-card[aria-pressed="true"] {
+  transform: scale(1.06);
+}
+.hex-card[aria-pressed="true"] .hex-art {
+  background: linear-gradient(160deg, #fff4c8, #f1c75c 45%, #a8781e);
+  filter: drop-shadow(0 0 10px #f3c75a);
+}
+.hex-card.empty .hex-art::before {
+  background: radial-gradient(circle, #203039, #121c24);
+}
+.hex-card.empty .hex-art {
+  opacity: 0.35;
+}
+.hex-card:disabled:not(.empty) .hex-art {
+  filter: saturate(0.4) brightness(0.7);
+}
+.hex-card.unaffordable:not(:disabled) .hex-art img {
+  filter: saturate(0.6) brightness(0.8) drop-shadow(0 4px 4px #0008);
+}
+.reroll {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 14px;
+  border: 2px solid #4b6172;
+  border-radius: 6px;
+  background: linear-gradient(#273746, #141f29);
+  font-size: 26px;
+  box-shadow: 0 3px 8px #0008;
+}
+.reroll .price {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--gold);
+}
+.reroll .price img {
+  width: 20px;
+  height: 20px;
+}
+.reroll:disabled {
+  opacity: 0.55;
+}
+
+.hud-actions {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+}
+.hex-card.villager {
+  --size: 92px;
+}
+.hex-card.villager .hex-art img {
+  width: 70%;
+}
+.hex-card .count {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 24px;
+  padding: 0 6px;
+  border-radius: 12px;
+  background: var(--insight);
+  color: #06121c;
+  font-weight: 800;
+  font-size: 15px;
+}
+.hex-card .count:empty {
+  display: none;
+}
+.fate-orb {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  border: 3px solid #6b5aa8;
+  background: radial-gradient(circle at 50% 35%, #4b3c86, #1b1438 70%);
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px #0009;
+  margin-bottom: 14px;
+}
+.fate-orb img {
+  width: 40px;
+  height: 40px;
+}
+.fate-orb.glow {
+  animation: fate-glow 2.4s ease-in-out infinite;
+}
+@keyframes fate-glow {
+  50% {
+    box-shadow:
+      0 0 22px #a58cff,
+      0 4px 12px #0009;
+  }
+}
+.fate-orb:disabled {
+  filter: grayscale(0.7) brightness(0.7);
+}
+.ready {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  border: 4px solid #7d93a3;
+  background: radial-gradient(circle at 50% 30%, #3b5160, #16232d 70%);
+  box-shadow:
+    inset 0 0 0 4px #0e1820,
+    inset 0 0 0 6px #44596a,
+    0 8px 20px #000a;
+  display: grid;
+  place-items: center;
+  font-size: 66px;
+  color: #f2f6f8 !important;
+  transition: transform 0.15s ease;
+}
+.ready svg {
+  width: 66px;
+  height: 66px;
+  margin-left: 8px;
+  filter: drop-shadow(0 3px 2px #000a);
+}
+.ready:not(:disabled):hover {
+  transform: scale(1.05);
+  border-color: var(--gold);
+}
+.ready:disabled {
+  opacity: 0.5;
+}
+
+/* Chief */
+.hud-chief {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: min(620px, 50vw);
+  height: 280px;
+  pointer-events: none;
+}
+.hud-chief > * {
+  pointer-events: auto;
+}
+.chief-portrait {
+  position: absolute;
+  left: -10px;
+  bottom: 0;
+  height: 290px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px #000c);
+  pointer-events: none !important;
+  z-index: 2;
+  mask-image: linear-gradient(#000 88%, #0000);
+}
+.hud-rival {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(520px, 42vw);
+  height: 280px;
+  display: none;
+  pointer-events: none !important;
+}
+.hud[data-phase="result"][data-rival="chief"] .hud-rival {
+  display: block;
+}
+.hud-rival .chief-portrait {
+  left: auto;
+  right: -10px;
+  transform: scaleX(-1);
+}
+.hud-rival .chief-plate {
+  left: auto;
+  right: 150px;
+  max-width: calc(100% - 150px);
+  bottom: 160px;
+  padding: 6px 70px 10px 40px;
+  background: linear-gradient(270deg, #2a0d0af2 70%, #2a0d0a00);
+  clip-path: polygon(8% 0, 100% 0, 100% 100%, 8% 100%, 0 50%);
+}
+.chief-plate {
+  position: absolute;
+  left: 165px;
+  box-sizing: border-box;
+  max-width: calc(100% - 165px);
+  bottom: 120px;
+  padding: 6px 40px 10px 70px;
+  background: linear-gradient(90deg, #0d1822f2 70%, #0d182200);
+  clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%);
+  z-index: 1;
+}
+.chief-name {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.chief-name b {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.clan-shield {
+  flex-shrink: 0;
+  width: 42px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(#8a3b26, #5a2012);
+  clip-path: polygon(0 0, 100% 0, 100% 65%, 50% 100%, 0 65%);
+}
+.clan-shield img {
+  width: 34px;
+  height: 34px;
+}
+.chief-skills {
+  display: flex;
+  gap: 12px;
+}
+.skill {
+  padding: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #33475a, #142029);
+  border: 2px solid #8095a5;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.skill img {
+  width: 40px;
+  height: 40px;
+}
+.skill i {
+  position: absolute;
+  bottom: -9px;
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--gold);
+  text-shadow: 0 1px 2px #000;
+}
+.chief-slots {
+  position: absolute;
+  left: 180px;
+  bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 48px);
+  grid-auto-rows: 40px;
+  column-gap: 30px;
+  z-index: 1;
+}
+.chief-slots .slot:nth-child(n + 5) {
+  transform: translateX(39px);
+}
+.slot {
+  width: 46px;
+  height: 46px;
+  transform: rotate(45deg);
+  padding: 0;
+  border: 2px solid #33475a;
+  background: #0e1922d8;
+  display: grid;
+  place-items: center;
+}
+.chief-slots .slot:nth-child(n + 5) {
+  transform: translateX(39px) rotate(45deg);
+}
+.slot img {
+  width: 40px;
+  height: 40px;
+  transform: rotate(-45deg);
+}
+.slot.blessing {
+  border-color: var(--insight);
+}
+
+/* Tooltip */
+.hud-tooltip:not([data-rarity]) {
+  --tier: var(--muted);
+}
+.hud-tooltip {
+  position: absolute;
+  right: calc(clamp(92px, 8.4vw, 124px) + 48px);
+  top: 84px;
+  width: min(380px, 34vw);
+  /* Transient hover hints stay transparent to pointer input. */
+  z-index: 3;
+  pointer-events: none !important;
+  animation: tip-in 0.12s ease-out;
+}
+.hud-tooltip[data-pinned="true"] {
+  pointer-events: auto !important;
+}
+/* Season details sit below the round label they explain (the default spot can cover it). */
+.hud-tooltip[data-anchor="season"] {
+  top: 112px;
+}
+.hud-tooltip[data-anchor="item"] {
+  top: var(--polis-header-bottom, 112px);
+  bottom: auto;
+}
+@keyframes tip-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+.tip-body .tip-tags {
+  margin: 0 0 6px;
+}
+.tip-tags {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tag);
+  text-shadow: 0 1px 3px #000;
+  word-spacing: 6px;
+}
+.tip-card {
+  background: #0e1822;
+  border: 2px solid var(--panel-edge);
+  box-shadow:
+    inset 0 0 0 1px #0b131b,
+    0 8px 22px #000b;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.tip-card header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px 8px 14px;
+  background: linear-gradient(90deg, #22313f, #18242f);
+  border-bottom: 1px solid #34495a;
+  position: relative;
+}
+.tip-card .ribbon {
+  width: 22px;
+  height: 34px;
+  background: var(--gold);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
+  flex: none;
+}
+.hud-tooltip[data-accent="purple"] .ribbon {
+  background: var(--tag);
+}
+.hud-tooltip[data-accent="blue"] .ribbon {
+  background: var(--insight);
+}
+.hud-tooltip[data-accent="green"] .ribbon {
+  background: var(--good);
+}
+.tip-card h3 {
+  margin: 0;
+  flex: 1;
+  font-size: 20px;
+  font-weight: 600;
+}
+.tip-card small {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tier);
+}
+.tip-body {
+  padding: 10px 14px 12px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.tip-body p {
+  margin: 6px 0 0;
+}
+.tip-placement {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 6px;
+}
+.tip-placement button {
+  flex: none;
+  min-height: 36px;
+  padding: 4px 8px;
+  background: #22313f;
+  border: 1px solid var(--panel-edge);
+  border-radius: 4px;
+}
+.tip-workers {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+}
+.tip-body .tip-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 6px;
+}
+.tip-badge {
+  padding: 0 6px;
+  border: 1px solid #4a5f6e;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.tip-badge.source-exact {
+  color: var(--good);
+  border-color: #4f7a3c;
+}
+.tip-badge.source-partial,
+.tip-badge.source-hold {
+  color: var(--gold);
+  border-color: #7a6232;
+}
+.tip-badge.clan {
+  color: var(--ink);
+  border-color: var(--bronze);
+}
+.tip-effects {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+.tip-unknown {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--panel-edge);
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.tip-unknown b {
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.tip-unknown ul {
+  margin: 2px 0 0;
+  padding-left: 16px;
+}
+.stat {
+  font-weight: 600;
+}
+.stat-health {
+  color: var(--good);
+}
+.stat-damage,
+.stat-burn {
+  color: #ff8a5c;
+}
+.stat-armor,
+.stat-ward {
+  color: #9fd2ff;
+}
+.stat-drachma,
+.stat-drachmas {
+  color: var(--gold);
+}
+.stat-insight {
+  color: var(--insight);
+}
+.stat-action,
+.stat-attack,
+.stat-poison,
+.stat-crit,
+.stat-regen,
+.stat-healing {
+  color: #6fe0b0;
+}
+.stat span {
+  opacity: 0.55;
+}
+.stat span.on {
+  opacity: 1;
+  text-decoration: underline;
+}
+.tag {
+  color: var(--tag);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+/* Hints and notices */
+.hud-hints {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 34px;
+  font-size: 16px;
+  color: #e2e9ee;
+  text-shadow: 0 1px 3px #000;
+  padding: 6px 28px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #0a101c00,
+    #0a101cb3 16%,
+    #0a101cb3 84%,
+    #0a101c00
+  );
+  pointer-events: none !important;
+}
+.hud-hints span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.hud-hints svg {
+  width: 20px;
+  height: 20px;
+}
+.hud-notice {
+  position: absolute;
+  left: 50%;
+  top: 132px;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  width: max-content;
+  max-width: calc(100% - 24px);
+  margin: 0;
+  padding: 8px 22px;
+  background: linear-gradient(90deg, #0000, #0e1822e8 20% 80%, #0000);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  pointer-events: none !important;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+.hud-notice.show {
+  animation: notice 3.2s ease forwards;
+}
+@keyframes notice {
+  8%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Phase visibility */
+.hud[data-phase="result"] .hud-shop,
+.hud[data-phase="result"] .hud-actions,
+.hud[data-phase="result"] .hud-tooltip,
+.hud[data-phase="result"] .chief-slots {
+  display: none;
+}
+
+@media (max-width: 900px), (max-height: 640px) {
+  .crest-emblem {
+    width: 60px;
+    height: 60px;
+  }
+  .crest-emblem img {
+    width: 54px;
+    height: 54px;
+  }
+  .wins i {
+    width: 10px;
+    height: 10px;
+  }
+  .lives i {
+    width: 16px;
+    height: 16px;
+  }
+  .season-banner {
+    height: 42px;
+  }
+  .hud-favor {
+    top: 84px;
+    left: 12px;
+    gap: 4px;
+  }
+  .hud .favor {
+    width: 34px;
+    font-size: 12px;
+  }
+  .favor img {
+    width: 30px;
+    height: 30px;
+  }
+  .mark {
+    width: 18px;
+    height: 18px;
+  }
+  .mark.current {
+    width: 26px;
+    height: 26px;
+  }
+  .season-label {
+    font-size: 14px;
+  }
+  .resource {
+    font-size: 19px;
+  }
+  .resource img {
+    width: 24px;
+    height: 24px;
+  }
+  .hud-resources {
+    gap: 12px;
+  }
+  .hud-gear {
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+    margin-left: 4px;
+  }
+  .hud-shop {
+    top: 70px;
+    gap: 8px;
+  }
+  .hex-card {
+    --size: 70px;
+  }
+  .hex-card.villager {
+    --size: 66px;
+  }
+  .ready {
+    width: 86px;
+    height: 86px;
+  }
+  .ready svg {
+    width: 44px;
+    height: 44px;
+  }
+  .fate-orb {
+    width: 58px;
+    height: 58px;
+  }
+  .fate-orb img {
+    width: 28px;
+    height: 28px;
+  }
+  .hud-chief {
+    height: 170px;
+  }
+  .chief-portrait {
+    height: 180px;
+  }
+  .chief-plate {
+    left: 92px;
+    max-width: calc(100% - 92px);
+    bottom: 70px;
+    padding: 4px 26px 6px 40px;
+  }
+  .chief-name {
+    font-size: 17px;
+  }
+  .clan-shield {
+    width: 28px;
+    height: 32px;
+  }
+  .clan-shield img {
+    width: 22px;
+    height: 22px;
+  }
+  .skill {
+    width: 36px;
+    height: 36px;
+  }
+  .skill img {
+    width: 28px;
+    height: 28px;
+  }
+  .chief-slots {
+    left: 104px;
+    bottom: 10px;
+    grid-template-columns: repeat(4, 30px);
+    grid-auto-rows: 26px;
+    column-gap: 20px;
+  }
+  .slot {
+    width: 28px;
+    height: 28px;
+  }
+  .slot img {
+    width: 24px;
+    height: 24px;
+  }
+  .chief-slots .slot:nth-child(n + 5) {
+    transform: translateX(25px) rotate(45deg);
+  }
+  .hud-hints {
+    display: none;
+  }
+  .hud-tooltip {
+    right: 100px;
+    top: 64px;
+    width: min(320px, 60vw);
+  }
+  .hud-tooltip[data-anchor="season"] {
+    top: 96px;
+  }
+  .tip-body {
+    font-size: 14px;
+  }
+}
+.hud[data-phase="result"] .hud-hints {
+  display: none;
+}
+
+/* Narrow portrait phones: stack the crest track, drop the season painting, stack actions. */
+@media (max-width: 600px) and (orientation: portrait) {
+  .hud-crest {
+    left: 8px;
+    top: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .crest-track {
+    margin: 4px 0 0;
+    /* The bottom padding keeps the lives clear of the soft lower edge. */
+    padding: 4px 6px 12px;
+    gap: 4px;
+  }
+  .wins i {
+    width: 8px;
+    height: 8px;
+    border-width: 1.5px;
+  }
+  .lives i {
+    width: 13px;
+    height: 13px;
+  }
+  .hud-favor {
+    top: 128px;
+    left: 8px;
+  }
+  .hud-season {
+    top: 10px;
+  }
+  .season-banner {
+    display: none;
+  }
+  .season-label {
+    font-size: 13px;
+    padding: 2px 10px;
+    white-space: nowrap;
+  }
+  .hud-resources {
+    top: 36px;
+    left: 0;
+    right: 0;
+    width: max-content;
+    margin: 0 auto;
+  }
+  /* Pinned to the screen corner while its parent stays centred (no transform involved). */
+  .hud-gear {
+    position: absolute;
+    top: -28px;
+    right: calc(50% - 50vw + 8px);
+  }
+  .hud-shop {
+    top: 58px;
+  }
+  /* Notices (targeting prompts) sit in the open map, left of the shop column and below the
+     favor medallions. */
+  .hud-notice {
+    left: 8px;
+    right: 108px;
+    top: 186px;
+    transform: none;
+    width: auto;
+    max-width: none;
+    padding: 6px 12px;
+    font-size: 15px;
+    background: linear-gradient(90deg, #0e1822e8 85%, #0000);
+    text-align: left;
+  }
+  .hud-actions {
+    right: 10px;
+    bottom: 14px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .fate-orb {
+    margin-bottom: 0;
+  }
+  .hud-chief {
+    width: 70vw;
+    height: 150px;
+  }
+  .chief-portrait {
+    height: 150px;
+  }
+  .chief-plate {
+    left: 74px;
+    max-width: max(198px, calc(100% - 74px));
+    bottom: 64px;
+  }
+  .chief-slots {
+    left: 84px;
+  }
+  .hud-tooltip {
+    left: 10px;
+    right: auto;
+    top: auto;
+    bottom: 170px;
+    width: calc(100vw - 120px);
+  }
+  .hud-tooltip[data-anchor="season"] {
+    top: auto;
+  }
+  /* In battle the speed controls fill the bottom of a phone: the chiefs step aside. The
+     rival stays when motion is reduced, since no versus card names them then. */
+  .hud[data-phase="result"] .hud-chief,
+  :root:not([data-motion="reduce"])
+    .hud[data-phase="result"][data-rival]
+    .hud-rival {
+    display: none;
+  }
+  /* Its name is enough: the portrait would sit behind the battle controls. */
+  .hud[data-phase="result"] .hud-rival .chief-portrait {
+    display: none;
+  }
+}
+
+.hud-announce {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%);
+  min-width: min(560px, 90vw);
+  padding: 14px 60px 12px;
+  text-align: center;
+  background: linear-gradient(90deg, #0000, #0e1822ec 18% 82%, #0000);
+  border-top: 2px solid #f3c75a66;
+  border-bottom: 2px solid #f3c75a66;
+  opacity: 0;
+  pointer-events: none !important;
+}
+.hud-announce.show {
+  animation: announce 2.8s ease forwards;
+}
+.hud-announce h2 {
+  margin: 0;
+  font: 800 40px var(--title);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-shadow: 0 2px 12px #000;
+}
+.hud-announce p {
+  margin: 4px 0 0;
+  font-size: 17px;
+  color: #dfe6ea;
+}
+@keyframes announce {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.9);
+  }
+  12%,
+  78% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media (max-width: 900px), (max-height: 640px) {
+  .hud-announce h2 {
+    font-size: 26px;
+  }
+}
+
+/* Short landscape screens: the shop folds into a 2x2 grid so it clears the ready button. */
+@media (max-height: 500px) and (orientation: landscape) {
+  .shop-cards {
+    grid-template-columns: repeat(2, auto);
+    gap: 6px 4px;
+  }
+  .hex-card {
+    --size: 58px;
+  }
+  .hud-shop {
+    top: 62px;
+    gap: 6px;
+  }
+  .hud-actions {
+    bottom: 12px;
+  }
+  .ready {
+    width: 74px;
+    height: 74px;
+  }
+  .ready svg {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.hud-notice.still,
+.hud-announce.still {
+  opacity: 1;
+}
+
+.hud[data-locked="true"] .hud-shop,
+.hud[data-locked="true"] .hud-actions,
+.hud[data-locked="true"] .chief-slots {
+  filter: saturate(0.45) brightness(0.8);
+}
+
+@media (orientation: portrait) and (max-width: 389px) {
+  .chief-plate {
+    left: 64px;
+    max-width: calc(100vw - 168px);
+    padding-inline: 16px;
+  }
+  .chief-name {
+    gap: 8px;
+  }
+  .chief-skills {
+    gap: 6px;
+  }
+  .chief-slots {
+    left: 60px;
+    grid-template-columns: repeat(4, 26px);
+    column-gap: 6px;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 600px) and (max-height: 740px) {
+  /* The two-column shop is wider here. */
+  .hud-notice {
+    right: 146px;
+  }
+  .hud-shop {
+    top: 70px;
+  }
+  .shop-cards {
+    grid-template-columns: repeat(2, auto);
+    gap: 6px 4px;
+  }
+  .hex-card {
+    --size: 58px;
+  }
+}
+
+/* Keep long explanations on screen. Short landscape: wider and denser. */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hud-tooltip {
+    top: 52px;
+    right: 146px;
+    /* Cover the chief plate rather than shrink explanations into a narrow column. */
+    width: min(460px, calc(100vw - 156px));
+  }
+  .tip-tags {
+    font-size: 12px;
+  }
+  .tip-card header {
+    padding-block: 4px;
+  }
+  .tip-body {
+    padding: 6px 12px 8px;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  .tip-unknown {
+    font-size: 11.5px;
+    line-height: 1.3;
+  }
+}
+/* Small portrait phones: the full width above the chief, in a denser type. */
+@media (orientation: portrait) and (max-width: 389px) and (max-height: 640px) {
+  .hud-tooltip {
+    width: calc(100vw - 20px);
+  }
+  .tip-tags {
+    font-size: 12px;
+  }
+  .tip-body {
+    padding: 6px 10px 8px;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  .tip-unknown {
+    font-size: 11.5px;
+    line-height: 1.3;
+  }
+}

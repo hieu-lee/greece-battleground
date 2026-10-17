@@ -1,0 +1,409 @@
+{
+  "cards": [
+    {
+      "id": "lost-wanderer",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {},
+      "effect": {
+        "villagers": 1
+      }
+    },
+    {
+      "id": "call-to-peace",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Baldr": 1
+      },
+      "effect": {
+        "discountKrowns": 1
+      }
+    },
+    {
+      "id": "burning-blades",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Thor": 1
+      },
+      "effect": {
+        "burn": 2
+      }
+    },
+    {
+      "id": "call-to-learn",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Odin": 1
+      },
+      "effect": {
+        "discountKrowns": 1
+      }
+    },
+    {
+      "id": "flurry-of-blows",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Thor": 1
+      },
+      "effect": {
+        "actionSpeed": 0.2
+      }
+    },
+    {
+      "id": "protect-the-weak",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Baldr": 1
+      },
+      "effect": {
+        "ward": 1
+      }
+    },
+    {
+      "id": "padded-armor",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Baldr": 1
+      },
+      "effect": {
+        "armor": 25
+      }
+    },
+    {
+      "id": "call-to-war",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Thor": 1
+      },
+      "effect": {
+        "discountKrowns": 1
+      }
+    },
+    {
+      "id": "well-fed",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Baldr": 1
+      },
+      "effect": {
+        "health": 15
+      }
+    },
+    {
+      "id": "beseech-odin",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Odin": 2
+      },
+      "effect": {
+        "favorOdin": 2
+      }
+    },
+    {
+      "id": "guardians",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Odin": 1
+      },
+      "effect": {
+        "healthPerEmptyColonizedTile": 15
+      }
+    },
+    {
+      "id": "prepare-to-learn",
+      "observedLorePrice": 8,
+      "displayedGodEmblems": {},
+      "effect": {
+        "upgrade": 1
+      }
+    },
+    {
+      "id": "wide-swings",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Thor": 1
+      },
+      "effect": {
+        "cleave": 1
+      }
+    },
+    {
+      "id": "lost-ruins",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {},
+      "effect": {
+        "krowns": 6
+      }
+    },
+    {
+      "id": "read-the-runes",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Odin": 1
+      },
+      "effect": {
+        "lore": 1
+      }
+    },
+    {
+      "id": "pathfinders",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Odin": 1
+      },
+      "effect": {
+        "damagePerEmptyColonizedTile": 3
+      }
+    },
+    {
+      "id": "bloodied-might",
+      "observedLorePrice": 16,
+      "displayedGodEmblems": {
+        "Thor": 1
+      },
+      "effect": {
+        "whenStruckDamage": 3
+      }
+    },
+    {
+      "id": "heavy-plate",
+      "observedLorePrice": 32,
+      "displayedGodEmblems": {
+        "Baldr": 1
+      },
+      "effect": {
+        "armor": 150,
+        "ward": 2
+      }
+    },
+    {
+      "id": "spiked-skin",
+      "observedLorePrice": 8,
+      "displayedGodEmblems": {
+        "Baldr": 1,
+        "Thor": 1
+      },
+      "effect": {
+        "health": 15,
+        "thorns": 2
+      }
+    },
+    {
+      "id": "defensive-strategy",
+      "observedLorePrice": 8,
+      "displayedGodEmblems": {
+        "Baldr": 1
+      },
+      "effect": {
+        "offerLikelihoodMultiplier": 2
+      }
+    },
+    {
+      "id": "work-together",
+      "observedLorePrice": 16,
+      "displayedGodEmblems": {
+        "Baldr": 1,
+        "Thor": 1
+      },
+      "effect": {
+        "actionSpeedPercentPerAdjacentMeleeStructure": 10
+      }
+    },
+    {
+      "id": "good-business",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Baldr": 1
+      },
+      "effect": {
+        "krowns": 1
+      }
+    },
+    {
+      "id": "mind-shield",
+      "observedLorePrice": 8,
+      "displayedGodEmblems": {
+        "Baldr": 1,
+        "Odin": 1
+      },
+      "effect": {
+        "adjacentUnitWard": 1
+      }
+    },
+    {
+      "id": "growing-toughness",
+      "observedLorePrice": 8,
+      "displayedGodEmblems": {
+        "Thor": 1
+      },
+      "effect": {
+        "perRoundDamage": 5,
+        "perRoundHealth": 15
+      }
+    },
+    {
+      "id": "beseech-thor",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Thor": 2
+      },
+      "effect": {
+        "favorThor": 2
+      }
+    },
+    {
+      "id": "flaming-arrows",
+      "observedLorePrice": 8,
+      "displayedGodEmblems": {
+        "Thor": 1
+      },
+      "effect": {
+        "burn": 4
+      }
+    },
+    {
+      "id": "beseech-baldr",
+      "observedLorePrice": 4,
+      "displayedGodEmblems": {
+        "Baldr": 2
+      },
+      "effect": {
+        "favorBaldr": 2
+      }
+    },
+    {
+      "id": "gleaming-aegis",
+      "observedLorePrice": null,
+      "displayedGodEmblems": null,
+      "effect": {
+        "ward": 15,
+        "durationSeconds": 10
+      }
+    },
+    {
+      "id": "shield-wall",
+      "observedLorePrice": 8,
+      "displayedGodEmblems": {
+        "Baldr": 1
+      },
+      "effect": {
+        "armor": 20,
+        "requiresArmor": true
+      }
+    },
+    {
+      "id": "prepare-for-peace",
+      "observedLorePrice": 8,
+      "displayedGodEmblems": {},
+      "effect": {
+        "upgrade": 1
+      }
+    },
+    {
+      "id": "follow-them",
+      "observedLorePrice": 32,
+      "displayedGodEmblems": {
+        "Baldr": 1,
+        "Thor": 1
+      },
+      "effect": {
+        "health": 150,
+        "cleave": 2
+      }
+    },
+    {
+      "id": "mythic-fury",
+      "observedLorePrice": 32,
+      "displayedGodEmblems": {
+        "Thor": 1
+      },
+      "effect": {
+        "cleavePerAdjacentWarbandStructure": 1
+      }
+    },
+    {
+      "id": "eagle-eyes",
+      "observedLorePrice": 32,
+      "displayedGodEmblems": {
+        "Thor": 1,
+        "Baldr": 1
+      },
+      "effect": {
+        "critChancePerAdjacentTower": 15
+      }
+    },
+    {
+      "id": "roll-with-the-punches",
+      "observedLorePrice": 16,
+      "displayedGodEmblems": {
+        "Baldr": 1
+      },
+      "effect": {
+        "whenStruckArmor": 10
+      }
+    },
+    {
+      "id": "pray-to-odin",
+      "observedLorePrice": 16,
+      "displayedGodEmblems": {
+        "Odin": 3
+      },
+      "effect": {
+        "favorOdin": 3
+      }
+    },
+    {
+      "id": "sentinels",
+      "observedLorePrice": 16,
+      "displayedGodEmblems": {
+        "Baldr": 1
+      },
+      "effect": {
+        "armorPerAdjacentTower": 30
+      }
+    },
+    {
+      "id": "second-wind",
+      "observedLorePrice": 16,
+      "displayedGodEmblems": {
+        "Baldr": 1
+      },
+      "effect": {
+        "ward": 3,
+        "healthThresholdPercent": 50,
+        "maximumTriggersPerBattle": 1
+      }
+    },
+    {
+      "id": "protect-the-people",
+      "observedLorePrice": 16,
+      "displayedGodEmblems": {
+        "Baldr": 1
+      },
+      "effect": {
+        "wardPerAdjacentCivilian": 1
+      }
+    },
+    {
+      "id": "offensive-strategy",
+      "observedLorePrice": 8,
+      "displayedGodEmblems": {
+        "Thor": 1
+      },
+      "effect": {
+        "offerLikelihoodMultiplier": 2
+      }
+    },
+    {
+      "id": "well-trained",
+      "observedLorePrice": 8,
+      "displayedGodEmblems": {
+        "Thor": 1,
+        "Baldr": 1
+      },
+      "effect": {
+        "damage": 5,
+        "armor": 25
+      }
+    }
+  ]
+}

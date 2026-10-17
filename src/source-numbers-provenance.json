@@ -1,0 +1,404 @@
+{
+  "version": "0.77.118d",
+  "build": 25904130,
+  "readFrom": {
+    "version": "0.77.111d",
+    "build": 25883815
+  },
+  "semanticDeltaSha256": "2161d04b489eb6d507e7cbeadc74ecfe6da247eb18ed54c0b9116613153ced92",
+  "current118Sha256": {
+    "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/7503551776207368354-SmallUnitSizeData.json": "34c3a41c4da0bbdbe7464db12861ea20cbd207e531364d4222983870706f6947",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-2591079183986458145-SpawnUnitData-1.json": "206fcd6c328304e5289bae3d1a310a3f8d594a865dc9c3e6a9fa92bcfb77fd57",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/5254597001052868006-SpawnUnitData-1.json": "8a6e5583f9e17c59cb5db965c12da0e7bc2bb7cb88a1b8069d2eb316eae93986",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/9025903052208085557-SpawnUnitData-1.json": "00261a12b3b24a6647380d15ff30220f9bd6070f7419a4f3490a60f17bfd1245",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-4435279580105270179-SpawnUnitData-1.json": "78d7b182fb14c3cb852ae144a79eddab38a11a1fcc0135361c336d0c27f62f20",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/6303220937758519018-SpawnUnitData-1.json": "27f07510c1fcb28851a8bf95836e89b111f997b0e0d9339e70f34b818bae21cd",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-6923397131978039214-SpawnUnitData-1.json": "beb0baa94b0a527020a0843ae88e5878836f98a8521a3159dde436551efb5167",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-2312790929274163878-SpawnUnitData-1.json": "c45924c3d5c569de11fe010cb702375275251a574a1aef567803d9013c84ff37",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-4439119976783616758-SpawnUnitData-1.json": "57246127b5064ed17839e1be2ca777633a52edd40cf81cbd47f19e1fa08beb6a",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/476687913271774401-SpawnUnitData-1.json": "299fe550c7a62ba51da96e8f99a57014082abddf4e3f8d2f17579d6917306e3b",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/6089634558964853040-SpawnUnitData-1.json": "4d162b3378b11e818c9b8cb18b3fe6710688f0053473862bfaa293efacaed2ae",
+    "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/2075991650089518337-BigUnitSizeData.json": "fc7c5082ca82f15f603cd2e3f769a2128feb2c79e731c97d11d8a8a1b358e10f",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-7028260978691189329-SpawnUnitData-1.json": "0e1ea544b94eef36447a71f4ceb9928d12074fd440ea5349c479fe178746ec07",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-3889202854424232789-SpawnUnitData-1.json": "4900dbeae9e4e43bd74b43a280b09d95cdb4517ba9c122e8a7f57f6843a76eda",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-7748402073124074937-SpawnUnitData-1.json": "c1965818a7e5478a921668dc7a4bb95e97f67f66ebc29defdf9844388c62ffa9",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/6137684565274834130-SpawnUnitData-1.json": "b5ead1071eefa643245711500ca733273c6042017fbb41a2672e90860c182db4",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/5747289733310949153-SpawnUnitData-1.json": "59e30e1cc31fcf1ce7b30a0c9253b5a55ef4d13d8cbc2fa9842b5a6bc867a231",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/1732085313493974808-SpawnUnitData-1.json": "2796d4d78a1ae9b98933d8a1269d3f496ca3bc97bd6b63c0dd503fd651c64d71",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/1585084575292186832-SpawnUnitData-1.json": "99637b91f15db29b56077d85dab81d37b0d4b361c5138c35586313c63674f5f4",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-1777153349985485515-SpawnUnitData-1.json": "85ed3cd2671d0d9f2e639b61823dde92e49fa8d722a28b276ffc5fa121ac2f23",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-4149166229560665634-SpawnUnitData-1.json": "bee8bf74d0a1d5a870d8ef7e8bcc30af63c6d7214078aab9a41eae89c74f91d6",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-5093981218037506247-SpawnUnitData-1.json": "8b751996e5e079fd40c23aa6aaf69642264ff23cf14ba35c449fddab934d5490",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/4730900331407321824-SpawnUnitData-1.json": "1f7c979a3366a68b843452a35d312af5df5d8348b1f16524828ba1cce4ff0c9e",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-8932163142946952985-SpawnUnitData-1.json": "8fbb0d1f7b8c1b314dd8d7fbd40d4eaa6c58469108a9fa1353798e0b812ce8bd",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-1069140251180633374-SpawnUnitData-1.json": "5e1be0064823373a1082fc66729426693458b5f3183414a9c9ecaa787cca6544",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-6873547484443502759-SpawnUnitData-1.json": "9eae53b6b331a3a213263c569a04ddb8bf86e430ccdbbaf781cb1ede8cd602f6",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-5279852337186531453-SpawnUnitData-1.json": "7a550ba135c83d0dbe57410d2486f96dc3bf794638988d77024d3d16d1f4fea5",
+    "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/8994714602468209918-1_Common.json": "e9f2e45457bd0d4ab5029e36707a839b6e4fe4a03c6bdb7e6b030f33ca57899d",
+    "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/-6859118952063588710-2_Uncommon.json": "a38b2fef0b78531edeb9b9a6712412c3fdc1442a9564b4c0af30e50318616e55",
+    "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/2294973157664528093-3_Rare.json": "5a447bb6a207670a206dc8c9a184520dfeea27ef79877c621b7f443da3ff5442",
+    "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/-4576668682879880742-4_Epic.json": "f8d340cecc451b83f055d3c92c32c50a9bad57f9a81e49090aec977d8b52a9f2",
+    "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/-3147313642322873085-5_Legendary.json": "018cc99bd7e647d9dbeb579b4a6236975207d7fb0597d15acad789857d59e2f0",
+    "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/7116790111571791672-1_Spring.json": "e7d72badcf69d2a73a9415b48885f92210a4ab06c49ca3c1a27f50f4773329f5",
+    "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/-872381337663850905-2_Summer.json": "9995c9b076f1fe5202b40860cdb9c7407b82c3c0525c1bc00639bd20e64a9a1b",
+    "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/-2481194373071852464-3_Autumn.json": "2e6aa80237fda83b2a341968bba5aa915dbe1a49f933197ef9579e0bf0e5e720",
+    "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/-4798804822877519464-4_Winter.json": "fe90a371714186328b2558eee00d5fc9e604b43719f29fca357063af9c4f4380",
+    "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/4386627308617828641-DefaultGlobalSettings.json": "ccb1b56d03ba710ef03bcb78c7b52fa6c3aec5f99ce6ccb652c1efcb95d8a566",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/2906296621942910298-SentryCamp.json": "4951876e541b447631f99f1040c9957a91b82e59f593e32f0a43e3229aca5d5b",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/5202408093061229914-GiveItemStats-1.json": "b083c5e3d61f441c417c1872074c78cdf90eaa4d6ffc73bc5102c9e9bc88ea29",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/2396162506830898442-MercenaryCamp.json": "19c1e290a1e7d346c83c31255906c42f031de954acbad19ac712cd37270e05e3",
+    "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/5298783239384524042-GiveItemStats-1.json": "8fee89e63736eae89345de88d639c6c4c3117bd876c5f7eb75967646f2202e8c"
+  },
+  "sources": [
+    {
+      "greek": "small",
+      "item": "SmallUnitSizeData",
+      "source": "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/7503551776207368354-SmallUnitSizeData.json",
+      "sha256": "a767c0dd132fd0d0c17cc54cc7ff08bd158edbcc4f8775950f88275e19560111"
+    },
+    {
+      "greek": "aegeus",
+      "item": "BannerHallStag",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-2591079183986458145-SpawnUnitData-1.json",
+      "sha256": "0dc41240f25e7bf81a0f418d147d0c42b68a9934300c1d472b81e282e5672731"
+    },
+    {
+      "greek": "atalanta",
+      "item": "BannerHallRaven",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/5254597001052868006-SpawnUnitData-1.json",
+      "sha256": "356667b061b970bdc881a09ea0baa0e761ef12f3e6444ecc8608163f1af825a0"
+    },
+    {
+      "greek": "hoplite",
+      "item": "WarriorCamp",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/9025903052208085557-SpawnUnitData-1.json",
+      "sha256": "74964339090b173b53b2cc4d671fa01c278cac66d5a374636c9ccc0ca0c92459"
+    },
+    {
+      "greek": "tracker",
+      "item": "TrackerCamp",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-4435279580105270179-SpawnUnitData-1.json",
+      "sha256": "35cdb15cd332025a1f2ea165ea8eaedf33d8432d88255fd68d39a94bdabcfea9"
+    },
+    {
+      "greek": "peltast",
+      "item": "AxeThrowersCamp",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/6303220937758519018-SpawnUnitData-1.json",
+      "sha256": "9815e2d50e7b5a69f5ef1ba0f2a3e11fc5a51fa0e0605834911c23729299e9f0"
+    },
+    {
+      "greek": "hypaspist",
+      "item": "ShieldsBearersCamp",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-6923397131978039214-SpawnUnitData-1.json",
+      "sha256": "0d59bc6f0268c6c206cfc3faa796d7653658f0b1e667e238b3390f9d05ecfeec"
+    },
+    {
+      "greek": "peripolos",
+      "item": "SentryCamp",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-2312790929274163878-SpawnUnitData-1.json",
+      "sha256": "c66bcdbc0ad46d96a4826be88491328696c379ee07858bf25ee8479414ebc9ef"
+    },
+    {
+      "greek": "misthophoros",
+      "item": "MercenaryCamp",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-4439119976783616758-SpawnUnitData-1.json",
+      "sha256": "5ec4f6eca9e7469833aeda5d63f1c93b125a3e5338808d1795e259c4702af813"
+    },
+    {
+      "greek": "spartoi",
+      "item": "DraugrTombs",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/476687913271774401-SpawnUnitData-1.json",
+      "sha256": "b7c87c8d46c4a9ca94618e26935769ce76aa136c950f306006e72612d7a1b958"
+    },
+    {
+      "greek": "erinys",
+      "item": "GatesOfHelheim",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/6089634558964853040-SpawnUnitData-1.json",
+      "sha256": "cacc36ef13ec582e1967126cecf87f6728331b984f1e9f3f47b8d87bbf3e6bc5"
+    },
+    {
+      "greek": "big",
+      "item": "BigUnitSizeData",
+      "source": "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/2075991650089518337-BigUnitSizeData.json",
+      "sha256": "f1e6aa4522aaffaf9bad5498b5aa5cf2611e907a70bbdc824134d057ccc7aaf4"
+    },
+    {
+      "greek": "fire-titan",
+      "item": "GatesOfMuspell",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-7028260978691189329-SpawnUnitData-1.json",
+      "sha256": "526f2c0a6d5c58108088315b1d82c177218a2ef5b9a189fda40c6e5a309d62f5"
+    },
+    {
+      "greek": "rhapsode",
+      "item": "HallofSkalds",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-3889202854424232789-SpawnUnitData-1.json",
+      "sha256": "e9e650cb43e911d6d86f12b344024085c2474fb66c29d14aad1af3977e2b6c76"
+    },
+    {
+      "greek": "asclepiad",
+      "item": "HealersHut",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-7748402073124074937-SpawnUnitData-1.json",
+      "sha256": "2af4a382db2774b5fe016484379ec523d7ed9b8395b99f7d978912b474b71f16"
+    },
+    {
+      "greek": "elysian-champion",
+      "item": "Hjildskjalf",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/6137684565274834130-SpawnUnitData-1.json",
+      "sha256": "732b2934ee8d08f2321c8d09362ca14722d12e1cf0c65a830b403f94d986da23"
+    },
+    {
+      "greek": "shade",
+      "item": "Horgr",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/5747289733310949153-SpawnUnitData-1.json",
+      "sha256": "466782c46e71d81202e371592561dace3c36a0417d30550b93198cdf4b06c66b"
+    },
+    {
+      "greek": "cyclops",
+      "item": "JotunnCamp",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/1732085313493974808-SpawnUnitData-1.json",
+      "sha256": "55ac202d7d8d16bda15ccf3f8c2b4876c2c3c90a2290fdcb55ff81365a43ac6b"
+    },
+    {
+      "greek": "dactyl",
+      "item": "Kobold Camp",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/1585084575292186832-SpawnUnitData-1.json",
+      "sha256": "26f0eff4399c790c025b9fd2c72a098fb13d3798ff10b37c22ac4459bb68b2fc"
+    },
+    {
+      "greek": "battle-physician",
+      "item": "MendersHut",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-1777153349985485515-SpawnUnitData-1.json",
+      "sha256": "53f3a4495545c07588e7f1b716cc248160ecc72a566fbcc88c7a94b92c09d871"
+    },
+    {
+      "greek": "boreal-giant",
+      "item": "Naglfar",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-4149166229560665634-SpawnUnitData-1.json",
+      "sha256": "b40842962487d373b506ec9aea22ea71030d861236115c8eb1953b0294f71a23"
+    },
+    {
+      "greek": "drakon-colossus",
+      "item": "SkullOfHrungnir",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-5093981218037506247-SpawnUnitData-1.json",
+      "sha256": "20c092e4468bde6d01c2cd30df79785857bfdefc40216e92a10200284f48d933"
+    },
+    {
+      "greek": "arcadian-wolf",
+      "item": "WolfDen",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/4730900331407321824-SpawnUnitData-1.json",
+      "sha256": "f50bf07991fc8833988fa36977d17c78cc5e54e2bb7ac6f6c3941f833b8ecefd"
+    },
+    {
+      "greek": "drakon",
+      "item": "WyvernNest",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-8932163142946952985-SpawnUnitData-1.json",
+      "sha256": "d32e33003a4b33e64a8059b3ea07ef4ef1321c934d6719fece7c34ee6741abd3"
+    },
+    {
+      "greek": "fox",
+      "item": "Fox Den",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-1069140251180633374-SpawnUnitData-1.json",
+      "sha256": "cd6025779af360d76f62ec6ee355d8597105d2d22d22c7d458ebd1c9063ae66d"
+    },
+    {
+      "greek": "boar",
+      "item": "BoarPit",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-6873547484443502759-SpawnUnitData-1.json",
+      "sha256": "9afad65cc9fb61b2941e5208195ad363dd08506d3efd4cdea263b454d9aa39b2"
+    },
+    {
+      "greek": "bear",
+      "item": "BearCave",
+      "source": "objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-5279852337186531453-SpawnUnitData-1.json",
+      "sha256": "81415753a2df981168bdff082dc3da43b14ca5217c4010c3b6778c1142c1407e"
+    },
+    {
+      "greek": "common",
+      "item": "1_Common",
+      "source": "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/8994714602468209918-1_Common.json",
+      "sha256": "c7557441b996df41748020bf6d1e92145a7691ce91c81b02fc66d7ffa347b237"
+    },
+    {
+      "greek": "uncommon",
+      "item": "2_Uncommon",
+      "source": "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/-6859118952063588710-2_Uncommon.json",
+      "sha256": "e8b2f342d44dad86c16e04cdd9d1d79638225ec8537cabd299ba492a571f9b15"
+    },
+    {
+      "greek": "rare",
+      "item": "3_Rare",
+      "source": "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/2294973157664528093-3_Rare.json",
+      "sha256": "86b2d0f873348708339256601fa13d07f62067c56e9f01c291f4e7195b062aec"
+    },
+    {
+      "greek": "epic",
+      "item": "4_Epic",
+      "source": "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/-4576668682879880742-4_Epic.json",
+      "sha256": "3e14ba33c06e102461ab5b2cfd6c32cfd8d6515d9c95a1b2cbfa280b6690079e"
+    },
+    {
+      "greek": "legendary",
+      "item": "5_Legendary",
+      "source": "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/-3147313642322873085-5_Legendary.json",
+      "sha256": "6a26beca556e4d36fa285b7e477cbcc49396563e75136053f07fefa7e51bbb06"
+    },
+    {
+      "greek": "spring",
+      "item": "1_Spring",
+      "source": "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/7116790111571791672-1_Spring.json",
+      "sha256": "52f2c547da6f0c8b13194b5a09cb37a8ad6579f7a68eb131d4ce10879e700570"
+    },
+    {
+      "greek": "summer",
+      "item": "2_Summer",
+      "source": "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/-872381337663850905-2_Summer.json",
+      "sha256": "d5625e046977fc430c2c55d5507c4f32e559a767705c4083188fb8389c10211f"
+    },
+    {
+      "greek": "autumn",
+      "item": "3_Autumn",
+      "source": "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/-2481194373071852464-3_Autumn.json",
+      "sha256": "a8c87dcde7f5be28d1047f2cd3033405f3426ef894afd0b0816e75bbc133a98e"
+    },
+    {
+      "greek": "winter",
+      "item": "4_Winter",
+      "source": "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/-4798804822877519464-4_Winter.json",
+      "sha256": "e7ee9e762e839e53711b2f83e110775010d03724c04aa579df9f532b67d4b99e"
+    }
+  ],
+  "producerSources": [
+    {
+      "greek": "peripolos",
+      "item": "SentryCamp",
+      "itemSource": {
+        "path": "assets/objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/2906296621942910298-SentryCamp.json",
+        "sha256": "65b3f99acf0270ed7983082e49681e851399f0efb78de237a56296b9303883f9"
+      },
+      "spawnSource": {
+        "guid": "feadfa72-b4fe-44fe-9c5c-bfcc348ee3c6",
+        "path": "assets/objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-2312790929274163878-SpawnUnitData-1.json",
+        "pathId": "-2312790929274163878",
+        "sha256": "c66bcdbc0ad46d96a4826be88491328696c379ee07858bf25ee8479414ebc9ef"
+      },
+      "countSource": {
+        "guid": "e9108c19-7893-480d-9ff2-660cf078fd45",
+        "path": "assets/objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/5202408093061229914-GiveItemStats-1.json",
+        "pathId": "5202408093061229914",
+        "sha256": "b8b1a00eca15cefe2ab9aa86d1faf1c5408812e65255b14d842dfccaefcd09a4"
+      },
+      "tags": [
+        "WarbandTagType",
+        "MeleeTagType",
+        "UnitTagType"
+      ],
+      "worker": null,
+      "pool": "Default",
+      "bareCost": 8,
+      "variants": [
+        {
+          "guid": "49f66e974b20b2545a4b6270f2a1b5f2",
+          "location": {
+            "internalId": "Assets/Core/Prefabs/Units/Humans/Sentry/Male_Sentry/Male_SentryPrefab.prefab",
+            "primaryKey": "SentryPrefab",
+            "providerId": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+            "type": "UnityEngine.GameObject"
+          },
+          "windup": {
+            "controllerEvidence": {
+              "hierarchy": [
+                "Male_SentryPrefab",
+                "Action"
+              ],
+              "rawSha256": "b302e106eb84ae429ad0da4adacd4793f5e227e3e6b9f2186c394b78a568adef"
+            },
+            "controllerPathId": "2398597422345904287",
+            "percentage": 50,
+            "requestedMsAtBaseAPS": 833,
+            "rootPathId": "5994857018370711711"
+          }
+        },
+        {
+          "guid": "92af35b52954a5b4b99ede87d4711bf8",
+          "location": {
+            "internalId": "Assets/Core/Prefabs/Units/Humans/Sentry/Female_Sentry/Female_SentryPrefab.prefab",
+            "primaryKey": "Female_SentryPrefab",
+            "providerId": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+            "type": "UnityEngine.GameObject"
+          },
+          "windup": {
+            "controllerEvidence": {
+              "hierarchy": [
+                "Female_SentryPrefab",
+                "Action"
+              ],
+              "rawSha256": "50809301b6fee82e35874b1826492803775648d6f454bf70ac90f1d12b0b9335"
+            },
+            "controllerPathId": "-5155373453704511606",
+            "percentage": 50,
+            "requestedMsAtBaseAPS": 833,
+            "rootPathId": "2549801489479155594"
+          }
+        }
+      ]
+    },
+    {
+      "greek": "misthophoros",
+      "item": "MercenaryCamp",
+      "itemSource": {
+        "path": "assets/objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/2396162506830898442-MercenaryCamp.json",
+        "sha256": "36f07a0ee18469a63fb184ee7b74d42cf49e4e66bb048f622e2e204a4e53f1c6"
+      },
+      "spawnSource": {
+        "guid": "137ba4ce-1e22-4fac-b462-da5d67c1c215",
+        "path": "assets/objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/-4439119976783616758-SpawnUnitData-1.json",
+        "pathId": "-4439119976783616758",
+        "sha256": "5ec4f6eca9e7469833aeda5d63f1c93b125a3e5338808d1795e259c4702af813"
+      },
+      "countSource": {
+        "guid": "3ce4a239-a978-4b8b-b991-037a84bab2e3",
+        "path": "assets/objects/items_assets_all_7d6b05d22b6e23417db95e9df3aa3342.bundle/5298783239384524042-GiveItemStats-1.json",
+        "pathId": "5298783239384524042",
+        "sha256": "47fb7c5626472b00588ccd98dcc586948417d7be37d25eee00e207ed97dca5fd"
+      },
+      "tags": [
+        "UnitTagType",
+        "WarbandTagType",
+        "MeleeTagType",
+        "MercenaryTagType"
+      ],
+      "worker": null,
+      "pool": "RavenClan",
+      "bareCost": 4,
+      "variants": [
+        {
+          "guid": "4c7b77710ea1f794c84b6849d0f8e530",
+          "location": {
+            "internalId": "Assets/Core/Prefabs/Units/Humans/Mercenary/MercenaryPrefab.prefab",
+            "primaryKey": "Male_MercenaryPrefab",
+            "providerId": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+            "type": "UnityEngine.GameObject"
+          },
+          "windup": {
+            "controllerEvidence": {
+              "hierarchy": [
+                "MercenaryPrefab",
+                "Action"
+              ],
+              "rawSha256": "18b4e5842bd878d9bf40ad7be531bd6f99ef52669ece3c9d13c9638b8ef5126b"
+            },
+            "controllerPathId": "-242894079312814212",
+            "percentage": 20,
+            "requestedMsAtBaseAPS": 308,
+            "rootPathId": "2786105921613307772"
+          }
+        }
+      ]
+    }
+  ],
+  "rosterSha256": "4f7b320fdd1fbb52376943d2b8f0c47aae75d6f800ab973e675718a909161eac",
+  "countProofSha256": "afd9dfccf1793bee95b511a4490f27306531248d2b33c7f20891d67a3eb9c305",
+  "globalSource": "objects/scriptableobjects_assets_all_127d52efa42f3677c17dce489430735a.bundle/4386627308617828641-DefaultGlobalSettings.json",
+  "globalSha256": "205e2adeadb14a5cb6eda06e8c7a4f3a26ae5ea4270097590ba9378ec41a5f11",
+  "growthEvidence": "code/mechanics-ledger.json: verified native ItemUpgradeData.CurrentLevel starts1 and SpawnUnitData forwards it unchanged to LevelBasedModifiableFloat"
+}

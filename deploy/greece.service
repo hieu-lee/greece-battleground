@@ -1,0 +1,24 @@
+[Unit]
+Description=Greece Battleground production game service
+After=network.target
+
+[Service]
+Type=simple
+User=greece
+Group=greece
+WorkingDirectory=/srv/greece/current
+EnvironmentFile=/etc/greece/service.env
+ExecStart=/usr/bin/node /srv/greece/current/server/start.ts --assets /srv/greece/current/dist --database /var/lib/greece/game.sqlite --host 127.0.0.1 --port 5396 --origin ${GREECE_ORIGIN} --secure-cookie
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=15
+StateDirectory=greece
+StateDirectoryMode=0700
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+
+[Install]
+WantedBy=multi-user.target

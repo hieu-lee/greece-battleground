@@ -1,0 +1,161 @@
+.tutorial-panel {
+  box-sizing: border-box;
+  position: absolute;
+  left: 18px;
+  top: 200px;
+  width: min(300px, calc(100vw - 36px));
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+  border: 1px solid var(--bronze);
+  border-radius: 8px;
+  background: #0e1822ed;
+  box-shadow: 0 8px 24px #0008;
+  pointer-events: auto;
+}
+.tutorial-stage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+.tutorial-browse {
+  display: grid;
+  gap: 4px;
+  color: var(--muted);
+  font: 12px var(--ui);
+}
+.tutorial-browse select {
+  min-width: 0;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--panel-edge);
+  border-radius: 4px;
+  background: #142330;
+  color: var(--ink);
+  font: 14px var(--ui);
+}
+.tutorial-dialog {
+  box-sizing: border-box;
+  width: min(570px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+  padding: 28px;
+  border: 2px solid var(--bronze);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #233844, #101b28);
+  box-shadow: 0 24px 90px #000b;
+  color: var(--ink);
+  font: 17px/1.6 var(--ui);
+  overscroll-behavior: contain;
+}
+.tutorial-dialog::backdrop {
+  background: #050a12bd;
+}
+.tutorial-chapter-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.tutorial-chapter-heading img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+.tutorial-eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font: 11px var(--ui);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.tutorial-dialog h2 {
+  margin: 4px 0 0;
+  color: var(--gold);
+  font: 700 25px/1.3 var(--title);
+}
+#tutorial-description {
+  margin: 20px 0;
+}
+#tutorial-status {
+  margin: 0;
+  color: #ffd295;
+  font-size: 14px;
+}
+#tutorial-status:empty {
+  display: none;
+}
+.tutorial-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 18px;
+}
+.tutorial-panel button,
+.tutorial-dialog button,
+#tutorial-advance {
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid #f7d58a;
+  border-radius: 5px;
+  background: linear-gradient(#e6c16a, #b78c36);
+  color: #191606;
+  font: 600 15px var(--ui);
+  cursor: pointer;
+}
+#tutorial-leave {
+  border-color: var(--panel-edge);
+  background: #172733;
+  color: var(--ink);
+}
+.tutorial-panel button:disabled,
+.tutorial-dialog button:disabled,
+#tutorial-advance:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.tutorial-panel :focus-visible,
+.tutorial-dialog :focus-visible {
+  outline: 3px solid #fff1bb;
+  outline-offset: 3px;
+}
+@media (max-width: 600px), (max-height: 640px) {
+  .tutorial-panel {
+    top: 134px;
+    left: 8px;
+    width: 225px;
+    padding: 8px;
+    gap: 6px;
+  }
+  .tutorial-browse {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 6px;
+  }
+  .tutorial-browse select {
+    font-size: 12px;
+    padding: 6px;
+  }
+  .tutorial-stage {
+    font-size: 12px;
+  }
+  .tutorial-dialog {
+    padding: 18px 22px;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .tutorial-dialog h2 {
+    font-size: 21px;
+  }
+  .tutorial-chapter-heading img {
+    width: 40px;
+    height: 40px;
+  }
+  #tutorial-description {
+    margin: 14px 0;
+  }
+  .tutorial-dialog-actions {
+    margin-top: 12px;
+  }
+}

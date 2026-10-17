@@ -1,0 +1,47 @@
+[
+  {
+    "id": "fire",
+    "path": "/vfx/fire.webp",
+    "width": 512,
+    "height": 512,
+    "model": "gpt-image-2.5-sunburst",
+    "bytes": 138556,
+    "sha256": "dc4527040dac003014d9d2706e3ed0782d21e3592f93d8bc36b079e66cfed8b2"
+  },
+  {
+    "id": "smoke",
+    "path": "/vfx/smoke.webp",
+    "width": 256,
+    "height": 256,
+    "model": "gpt-image-2.5-sunburst",
+    "bytes": 54142,
+    "sha256": "4aa49c0db9177003f74afb365b30b75cb93ffead6a1362be6a261b45ac69c969"
+  },
+  {
+    "id": "spark",
+    "path": "/vfx/spark.webp",
+    "width": 256,
+    "height": 256,
+    "model": "gpt-image-2.5-sunburst",
+    "bytes": 30152,
+    "sha256": "f5a966d99369baa413605447a606b6a1abc32adb15a07477fc4dc97a1ae03a45"
+  },
+  {
+    "id": "ward",
+    "path": "/vfx/ward.webp",
+    "width": 256,
+    "height": 256,
+    "model": "gpt-image-2.5-sunburst",
+    "bytes": 80438,
+    "sha256": "0da1c85a3e78f1dc0df32cf465d48d8cef0b72edd5b139f451c6975dcce13093"
+  },
+  {
+    "id": "kopis",
+    "path": "/vfx/kopis.webp",
+    "width": 256,
+    "height": 256,
+    "model": "gpt-image-2.5-sunburst",
+    "bytes": 18932,
+    "sha256": "81903c512f9ad1917a0a2e25d6433c79856abf02eaf9a873907d6b4435b51c5a"
+  }
+]
