@@ -32,16 +32,15 @@ root.innerHTML = `<img class="menu-background" alt="" src="${appUrl("/art/main-m
 <h1><span>Greece</span>Battleground</h1>
 <nav class="menu-buttons" aria-label="Game modes and options">
 <button data-panel="ranked">Ranked Play</button>
-<button data-panel="freeplay">Freeplay</button><button data-panel="async">Async PvP · Unranked</button>
+<button data-panel="freeplay">Freeplay</button><button data-panel="async">Unranked Play</button>
 <button class="menu-gap" id="tutorial">Tutorial</button>
-<button data-panel="account" id="menu-account">Account</button><button data-panel="settings">Settings</button><button data-panel="recovery">Account recovery</button><button data-panel="report">Report a Bug</button><button data-panel="exit">Exit</button>
-</nav><p class="development-note">Freeplay, guided practice, and ranked and unranked async PvP against real players are available.</p>
-<div class="development-links"><a href="/clans.html">Clan selection</a><a href="/play.html">Preparation playtest</a><a href="/workshop.html">Settlement workshop</a><a href="/art-review.html">Art gallery</a><a href="/effects.html">Effects atelier</a></div>
+<button data-panel="settings">Settings</button><button data-panel="report">Report a Bug</button><button data-panel="exit">Exit</button>
+</nav>
 </section><aside class="menu-right" aria-label="Player and rankings">
 <button class="profile panel" data-panel="profile" aria-label="Open your profile"><span class="rank-emblem" aria-hidden="true">${laurel}<span class="rank-badge" id="profile-badge">Ω</span></span><span class="profile-details"><strong id="player-name"></strong><span class="rank-track" id="profile-track"><span id="profile-rank">Unranked</span></span><small id="profile-summary">Loading your profile…</small></span></button>
 <section class="leaderboard panel" aria-labelledby="board-title"><h2 id="board-title">Leaderboard</h2><div id="board-preview" aria-live="polite"></div><button class="board-more" data-panel="leaderboard">View all standings</button></section>
 <section class="panel announcement"><span class="small-title">From the Aegean to Olympus</span><p>Build a polis. Gather a warband.<br>Earn the favour of the gods.</p></section></aside></main>
-<footer class="menu-footer"><span title="A community link has not been published">Community · Coming soon</span><button data-panel="report">Feedback</button><small>Greece Battleground · In development</small></footer>
+<footer class="menu-footer"><button data-panel="account" id="menu-account">Account</button><button data-panel="recovery">Account recovery</button><button data-panel="report">Feedback</button><small>In development</small></footer>
 <dialog id="menu-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><h2 id="dialog-title" tabindex="-1"></h2><button id="close-dialog" aria-label="Close dialog">×</button></div><div id="dialog-body"></div></dialog>`;
 const required = (id: string) => {
   const found = document.getElementById(id);
@@ -134,11 +133,7 @@ async function refreshBoard() {
     preview.replaceChildren(
       board.rows.length
         ? standingsList(board, "Top ranked players")
-        : element(
-            "p",
-            "No ranked results yet. Finish a ranked run to carve the first name here.",
-            "empty-board",
-          ),
+        : element("p", "No ranked results yet.", "empty-board"),
     );
     if (board.you && board.you.page > 1)
       preview.append(
@@ -192,7 +187,7 @@ const open = (panel: z.infer<typeof panels>) => {
     report: "Report a Bug",
     exit: "Exit",
     freeplay: "Freeplay",
-    async: "Async PvP · Unranked",
+    async: "Unranked Play",
   }[panel];
   if (panel === "account") {
     body.replaceChildren(
@@ -211,7 +206,7 @@ const open = (panel: z.infer<typeof panels>) => {
       retry("Sign in or create account", () => open("account")),
     );
   } else if (panel === "ranked") {
-    body.innerHTML = `<p>Face real players’ submitted warbands. When a ranked run ends, the server sets your new Elo from your wins and your opponents’ ratings, and every finished async run can earn XP.</p><p id="ranked-status" role="status">Checking for your guest polis…</p><div class="mode-links" id="ranked-links"></div><div class="panel-switch"><button type="button" data-open="profile">Your profile</button><button type="button" data-open="leaderboard">Leaderboard</button></div>`;
+    body.innerHTML = `<p>Face other players’ warbands. Your Elo changes when the run ends.</p><p id="ranked-status" role="status">Checking for your guest polis…</p><div class="mode-links" id="ranked-links"></div><div class="panel-switch"><button type="button" data-open="profile">Your profile</button><button type="button" data-open="leaderboard">Leaderboard</button></div>`;
     const status = document.getElementById("ranked-status"),
       links = document.getElementById("ranked-links");
     const link = (text: string, href: string) => {
@@ -222,15 +217,11 @@ const open = (panel: z.infer<typeof panels>) => {
     loadCard()
       .then((loaded) => {
         if (!status?.isConnected || !links) return;
-        const enter = link(
-          "Choose a clan and enter ranked play",
-          "/clans.html?mode=ranked",
-        );
+        const enter = link("Choose a clan", "/clans.html?mode=ranked");
         enter.id = "enter-ranked";
         const current = loaded?.current;
         if (!current) {
-          status.textContent =
-            "Choose a clan to create your guest polis in the ranked queue.";
+          status.textContent = "";
           links.replaceChildren(enter);
         } else if (current.queue === "ranked") {
           status.textContent =
@@ -336,7 +327,7 @@ const open = (panel: z.infer<typeof panels>) => {
                   "p",
                   board.total
                     ? "This page is past the last standing."
-                    : "No ranked results yet. Finish a ranked run to carve the first name here.",
+                    : "No ranked results yet.",
                   "empty-board",
                 ),
             pager,
@@ -371,15 +362,13 @@ const open = (panel: z.infer<typeof panels>) => {
     };
     show(1);
   } else if (panel === "async") {
-    body.innerHTML = `<p>Face real submitted player warbands. Matchmaking waits for another guest’s warband on the same round. This mode is unranked.</p><p id="async-menu-status" role="status">Checking for your guest polis…</p><div class="mode-links"><a class="menu-link" href="/play.html?mode=async" id="resume-async" hidden>Resume your guest polis</a><a class="menu-link" href="/clans.html?mode=async">Choose a clan / enter async PvP</a></div><p>Your guest identity is saved by this browser. Freeplay and tutorial saves remain separate.</p>`;
+    body.innerHTML = `<p>Face other players’ warbands without changing your Elo.</p><p id="async-menu-status" role="status">Checking for your polis…</p><div class="mode-links"><a class="menu-link" href="/play.html?mode=async" id="resume-async" hidden>Resume your polis</a><a class="menu-link" href="/clans.html?mode=async">Choose a clan</a></div>`;
     const status = document.getElementById("async-menu-status"),
       resume = document.getElementById("resume-async");
     loadProfile()
       .then((loaded) => {
         if (!status?.isConnected) return;
-        status.textContent = loaded
-          ? `Welcome back, ${loaded.name}.`
-          : "Choose a clan to create your guest polis.";
+        status.textContent = loaded ? `Welcome back, ${loaded.name}.` : "";
         if (resume && loaded) {
           resume.hidden = false;
           if (loaded.current.queue === "ranked")
@@ -392,7 +381,7 @@ const open = (panel: z.infer<typeof panels>) => {
             error instanceof Error ? error.message : "Service unavailable.";
       });
   } else if (panel === "freeplay") {
-    body.innerHTML = `<p>Build a polis and play a full practice run against simulated warbands.</p><p id="saved-run"></p><div class="mode-links"><a id="resume-run" class="menu-link" href="/play.html" hidden>Resume your polis</a><a class="menu-link" href="/clans.html?mode=practice">Choose a clan for a new polis</a></div>`;
+    body.innerHTML = `<p>A full run against practice warbands.</p><p id="saved-run"></p><div class="mode-links"><a id="resume-run" class="menu-link" href="/play.html" hidden>Resume your polis</a><a class="menu-link" href="/clans.html?mode=practice">Choose a clan for a new polis</a></div>`;
     const saved = document.getElementById("saved-run"),
       resume = document.getElementById("resume-run");
     try {
@@ -406,7 +395,7 @@ const open = (panel: z.infer<typeof panels>) => {
           current.issue ??
           (current.archives.length
             ? "Your previous-rules polis is preserved. Download its archive or choose a clan to begin under the current rules."
-            : "Choose Athens or Arcadia to begin.");
+            : "");
       appendRunArchives(body, "practice");
     } catch {
       if (saved)
@@ -721,7 +710,3 @@ onAccountChange((external) => {
   loadCard().catch(() => {});
   void refreshBoard();
 });
-for (const link of document.querySelectorAll<HTMLAnchorElement>(
-  '.development-links a[href^="/"]',
-))
-  link.href = appUrl(link.getAttribute("href")!);

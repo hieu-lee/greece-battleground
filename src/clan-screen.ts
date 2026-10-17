@@ -34,9 +34,9 @@ const local = mode === "practice" || mode === "tutorial" ? mode : null;
 const rootElement = document.getElementById("app");
 if (!rootElement) throw new Error("Missing clan selection root");
 const root = rootElement;
-root.innerHTML = `<main class="clan-selection"><header class="clan-banner"><img id="crest" alt=""><div><span class="eyebrow">Choose your clan</span><h1 id="clan-name"></h1></div><a class="back" href="${appUrl("/")}">Back to menu</a></header>
-<section class="clan-details" aria-labelledby="skills-heading"><h2 id="skills-heading">Clan Skills</h2><p class="tier-note">Values show skill tiers I / II / III.</p><div id="skills"></div><div class="clan-extras"><div><h2>Unique Structures</h2><ul id="structures"></ul></div><div><h2>Starting Affinity</h2><p id="affinity"></p></div></div><button class="play" ${mode ? "" : 'disabled title="Choose Freeplay or Tutorial from the menu"'}>${mode === "tutorial" ? "Begin the lesson" : mode === "async" ? "Enter async PvP" : mode === "ranked" ? "Enter ranked play" : mode ? "Begin Freeplay" : "Play"}</button><p class="development">${mode === "async" ? "Real submitted player warbands · Unranked. Enter resumes your guest polis if one exists in this browser." : mode === "ranked" ? "Real submitted player warbands · Ranked. Your Elo changes when the run ends. Enter resumes a ranked polis in this browser." : mode === "tutorial" ? "Authored campaign opponents and wilderness encounters. Some source rules remain under verification." : mode ? "Practice opponents are simulated. Some source rules remain under verification." : "Clan preview · Choose a mode from the menu to play."}</p></section>
-<section class="chief-scene" aria-label="Your chief"><img id="portrait" alt=""><p class="portrait-fallback" hidden>Chief portrait unavailable</p><div class="chief-caption"><span class="eyebrow">Your chief</span><h2 id="chief-name"></h2><p id="motto"></p></div></section>
+root.innerHTML = `<main class="clan-selection"><header class="clan-banner"><img id="crest" alt=""><h1 id="clan-name"></h1></header>
+<section class="clan-details" aria-labelledby="skills-heading"><h2 id="skills-heading">Clan Skills</h2><div id="skills"></div><div class="clan-extras"><div><h2>Unique Structures</h2><ul id="structures"></ul></div><div><h2>Starting Affinity</h2><p id="affinity"></p></div></div><button class="play" ${mode ? "" : 'disabled title="Choose a mode from the menu"'}>Play</button><a class="back" href="${appUrl("/")}">Back</a></section>
+<section class="chief-scene" aria-label="Your chief"><img id="portrait" alt=""><p class="portrait-fallback" hidden>Chief portrait unavailable</p><div class="chief-caption"><h2 id="chief-name"></h2><p id="motto"></p></div></section>
 <nav class="clan-picker" aria-label="Clans">${clanId.options.map((id) => `<button data-clan="${id}" aria-pressed="false"><img src="${appUrl(`/art/icon-${clans[id].crest}.webp`)}" alt="">${clans[id].name}</button>`).join("")}</nav><div class="selection-status"><div id="run-archives"></div><p id="selection-status" role="status" tabindex="-1"></p></div></main><dialog id="replace-run" aria-labelledby="replace-title"><h2 id="replace-title">A new polis</h2><p id="replace-text">Starting a new polis replaces the saved run for this mode. Your other mode stays saved.</p><div><button id="confirm-run">Start a new polis</button><button id="cancel-run">Keep the saved polis</button></div><p id="replace-status" role="status"></p></dialog>`;
 function element(id: string) {
   const value = document.getElementById(id);
@@ -71,6 +71,7 @@ function render() {
   element("affinity").textContent = clan.affinity;
   element("crest").setAttribute("src", appUrl(`/art/icon-${clan.crest}.webp`));
   const src = appUrl(`/art/${clan.portrait}.webp`);
+  root.style.setProperty("--portrait", `url("${src}")`);
   if (portrait.getAttribute("src") !== src) {
     fallback.hidden = true;
     portrait.hidden = false;

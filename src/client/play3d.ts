@@ -428,6 +428,8 @@ void registerPlayTools({
 
 type Mode = { kind: "villager" } | { kind: "move"; from: TileId } | null;
 const selection: HudSelection = { shop: null, fate: null };
+// The shop offer being dragged over the island; it highlights targets like a selected offer.
+let dragged: number | null = null;
 let tooltipTile: TileId | null = null;
 let mode: Mode = null;
 let picked: TileId | null = null;
@@ -441,6 +443,42 @@ const hud = createHud(app.querySelector<HTMLElement>("#hud")!, {
     mode = null;
     hud.notice("");
     render();
+  },
+  drag(slot, phase, x, y) {
+    // Abandoned drags report no point. Only a point on the open island counts: not one
+    // over the HUD (the shop column, a panel) or under a dialog another finger opened.
+    const tile =
+      Number.isFinite(x) && document.elementFromPoint(x, y) === canvas
+        ? tileAt(x, y)
+        : null;
+    if (phase === "start") {
+      // The shop selection is kept until release: changing it rebuilds the offers and would
+      // drop the dragged card's pointer capture.
+      audio.play("select");
+      hud.notice("");
+      selection.fate = null;
+      mode = null;
+      picked = null;
+      dragged = slot;
+      render();
+    } else if (phase === "move") {
+      overlay.setHover(tile);
+    } else {
+      overlay.setHover(null);
+      const valid = tile !== null && targets(game.state).includes(tile.id);
+      if (valid) {
+        audio.play("select");
+        void act({ op: "buy", slot, tile: tile.id }).then(render);
+      } else if (tile) {
+        audio.play("error");
+        hud.notice("Drop it on an empty owned tile or a matching structure");
+      }
+      dragged = null;
+      // Only the dragged offer's own selection ends with it: a deferred abandonment must not
+      // clear an offer selected meanwhile (another finger, the keyboard).
+      if (selection.shop === slot) selection.shop = null;
+      render();
+    }
   },
   reroll() {
     selection.shop = null;
@@ -477,6 +515,7 @@ const hud = createHud(app.querySelector<HTMLElement>("#hud")!, {
   },
   fate() {
     if (game.state.tutorial && game.state.tutorial.stage !== "fate") return;
+    hud.cancelDrag();
     cancelFateAudio();
     fateAudio = new AbortController();
     audio.play("fate-open", 0, 0, 0, fateAudio.signal);
@@ -486,6 +525,7 @@ const hud = createHud(app.querySelector<HTMLElement>("#hud")!, {
     render();
   },
   settings() {
+    hud.cancelDrag();
     audio.play("select");
     screens.settings(!screens.settingsOpen);
   },
@@ -784,15 +824,19 @@ function refreshMap() {
 refreshMap();
 
 function tileAtPointer(event: PointerEvent | MouseEvent) {
-  const p = world.groundPoint(event.clientX, event.clientY);
+  return tileAt(event.clientX, event.clientY);
+}
+function tileAt(x: number, y: number) {
+  const p = world.groundPoint(x, y);
   if (!p) return null;
   const { q, r } = worldToHex(p.x, p.z);
   return tileByAxial.get(`${q},${r}`) ?? null;
 }
 function targets(state: PlayState): TileId[] {
   if (state.phase.kind !== "prepare") return [];
-  if (selection.shop !== null) {
-    const item = state.shop[selection.shop];
+  const offer = dragged ?? selection.shop;
+  if (offer !== null) {
+    const item = state.shop[offer];
     if (!item) return [];
     return state.owned.filter((id) => {
       const p = state.placements.find((x) => x.tile === id);
@@ -1166,6 +1210,7 @@ addEventListener(
       cancelFateAudio();
       screens.fate(null);
     }
+    hud.cancelDrag();
     cancelModes();
     render();
   },
@@ -1451,7 +1496,6 @@ function render() {
     locked: blocked,
     // Async rivals see the server guest name, which may predate a preference rename.
     playerName: game.connection?.guest ?? preferences().name,
-    ranked: game.connection?.queue === "ranked",
     villagerSelected: mode?.kind === "villager",
   });
   if (state.tutorial) {
@@ -1619,7 +1663,12 @@ function beginBattle(state: PlayState) {
   battleState.marchAt = marching
     ? battleState.startAt - MARCH_MS
     : battleState.startAt;
-  if (!reduced) screens.versus(state, state.battle?.opponent ?? "Opponent");
+  if (!reduced)
+    screens.versus(
+      state,
+      state.battle?.opponent ?? "Opponent",
+      game.connection?.guest ?? preferences().name,
+    );
   // The battle-start cue plays once, when a real replay begins.
   audio.play("battle-start");
 }

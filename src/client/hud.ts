@@ -10,7 +10,11 @@ import {
   troopNames,
 } from "../rules.ts";
 import type { BuildingId, Count, FateId, Rarity, TroopId } from "../rules.ts";
-import { sourceCampCounts, sourceSpawn } from "../source-numbers.ts";
+import {
+  sourceCampCounts,
+  sourceSpawn,
+  sourceUnit,
+} from "../source-numbers.ts";
 import { retainedAura } from "../warband.ts";
 import type { PlayState } from "../read-model.ts";
 import type { Feature, TileId } from "../map.ts";
@@ -44,6 +48,13 @@ export function preparationKey(state: PlayState) {
 
 type HudHandlers = {
   shop(slot: number): void;
+  // A shop offer dragged out over the island and released (or abandoned) at a screen point.
+  drag(
+    slot: number,
+    phase: "start" | "move" | "end",
+    x: number,
+    y: number,
+  ): void;
   reroll(): void;
   villager(): void;
   ready(): void;
@@ -102,7 +113,17 @@ export const rarityNames = {
   epic: "Epic",
   legendary: "Legendary",
 } satisfies Record<Rarity, string>;
-const sourceStatus = { exact: "Exact", partial: "Partial", hold: "On hold" };
+// Favour thresholds that unlock more Fate offers, read from the offers themselves. Generic
+// Gifts read the highest single favour, so their thresholds count for every patron.
+export const favorSteps = [
+  ...new Set(
+    Object.values(fates).flatMap((f) =>
+      f.unlock.flatMap(([, at]) => (at > 0 ? [at] : [])),
+    ),
+  ),
+].sort((a, b) => a - b);
+export const nextFavorStep = (favor: number) =>
+  favorSteps.find((step) => step > favor);
 const irregularPlurals: Partial<Record<TroopId, string>> = {
   peripolos: "Peripoloi",
   misthophoros: "Misthophoroi",
@@ -129,6 +150,34 @@ function deployRule(troop: { id: TroopId; count: Count }) {
     case "adjacent-circle-of-stone":
       return `1 per adjacent Circle of Stone (max ${sourceSpawn[troop.id].cap})`;
   }
+}
+
+// The deployed troop's combat profile at the structure's level, as the source tooltips show it.
+function troopStats(id: BuildingId, level = 1) {
+  const troop = buildings[id].troop;
+  if (!troop) return "";
+  const unit = sourceUnit(troop.id, level);
+  const round = (n: number) => String(Math.round(n * 10) / 10);
+  const stats: [string, string, string][] = [
+    ["damage", "Damage", round(unit.damage)],
+    ["health", "Health", round(unit.health)],
+    ["speed", "Attack speed", round(unit.speed)],
+    ["range", "Range", round(unit.range)],
+    ...(
+      [
+        ["armor", "Armor", unit.armor],
+        ["crit", "Crit Chance", unit.crit],
+        ["burn", "Burn", unit.burn],
+        ["poison", "Poison", unit.poison],
+        ["healing", "Healing", unit.healing],
+      ] as const
+    ).flatMap(([key, label, value]): [string, string, string][] =>
+      value > 0
+        ? [[key, label, round(value) + (key === "crit" ? "%" : "")]]
+        : [],
+    ),
+  ];
+  return `<ul class="tip-stats">${stats.map(([key, label, value]) => `<li class="stat-${key}" title="${label}"><i aria-hidden="true">${icons.stat[key as keyof typeof icons.stat] ?? ""}</i><span class="sr-only">${label} </span>${value}</li>`).join("")}</ul>`;
 }
 
 function deploymentText(id: BuildingId, deployment?: number) {
@@ -181,7 +230,6 @@ export function buildingTooltip(
     tier: b.rarity,
     tags: b.tags.map((t) => t.replace("-", " ")),
     body:
-      `<p class="tip-badges"><span class="tip-badge source-${b.status}">Source: ${sourceStatus[b.status]}</span>${b.clan ? `<span class="tip-badge clan">${b.clan === "stag" ? "Stag" : "Raven"} clan</span>` : ""}</p>` +
       richText(b.description) +
       (b.effects.length
         ? `<ul class="tip-effects">${b.effects.map((e) => `<li>${richText(describeEffect(e))}</li>`).join("")}</ul>`
@@ -189,7 +237,9 @@ export function buildingTooltip(
       (stored
         ? `<p class="tip-effects">${richText(`Stored aura: +${stored.health} Health${id === "offering-well" ? ` and +${stored.damage} Damage` : ""}`)}</p>`
         : "") +
-      (deploy ? `<p class="tip-deploy">${richText(deploy)}</p>` : "") +
+      (deploy
+        ? `<div class="tip-troop"><p class="tip-deploy">${icons.swords}${richText(deploy)}</p>${troopStats(id, level)}</div>`
+        : "") +
       (workers !== undefined && b.workerSlots
         ? `<p class="tip-workers">${icons.worker} Villagers ${workers}/${b.workerSlots}${b.minimumWorkers ? ` (min ${b.minimumWorkers})` : ""}</p>`
         : "") +
@@ -480,6 +530,110 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
     hideDetails();
   });
 
+  // Shop offers can be dragged onto the island to buy (or level up) in one gesture. A press
+  // that never travels past the threshold stays an ordinary click (select, then pick a tile).
+  // A drag is refused only as it starts while locked; its release goes through `act`, which
+  // refuses pending orders itself, so a lock arriving mid-drag cannot strand it.
+  let drag: {
+    slot: number;
+    pointer: number;
+    x: number;
+    y: number;
+    card: HTMLButtonElement;
+    ghost: HTMLElement | null;
+  } | null = null;
+  // Pointers whose next click is swallowed after their drag, so neither a drop nor a later
+  // release of an abandoned drag also selects the offer. Other pointers and keyboard
+  // activations are unaffected.
+  const suppressed = new Set<number>();
+  const dragThreshold = 8;
+  function moveGhost(ghost: HTMLElement, x: number, y: number) {
+    ghost.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+  }
+  // Ends the gesture at its release point, or abandons it (`null`). An abandoned drag is
+  // reported after the current task, since it can be ended from inside a render (the
+  // shop rebuilding under it) or by Escape. `held` says whether the pointer is still down
+  // (abandoned by Escape, a dialog or a rebuild) rather than released or cancelled.
+  function finishDrag(point: { x: number; y: number } | null, held = true) {
+    if (!drag) return;
+    const { slot, ghost, card, pointer } = drag;
+    drag = null;
+    if (card.hasPointerCapture(pointer)) card.releasePointerCapture(pointer);
+    if (!ghost) return;
+    ghost.remove();
+    root.classList.remove("dragging");
+    const forget = () => suppressed.delete(pointer);
+    if (point) {
+      // The click dispatched with this release, in this same task.
+      suppressed.add(pointer);
+      setTimeout(forget);
+      handlers.drag(slot, "end", point.x, point.y);
+      return;
+    }
+    if (held) {
+      // The click of this pointer's later release.
+      suppressed.add(pointer);
+      const release = (event: PointerEvent) => {
+        if (event.pointerId !== pointer) return;
+        removeEventListener("pointerup", release, true);
+        removeEventListener("pointercancel", release, true);
+        setTimeout(forget);
+      };
+      addEventListener("pointerup", release, true);
+      addEventListener("pointercancel", release, true);
+    }
+    queueMicrotask(() => handlers.drag(slot, "end", NaN, NaN));
+  }
+  function endDrag(event: PointerEvent, cancelled: boolean) {
+    if (drag?.pointer !== event.pointerId) return;
+    finishDrag(
+      cancelled ? null : { x: event.clientX, y: event.clientY },
+      false,
+    );
+  }
+  function startDrag(
+    event: PointerEvent,
+    card: HTMLButtonElement,
+    slot: number,
+  ) {
+    if (event.button !== 0 || card.disabled || drag) return;
+    drag = {
+      slot,
+      pointer: event.pointerId,
+      x: event.clientX,
+      y: event.clientY,
+      card,
+      ghost: null,
+    };
+    card.setPointerCapture(event.pointerId);
+  }
+  function moveDrag(event: PointerEvent) {
+    if (!drag || event.pointerId !== drag.pointer) return;
+    if (!drag.ghost) {
+      if (
+        Math.hypot(event.clientX - drag.x, event.clientY - drag.y) <
+        dragThreshold
+      )
+        return;
+      if (root.dataset.locked === "true") {
+        finishDrag(null);
+        refuse();
+        return;
+      }
+      const ghost = el("div", "shop-ghost");
+      ghost.setAttribute("aria-hidden", "true");
+      const art = drag.card.querySelector(".hex-art");
+      if (art) ghost.append(art.cloneNode(true));
+      root.append(ghost);
+      drag.ghost = ghost;
+      root.classList.add("dragging");
+      hideDetails();
+      handlers.drag(drag.slot, "start", event.clientX, event.clientY);
+    }
+    moveGhost(drag.ghost, event.clientX, event.clientY);
+    handlers.drag(drag.slot, "move", event.clientX, event.clientY);
+  }
+
   function renderShop(
     state: PlayState,
     selection: HudSelection,
@@ -498,6 +652,8 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
       }
       return;
     }
+    // A dragged card is about to be replaced: its gesture cannot outlive it.
+    finishDrag(null);
     cards.replaceChildren(
       ...state.shop.map((item, slot) => {
         const card = el("button", "hex-card shop-card shop-offer");
@@ -530,7 +686,24 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
         });
         card.disabled = !preparing || !b.available;
         card.classList.toggle("unaffordable", state.drachmas < item.price);
-        card.addEventListener("click", () => {
+        // The offer's image must not start a native image drag, which cancels the pointer.
+        card.addEventListener("dragstart", (event) => event.preventDefault());
+        card.addEventListener("pointerdown", (event) =>
+          startDrag(event, card, slot),
+        );
+        card.addEventListener("pointermove", moveDrag);
+        card.addEventListener("pointerup", (event) => endDrag(event, false));
+        card.addEventListener("pointercancel", (event) => endDrag(event, true));
+        card.addEventListener("lostpointercapture", (event) =>
+          endDrag(event, true),
+        );
+        card.addEventListener("click", (event) => {
+          // Clicks are PointerEvents carrying their pointer; one without is treated as the
+          // dragging pointer's (older engines).
+          const id =
+            (event as Partial<PointerEvent>).pointerId ??
+            suppressed.values().next().value;
+          if (id !== undefined && suppressed.delete(id)) return;
           handlers.shop(slot);
           const selected = cards.querySelector<HTMLButtonElement>(
             `[data-slot="${slot}"][aria-pressed="true"]`,
@@ -553,8 +726,8 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
     );
   }
 
-  function renderSeason(state: PlayState, ranked: boolean) {
-    if (!changed("season", state.round, state.season, ranked)) return;
+  function renderSeason(state: PlayState) {
+    if (!changed("season", state.round, state.season)) return;
     const marks = $("hud-season-marks");
     // A sliding window of rounds around the current one. Scheduled beast rounds show claws only
     // once the engine fields beasts; until then async meets rival poleis and practice trains.
@@ -574,9 +747,7 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
           const foe = beast
             ? "Beasts"
             : state.mode === "async"
-              ? ranked
-                ? "Ranked rival polis"
-                : "Rival polis"
+              ? "Rival polis"
               : "Training warband";
           mark.title = `Round ${round} · ${foe}`;
         }
@@ -589,7 +760,7 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
       String(seasonIndex[state.season]),
     );
     $("hud-round").textContent =
-      `${ranked ? "Ranked round" : "Round"} ${state.round}, ${seasonNames[state.season]}`;
+      `Round ${state.round}, ${seasonNames[state.season]}`;
   }
 
   function renderFavor(state: PlayState) {
@@ -601,18 +772,28 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
           const item = el("button", "favor");
           item.dataset.god = god;
           item.innerHTML = `<img src="${appUrl(`/ui/god-${god}.webp`)}" alt=""><b></b>`;
-          disclosure(item, () => ({
-            title: `Favour of ${god[0]!.toUpperCase() + god.slice(1)}`,
-            body: `${current?.favor[god] ?? 0} favour, earned from Fate offers.`,
-            accent: god === "athena" ? "blue" : "gold",
-          }));
+          disclosure(item, () => {
+            const favor = current?.favor[god] ?? 0;
+            const next = nextFavorStep(favor);
+            return {
+              title: `Favour of ${god[0]!.toUpperCase() + god.slice(1)}`,
+              body: `${favor} favour, earned from Fate offers.${next === undefined ? " Every offer is unlocked." : ` At ${next}, more offers can join the Fate.`}`,
+              accent: god === "athena" ? "blue" : "gold",
+            };
+          });
           return item;
         }),
       );
     for (const item of node.querySelectorAll<HTMLElement>(".favor")) {
       const god = item.dataset.god as keyof PlayState["favor"];
-      item.querySelector("b")!.textContent = String(state.favor[god] ?? 0);
-      item.setAttribute("aria-label", `${god} favour ${state.favor[god] ?? 0}`);
+      const favor = state.favor[god] ?? 0;
+      const next = nextFavorStep(favor);
+      item.querySelector("b")!.textContent =
+        next === undefined ? String(favor) : `${favor}/${next}`;
+      item.setAttribute(
+        "aria-label",
+        `${god} favour ${favor}${next === undefined ? "" : ` of ${next}`}`,
+      );
     }
   }
 
@@ -703,7 +884,6 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
         preparing: boolean;
         locked: boolean;
         playerName: string;
-        ranked: boolean;
         villagerSelected: boolean;
       },
     ) {
@@ -736,7 +916,7 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
           ),
         );
       }
-      renderSeason(state, options.ranked);
+      renderSeason(state);
       renderFavor(state);
       renderShop(state, selection, preparing);
       renderChief(state, options.playerName);
@@ -851,6 +1031,10 @@ export function createHud(root: HTMLElement, given: HudHandlers) {
       node.querySelector("h2")!.textContent = title;
       node.querySelector("p")!.textContent = detail;
       flash(node);
+    },
+    /** Abandons a shop drag in progress (Escape). */
+    cancelDrag() {
+      finishDrag(null);
     },
     notice(text: string) {
       const node = $("hud-notice");

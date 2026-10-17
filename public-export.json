@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "f5abb002fd6c62837f45c2b453c1a5f0986bd4c8",
+  "sourceCommit": "29782b5b1ecb7fa07c2348dc8c1d7694e66eae5c",
   "runtime": {
     "rulesVersion": "greece-118-v31",
     "saveVersion": 31,
@@ -46,9 +46,9 @@
     ]
   },
   "audit": {
-    "trackedFiles": 17254,
+    "trackedFiles": 17255,
     "retainedTrackedFiles": 794,
-    "excludedTrackedFiles": 16460,
+    "excludedTrackedFiles": 16461,
     "privateHistoryCopied": false,
     "releasesCopied": false,
     "sourceNativeBodiesCopied": false,
@@ -87,14 +87,14 @@
     },
     {
       "path": "art-review.html",
-      "bytes": 2163,
-      "sha256": "f119268000be92500e1215f16da6484970f179224d26e5d2c687eeb1a18b52ed",
+      "bytes": 2096,
+      "sha256": "9c42fa63157cc4fe148aad93c160412b647c3c298564ce7df0da82d746c01248",
       "origin": "tracked"
     },
     {
       "path": "clans.html",
-      "bytes": 2229,
-      "sha256": "1001a00792e49a6a89d9a7d92bcb694fa8205a9bd1c93f48a7b377b3ef08f1ef",
+      "bytes": 2162,
+      "sha256": "a7518b8e72b051114327a7a958744afb574288e37645a6207ccfa7fa0bb12d96",
       "origin": "tracked"
     },
     {
@@ -129,14 +129,14 @@
     },
     {
       "path": "effects.html",
-      "bytes": 2228,
-      "sha256": "d3a7ed1a6b7c298384338dcc8d3e7dcd19e84a1e9fd83c5a401c7e5ef8240873",
+      "bytes": 2161,
+      "sha256": "71b15175e0c3e1a036b8806fbd91c6746fec2b0696753e2169483b1abf42c999",
       "origin": "tracked"
     },
     {
       "path": "index.html",
-      "bytes": 2365,
-      "sha256": "fee0aea1042b241e557447980cafbbca455cf5e7fc5612f889e44b1ebd1bb921",
+      "bytes": 2298,
+      "sha256": "df17cbc647b9ca81a4ea25750072fc731e5ae79362cf69944797c7f718d15c34",
       "origin": "tracked"
     },
     {
@@ -147,8 +147,8 @@
     },
     {
       "path": "play.html",
-      "bytes": 2351,
-      "sha256": "4708fc1f46c63f303062aca04e67f9e457280bf2fa626bd89c20373e9b5011ca",
+      "bytes": 2284,
+      "sha256": "0412b7b3c40d0fd6a77c5af4b23589bb8bcdbed4115badc53cecf501408f0175",
       "origin": "tracked"
     },
     {
@@ -4101,14 +4101,14 @@
     },
     {
       "path": "src/clan-screen.ts",
-      "bytes": 15482,
-      "sha256": "7cee0c22abe2e24b36ad3050ffedead41b0c1f9c669246d0f94b456f2f96e8e8",
+      "bytes": 14628,
+      "sha256": "0b9052d2f7b3ddcccab11d19a48eb4ba1b05032721f0e5de2803e0a363543b79",
       "origin": "tracked"
     },
     {
       "path": "src/clans.css",
-      "bytes": 7555,
-      "sha256": "b5ddf1553643607226009006ba913555ab1b0c67bbac40069713459bcd25a0e9",
+      "bytes": 8368,
+      "sha256": "331d2666a7a4fc47283793ecfb63dd371d32b84e9d479afe5aa968ad10d70a64",
       "origin": "tracked"
     },
     {
@@ -4137,8 +4137,8 @@
     },
     {
       "path": "src/client/client.css",
-      "bytes": 32903,
-      "sha256": "5bd31ecdafb78c5858b2a10a5dc6605c48cfbb22c4f0a7f6129a6a5c518f5b9e",
+      "bytes": 33280,
+      "sha256": "68a65f72780f3c8eb46b8a4fab4713e3136136c06c9e8b23f23555628284d9c1",
       "origin": "tracked"
     },
     {
@@ -4167,20 +4167,20 @@
     },
     {
       "path": "src/client/hud.css",
-      "bytes": 27253,
-      "sha256": "0884f9450560a5ec7029588795cc1251b2fe521f30241ab72a196671bdcc85ea",
+      "bytes": 29441,
+      "sha256": "a7cb84d717455a2ff35300ccdf298e9f7360f341b6508d56601e6e0b1144b5a4",
       "origin": "tracked"
     },
     {
       "path": "src/client/hud.ts",
-      "bytes": 33966,
-      "sha256": "35c6f383556a17b466fa3e11814d7abf709cf82d42fc6bfaaba9e60111354de5",
+      "bytes": 40893,
+      "sha256": "9199e9a79e4e875a0d6ba1ffdfcf00de7d341d1acec72fe9079ab2b386299346",
       "origin": "tracked"
     },
     {
       "path": "src/client/icons.ts",
-      "bytes": 2935,
-      "sha256": "67371613e5e26e9c397b04472098a272816320802da3f60d92a92de238858918",
+      "bytes": 4381,
+      "sha256": "54a772a3747d2a6eb63f82a7848354994632524c89f52ad7e4489ef85d30332f",
       "origin": "tracked"
     },
     {
@@ -4215,8 +4215,8 @@
     },
     {
       "path": "src/client/play3d.ts",
-      "bytes": 72935,
-      "sha256": "b59e442d04f46b1ac2b16599883ddc59734119acb01dffe83348f76e8b6f8f3b",
+      "bytes": 74622,
+      "sha256": "9c2d8a1b8791fdc0fdd512cda5722f517ed3afadd8a757799cccc3658bca64ce",
       "origin": "tracked"
     },
     {
@@ -4239,8 +4239,8 @@
     },
     {
       "path": "src/client/screens.ts",
-      "bytes": 31333,
-      "sha256": "64a641433f6bd7ebb13000712b881c4aae2de289039788d58a43ad5832afa3a5",
+      "bytes": 30634,
+      "sha256": "a3342a8fbd3fc74af10bd536270c9943948e56b61c214e57ecbb276678d2997f",
       "origin": "tracked"
     },
     {
@@ -4515,14 +4515,14 @@
     },
     {
       "path": "src/menu.css",
-      "bytes": 16786,
-      "sha256": "8decdadbf3c11dbcbff07824e6be877eac09b1fa64fcbabe5a840b486b28165f",
+      "bytes": 16339,
+      "sha256": "92ccabb782ed3ab51c1c8d8eec48c2511fc248a5a40d0b6bbe8f09cb6068e916",
       "origin": "tracked"
     },
     {
       "path": "src/menu.ts",
-      "bytes": 31868,
-      "sha256": "73809ee94214fc0c72de6bf8bcd6357945fb5a33dd6bd9e34bbdf4446be2654c",
+      "bytes": 30492,
+      "sha256": "b8699190b7876255f2050094285c9b934908e359583402dcda46a9163790de5b",
       "origin": "tracked"
     },
     {
@@ -4875,8 +4875,8 @@
     },
     {
       "path": "workshop.html",
-      "bytes": 2225,
-      "sha256": "4bab3c54c5e9cbf70cd8058ea27a434f57d21e5ba4b31ccffa1af9db021a8d6c",
+      "bytes": 2158,
+      "sha256": "0c54ec65baa4180127f4398006ec7445886e66e7a282697164ace00e80655feb",
       "origin": "tracked"
     }
   ]

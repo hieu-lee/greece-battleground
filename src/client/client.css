@@ -360,19 +360,20 @@ body {
 .fate-screen {
   inset: 0;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto;
+  align-content: center;
   justify-items: center;
-  align-items: center;
-  padding: 120px 40px 60px;
+  gap: 26px;
+  padding: 100px 40px 40px;
 }
 .fate-backdrop {
   position: absolute;
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(ellipse at 50% 60%, #6c4bb855, #0000 60%),
-    radial-gradient(ellipse at 50% 120%, #9a6bff44, #0000 50%),
-    linear-gradient(#120d2ae6, #1d1240f0);
+    radial-gradient(ellipse at 50% 58%, #6c4bb84d, #0000 62%),
+    radial-gradient(ellipse at 50% 120%, #9a6bff40, #0000 52%),
+    linear-gradient(#0d0a20d9, #1a1038eb);
   backdrop-filter: blur(3px);
   animation: fade-in 0.35s ease;
 }
@@ -384,59 +385,58 @@ body {
 .fate-screen header {
   text-align: center;
 }
-.fate-screen h2 {
-  margin: 0;
-  font: 700 36px var(--title);
-  color: #f1e6ff;
-  text-shadow: 0 0 18px #a98bff88;
-}
-.fate-screen header p {
-  margin: 6px 0 0;
-  color: #cbbcf0;
-  font-size: 18px;
+.fate-screen header:not(:has(> :not([hidden]))) {
+  display: none;
 }
 .fate-screen #fate-error {
+  margin: 0;
   color: #ffd0b8;
   font-weight: 700;
 }
-/* Favour gates: each patron's favour and its next unlock threshold. */
-.fate-favor {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin: 12px 0 0;
-  padding: 0;
-  list-style: none;
-}
-.fate-favor li {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 12px 3px 4px;
-  border: 1px solid #6b5aa8aa;
-  border-radius: 999px;
-  background: #17122ecc;
-  color: #e6dcff;
-  font-size: 14px;
-}
-.fate-favor img {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-}
-.fate-favor b {
-  color: #fff;
-  font-size: 16px;
-}
-.fate-favor small {
-  color: #a99bd6;
-  font-size: 12px;
+/* The Fate offer covers the island only: favour counters, season and purse stay in view
+   above it (inert), so a woven card's favour is seen arriving in the corner. The chief
+   panel steps aside, as tall offers reach its corner on shorter desktop screens. A
+   connection banner (which moves into the dialog at the top) keeps the HUD below. */
+@media (min-width: 901px) and (min-height: 641px) {
+  #app:has(.fate-screen:not([hidden])):not(
+      :has(.connection-banner:not([hidden]))
+    )
+    #hud {
+    z-index: 4;
+  }
+  #app:has(.fate-screen:not([hidden])):not(
+      :has(.connection-banner:not([hidden]))
+    )
+    #hud,
+  #app:has(.fate-screen:not([hidden])):not(
+      :has(.connection-banner:not([hidden]))
+    )
+    #hud
+    * {
+    pointer-events: none !important;
+  }
+  #app:has(.fate-screen:not([hidden])):not(
+      :has(.connection-banner:not([hidden]))
+    )
+    #hud
+    > :is(
+      .hud-shop,
+      .hud-actions,
+      .hud-hints,
+      .hud-tooltip,
+      .hud-notice,
+      .hud-announce,
+      .hud-chief,
+      .hud-rival,
+      .tutorial-panel
+    ) {
+    visibility: hidden;
+  }
 }
 .fate-cards {
   display: flex;
-  gap: 36px;
-  align-items: center;
+  gap: 28px;
+  align-items: stretch;
 }
 .fate-offer {
   position: relative;
@@ -456,27 +456,43 @@ body {
   font: 600 20px var(--title);
   text-align: center;
 }
+/* Source-style offer card: patron painting and emblem above, the name on a ribbon, and the
+   kind and effect in a panel below. Patrons tint the frame; the Insight cost hangs top right. */
 .fate-card {
+  --god: #9db4cc;
+  --card: #111a27;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   width: 250px;
-  min-height: 380px;
-  padding: 16px 18px 18px;
+  min-height: 372px;
+  padding: 0;
   display: grid;
-  grid-template-rows: 150px auto auto 1fr;
-  justify-items: center;
-  gap: 6px;
-  border: 3px solid #5b6f86;
-  border-radius: 10px;
-  background: linear-gradient(#2a3f5ae6, #17233bf2);
+  grid-template-rows: 192px auto 1fr;
+  border: 3px solid color-mix(in srgb, var(--god) 50%, #1b2633);
+  border-radius: 12px;
+  background: var(--card);
   box-shadow:
-    inset 0 0 0 2px #0d1524,
-    0 14px 30px #000b;
+    inset 0 0 0 2px #070c14,
+    0 16px 34px #000c;
   color: var(--ink);
   font-family: var(--ui);
+  text-align: center;
   cursor: pointer;
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
   animation: card-in 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2) backwards;
+}
+.fate-card[data-god="zeus"] {
+  --god: #86bdff;
+}
+.fate-card[data-god="athena"] {
+  --god: #93d8bd;
+}
+.fate-card[data-god="apollo"] {
+  --god: #f4b860;
 }
 .fate-offer:nth-child(2) .fate-card {
   animation-delay: 0.08s;
@@ -490,34 +506,171 @@ body {
     transform: translateY(40px) rotateY(80deg);
   }
 }
+.fate-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 216px;
+  z-index: -1;
+  background:
+    linear-gradient(#0000 45%, var(--card) 98%),
+    var(--art) center 18% / cover no-repeat;
+}
+/* Charms are struck in bronze, Gifts in silver, as in the source deck. */
 .fate-card[data-kind="rune"] {
-  border-color: #b48cff;
-  background: linear-gradient(#3b2a66e6, #1d1438f2);
+  --card: #22160f;
 }
 .fate-card[data-kind="gift"] {
-  border-color: #8fd16a;
-  background: linear-gradient(#26432ce6, #142218f2);
-}
-.fate-card[data-kind="blessing"] {
-  border-color: #e8b860;
-  background: linear-gradient(#4a3a20e6, #241a0ef2);
+  --card: #161a20;
 }
 .fate-card[data-kind="spell"] {
-  border-color: #6cc8e8;
-  background: linear-gradient(#1f3f52e6, #10202ef2);
+  --card: #0f1d26;
+}
+.card-art {
+  display: grid;
+  place-items: center;
+  padding-top: 18px;
+}
+.card-art img {
+  width: 96px;
+  height: 96px;
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: radial-gradient(circle, #0d1424e6 60%, #0d142499);
+  border: 2px solid color-mix(in srgb, var(--god) 60%, #fff3);
+  filter: drop-shadow(0 8px 12px #000b);
+}
+.card-gods {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: grid;
+  gap: 6px;
+}
+.card-god {
+  position: relative;
+  display: block;
+  width: 34px;
+  height: 34px;
+}
+.card-god img {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 2px;
+  border-radius: 50%;
+  background: #0b1220;
+  border: 2px solid #b9c6d3;
+  box-shadow: 0 2px 6px #000a;
+}
+.card-god b {
+  position: absolute;
+  right: -7px;
+  bottom: -4px;
+  min-width: 18px;
+  padding: 0 4px;
+  box-sizing: border-box;
+  border: 1px solid #b9c6d3;
+  border-radius: 9px;
+  background: #0b1220;
+  color: #fff;
+  font: 700 11px/16px var(--ui);
+}
+.fate-card .cost {
+  position: absolute;
+  top: -3px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 7px 16px;
+  background: linear-gradient(#0b1a2e, #13294a);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+  color: var(--insight);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+}
+.fate-card[data-tier="bronze"] .cost {
+  background: linear-gradient(#2e1a0b, #5b3416);
+}
+.fate-card[data-tier="silver"] .cost {
+  background: linear-gradient(#1f252d, #46505c);
+}
+.fate-card[data-tier="gold"] .cost {
+  background: linear-gradient(#3a2a08, #7a5a12);
+}
+.fate-card .cost img {
+  width: 18px;
+  height: 18px;
+}
+.fate-card h3 {
+  margin: 0 10px;
+  padding: 6px 10px;
+  background: linear-gradient(
+    90deg,
+    #0000,
+    #0a101ce8 16%,
+    #0a101ce8 84%,
+    #0000
+  );
+  border-block: 1px solid color-mix(in srgb, var(--god) 45%, #0000);
+  font: 700 19px var(--title);
+  line-height: 1.2;
+}
+.card-body {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  margin: 10px 12px 12px;
+  padding: 10px 10px 8px;
+  border: 1px solid #2b3a4b;
+  border-radius: 4px;
+  background: #080e17b3;
+}
+.fate-card .kind {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--god) 70%, #fff);
+}
+.fate-card .text {
+  font-size: 14px;
+  line-height: 1.45;
+}
+.fate-card:not(:disabled):hover,
+.fate-card:not(:disabled):focus-visible {
+  transform: translateY(-10px) scale(1.03);
+  border-color: #f1d9a0;
+  box-shadow:
+    inset 0 0 0 2px #070c14,
+    0 0 28px color-mix(in srgb, var(--god) 60%, #0000),
+    0 18px 34px #000c;
+}
+.fate-card:disabled:not(.taken) {
+  filter: saturate(0.5) brightness(0.75);
+  cursor: default;
+}
+.fate-card.taken {
+  opacity: 0.35;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 1fr;
 }
 /* Opens the list of source pieces this port does not apply. */
 .fate-partial {
   position: absolute;
-  top: 8px;
-  left: 8px;
+  right: 10px;
+  bottom: 10px;
   z-index: 1;
-  padding: 2px 9px;
-  border: 1px solid #f0c674;
+  padding: 1px 7px;
+  border: 1px solid #f0c67499;
   border-radius: 999px;
-  background: #2a1f0ce6;
+  background: #2a1f0ccc;
   color: #f6dca0;
-  font: 700 11px var(--ui);
+  font: 700 10px var(--ui);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: help;
@@ -546,113 +699,36 @@ body {
   margin: 8px 0 0;
   padding-left: 18px;
 }
-.fate-card .gain {
-  justify-self: stretch;
-  margin: 0;
-  font-size: 13px;
-  font-weight: 600;
-  color: #e6d29a;
-  text-align: center;
-}
-.fate-card:not(:disabled):hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow:
-    inset 0 0 0 2px #0d1524,
-    0 0 30px #c9a8ff99,
-    0 18px 34px #000c;
-}
-.fate-card:disabled:not(.taken) {
-  filter: saturate(0.5) brightness(0.75);
-  cursor: default;
-}
-.fate-card.taken {
-  opacity: 0.35;
-  display: grid;
-  place-items: center;
-  grid-template-rows: 1fr;
-}
-.fate-card {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
-.fate-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(#0000 25%, #0d1222e8 58%, #0d1222 100%),
-    var(--art) center top / 100% auto no-repeat;
-}
-.card-art {
-  width: 150px;
-  height: 150px;
-  display: grid;
-  place-items: end center;
-}
-.card-art img {
-  width: 76px;
-  height: 76px;
-  padding: 8px;
-  border-radius: 50%;
-  background: #0d1222d0;
-  border: 2px solid #ffffff55;
-  filter: drop-shadow(0 6px 10px #000a);
-}
-.fate-card h3 {
-  margin: 0;
-  font: 700 20px var(--title);
-  text-align: center;
-}
-.fate-card .kind {
-  margin: 0;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #cbbcf0;
-}
-.fate-card .text {
-  margin: 4px 0 0;
-  font-size: 14px;
-  line-height: 1.45;
-  text-align: center;
-  align-self: start;
-}
-.fate-card .cost {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--insight);
-}
-.fate-card .cost img {
-  width: 24px;
-  height: 24px;
-}
 .fate-screen footer {
   display: flex;
-  gap: 18px;
+  align-items: center;
+  gap: 14px;
 }
 .fate-screen footer button {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 10px 22px;
-  font: 600 17px var(--ui);
+  min-width: 48px;
+  min-height: 44px;
+  padding: 6px 16px;
+  font: 700 17px var(--ui);
   color: var(--ink);
-  background: linear-gradient(#2c2552, #17122e);
-  border: 2px solid #6b5aa8;
+  background: linear-gradient(#1b2a3c, #0f1826);
+  border: 2px solid #4d6378;
   border-radius: 6px;
   cursor: pointer;
+}
+.fate-screen footer button:not(:disabled):hover,
+.fate-screen footer button:focus-visible {
+  border-color: #9fb6cc;
 }
 .fate-screen footer button:disabled {
   opacity: 0.5;
 }
 .fate-screen footer svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 }
 .fate-screen footer b {
   display: flex;
@@ -996,13 +1072,14 @@ body {
 .speeds .skip {
   padding: 0 14px;
 }
+/* The source shows no battle clock; the elapsed time stays available to assistive tech. */
 #battle-clock {
-  padding: 2px 9px;
-  color: var(--ink);
-  background: #0f1922d0;
-  border-radius: 4px;
-  font: 600 14px var(--ui);
-  font-variant-numeric: tabular-nums;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 #battle-art-status {
   max-width: min(420px, 85vw);
@@ -1214,42 +1291,6 @@ body {
 }
 
 @media (max-width: 900px), (max-height: 640px) {
-  .card-art img {
-    width: 52px;
-    height: 52px;
-  }
-  .fate-screen {
-    padding: 70px 12px 20px;
-  }
-  /* Room for a (possibly two-row) connection banner above the heading. */
-  .fate-screen:has(> .connection-banner:not([hidden])) {
-    padding-top: 130px;
-  }
-  .fate-cards {
-    gap: 10px;
-  }
-  .fate-card {
-    width: 31vw;
-    max-width: 200px;
-    height: auto;
-    min-height: 260px;
-    grid-template-rows: 90px auto auto 1fr;
-    padding: 10px;
-  }
-  .card-art {
-    width: 84px;
-    height: 84px;
-  }
-  .card-art img {
-    width: 70px;
-    height: 70px;
-  }
-  .fate-card .text {
-    font-size: 13px;
-  }
-  .fate-screen h2 {
-    font-size: 24px;
-  }
   .season-card {
     padding: 20px 16px;
   }
@@ -1280,111 +1321,18 @@ body {
   }
 }
 
-/* Landscape phones: the whole Fate offer, footer included, fits the short screen. */
+/* Landscape phones: the versus banners sit clear of the bottom HUD. */
 @media (max-height: 500px) {
   .versus-side .banner {
     bottom: 90px;
   }
-  .fate-screen {
-    padding: 8px 12px;
-    gap: 6px;
-    overflow-y: auto;
-  }
-  /* Scrolling content keeps the whole screen dimmed. */
-  .fate-backdrop {
-    position: fixed;
-  }
-  /* A one-row connection banner at this width. */
-  .fate-screen:has(> .connection-banner:not([hidden])) {
-    padding-top: 60px;
-  }
-  .fate-screen h2 {
-    font-size: 20px;
-  }
-  .fate-screen header p {
-    margin-top: 2px;
-    font-size: 13px;
-  }
-  .fate-card {
-    min-height: 0;
-    max-width: 220px;
-    grid-template-rows: 60px auto auto 1fr;
-    gap: 2px;
-    padding: 6px 10px 8px;
-  }
-  .card-art {
-    width: 60px;
-    height: 60px;
-  }
-  .card-art img {
-    width: 48px;
-    height: 48px;
-    padding: 5px;
-  }
-  .fate-card h3 {
-    font-size: 16px;
-  }
-  .fate-card .kind {
-    font-size: 11px;
-  }
-  .fate-card .text {
-    font-size: 12px;
-    line-height: 1.3;
-  }
-  .fate-card .cost {
-    font-size: 16px;
-  }
-  .fate-screen footer button {
-    padding: 6px 14px;
-    font-size: 14px;
-  }
 }
 
-/* Portrait phones: smaller chiefs and emblem on the versus card, clear of the HUD; the three
-   Fate cards share the width (fixed widths overflowed a 390-wide screen). */
+/* Portrait phones: smaller chiefs and emblem on the versus card, clear of the HUD. */
 @media (orientation: portrait) and (max-width: 600px) {
   .connection-banner p {
     flex-basis: 100%;
     text-align: center;
-  }
-  .fate-screen {
-    grid-template-columns: minmax(0, 1fr);
-    overflow-y: auto;
-  }
-  .fate-backdrop {
-    position: fixed;
-  }
-  .fate-cards {
-    width: 100%;
-  }
-  .fate-offer {
-    flex: 1 1 0;
-    min-width: 0;
-  }
-  .fate-card {
-    flex: 1 1 0;
-    min-width: 0;
-    width: auto;
-    padding: 10px 6px;
-    grid-template-rows: 70px auto auto 1fr;
-  }
-  .fate-card h3 {
-    font-size: 15px;
-  }
-  .card-art {
-    width: 64px;
-    height: 64px;
-  }
-  .card-art img {
-    width: 52px;
-    height: 52px;
-    padding: 6px;
-  }
-  .fate-screen footer {
-    gap: 10px;
-  }
-  .fate-screen footer button {
-    padding: 8px 12px;
   }
   .versus-side {
     top: 18%;
@@ -1502,48 +1450,61 @@ body {
   background: linear-gradient(#f6d47a, #c9952e);
   border-color: #fff0b8;
 }
-/* The narrowest phones: long one-word titles ("Demeter's") and kinds ("Blessing") still fit
-   their card. */
-@media (orientation: portrait) and (max-width: 340px) {
-  .fate-card h3 {
-    font-size: 13px;
+
+/* Smaller screens: the three offers share the width at a smaller size. */
+@media (max-width: 900px), (max-height: 640px) {
+  .fate-screen {
+    gap: 16px;
+    padding: 70px 12px 20px;
   }
-  .fate-card .kind {
-    font-size: 10px;
-    letter-spacing: 0.06em;
+  /* Room for a (possibly two-row) connection banner above the cards. */
+  .fate-screen:has(> .connection-banner:not([hidden])) {
+    padding-top: 130px;
+  }
+  .fate-cards {
+    gap: 10px;
+  }
+  .fate-card {
+    width: 31vw;
+    max-width: 210px;
+    height: auto;
+    min-height: 300px;
+    grid-template-rows: 136px auto 1fr;
+  }
+  .fate-card::before {
+    height: 156px;
+  }
+  .card-art {
+    padding-top: 14px;
+  }
+  .card-art img {
+    width: 72px;
+    height: 72px;
+    padding: 9px;
+  }
+  .card-god {
+    width: 28px;
+    height: 28px;
+  }
+  .fate-card h3 {
+    font-size: 16px;
+  }
+  .fate-card .text {
+    font-size: 13px;
   }
 }
 
-/* Phones (portrait) and short landscape screens: the three offers become full-width rows (icon,
-   words, cost) so long names and texts stay readable and the footer stays on screen. */
+/* Phones (portrait) and short landscape screens: the three offers become full-width rows
+   (emblem, words, cost) so long names and texts stay readable and the footer stays on screen. */
 @media (orientation: portrait) and (max-width: 600px), (max-height: 500px) {
   .fate-screen {
-    padding: 12px;
     gap: 8px;
-    align-content: center;
+    padding: 12px;
+    overflow-y: auto;
   }
-  .fate-screen header p {
-    margin-top: 2px;
-    font-size: 13px;
-  }
-  .fate-favor {
-    gap: 4px;
-    margin-top: 6px;
-  }
-  .fate-favor li {
-    gap: 4px;
-    padding: 1px 8px 1px 2px;
-    font-size: 12px;
-  }
-  .fate-favor img {
-    width: 18px;
-    height: 18px;
-  }
-  .fate-favor b {
-    font-size: 13px;
-  }
-  .fate-favor small {
-    font-size: 11px;
+  /* Scrolling content keeps the whole screen dimmed. */
+  .fate-backdrop {
+    position: fixed;
   }
   .fate-cards {
     flex-direction: column;
@@ -1555,115 +1516,124 @@ body {
     flex: none;
   }
   .fate-card {
-    flex: 1 1 auto;
     width: 100%;
     max-width: none;
+    height: auto;
     min-height: 0;
     grid-template-columns: 52px minmax(0, 1fr) auto;
     grid-template-rows: none;
     grid-auto-rows: auto;
     column-gap: 10px;
     row-gap: 1px;
-    justify-items: start;
     align-items: center;
     padding: 7px 12px 7px 8px;
     text-align: left;
   }
-  .fate-card:not(:disabled):hover {
+  .fate-card:not(:disabled):hover,
+  .fate-card:not(:disabled):focus-visible {
     transform: translateY(-2px);
   }
   .fate-card::before {
+    inset: 0;
+    height: auto;
     background:
-      linear-gradient(90deg, #0d1222a8, #0d1222f2 40%),
+      linear-gradient(90deg, #0d1222a8, var(--card) 40%),
       var(--art) left 25% / cover no-repeat;
   }
   .fate-card .card-art {
     grid-column: 1;
-    grid-row: 1 / span 4;
-    width: 52px;
-    height: 52px;
-    place-items: center;
+    grid-row: 1 / span 2;
+    padding: 0;
   }
   .fate-card .card-art img {
     width: 48px;
     height: 48px;
     padding: 5px;
   }
-  .fate-card h3,
-  .fate-card .kind,
-  .fate-card .text,
-  .fate-card .gain {
-    grid-column: 2 / span 2;
-    justify-self: stretch;
-    text-align: left;
+  .card-gods {
+    top: 3px;
+    left: 3px;
+    display: flex;
+    gap: 2px;
+  }
+  .card-god {
+    width: 18px;
+    height: 18px;
+  }
+  .card-god img {
+    padding: 1px;
+    border-width: 1px;
+  }
+  .card-god b {
+    right: -4px;
+    bottom: -3px;
+    min-width: 13px;
+    padding: 0 2px;
+    font-size: 9px;
+    line-height: 12px;
   }
   .fate-card h3 {
     grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
     font-size: 16px;
+  }
+  .fate-card .cost {
+    position: static;
+    grid-column: 3;
+    grid-row: 1;
+    padding: 0;
+    background: none !important;
+    clip-path: none;
+    font-size: 17px;
+  }
+  .card-body {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+    gap: 1px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
   }
   .fate-card .kind {
     font-size: 10px;
   }
   .fate-card .text {
-    margin: 1px 0 0;
     font-size: 12.5px;
     line-height: 1.3;
   }
-  .fate-card .gain {
-    font-size: 11.5px;
-  }
-  .fate-card .cost {
-    grid-column: 3;
-    grid-row: 1;
-    font-size: 17px;
-  }
   .fate-partial {
-    top: auto;
+    right: 6px;
     bottom: 5px;
-    left: 5px;
     padding: 1px 6px;
     font-size: 9px;
   }
   .fate-woven {
     font-size: 16px;
   }
-}
-/* Short phones: the cards explain targeting themselves, so the subtitle gives way. */
-@media (orientation: portrait) and (max-width: 600px) and (max-height: 700px),
-  (max-height: 500px) {
-  .fate-screen {
-    gap: 6px;
-    padding: 8px 12px;
-  }
-  .fate-screen header p {
-    display: none;
-  }
-  .fate-screen h2 {
-    font-size: 19px;
-  }
-  .fate-cards {
-    gap: 6px;
-  }
-  .fate-card {
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
   .fate-screen footer button {
+    min-height: 40px;
     padding: 6px 14px;
     font-size: 14px;
   }
 }
-
-/* Short landscape: the favour strip shares the heading's row. */
+/* A one-row connection banner at this width. */
 @media (max-height: 500px) {
-  .fate-screen header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 4px 14px;
+  .fate-screen:has(> .connection-banner:not([hidden])) {
+    padding-top: 60px;
   }
-  .fate-favor {
-    margin-top: 0;
+}
+/* The narrowest phones: long one-word titles and kinds still fit their card. */
+@media (orientation: portrait) and (max-width: 340px) {
+  .fate-card h3 {
+    font-size: 13px;
+  }
+  .fate-card .kind {
+    font-size: 10px;
+    letter-spacing: 0.06em;
   }
 }

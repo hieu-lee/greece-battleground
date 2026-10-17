@@ -126,25 +126,6 @@ h1 span {
 .menu-buttons .menu-gap {
   margin-top: 23px;
 }
-.development-note,
-.development-links {
-  margin: 14px 0 0 55px;
-  max-width: 330px;
-  font:
-    12px/1.6 "Jost",
-    system-ui,
-    sans-serif;
-  color: #dfdfce;
-}
-.development-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-.development-links a {
-  color: #ffe3a0;
-  text-underline-offset: 4px;
-}
 .menu-right {
   width: 300px;
   align-self: flex-start;
@@ -424,7 +405,7 @@ h1 span {
   align-items: center;
   padding: 10px clamp(24px, 4vw, 70px) 18px;
   font:
-    12px "Jost",
+    14px "Jost",
     system-ui,
     sans-serif;
   color: #dedfcf;
@@ -777,10 +758,6 @@ dialog[data-panel="leaderboard"] .dialog-heading h2 {
     margin: 40px 0 0;
     max-width: 300px;
   }
-  .development-note,
-  .development-links {
-    margin-left: 0;
-  }
   .menu-right {
     width: 250px;
   }
@@ -817,10 +794,6 @@ dialog[data-panel="leaderboard"] .dialog-heading h2 {
   }
   .menu-buttons button {
     min-height: 49px;
-  }
-  .development-note,
-  .development-links {
-    max-width: none;
   }
   .menu-right {
     width: 100%;

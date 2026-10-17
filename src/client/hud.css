@@ -437,6 +437,69 @@
 .hex-card.unaffordable:not(:disabled) .hex-art img {
   filter: saturate(0.6) brightness(0.8) drop-shadow(0 4px 4px #0008);
 }
+/* Shop offers drag onto the island: the offer follows the pointer as a small hex. */
+.shop-offer:not(:disabled) {
+  touch-action: none;
+  cursor: grab;
+}
+.hud.dragging,
+.hud.dragging * {
+  cursor: grabbing !important;
+}
+.shop-ghost {
+  --size: clamp(76px, 6.6vw, 100px);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: var(--size);
+  height: calc(var(--size) * 1.1);
+  pointer-events: none;
+  opacity: 0.92;
+  filter: drop-shadow(0 10px 14px #000b);
+  animation: ghost-in 0.12s ease-out;
+}
+.shop-ghost .hex-art {
+  position: absolute;
+  inset: 0;
+  clip-path: var(--hex);
+  display: grid;
+  place-items: center;
+  background: linear-gradient(160deg, #fff4c8, #f1c75c 45%, #a8781e);
+}
+.shop-ghost .hex-art::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  clip-path: var(--hex);
+  background: radial-gradient(
+    circle at 50% 38%,
+    #3e5a6c 0 35%,
+    #1d2c38 75%,
+    #121c25 100%
+  );
+}
+.shop-ghost .hex-art img {
+  position: relative;
+  width: 118%;
+  height: 118%;
+  margin-top: -6%;
+  object-fit: contain;
+}
+.shop-ghost .hex-art img.strip {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  margin-top: 0;
+  object-fit: cover;
+  object-position: left center;
+}
+@keyframes ghost-in {
+  from {
+    opacity: 0;
+    scale: 0.7;
+  }
+}
 .reroll {
   display: flex;
   align-items: center;
@@ -824,33 +887,83 @@
   gap: 6px;
   color: var(--muted);
 }
-.tip-body .tip-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 0 0 6px;
+/* The deployed troop, set apart like the source tooltips: name, then its combat profile. */
+.tip-troop {
+  margin: 10px -14px 0;
+  padding: 8px 14px 10px;
+  background: #0a121a;
+  border-block: 1px solid #34495a;
 }
-.tip-badge {
-  padding: 0 6px;
-  border: 1px solid #4a5f6e;
-  border-radius: 3px;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.5;
+.tip-troop:last-child {
+  margin-bottom: -12px;
+  border-bottom: 0;
+}
+.tip-body .tip-deploy {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-weight: 600;
+}
+.tip-deploy svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
   color: var(--muted);
 }
-.tip-badge.source-exact {
-  color: var(--good);
-  border-color: #4f7a3c;
+.tip-stats {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: start;
+  gap: 4px 18px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
-.tip-badge.source-partial,
-.tip-badge.source-hold {
-  color: var(--gold);
-  border-color: #7a6232;
-}
-.tip-badge.clan {
+.tip-stats li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   color: var(--ink);
-  border-color: var(--bronze);
+}
+.tip-stats i {
+  display: flex;
+  width: 15px;
+  height: 15px;
+}
+.tip-stats svg {
+  width: 100%;
+  height: 100%;
+}
+.tip-stats .stat-damage i,
+.tip-stats .stat-burn i {
+  color: #ff8a5c;
+}
+.tip-stats .stat-health i,
+.tip-stats .stat-healing i,
+.tip-stats .stat-poison i {
+  color: var(--good);
+}
+.tip-stats .stat-armor i {
+  color: #9fd2ff;
+}
+.tip-stats .stat-speed i,
+.tip-stats .stat-range i {
+  color: var(--muted);
+}
+.tip-stats .stat-crit i {
+  color: var(--gold);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 .tip-effects {
   margin: 6px 0 0;

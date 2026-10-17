@@ -77,7 +77,7 @@ export function createScreens(
   },
 ) {
   const income = layer(root, "income-screen");
-  income.innerHTML = `<section id="income-status" class="income-card" role="status" tabindex="-1"><h2>Collecting income…</h2><p>Your structures are collecting income. The shop opens when collection finishes.</p></section>`;
+  income.innerHTML = `<section id="income-status" class="income-card" role="status" tabindex="-1"><h2>Collecting income…</h2><p class="sr-only">The shop opens when collection finishes.</p></section>`;
   const fate = layer(root, "fate-screen");
   fate.setAttribute("role", "dialog");
   fate.setAttribute("aria-modal", "true");
@@ -189,7 +189,7 @@ export function createScreens(
   });
   trapFocus(settings);
 
-  fate.innerHTML = `<div class="fate-backdrop"></div><header><h2>The Moirai weave your Fate</h2><p>Choose one offer this round. Charms and Spells then ask for a structure.</p><ul class="fate-favor" id="fate-favor" aria-label="Favour and the next unlock"></ul><p id="fate-error" role="alert" hidden></p></header><div class="fate-cards" id="fate-cards"></div><footer><button class="fate-reroll" id="reroll-fate">${icons.reroll}<span>Reroll</span><b><img src="${appUrl(`/ui/insight.webp`)}" alt=""><span id="fate-reroll-price"></span></b></button><button class="fate-close" id="close-fate">Return to polis</button></footer>`;
+  fate.innerHTML = `<div class="fate-backdrop"></div><header><p id="fate-error" role="alert" hidden></p></header><div class="fate-cards" id="fate-cards"></div><footer><button class="fate-reroll" id="reroll-fate">${icons.reroll}<b><img src="${appUrl(`/ui/insight.webp`)}" alt=""><span id="fate-reroll-price"></span></b></button><button class="fate-close" id="close-fate" aria-label="Return to polis" title="Return to polis">${icons.eye}</button></footer>`;
   fate
     .querySelector("#close-fate")!
     .addEventListener("click", () => handlers.closeFate());
@@ -246,7 +246,7 @@ export function createScreens(
   );
   result.append(continueWithoutReplay);
 
-  finished.innerHTML = `<div class="run-card"><h2 id="run-title"></h2><p id="run-polis" class="run-polis"></p><p id="run-detail"></p><dl id="run-recap" class="run-recap"><div><dt>Season reached</dt><dd id="run-season"></dd></div><div><dt>Lives remaining</dt><dd id="run-lives"></dd></div><div><dt>Polis Hall</dt><dd id="run-hall"></dd></div><div><dt>Structures settled</dt><dd id="run-structures"></dd></div></dl><p id="run-award" role="status"></p><p id="run-next" class="run-next">Found a new polis to begin a fresh campaign, or return to the main menu.</p><div class="run-actions"><button id="restart">Found a new polis</button><a href="${appUrl("/")}">Main menu</a></div></div>`;
+  finished.innerHTML = `<div class="run-card"><h2 id="run-title"></h2><p id="run-polis" class="run-polis"></p><p id="run-detail"></p><dl id="run-recap" class="run-recap"><div><dt>Season reached</dt><dd id="run-season"></dd></div><div><dt>Lives remaining</dt><dd id="run-lives"></dd></div><div><dt>Polis Hall</dt><dd id="run-hall"></dd></div><div><dt>Structures settled</dt><dd id="run-structures"></dd></div></dl><p id="run-award" role="status"></p><p id="run-next" class="run-next sr-only">Found a new polis to begin a fresh campaign, or return to the main menu.</p><div class="run-actions"><button id="restart">Found a new polis</button><a href="${appUrl("/")}">Main menu</a></div></div>`;
   finished
     .querySelector("#restart")!
     .addEventListener("click", () => handlers.restart());
@@ -287,38 +287,20 @@ export function createScreens(
       const rerollButton =
         fate.querySelector<HTMLButtonElement>("#reroll-fate")!;
       rerollButton.disabled = woven || reroll === null || insight < reroll;
+      rerollButton.setAttribute(
+        "aria-label",
+        reroll === null
+          ? "Reroll offers, none left"
+          : `Reroll offers, ${reroll} Insight`,
+      );
       rerollButton.title = woven
         ? "Your Fate is woven this round"
         : reroll === null
           ? "No Fate rerolls remain this round"
           : "";
-      const key = JSON.stringify([state.fate, woven, insight, state.favor]);
+      const key = JSON.stringify([state.fate, woven, insight]);
       if (fate.dataset.key !== key) {
         fate.dataset.key = key;
-        // Favor gates: each patron's next collection threshold, and the Generic gift tiers,
-        // which read the highest single favor.
-        const highest = Math.max(...Object.values(state.favor));
-        const next = (value: number, steps: readonly number[]) =>
-          steps.find((step) => step > value);
-        const chip = (
-          label: string,
-          value: number,
-          upcoming: number | undefined,
-          image: string,
-        ) =>
-          `<li><img src="${appUrl(image)}" alt=""><span>${label}</span><b>${value}</b><small>${upcoming === undefined ? "all unlocked" : `next ${upcoming}`}</small></li>`;
-        fate.querySelector("#fate-favor")!.innerHTML =
-          (["zeus", "athena", "apollo"] as const)
-            .map((god) =>
-              chip(
-                patronNames[god],
-                state.favor[god] ?? 0,
-                next(state.favor[god] ?? 0, [3, 5, 8]),
-                `/ui/god-${god}.webp`,
-              ),
-            )
-            .join("") +
-          chip("Gifts", highest, next(highest, [5, 10]), "/ui/insight.webp");
         const cards = fate.querySelector("#fate-cards")!;
         cards.classList.toggle("woven", woven);
         cards.replaceChildren(
@@ -327,7 +309,7 @@ export function createScreens(
                 Object.assign(document.createElement("p"), {
                   className: "fate-woven",
                   textContent: woven
-                    ? "Your Fate is woven this round. The Moirai offer anew next round."
+                    ? "Your Fate is woven. New offers arrive next round."
                     : "No eligible offers on this roll. Reroll again or return to your polis.",
                 }),
               ]
@@ -352,19 +334,21 @@ export function createScreens(
               f.favor[0] ??
               f.unlock.map(([patron]) => patron).find((p) => p !== "generic") ??
               "apollo";
-            const favor = f.kind === "gift" ? [] : f.favor;
-            const gained = [...new Set(favor)].map(
-              (p) =>
-                `+${favor.filter((x) => x === p).length} ${patronNames[p]}`,
+            // Each favour entry raises that patron's counter in the HUD's top-left corner.
+            const patrons = [...new Set(f.favor)].map(
+              (p) => [p, f.favor.filter((x) => x === p).length] as const,
             );
+            const gained = patrons.map(([p, n]) => `+${n} ${patronNames[p]}`);
             const targeted = f.kind === "rune" || f.kind === "spell";
             card.dataset.kind = f.kind;
+            card.dataset.god = god;
+            card.dataset.tier = tierNames[f.cost].toLowerCase();
             card.dataset.status = f.status;
             card.style.setProperty(
               "--art",
               `url("${appUrl(`/ui/card-${god}.webp`)}")`,
             );
-            card.innerHTML = `<span class="card-art"><img src="${appUrl(f.art)}" alt=""></span><h3>${escapeHtml(f.name)}</h3><p class="kind">${fateKindNames[f.kind]} · ${tierNames[f.cost]}</p><p class="text">${richText(f.text)}</p>${gained.length ? `<p class="gain">Favour ${gained.join(" · ")}</p>` : ""}<span class="cost"><img src="${appUrl(`/ui/insight.webp`)}" alt="">${f.cost}</span>`;
+            card.innerHTML = `<span class="card-art"><img src="${appUrl(f.art)}" alt=""></span>${patrons.length ? `<span class="card-gods">${patrons.map(([p, n]) => `<span class="card-god" data-god="${p}"><img src="${appUrl(`/ui/god-${p}.webp`)}" alt="">${n > 1 ? `<b>${n}</b>` : ""}</span>`).join("")}</span>` : ""}<span class="cost"><img src="${appUrl(`/ui/insight.webp`)}" alt="">${f.cost}</span><h3>${escapeHtml(f.name)}</h3><span class="card-body"><span class="kind">${fateKindNames[f.kind]}</span><span class="text">${richText(f.text)}</span></span>`;
             card.setAttribute(
               "aria-label",
               `${f.name}, ${fateKindNames[f.kind]}, ${f.cost} Insight. ${f.text}${gained.length ? ` ${gained.join(" ")} favour.` : ""}${targeted ? " Then choose its structure." : ""}${f.unknown.length ? " Partial: some source effects are not applied." : ""}`,
@@ -475,7 +459,7 @@ export function createScreens(
         b.disabled = b.dataset.allowed !== "true";
       if (opening) enter(season);
     },
-    versus(state: PlayState | null, opponent = "") {
+    versus(state: PlayState | null, opponent = "", player = "You") {
       if (versus.hidden !== !state) versus.hidden = !state;
       if (!state) return;
       const clan = clans[state.clan];
@@ -484,7 +468,7 @@ export function createScreens(
       const rival = foe
         ? `<img src="${appUrl(`/ui/chief-${foe.portrait}.webp`)}" alt=""><div class="banner"><span class="shield"><img src="${appUrl(`/art/icon-${foe.crest}.webp`)}" alt=""></span><b>${escapeHtml(opponent)}</b></div>`
         : `<div class="banner"><b>${escapeHtml(opponent)}</b></div>`;
-      versus.innerHTML = `<div class="versus-side left"><img src="${appUrl(`/ui/chief-${clan.portrait}.webp`)}" alt=""><div class="banner"><b>You</b><span class="shield"><img src="${appUrl(`/art/icon-${clan.crest}.webp`)}" alt=""></span></div></div><div class="versus-emblem">${icons.swords}</div><div class="versus-side right">${rival}</div>`;
+      versus.innerHTML = `<div class="versus-side left"><img src="${appUrl(`/ui/chief-${clan.portrait}.webp`)}" alt=""><div class="banner"><b>${escapeHtml(player)}</b><span class="shield"><img src="${appUrl(`/art/icon-${clan.crest}.webp`)}" alt=""></span></div></div><div class="versus-emblem">${icons.swords}</div><div class="versus-side right">${rival}</div>`;
       versus.classList.remove("play");
       void versus.offsetWidth;
       versus.classList.add("play");
@@ -580,7 +564,7 @@ export function createScreens(
       // The round counter has already advanced past the last round fought.
       const rounds = outcome === "round-limit" ? state.round - 1 : state.round;
       finished.querySelector("#run-detail")!.textContent =
-        `${state.wins} victories in ${rounds} rounds · ${queue === "ranked" ? "Ranked async" : queue ? "Unranked async" : "Practice"}`;
+        `${state.wins} victories in ${rounds} rounds · ${queue === "ranked" ? "Ranked Play" : queue ? "Unranked Play" : state.mode === "tutorial" ? "Tutorial" : "Freeplay"}`;
       const clan = clans[state.clan];
       finished.querySelector("#run-polis")!.textContent =
         `${clan.name} · ${clan.chief}`;
