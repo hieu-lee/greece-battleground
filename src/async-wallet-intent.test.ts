@@ -113,6 +113,7 @@ for (const delivery of ["lost-ack", "before-post"] as const)
       let walletPreflight = false;
       let semanticPreflight = false;
       let loseReply = false;
+      const lostStatuses: number[] = [];
       let preflightRevision: number | null = null;
       const boundary = {
         fetch: async (input: RequestInfo | URL, init?: RequestInit) => {
@@ -173,13 +174,9 @@ for (const delivery of ["lost-ack", "before-post"] as const)
               .pick({ r: true })
               .loose()
               .parse(await response.clone().json()).r;
-          if (payload && loseReply) {
+          if (payload && loseReply && response.status === 200) {
             loseReply = false;
-            assert.equal(
-              response.status,
-              200,
-              "the server really commits Ready before acknowledgement loss",
-            );
+            lostStatuses.push(response.status);
             throw Error("Deliberately lost successful HTTP acknowledgement");
           }
           return response;
@@ -250,13 +247,39 @@ for (const delivery of ["lost-ack", "before-post"] as const)
       walletPreflight = true;
       loseReply = true;
       sounds.length = 0;
-      const reply = await act("ready");
+      let reply = await act("ready");
       assert.equal(
         posted.length,
         count + 1,
         "wallet-only preflight must send the new Ready intent rather than reject it as stale: " +
           JSON.stringify(reply),
       );
+      const preflightIntent = posted.at(-1)!;
+      assert.ok(preflightIntent.revision > cached);
+      assert.equal(
+        preflightIntent.revision,
+        preflightRevision,
+        "only the new intent uses the trusted newer wallet revision",
+      );
+      if (delivery === "lost-ack") {
+        // Another real payment can race the POST after preflight. A definitive
+        // stale rejection permits a fresh intent; uncertainty never does.
+        const deadline = performance.now() + 7000;
+        while (
+          reply &&
+          typeof reply === "object" &&
+          "error" in reply &&
+          reply.error === "stale" &&
+          session.connection?.pending === null &&
+          performance.now() < deadline
+        )
+          reply = await act("ready");
+        assert.equal(
+          lostStatuses.at(-1),
+          200,
+          "lose only a committed Ready response: " + session.message,
+        );
+      }
       assert.ok(reply && typeof reply === "object" && "error" in reply);
       assert.equal(
         reply.error,
@@ -269,12 +292,6 @@ for (const delivery of ["lost-ack", "before-post"] as const)
         "an unacknowledged command produces no success cue",
       );
       const first = posted.at(-1)!;
-      assert.ok(first.revision > cached);
-      assert.equal(
-        first.revision,
-        preflightRevision,
-        "only the new intent uses the trusted newer wallet revision",
-      );
       assert.equal(session.connection?.pending?.status, "uncertain");
       if (delivery === "before-post") {
         assert.equal(
