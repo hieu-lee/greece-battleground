@@ -1,7 +1,7 @@
 # Username and password accounts
 
 This export uses greece-118-v31, save31, database
-schema13. Account data belongs to the online service;
+schema14. Account data belongs to the online service;
 local Freeplay/tutorial saves remain separate.
 
 Open Account on the menu to create an account or sign in. Creating credentials
@@ -21,23 +21,23 @@ origin can read it, so keep that origin free of untrusted scripts. Passwords are
 not persisted in browser storage. Same-origin guest cookies remain HttpOnly.
 Production must use HTTPS, exact Origin/CORS settings and no credential logging.
 
-## Preserve an existing schema12 database
+## Preserve an existing schema12 or schema13 database
 
-Only schema12 with the identical rules identity greece-118-v31 can
-migrate to schema13. Never migrate a database with different gameplay rules;
+Only schema12 or schema13 with the identical rules identity greece-118-v31 can
+migrate to schema14. Never migrate a database with different gameplay rules;
 preserve older rules, saves, replays, account/profiles and receipts as archives.
-The normal service refuses an unapproved schema12 database rather than silently
+The normal service refuses an older-schema database rather than silently
 altering it. Stop its writer and preserve the source database and SQLite sidecars;
 use the explicit migration to a fresh destination basename, never the source path:
 
 ```sh
 node server/migrate-accounts.ts \
   --source /private/archive/game-greece-118-v31-schema12.sqlite \
-  --destination /private/durable/game-greece-118-v31-schema13.sqlite
+  --destination /private/durable/game-greece-118-v31-schema14.sqlite
 ```
 
 The migration reads the source, checks identity/integrity, preserves its existing
-tables/data and adds account tables to the new schema13 copy. It refuses an
+tables/data and adds missing account tables and empty matchmaking tables to the new schema14 copy. Existing ghost metadata is unknown and is never fabricated. It refuses an
 existing destination or SQLite sidecar. Inspect the result and keep the original
 archive before repointing the service to the new path. No other rules identity
 or in-place migration is implied. Backups contain private credential hashes and

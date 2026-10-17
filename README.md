@@ -22,7 +22,7 @@ the public API hostname or deploy anything by itself. The prepared
 [Username/password accounts](docs/ACCOUNTS.md) preserve the online guest and profile.
 
 Rules: greece-118-v31. Save version: 31.
-Database schema: 13.
+Database schema: 14.
 
 `pnpm verify` runs runtime tests, exported-asset integrity, server types and
 the client build. Private source-regeneration checks are outside this export.

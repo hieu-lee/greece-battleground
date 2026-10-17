@@ -16,6 +16,7 @@ import { pathToFileURL } from "node:url";
 import { z } from "zod";
 import { rulesVersion } from "../src/rules-version.ts";
 import { createAccountTables } from "./accounts.ts";
+import { createMatchmakingTables } from "./matchmaking.ts";
 
 export async function migrateAccounts(
   sourcePath: string,
@@ -56,11 +57,15 @@ export async function migrateAccounts(
       .parse(
         database.prepare("SELECT value FROM rules_metadata WHERE id=1").get(),
       );
-    if (version.user_version !== 12 || rules.value !== rulesVersion)
+    if (
+      ![12, 13].includes(version.user_version) ||
+      rules.value !== rulesVersion
+    )
       throw new Error(
-        "Only schema12 with the current identical rules identity can be migrated.",
+        "Only schema12 or schema13 with the current identical rules identity can be migrated.",
       );
     if (
+      version.user_version === 12 &&
       database
         .prepare(
           "SELECT 1 FROM sqlite_schema WHERE name IN ('accounts','account_sessions')",
@@ -77,6 +82,11 @@ export async function migrateAccounts(
         .map((row) => row.name),
     );
     if (
+      version.user_version === 13 &&
+      ["accounts", "account_sessions"].some((table) => !tables.has(table))
+    )
+      throw new Error("Source schema13 is missing required account tables.");
+    if (
       [
         "guests",
         "account_recovery",
@@ -91,13 +101,15 @@ export async function migrateAccounts(
         "results",
       ].some((table) => !tables.has(table))
     )
-      throw new Error("Source schema12 is missing required tables.");
+      throw new Error(
+        "Source schema12 or schema13 is missing required tables.",
+      );
     if (
       database
         .prepare("SELECT length(key) AS size FROM private_random WHERE id=1")
         .get()?.size !== 32
     )
-      throw new Error("Source schema12 has no valid private randomness key.");
+      throw new Error("Source database has no valid private randomness key.");
     const integrity = z
       .object({ quick_check: z.literal("ok") })
       .array()
@@ -120,7 +132,8 @@ export async function migrateAccounts(
         "PRAGMA journal_mode=DELETE; PRAGMA synchronous=FULL; PRAGMA foreign_keys=ON; BEGIN IMMEDIATE",
       );
       createAccountTables(target);
-      target.exec("PRAGMA user_version=13; COMMIT");
+      createMatchmakingTables(target);
+      target.exec("PRAGMA user_version=14; COMMIT");
     } catch (error) {
       if (target.isTransaction) target.exec("ROLLBACK");
       throw error;
@@ -155,10 +168,10 @@ if (
   });
   if (!values.source || !values.destination)
     throw new Error(
-      "Provide --source schema12.sqlite --destination new-schema13.sqlite",
+      "Provide --source schema12-or13.sqlite --destination new-schema14.sqlite",
     );
   await migrateAccounts(values.source, values.destination);
   process.stdout.write(
-    JSON.stringify({ migrated: true, schema: 13, rulesVersion }) + "\n",
+    JSON.stringify({ migrated: true, schema: 14, rulesVersion }) + "\n",
   );
 }

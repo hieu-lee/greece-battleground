@@ -576,10 +576,10 @@ test("authentication attempts and simultaneous memory-hard password work are bou
   }
 });
 
-test("source12 needs explicit non-overwriting same-rules migration to13 with exact original bytes and old rows preserved", () => {
+test("source12 needs explicit non-overwriting same-rules migration to14 with exact original bytes and old rows preserved", () => {
   const folder = directory(),
     source = join(folder, "source12.sqlite"),
-    destination = join(folder, "destination13.sqlite");
+    destination = join(folder, "destination14.sqlite");
   try {
     let owner = new GameStore(source);
     const created = owner.create({ name: "Migration fixture", clan: "raven" });
@@ -592,7 +592,7 @@ test("source12 needs explicit non-overwriting same-rules migration to13 with exa
     owner.close();
     const producer = new DatabaseSync(source);
     producer.exec(
-      "DROP TABLE IF EXISTS account_sessions; DROP TABLE IF EXISTS accounts; PRAGMA user_version=12",
+      "DROP TABLE IF EXISTS ghost_matchmaking; DROP TABLE IF EXISTS match_history; DROP TABLE IF EXISTS account_sessions; DROP TABLE IF EXISTS accounts; PRAGMA user_version=12",
     );
     producer
       .prepare("UPDATE profiles SET xp=123 WHERE guest=?")
@@ -637,7 +637,7 @@ test("source12 needs explicit non-overwriting same-rules migration to13 with exa
     assert.equal(
       execute(source, destination).status,
       0,
-      "explicit CLI copies source12 into a new schema13 destination",
+      "explicit CLI copies source12 into a new schema14 destination",
     );
     assert.ok(readFileSync(source).equals(before));
     assert.equal(statSync(source).mode & 0o777, 0o400);
@@ -647,7 +647,7 @@ test("source12 needs explicit non-overwriting same-rules migration to13 with exa
         table + " rows remain exact",
       );
     const copied = new DatabaseSync(destination, { readOnly: true });
-    assert.equal(copied.prepare("PRAGMA user_version").get()?.user_version, 13);
+    assert.equal(copied.prepare("PRAGMA user_version").get()?.user_version, 14);
     assert.equal(
       copied.prepare("SELECT value FROM rules_metadata WHERE id=1").get()
         ?.value,
@@ -675,7 +675,7 @@ test("source12 needs explicit non-overwriting same-rules migration to13 with exa
     const refused = join(folder, "refused.sqlite");
     assert.notEqual(execute(wrong, refused).status, 0);
     assert.equal(existsSync(refused), false);
-    assert.equal(schemaVersion, 13);
+    assert.equal(schemaVersion, 14);
   } finally {
     rmSync(folder, { recursive: true, force: true });
   }

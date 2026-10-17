@@ -19,6 +19,8 @@ const requiredTables = [
   "profiles",
   "ranked_battles",
   "results",
+  "ghost_matchmaking",
+  "match_history",
 ];
 
 function validate(database: DatabaseSync) {

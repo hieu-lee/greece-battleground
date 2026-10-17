@@ -40,6 +40,7 @@ import { publicMap } from "../src/map.ts";
 import { rulesVersion, sourceEncounterKind } from "../src/rules-version.ts";
 import { clanId } from "../src/clans.ts";
 import { resumeEntries } from "../src/item-entries.ts";
+import { createMatchmakingTables } from "./matchmaking.ts";
 import {
   rate,
   sourceOpponentMean,
@@ -60,7 +61,8 @@ import {
 // Schema 10 freezes Horn controllers alongside each submitted warband.
 // Schema 11 additionally freezes source Tower controllers; rules21 data stays archived.
 // Schema12 stores the source live opponent list and independent freeplay rating/counter.
-export const schemaVersion = 13;
+// Schema14 freezes matchmaking inputs and records opponent reuse independently of rewards.
+export const schemaVersion = 14;
 const queue = z.enum(["unranked", "ranked"]);
 export const guestRequest = guestInput.extend({ queue: queue.optional() });
 export const actionRequest = transaction.extend({
@@ -152,6 +154,7 @@ const ghostRow = z.object({
   towers: z.string(),
   layout: z.string(),
   lineup_hash: z.string(),
+  elo: z.int32().nonnegative(),
 });
 const deltaRow = z.object({ revision: z.number(), delta: z.string() });
 const hash = (value: string) =>
@@ -291,6 +294,7 @@ export class GameStore {
       ) STRICT;
     `);
       createAccountTables(this.db);
+      createMatchmakingTables(this.db);
       // Older same-rules schemas gain columns whose defaults describe their rows exactly:
       // version-1 ghosts had no layout, and every pre-ranked run and ghost is unranked.
       for (const [table, column, definition] of [
@@ -338,6 +342,18 @@ export class GameStore {
           this.db.prepare("SELECT key FROM private_random WHERE id=1").get(),
         );
       this.randomKey = Buffer.from(storedKey.key);
+      this.db.function(
+        "match_tie",
+        { deterministic: true },
+        (owner, run, round, other) =>
+          this.randomBytes([
+            "matchmaking-v1",
+            String(owner),
+            String(run),
+            Number(round),
+            String(other),
+          ]).readUInt32BE(),
+      );
       // One authoritative runtime reopening maps to source saved-run setup. Browser reads
       // and reconnects do not recreate GameStore or compact its item/report state.
       const restoredRuntimes = new Map<string, IncomeRuntime>();
@@ -762,18 +778,62 @@ export class GameStore {
       game: parseGame(JSON.parse(row.state)),
     };
   }
-  // Ranked runs meet only ranked ghosts, and unranked only unranked.
-  private opponent(id: string, round: number, ranked: boolean) {
+  private opponent(id: string, run: string, game: Game, ranked: boolean) {
+    const profile = z.object({ elo: z.number(), games: z.number() }).parse(
+      this.db
+        .prepare(
+          `SELECT ${ranked ? "elo" : "freeplay_elo"} AS elo,
+        ${ranked ? "ranked_games" : "freeplay_games"} AS games FROM profiles WHERE guest=?`,
+        )
+        .get(id),
+    );
+    // Rating bands keep diversity from selecting a much less suitable opponent. The
+    // nearest populated band always wins, so sparse pools do not add a new wait.
     const result = this.db
       .prepare(
         `
-      SELECT ghosts.guest,guests.name,ghosts.fighters,ghosts.horns,ghosts.towers,ghosts.layout,ghosts.lineup_hash FROM ghosts JOIN guests ON guests.id=ghosts.guest
-      WHERE ghosts.guest<>? AND ghosts.round=? AND ghosts.ranked=?
-        AND ghosts.seq=(SELECT MAX(g.seq) FROM ghosts g WHERE g.guest=ghosts.guest AND g.round=ghosts.round AND g.ranked=ghosts.ranked)
-      ORDER BY ghosts.seq DESC LIMIT 1
+      WITH candidates AS (
+        SELECT g.seq,g.guest,COALESCE(m.elo,p.${ranked ? "elo" : "freeplay_elo"}) AS elo,
+          ABS(COALESCE(m.elo,p.${ranked ? "elo" : "freeplay_elo"})-?) AS rating_gap,
+          CASE WHEN m.ghost_seq IS NULL THEN 2 ELSE (m.games<5)<>(?<5) END AS placement_gap,
+          CASE WHEN m.ghost_seq IS NULL THEN 100 ELSE ABS(m.wins-?)+ABS(m.lives-?) END AS record_gap,
+          (SELECT COUNT(*) FROM match_history h WHERE h.guest=? AND h.run=? AND h.opponent=g.guest) AS repeats
+        FROM ghosts g
+        JOIN profiles p ON p.guest=g.guest
+        LEFT JOIN ghost_matchmaking m ON m.ghost_seq=g.seq
+        WHERE g.guest<>? AND g.round=? AND g.ranked=?
+      ), best_per_account AS (
+        SELECT *,ROW_NUMBER() OVER (PARTITION BY guest ORDER BY
+          CAST(rating_gap/100 AS INTEGER),placement_gap,record_gap,rating_gap,
+          match_tie(?,?,?,seq),seq) AS choice
+        FROM candidates
+      ), chosen AS (
+        SELECT seq,elo FROM best_per_account
+        WHERE choice=1
+        ORDER BY CAST(rating_gap/100 AS INTEGER),placement_gap,record_gap,repeats,rating_gap,
+          match_tie(?,?,?,guest),guest LIMIT 1
+      )
+      SELECT g.guest,guests.name,g.fighters,g.horns,g.towers,g.layout,g.lineup_hash,c.elo
+      FROM chosen c JOIN ghosts g ON g.seq=c.seq JOIN guests ON guests.id=g.guest
     `,
       )
-      .get(id, round, ranked ? 1 : 0);
+      .get(
+        profile.elo,
+        profile.games,
+        game.wins,
+        game.lives,
+        id,
+        run,
+        id,
+        game.round,
+        ranked ? 1 : 0,
+        id,
+        run,
+        game.round,
+        id,
+        run,
+        game.round,
+      );
     return result ? ghostRow.parse(result) : null;
   }
   private lineup(game: Game) {
@@ -791,7 +851,7 @@ export class GameStore {
     const fighters = JSON.stringify(lineup.fighters);
     const layout = JSON.stringify(lineup.opponentLayout);
     const digest = hash(JSON.stringify(lineup));
-    this.db
+    const inserted = this.db
       .prepare(
         "INSERT OR IGNORE INTO ghosts (guest,run,round,revision,fighters,horns,towers,layout,lineup_hash,ranked) VALUES (?,?,?,?,?,?,?,?,?,?)",
       )
@@ -807,6 +867,15 @@ export class GameStore {
         digest,
         ranked ? 1 : 0,
       );
+    if (inserted.changes)
+      this.db
+        .prepare(
+          `INSERT INTO ghost_matchmaking
+      SELECT g.seq,p.${ranked ? "elo" : "freeplay_elo"},?,?,p.${ranked ? "ranked_games" : "freeplay_games"}
+      FROM ghosts g JOIN profiles p ON p.guest=g.guest
+      WHERE g.guest=? AND g.run=? AND g.round=? AND g.revision=? AND g.lineup_hash=?`,
+        )
+        .run(game.wins, game.lives, id, run, game.round, game.revision, digest);
     this.db
       .prepare(
         `DELETE FROM ghosts WHERE guest=? AND round=? AND seq NOT IN
@@ -895,7 +964,13 @@ export class GameStore {
               available:
                 game.phase.kind === "prepare" &&
                 (sourceEncounterKind(game.round) === "pve" ||
-                  Boolean(this.opponent(id, game.round, ranked))),
+                  Boolean(
+                    this.db
+                      .prepare(
+                        "SELECT 1 FROM ghosts WHERE guest<>? AND round=? AND ranked=? LIMIT 1",
+                      )
+                      .get(id, game.round, ranked ? 1 : 0),
+                  )),
             },
           }
         : {}),
@@ -1286,7 +1361,7 @@ export class GameStore {
         const session = this.session(id, nextRun, game, {
           offerIndex: this.offerIndex(id),
           encounter: (current) => {
-            const other = this.opponent(id, current.round, ranked);
+            const other = this.opponent(id, nextRun, current, ranked);
             if (!other)
               throw new Waiting(
                 "Waiting for another player's submitted warband on this round",
@@ -1294,9 +1369,10 @@ export class GameStore {
             this.publish(id, nextRun, current, ranked);
             // Keep the actual ghost audit separate from source reports (PvE has no ghost).
             this.db
-              .prepare(
-                `INSERT OR REPLACE INTO ranked_battles SELECT ?,?,?,${ranked ? "elo" : "freeplay_elo"} FROM profiles WHERE guest=?`,
-              )
+              .prepare("INSERT OR REPLACE INTO ranked_battles VALUES (?,?,?,?)")
+              .run(id, nextRun, current.round, other.elo);
+            this.db
+              .prepare("INSERT INTO match_history VALUES (?,?,?,?)")
               .run(id, nextRun, current.round, other.guest);
             return battle.parse({
               seed: this.randomBytes([

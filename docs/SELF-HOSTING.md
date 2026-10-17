@@ -2,7 +2,7 @@
 
 Rules: greece-118-v31
 Save version: 31
-Database schema: 13
+Database schema: 14
 
 Build with Node24+ and pnpm11.7.0, then serve the complete matching source,
 dependencies and built client from a durable release directory:
@@ -10,7 +10,7 @@ dependencies and built client from a durable release directory:
 ```sh
 pnpm install --frozen-lockfile
 pnpm build
-node server/start.ts --assets dist --database /private/durable/game-greece-118-v31-schema13.sqlite \
+node server/start.ts --assets dist --database /private/durable/game-greece-118-v31-schema14.sqlite \
   --host 127.0.0.1 --port 5396
 ```
 
@@ -31,9 +31,9 @@ Use a complete new release directory instead of modifying a running dist in plac
 See [GitHub Pages and HTTPS API setup](GITHUB-PAGES.md) for the project base,
 VITE_API_ORIGIN and exact allowed frontend origin. Pages hosts only the client;
 the separately hosted Node service owns authentication, matchmaking and SQLite.
-See [accounts and schema12 to schema13 migration](ACCOUNTS.md).
+See [accounts and schema12/13 to schema14 migration](ACCOUNTS.md).
 
-Online backup: `node server/snapshot.ts --database /private/durable/game-greece-118-v31-schema13.sqlite
+Online backup: `node server/snapshot.ts --database /private/durable/game-greece-118-v31-schema14.sqlite
 --output /private/backups/fresh-name.sqlite`. Use a fresh output basename,
 inspect its verified result, keep credential-bearing snapshots private and arrange
 encrypted off-host retention. Recover to a new path while the old service is

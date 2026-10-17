@@ -61,7 +61,7 @@ test("the service refuses an unversioned populated database without altering sav
     assert.equal(JSON.parse(saved).version, 31);
     assert.equal(
       current.prepare("PRAGMA user_version").get()?.user_version,
-      13,
+      schemaVersion,
     );
     current.close();
     const wrongRules = new DatabaseSync(freshPath);
@@ -195,7 +195,8 @@ test("an older same-rules schema-5 database is refused without changing its runs
     store.create({ clan: "stag", name: "Schema five" });
     store.close();
     const legacy = new DatabaseSync(path);
-    legacy.exec(`ALTER TABLE games DROP COLUMN ranked; ALTER TABLE ghosts DROP COLUMN ranked;
+    legacy.exec(`DROP TABLE ghost_matchmaking; DROP TABLE match_history; DROP INDEX ghosts_queue_round_guest;
+      ALTER TABLE games DROP COLUMN ranked; ALTER TABLE ghosts DROP COLUMN ranked;
       DROP TABLE profiles; DROP TABLE ranked_battles; DROP TABLE results; DROP TABLE account_sessions; DROP TABLE accounts; PRAGMA user_version=5;`);
     const games = legacy
       .prepare("SELECT guest,run,revision,state,source_opponents FROM games")
