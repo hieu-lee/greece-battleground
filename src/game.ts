@@ -155,6 +155,7 @@ export const preparationCosts = {
   },
 };
 export const command = z.discriminatedUnion("op", [
+  z.object({ op: z.literal("give-up") }).strict(),
   z.object({ op: z.literal("restart"), clan: clanId }).strict(),
   z.object({ op: z.literal("ready") }).strict(),
   z.object({ op: z.literal("continue") }).strict(),
@@ -754,6 +755,14 @@ export function apply(
     fresh.revision = game.revision;
     return fresh;
   }
+  if (action.op === "give-up") {
+    if (next.phase.kind === "finished") throw new Error("This run has ended");
+    next.lives = 0;
+    next.phase = { kind: "finished", outcome: "defeat" };
+    next.incomeCheckpoint = null;
+    if (next.tutorial) next.tutorial.chapter = null;
+    return next;
+  }
   if (action.op === "tutorial-chapter") {
     if (!next.tutorial) throw new Error("No tutorial is active");
     if (
@@ -1154,6 +1163,7 @@ export function inspection(state: Game) {
 
 type Change = { r: number; delta: Record<string, unknown> };
 const asyncCommitBoundaries = new Set<Command["op"]>([
+  "give-up",
   "reroll-shop",
   "reroll-fate",
   "ready",
@@ -1450,7 +1460,7 @@ export function gameSession(
       for (const action of request.actions)
         next = apply(next, action, authority);
       const candidate = request.actions.some(
-        (action) => action.op === "restart",
+        (action) => action.op === "restart" || action.op === "give-up",
       )
         ? incomeRuntime(next, runtime.clock.last)
         : structuredClone(runtime);

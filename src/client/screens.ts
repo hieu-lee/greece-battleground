@@ -124,8 +124,11 @@ export function createScreens(
 <fieldset><legend>Video</legend><label>Render resolution<select name="resolution"><option value="auto">Auto</option><option value="lower">Lower (1×)</option></select></label></fieldset>
 <fieldset><legend>Input</legend><label>Camera pan speed <output id="game-pan-speed-value"></output><input type="range" name="panSpeed" min="0.5" max="2" step="0.1"></label><label class="check"><input type="checkbox" name="reverseWheel">Reverse mouse-wheel zoom</label><small>Pan speed changes drag and keyboard movement. Touch pinch keeps its natural direction.</small></fieldset>
 <output id="settings-status" role="status"></output>
+<div class="settings-actions"><button type="button" id="settings-give-up" class="give-up">Give Up</button></div>
 <div class="settings-actions"><button type="button" id="settings-resume">Resume</button><a href="${appUrl("/")}" id="settings-menu">Main menu</a></div></form>`;
   const form = settings.querySelector("form")!;
+  const giveUp = form.querySelector<HTMLButtonElement>("#settings-give-up")!;
+  let giveUpBlocked = false;
   const status = form.querySelector("#settings-status")!;
   const panValue = form.querySelector("#game-pan-speed-value")!;
   const resolution = form.querySelector<HTMLSelectElement>(
@@ -184,6 +187,21 @@ export function createScreens(
   settings
     .querySelector("#settings-resume")!
     .addEventListener("click", closeSettings);
+  giveUp.addEventListener("click", async () => {
+    if (
+      !confirm(
+        "Give up this campaign? This ends your run and cannot be undone. Online runs use the usual abandonment rating and XP rules.",
+      )
+    )
+      return;
+    giveUp.disabled = true;
+    const ended = await handlers.act({ op: "give-up" });
+    giveUp.disabled = giveUpBlocked;
+    if (ended) closeSettings();
+    else
+      status.textContent =
+        "Could not give up. Check the connection message and try again.";
+  });
   settings.addEventListener("click", (event) => {
     if (event.target === settings) closeSettings();
   });
@@ -257,6 +275,14 @@ export function createScreens(
     fateError.hidden = !message;
   }
   return {
+    giveUp(available: boolean, blocked: boolean) {
+      giveUpBlocked = blocked;
+      giveUp.parentElement!.hidden = !available;
+      giveUp.disabled = blocked;
+      giveUp.title = blocked
+        ? "Resolve your pending order or cancel waiting first."
+        : "";
+    },
     income(active: boolean) {
       income.hidden = !active;
     },

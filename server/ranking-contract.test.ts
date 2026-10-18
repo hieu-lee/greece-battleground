@@ -525,6 +525,144 @@ test("unranked queue abandonment settles only committed round3-or-later wins and
   }
 });
 
+test("give-up persists abandonment once, keeps queue policy and rejects waiting or stale intents", () => {
+  for (const queue of ["unranked", "ranked"] as const) {
+    for (const round of [1, 3]) {
+      const f = fixture();
+      try {
+        const id = f.store.create({ name: "Give up", clan: "stag", queue })
+          .guest.id;
+        f.patch(id, { round, wins: round === 3 ? 1 : 0 });
+        const request = {
+          requestId: randomUUID(),
+          revision: f.game(id).revision,
+          actions: [{ op: "give-up" as const }],
+        };
+        assert.equal(
+          f.store.act(id, { ...request, revision: request.revision + 1 })
+            .status,
+          409,
+        );
+        assert.equal(f.store.profile(id).history.length, 0);
+        const valid = { ...request, requestId: randomUUID() };
+        const reply = f.store.act(id, valid);
+        assert.equal(reply.status, 200);
+        assert.deepEqual(f.game(id).phase, {
+          kind: "finished",
+          outcome: "defeat",
+        });
+        const profile = f.store.profile(id);
+        assert.equal(profile.current.queue, queue);
+        assert.equal(
+          profile.history.length,
+          queue === "ranked" || round >= 3 ? 1 : 0,
+        );
+        if (profile.history.length)
+          assert.equal(profile.history[0]?.outcome, "abandoned");
+        if (profile.history.length)
+          assert.equal(profile.history[0]?.wins, round === 3 ? 1 : 0);
+        f.reopen();
+        assert.deepEqual(
+          f.store.act(id, valid),
+          reply,
+          "lost acknowledgement retries the original receipt",
+        );
+        assert.deepEqual(f.store.profile(id), profile);
+        assert.equal(
+          f.store.act(id, { ...valid, actions: [{ op: "ready" }] }).status,
+          409,
+        );
+        assert.equal(
+          f.store.act(id, {
+            ...valid,
+            requestId: randomUUID(),
+            revision: f.game(id).revision,
+          }).status,
+          422,
+        );
+        assert.deepEqual(f.store.profile(id), profile);
+      } finally {
+        f.close();
+      }
+    }
+  }
+  const f = fixture();
+  try {
+    const id = f.store.create({
+      name: "Waiting surrender",
+      clan: "stag",
+      queue: "ranked",
+    }).guest.id;
+    f.patch(id, { round: 2 });
+    const wait = randomUUID();
+    assert.equal(f.act(id, "ready", wait).status, 202);
+    const request = {
+      requestId: randomUUID(),
+      revision: f.game(id).revision,
+      actions: [{ op: "give-up" as const }],
+    };
+    const before = f.game(id);
+    assert.equal(f.store.act(id, request).status, 422);
+    assert.deepEqual(f.game(id), before);
+    assert.equal(f.store.profile(id).history.length, 0);
+    assert.equal(f.store.cancel(id, wait).status, 200);
+    const accepted = { ...request, requestId: randomUUID() };
+    f.db.exec(
+      "CREATE TRIGGER fail_give_up BEFORE INSERT ON results BEGIN SELECT RAISE(ABORT,'give-up rollback'); END",
+    );
+    assert.throws(() => f.store.act(id, accepted), /give-up rollback/);
+    assert.deepEqual(f.game(id), before);
+    f.db.exec("DROP TRIGGER fail_give_up");
+    assert.equal(f.store.act(id, accepted).status, 200);
+    assert.equal(f.store.profile(id).history[0]?.outcome, "abandoned");
+    assert.equal(f.store.replay(id), null);
+  } finally {
+    f.close();
+  }
+});
+
+test("give-up ignores an older waiting receipt after another client advances the polis", () => {
+  const f = fixture();
+  try {
+    const id = f.store.create({
+      name: "Old waiting receipt",
+      clan: "stag",
+      queue: "ranked",
+    }).guest.id;
+    f.patch(id, { round: 2 });
+    assert.equal(f.act(id, "ready").status, 202);
+    assert.equal(
+      f.store.act(id, {
+        requestId: randomUUID(),
+        revision: f.game(id).revision,
+        actions: [{ op: "villager" }],
+      }).status,
+      200,
+    );
+    const revision = f.game(id).revision;
+    assert.equal(
+      f.store.act(id, {
+        requestId: randomUUID(),
+        revision,
+        actions: [{ op: "give-up" }, { op: "restart", clan: "stag" }],
+      }).status,
+      422,
+    );
+    assert.equal(f.game(id).revision, revision);
+    assert.equal(
+      f.store.act(id, {
+        requestId: randomUUID(),
+        revision,
+        actions: [{ op: "give-up" }],
+      }).status,
+      200,
+    );
+    assert.equal(f.store.profile(id).history[0]?.outcome, "abandoned");
+  } finally {
+    f.close();
+  }
+});
+
 test("ranked paid abandonment settles a persisted round1 or later run before changing queues", () => {
   for (const [round, wins, pending, elo, expectedChange] of [
     [1, 0, false, 100, -116],

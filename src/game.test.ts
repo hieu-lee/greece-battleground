@@ -22,6 +22,71 @@ function capturedCamp() {
   return initial;
 }
 
+test("giving up ends each active phase, clears income work and persists a restartable defeat", () => {
+  for (const mode of ["practice", "tutorial"] as const) {
+    for (const phase of ["prepare", "income", "result", "season"] as const) {
+      const initial = newGame(42, "stag", mode);
+      if (phase === "season") {
+        initial.round = 5;
+        initial.season = "summer";
+      }
+      initial.phase = { kind: phase === "result" ? "prepare" : phase };
+      if (phase === "result" && initial.tutorial) {
+        initial.tutorial.stage = "prepare";
+        initial.tutorial.chapter = null;
+      }
+      let saved = initial;
+      const game = gameSession(
+        initial,
+        (next) => {
+          saved = next;
+        },
+        () => {},
+      );
+      if (phase === "result")
+        game.act({ revision: game.state.revision, actions: [{ op: "ready" }] });
+      game.act({ revision: game.state.revision, actions: [{ op: "give-up" }] });
+      assert.deepEqual(game.state.phase, {
+        kind: "finished",
+        outcome: "defeat",
+      });
+      assert.equal(game.state.lives, 0);
+      assert.equal(game.pending, false);
+      assert.equal(game.state.incomeCheckpoint, null);
+      assert.equal(game.state.tutorial?.chapter ?? null, null);
+      assert.deepEqual(parseGame(saved), game.state);
+      const ended = game.state;
+      game.update(game.runtime.clock.last + 10_000);
+      assert.deepEqual(game.state, ended, "no late income after giving up");
+      assert.throws(
+        () =>
+          game.act({ revision: ended.revision, actions: [{ op: "give-up" }] }),
+        /ended/,
+      );
+      game.act({
+        revision: ended.revision,
+        actions: [{ op: "restart", clan: "raven" }],
+      });
+      assert.equal(game.state.lives, 5);
+      assert.equal(game.state.clan, "raven");
+    }
+  }
+  const blocked = gameSession(
+    newGame(),
+    () => {
+      throw new Error("Storage blocked");
+    },
+    () => {},
+  );
+  const before = blocked.state;
+  assert.throws(
+    () =>
+      blocked.act({ revision: before.revision, actions: [{ op: "give-up" }] }),
+    /Storage blocked/,
+  );
+  assert.deepEqual(blocked.state, before);
+});
+
 test("async creation, rerolls and next-round offers use the authoritative selector independently of map seed", () => {
   const initial = newGame(42, "stag", "async", () => 0);
   // Rarity draw 0 = Common, entry 0 = Javelin Camp; later slots reject it 50 times and stay empty.

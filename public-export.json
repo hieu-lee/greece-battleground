@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "b8783cc6fda349f620b21951c08f905e649798fd",
+  "sourceCommit": "37de9f54eb1f5fef3ee5d163a0ec6a33cd33d611",
   "runtime": {
     "rulesVersion": "greece-118-v31",
     "saveVersion": 31,
@@ -3909,8 +3909,8 @@
     },
     {
       "path": "server/ranking-contract.test.ts",
-      "bytes": 22666,
-      "sha256": "1457fc621440eb04cb473d78100680a0c81a75399173f513907191566efc4dbd",
+      "bytes": 27088,
+      "sha256": "b7d1d5c231fa45c8053457d1656aec561408a0522f423fc4ee6353bbddaacb60",
       "origin": "tracked"
     },
     {
@@ -3957,8 +3957,8 @@
     },
     {
       "path": "server/store.ts",
-      "bytes": 52657,
-      "sha256": "e748a1c456e99c9ae49fe13e04fcb93a9fe72bc5517d21c46458487687915c28",
+      "bytes": 53333,
+      "sha256": "01f5e0ea10db7971347904b0726d03113aa8a655d90dca2690821af190e71617",
       "origin": "tracked"
     },
     {
@@ -4137,8 +4137,8 @@
     },
     {
       "path": "src/client/client.css",
-      "bytes": 33191,
-      "sha256": "0cfe240eb556458098c9eecc87ef2dfbf556b9f5d720ae174c9df23c3b71470d",
+      "bytes": 33314,
+      "sha256": "065986f592036b98b5d46c4d86768333a890395a24b58bdb4af95b9b6e9a1998",
       "origin": "tracked"
     },
     {
@@ -4215,8 +4215,8 @@
     },
     {
       "path": "src/client/play3d.ts",
-      "bytes": 83945,
-      "sha256": "7da359e4b14f97ffc0fa9280db7d9dd89c692b6c1759aace11b0e5c5721c0a12",
+      "bytes": 84237,
+      "sha256": "52990b57cdc205606e767031f8bf22e6e8ec555deb43345f816d7a4c090fe084",
       "origin": "tracked"
     },
     {
@@ -4239,8 +4239,8 @@
     },
     {
       "path": "src/client/screens.ts",
-      "bytes": 30629,
-      "sha256": "dc0f7bb465c5ca464dceb04845c0a3141148683b33dca3b8441b59a1d0a42791",
+      "bytes": 31633,
+      "sha256": "084bead829302648edbdc06e6e0c68b3ad61a7f6c8feae6215aaeff2183def52",
       "origin": "tracked"
     },
     {
@@ -4419,14 +4419,14 @@
     },
     {
       "path": "src/game.test.ts",
-      "bytes": 26261,
-      "sha256": "91f979f6d83f276370bcda91f432f30a3b58e1d7390570bf6a2d9e12e4267588",
+      "bytes": 28434,
+      "sha256": "212929d4c39db6d3f0c9e9b62ade27cc12f65adaad7f2848fdde389968e3cfab",
       "origin": "tracked"
     },
     {
       "path": "src/game.ts",
-      "bytes": 49736,
-      "sha256": "296be3ee095e84121205ddce80ece8c06b1df299b738aa62951cafc87029a7bc",
+      "bytes": 50125,
+      "sha256": "139c244abe8ba605ff22003031a9a14fec8e97797fa78331c98d2fff719ea5d6",
       "origin": "tracked"
     },
     {
@@ -4539,8 +4539,8 @@
     },
     {
       "path": "src/play-tools.ts",
-      "bytes": 5556,
-      "sha256": "384b9df1350eac82dc0ad6e3e24f9fcae6abb1dc35b5f4e5368c9d41710f4138",
+      "bytes": 5698,
+      "sha256": "abe70d816fd6292caaedd89df17fe7de38834c6188ad42c19326cf207357f6e6",
       "origin": "tracked"
     },
     {

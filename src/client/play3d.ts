@@ -1764,6 +1764,7 @@ function render() {
   // (actions already serialise on the session lock), so polls never flicker the HUD.
   const busy = Boolean(game.connection?.busy);
   const blocked = Boolean(game.connection?.pending);
+  screens.giveUp(state.phase.kind !== "finished", blocked);
   const preparing = state.phase.kind === "prepare";
   syncSettlement(state);
   syncTileButtons(state);
@@ -1793,7 +1794,14 @@ function render() {
     state.phase.kind === "finished" ? state : null,
     network ? (game.connection?.queue ?? "unranked") : null,
   );
-  if (network && state.phase.kind === "finished") showAward(state.revision);
+  if (network && state.phase.kind === "finished") {
+    if (game.connection?.queue === "unranked" && state.round < 3) {
+      awardShown = state.revision;
+      screens.award(
+        "Run ended. Freeplay runs ended before round 3 do not change Elo or XP.",
+      );
+    } else showAward(state.revision);
+  }
   syncActions(state, preparing && !blocked);
   if (tooltipTile !== null) {
     showTileTooltip(state, tooltipTile);

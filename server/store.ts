@@ -1405,6 +1405,22 @@ export class GameStore {
           if (!change) throw new Error("Missing committed delta");
           const after = session.state;
           let reported = nextRun === run ? opponents : [];
+          if (request.actions.at(-1)?.op === "give-up") {
+            const waiting = z
+              .array(z.object({ reply: z.string() }))
+              .parse(
+                this.db
+                  .prepare(
+                    "SELECT reply FROM receipts WHERE guest=? AND pending=1",
+                  )
+                  .all(id),
+              )
+              .some((row) => receiptReply(row.reply).body.r === game.revision);
+            if (waiting) throw new Error("Cancel waiting before giving up");
+            if (ranked || game.round >= 3)
+              this.award(id, run, ranked, after.wins, opponents, "abandoned");
+            reported = [];
+          }
           // Async ready/continue/restart must end their batch. A completed result can
           // therefore only be the initial phase consumed by this request's Continue.
           if (

@@ -1445,6 +1445,11 @@ body {
   background: linear-gradient(#f6d47a, #c9952e);
   border-color: #fff0b8;
 }
+.settings-actions .give-up {
+  color: #ffe1dc;
+  background: linear-gradient(#793d3c, #4b2528);
+  border-color: #b76b64;
+}
 
 /* Smaller screens: the three offers share the width at a smaller size. */
 @media (max-width: 900px), (max-height: 640px) {
